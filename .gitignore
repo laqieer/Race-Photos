@@ -1,7 +1,3 @@
-# Downloaded photos (except manifest)
-docs/images/*/*/
-!docs/images/manifest.json
-
 # Python
 __pycache__/
 *.py[cod]
