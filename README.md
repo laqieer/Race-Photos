@@ -8,6 +8,7 @@ My photos from various races, organized and displayed in a beautiful web gallery
 Race-Photos/
 ├── scripts/              # Batch download scripts for photos
 │   ├── download_photos.py      # Download photos from API responses
+│   ├── download_runnerbar.py   # Download photos from RunnerBar API
 │   ├── generate_manifest.py    # Generate gallery manifest
 │   ├── requirements.txt        # Python dependencies
 │   └── README.md              # Scripts documentation
@@ -61,6 +62,25 @@ Open `docs/index.html` in a browser, or enable GitHub Pages to view online.
 
 ## 📸 Usage Examples
 
+### Download from RunnerBar API
+
+Download photos directly from RunnerBar API:
+
+```bash
+python scripts/download_runnerbar.py --activity-id 28183 --uid 3256630 --face-id 7851335 --game-number B51278 --pl-id 3245790
+
+# Or with minimal parameters
+python scripts/download_runnerbar.py --activity-id 28183 --uid 3256630
+
+# Update gallery
+python scripts/generate_manifest.py
+```
+
+The script will:
+1. Fetch race information to get the race name
+2. Fetch photos list from the API
+3. Download all photos to `docs/images/{race_name}/runnerbar/`
+
 ### Download from Different Sources
 
 ```bash
@@ -104,6 +124,15 @@ The download script handles various API response formats automatically:
       {"src": "https://example.com/photo1.jpg", "identifier": "123"}
     ]
   }
+}
+```
+
+**Type 4: RunnerBar API format**
+```json
+{
+  "topicInfoList": [
+    {"url_hq": "https://example.com/photo1.jpg", "photoId": "123"}
+  ]
 }
 ```
 

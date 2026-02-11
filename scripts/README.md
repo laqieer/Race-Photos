@@ -67,6 +67,16 @@ The script automatically detects and handles various JSON structures from differ
 }
 ```
 
+### Type 4: RunnerBar API format
+```json
+{
+  "topicInfoList": [
+    {"url_hq": "https://example.com/photo1.jpg", "photoId": "123"},
+    {"url_hq": "https://example.com/photo2.jpg", "photoId": "124"}
+  ]
+}
+```
+
 The script will automatically detect which format is being used and extract the photo URLs accordingly.
 
 ## Features
@@ -76,6 +86,46 @@ The script will automatically detect which format is being used and extract the 
 - **Skip existing files**: Won't re-download photos that already exist
 - **Error handling**: Continues downloading even if some photos fail
 - **Progress tracking**: Shows download progress and statistics
+
+### download_runnerbar.py
+
+Download photos directly from RunnerBar API:
+
+```bash
+python download_runnerbar.py --activity-id <activity_id> --uid <uid> [options]
+```
+
+**Required Arguments:**
+- `--activity-id`: Activity ID for the race
+- `--uid`: User ID
+
+**Optional Arguments:**
+- `--face-id`: Face ID
+- `--game-number`: Game/Bib number
+- `--photo-num`: Number of photos to retrieve (default: 200)
+- `--pl-id`: PL ID
+- `--source`: Source name for organizing photos (default: "runnerbar")
+
+**Examples:**
+
+```bash
+# Download photos with all parameters
+python download_runnerbar.py --activity-id 28183 --uid 3256630 --face-id 7851335 --game-number B51278 --pl-id 3245790
+
+# Download photos with minimal parameters
+python download_runnerbar.py --activity-id 28183 --uid 3256630
+
+# Specify custom source name
+python download_runnerbar.py --activity-id 28183 --uid 3256630 --source official
+
+# Download more photos
+python download_runnerbar.py --activity-id 28183 --uid 3256630 --photo-num 500
+```
+
+This script will:
+1. Fetch race information from the API to get the race name
+2. Fetch the photos list from the API
+3. Download all photos with `url_hq` to `docs/images/{race_name}/runnerbar/`
 
 ### generate_manifest.py
 
