@@ -47,7 +47,7 @@ class RunnerBarDownloader:
         return sanitized.strip().replace(' ', '-')
     
     @staticmethod
-    def extract_photo_id(photo: Dict[str, Any], fallback_index: int = None) -> str:
+    def extract_photo_id(photo: Dict[str, Any], fallback_index: Optional[int] = None) -> str:
         """
         Extract photo ID from photo dictionary.
         
@@ -61,7 +61,7 @@ class RunnerBarDownloader:
         photo_id = photo.get('photoId') or photo.get('id')
         if photo_id:
             return str(photo_id)
-        return f'photo_{fallback_index}' if fallback_index else 'photo'
+        return f'photo_{fallback_index}' if fallback_index is not None else 'photo'
     
     def get_race_info(self, activity_id: str) -> Optional[Dict[str, Any]]:
         """
