@@ -98,10 +98,9 @@ def main():
     
     race_count = len(manifest["races"])
     photo_count = sum(
-        len(photo) 
+        len(source["photos"])
         for race in manifest["races"] 
-        for source in race["sources"] 
-        for photo in source["photos"]
+        for source in race["sources"]
     )
     
     print(f"✓ Manifest generated: {race_count} race(s), {photo_count} photo(s)")
