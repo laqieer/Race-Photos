@@ -30,6 +30,39 @@ class RunnerBarDownloader:
         })
         self.photo_downloader = PhotoDownloader(base_dir)
     
+    @staticmethod
+    def sanitize_directory_name(name: str) -> str:
+        """
+        Sanitize a string to be used as a directory name.
+        
+        Args:
+            name: The string to sanitize
+            
+        Returns:
+            Sanitized string suitable for use as a directory name
+        """
+        # Keep only alphanumeric characters, spaces, hyphens, and underscores
+        sanitized = "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in name)
+        # Replace spaces with hyphens and strip whitespace
+        return sanitized.strip().replace(' ', '-')
+    
+    @staticmethod
+    def extract_photo_id(photo: Dict[str, Any], fallback_index: int = None) -> str:
+        """
+        Extract photo ID from photo dictionary.
+        
+        Args:
+            photo: Photo dictionary
+            fallback_index: Fallback index if no ID found
+            
+        Returns:
+            Photo ID as string
+        """
+        photo_id = photo.get('photoId') or photo.get('id')
+        if photo_id:
+            return str(photo_id)
+        return f'photo_{fallback_index}' if fallback_index else 'photo'
+    
     def get_race_info(self, activity_id: str) -> Optional[Dict[str, Any]]:
         """
         Fetch race information from RunnerBar API.
@@ -141,11 +174,14 @@ class RunnerBarDownloader:
             print("Failed to get race info")
             return 0
         
-        # Extract race name from activity.title
+        # Extract race name from activity.title with validation
+        if 'activity' not in race_info or 'title' not in race_info['activity']:
+            print("✗ No activity.title found in race info", file=sys.stderr)
+            return 0
+        
         race_name = race_info['activity']['title']
         # Clean race name for use as directory name
-        race_name = "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in race_name)
-        race_name = race_name.strip().replace(' ', '-')
+        race_name = self.sanitize_directory_name(race_name)
         
         # Get photos list
         photos_list = self.get_photos_list(uid, activity_id, face_id, game_number, photo_num, pl_id)
@@ -155,9 +191,9 @@ class RunnerBarDownloader:
         
         # Extract photo URLs from topicInfoList
         photo_urls = []
-        for photo in photos_list:
+        for i, photo in enumerate(photos_list, 1):
             if 'url_hq' in photo and photo['url_hq']:
-                photo_id = photo.get('photoId') or photo.get('id')
+                photo_id = self.extract_photo_id(photo, i)
                 photo_urls.append({
                     'url': photo['url_hq'],
                     'id': photo_id
