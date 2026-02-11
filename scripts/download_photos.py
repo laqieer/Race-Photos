@@ -9,6 +9,7 @@ each with their own JSON response format.
 import json
 import os
 import sys
+import hashlib
 import requests
 from pathlib import Path
 from typing import Dict, List, Any
@@ -106,7 +107,9 @@ class PhotoDownloader:
             if photo_id:
                 filename = f"{photo_id}{ext}"
             else:
-                filename = f"photo_{hash(url) % 100000}{ext}"
+                # Use stable hash for consistent filenames across runs
+                url_hash = hashlib.md5(url.encode()).hexdigest()[:10]
+                filename = f"photo_{url_hash}{ext}"
         
         return filename
     
