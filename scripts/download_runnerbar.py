@@ -189,10 +189,29 @@ class RunnerBarDownloader:
     
     @staticmethod
     def set_file_timestamp(filepath: Path, timestamp: float) -> None:
-        """Set the file's access and modification time to the given timestamp."""
+        """Set the file's creation, access, and modification time to the given timestamp."""
         try:
             os.utime(filepath, (timestamp, timestamp))
+            # Set creation time on Windows
+            if sys.platform == 'win32':
+                import pywintypes
+                import win32file
+                import win32con
+                wintime = pywintypes.Time(timestamp)
+                handle = win32file.CreateFile(
+                    str(filepath),
+                    win32con.GENERIC_WRITE,
+                    win32con.FILE_SHARE_READ | win32con.FILE_SHARE_WRITE,
+                    None,
+                    win32con.OPEN_EXISTING,
+                    win32con.FILE_ATTRIBUTE_NORMAL,
+                    None
+                )
+                win32file.SetFileTime(handle, wintime, wintime, wintime)
+                handle.close()
         except OSError:
+            pass
+        except ImportError:
             pass
 
     @staticmethod
