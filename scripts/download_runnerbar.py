@@ -215,6 +215,66 @@ class RunnerBarDownloader:
             pass
 
     @staticmethod
+    def parse_gps_info(photo: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """
+        Parse GPS coordinates from photo's meta_info.
+        
+        Args:
+            photo: Photo dictionary with meta_info field
+            
+        Returns:
+            Dict with lat, lat_ref, lon, lon_ref if found, None otherwise
+        """
+        meta_info = photo.get('meta_info')
+        if not meta_info:
+            return None
+        try:
+            if isinstance(meta_info, str):
+                meta_info = json.loads(meta_info)
+            lat = meta_info.get('GPSLatitude')
+            lon = meta_info.get('GPSLongitude')
+            if lat is None or lon is None:
+                return None
+            return {
+                'lat': abs(float(lat)),
+                'lat_ref': meta_info.get('GPSLatitudeRef', 'N'),
+                'lon': abs(float(lon)),
+                'lon_ref': meta_info.get('GPSLongitudeRef', 'E'),
+            }
+        except (json.JSONDecodeError, ValueError, TypeError):
+            return None
+
+    @staticmethod
+    def _decimal_to_dms(decimal: float) -> tuple:
+        """Convert decimal degrees to (degrees, minutes, seconds) as rational tuples."""
+        d = int(decimal)
+        m_float = (decimal - d) * 60
+        m = int(m_float)
+        s = round((m_float - m) * 60 * 10000)
+        return ((d, 1), (m, 1), (s, 10000))
+
+    @staticmethod
+    def set_gps_exif(filepath: Path, gps_info: Dict[str, Any]) -> None:
+        """Write GPS EXIF data to a JPEG file."""
+        try:
+            import piexif
+        except ImportError:
+            return
+        try:
+            exif_dict = piexif.load(str(filepath))
+            gps_ifd = {
+                piexif.GPSIFD.GPSLatitudeRef: gps_info['lat_ref'].encode(),
+                piexif.GPSIFD.GPSLatitude: RunnerBarDownloader._decimal_to_dms(gps_info['lat']),
+                piexif.GPSIFD.GPSLongitudeRef: gps_info['lon_ref'].encode(),
+                piexif.GPSIFD.GPSLongitude: RunnerBarDownloader._decimal_to_dms(gps_info['lon']),
+            }
+            exif_dict['GPS'] = gps_ifd
+            exif_bytes = piexif.dump(exif_dict)
+            piexif.insert(exif_bytes, str(filepath))
+        except Exception:
+            pass
+
+    @staticmethod
     def extract_photo_id(photo: Dict[str, Any], fallback_index: Optional[int] = None) -> str:
         """
         Extract photo ID from photo dictionary.
@@ -488,7 +548,8 @@ class RunnerBarDownloader:
                 photo_urls.append({
                     'url': photo['url_hq'],
                     'id': photo_id,
-                    'timestamp': self.parse_datetime_original(photo)
+                    'timestamp': self.parse_datetime_original(photo),
+                    'gps': self.parse_gps_info(photo)
                 })
         
         if not photo_urls:
@@ -507,18 +568,23 @@ class RunnerBarDownloader:
             url = photo['url']
             photo_id = photo.get('id', f'photo_{i}')
             timestamp = photo.get('timestamp')
+            gps = photo.get('gps')
             filename = self.photo_downloader.get_filename_from_url(url, str(photo_id))
             output_path = output_dir / filename
             
             # Skip if already downloaded
             if output_path.exists():
                 print(f"⊙ Skipped (exists): {filename}")
+                if gps:
+                    self.set_gps_exif(output_path, gps)
                 if timestamp:
                     self.set_file_timestamp(output_path, timestamp)
                 success_count += 1
                 continue
             
             if self.photo_downloader.download_photo(url, output_path):
+                if gps:
+                    self.set_gps_exif(output_path, gps)
                 if timestamp:
                     self.set_file_timestamp(output_path, timestamp)
                 success_count += 1
