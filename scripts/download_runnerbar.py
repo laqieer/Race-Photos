@@ -67,7 +67,7 @@ class RunnerBarDownloader:
                 json.dump(data, f, indent=2, ensure_ascii=False)
             print(f"✓ Cached to {filename}")
             return True
-        except Exception as e:
+        except (IOError, OSError, TypeError) as e:
             print(f"⚠ Failed to save cache {filename}: {e}", file=sys.stderr)
             return False
     
@@ -93,7 +93,7 @@ class RunnerBarDownloader:
                 data = json.load(f)
             print(f"✓ Loaded from cache: {filename}")
             return data
-        except Exception as e:
+        except (IOError, OSError, json.JSONDecodeError) as e:
             print(f"⚠ Failed to load cache {filename}: {e}", file=sys.stderr)
             return None
     
@@ -266,7 +266,8 @@ class RunnerBarDownloader:
             Number of successfully downloaded photos
         """
         # First, try to get race info to determine the race name
-        # We'll use a temporary cache location based on activity_id
+        # Use a temporary cache location based on activity_id
+        # (Using underscore prefix to make it visible, not hidden like dot-prefix)
         temp_cache_dir = self.base_dir / f"_temp_cache_{activity_id}" / source
         temp_cache_dir.mkdir(parents=True, exist_ok=True)
         self.cache_dir = temp_cache_dir
@@ -295,11 +296,15 @@ class RunnerBarDownloader:
             for cache_file in ['race_info.json', 'photos_list.json']:
                 temp_file = temp_cache_dir / cache_file
                 final_file = final_cache_dir / cache_file
-                if temp_file.exists() and not final_file.exists():
-                    try:
-                        temp_file.rename(final_file)
-                    except OSError as e:
-                        print(f"⚠ Failed to move cache file {cache_file}: {e}", file=sys.stderr)
+                if temp_file.exists():
+                    if not final_file.exists():
+                        try:
+                            temp_file.rename(final_file)
+                        except OSError as e:
+                            print(f"⚠ Failed to move cache file {cache_file}: {e}", file=sys.stderr)
+                    else:
+                        # Cache already exists in final location, temp will be cleaned up
+                        pass
             # Update cache_dir to final location
             self.cache_dir = final_cache_dir
             # Clean up temp directory
