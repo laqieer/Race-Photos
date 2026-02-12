@@ -29,6 +29,7 @@ class RunnerBarDownloader:
             'User-Agent': 'Race-Photos-Downloader/1.0'
         })
         self.photo_downloader = PhotoDownloader(base_dir)
+        self.cache_dir = None  # Will be set during download_photos
     
     @staticmethod
     def sanitize_directory_name(name: str) -> str:
@@ -45,6 +46,56 @@ class RunnerBarDownloader:
         sanitized = "".join(c if c.isalnum() or c in (' ', '-', '_') else '_' for c in name)
         # Replace spaces with hyphens and strip whitespace
         return sanitized.strip().replace(' ', '-')
+    
+    def save_cache(self, filename: str, data: Dict[str, Any]) -> bool:
+        """
+        Save API response data to cache file.
+        
+        Args:
+            filename: Name of cache file (e.g., 'race_info.json')
+            data: Data to cache
+            
+        Returns:
+            True if saved successfully, False otherwise
+        """
+        if not self.cache_dir:
+            return False
+        
+        try:
+            cache_file = self.cache_dir / filename
+            with open(cache_file, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            print(f"✓ Cached to {filename}")
+            return True
+        except Exception as e:
+            print(f"⚠ Failed to save cache {filename}: {e}", file=sys.stderr)
+            return False
+    
+    def load_cache(self, filename: str) -> Optional[Dict[str, Any]]:
+        """
+        Load API response data from cache file.
+        
+        Args:
+            filename: Name of cache file (e.g., 'race_info.json')
+            
+        Returns:
+            Cached data if found, None otherwise
+        """
+        if not self.cache_dir:
+            return None
+        
+        cache_file = self.cache_dir / filename
+        if not cache_file.exists():
+            return None
+        
+        try:
+            with open(cache_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            print(f"✓ Loaded from cache: {filename}")
+            return data
+        except Exception as e:
+            print(f"⚠ Failed to load cache {filename}: {e}", file=sys.stderr)
+            return None
     
     @staticmethod
     def extract_photo_id(photo: Dict[str, Any], fallback_index: Optional[int] = None) -> str:
@@ -63,12 +114,13 @@ class RunnerBarDownloader:
             return str(photo_id)
         return f'photo_{fallback_index}' if fallback_index is not None else 'photo'
     
-    def get_race_info(self, activity_id: str) -> Optional[Dict[str, Any]]:
+    def get_race_info(self, activity_id: str, use_cache: bool = True) -> Optional[Dict[str, Any]]:
         """
-        Fetch race information from RunnerBar API.
+        Fetch race information from RunnerBar API with caching support.
         
         Args:
             activity_id: The activity ID for the race
+            use_cache: Whether to use cached data on API failure
             
         Returns:
             Dictionary containing race info, or None if failed
@@ -76,6 +128,7 @@ class RunnerBarDownloader:
         url = "https://apiface.store.runnerbar.com/yundong/yd_album/getUserGroupAlbumDetail_modify.json"
         params = {"activity_id": activity_id}
         
+        # Try API call first
         try:
             print(f"Fetching race info for activity {activity_id}...")
             response = self.session.get(url, params=params, timeout=30)
@@ -84,23 +137,44 @@ class RunnerBarDownloader:
             
             if 'activity' in data and 'title' in data['activity']:
                 print(f"✓ Found race: {data['activity']['title']}")
+                # Save to cache if cache_dir is set
+                if self.cache_dir:
+                    self.save_cache('race_info.json', data)
                 return data
             else:
                 print("✗ No activity.title found in response", file=sys.stderr)
+                # Try cache as fallback
+                if use_cache:
+                    cached = self.load_cache('race_info.json')
+                    if cached:
+                        print("→ Using cached race info")
+                        return cached
                 return None
                 
         except requests.RequestException as e:
             print(f"✗ Failed to fetch race info: {e}", file=sys.stderr)
+            # Try cache as fallback
+            if use_cache:
+                cached = self.load_cache('race_info.json')
+                if cached:
+                    print("→ Using cached race info")
+                    return cached
             return None
         except json.JSONDecodeError as e:
             print(f"✗ Failed to parse race info JSON: {e}", file=sys.stderr)
+            # Try cache as fallback
+            if use_cache:
+                cached = self.load_cache('race_info.json')
+                if cached:
+                    print("→ Using cached race info")
+                    return cached
             return None
     
     def get_photos_list(self, uid: str, activity_id: str, face_id: str = None, 
                        game_number: str = None, photo_num: int = 200, 
-                       pl_id: str = None) -> Optional[List[Dict[str, Any]]]:
+                       pl_id: str = None, use_cache: bool = True) -> Optional[List[Dict[str, Any]]]:
         """
-        Fetch photos list from RunnerBar API.
+        Fetch photos list from RunnerBar API with caching support.
         
         Args:
             uid: User ID
@@ -109,6 +183,7 @@ class RunnerBarDownloader:
             game_number: Game/Bib number (optional)
             photo_num: Number of photos to retrieve (default: 200)
             pl_id: PL ID (optional)
+            use_cache: Whether to use cached data on API failure
             
         Returns:
             List of photo info dictionaries, or None if failed
@@ -129,6 +204,7 @@ class RunnerBarDownloader:
         if pl_id:
             params["pl_id"] = pl_id
         
+        # Try API call first
         try:
             print(f"Fetching photos list...")
             response = self.session.get(url, params=params, timeout=30)
@@ -138,23 +214,44 @@ class RunnerBarDownloader:
             if 'topicInfoList' in data:
                 photos = data['topicInfoList']
                 print(f"✓ Found {len(photos)} photos")
+                # Save full response to cache if cache_dir is set
+                if self.cache_dir:
+                    self.save_cache('photos_list.json', data)
                 return photos
             else:
                 print("✗ No topicInfoList found in response", file=sys.stderr)
+                # Try cache as fallback
+                if use_cache:
+                    cached = self.load_cache('photos_list.json')
+                    if cached and 'topicInfoList' in cached:
+                        print("→ Using cached photos list")
+                        return cached['topicInfoList']
                 return None
                 
         except requests.RequestException as e:
             print(f"✗ Failed to fetch photos list: {e}", file=sys.stderr)
+            # Try cache as fallback
+            if use_cache:
+                cached = self.load_cache('photos_list.json')
+                if cached and 'topicInfoList' in cached:
+                    print("→ Using cached photos list")
+                    return cached['topicInfoList']
             return None
         except json.JSONDecodeError as e:
             print(f"✗ Failed to parse photos JSON: {e}", file=sys.stderr)
+            # Try cache as fallback
+            if use_cache:
+                cached = self.load_cache('photos_list.json')
+                if cached and 'topicInfoList' in cached:
+                    print("→ Using cached photos list")
+                    return cached['topicInfoList']
             return None
     
     def download_photos(self, activity_id: str, uid: str, face_id: str = None,
                        game_number: str = None, photo_num: int = 200,
                        pl_id: str = None, source: str = "runnerbar") -> int:
         """
-        Download photos from RunnerBar API.
+        Download photos from RunnerBar API with caching support.
         
         Args:
             activity_id: Activity ID for the race
@@ -168,10 +265,16 @@ class RunnerBarDownloader:
         Returns:
             Number of successfully downloaded photos
         """
-        # Get race info
+        # First, try to get race info to determine the race name
+        # We'll use a temporary cache location based on activity_id
+        temp_cache_dir = self.base_dir / f".cache_{activity_id}" / source
+        temp_cache_dir.mkdir(parents=True, exist_ok=True)
+        self.cache_dir = temp_cache_dir
+        
+        # Get race info (will try cache if API fails)
         race_info = self.get_race_info(activity_id)
         if not race_info:
-            print("Failed to get race info")
+            print("Failed to get race info from both API and cache")
             return 0
         
         # Extract race name from activity.title with validation
@@ -183,10 +286,30 @@ class RunnerBarDownloader:
         # Clean race name for use as directory name
         race_name = self.sanitize_directory_name(race_name)
         
-        # Get photos list
+        # Now set the final cache directory
+        final_cache_dir = self.base_dir / race_name / source
+        final_cache_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Move cache files from temp to final location if they exist
+        if temp_cache_dir != final_cache_dir:
+            for cache_file in ['race_info.json', 'photos_list.json']:
+                temp_file = temp_cache_dir / cache_file
+                final_file = final_cache_dir / cache_file
+                if temp_file.exists() and not final_file.exists():
+                    temp_file.rename(final_file)
+            # Update cache_dir to final location
+            self.cache_dir = final_cache_dir
+            # Clean up temp directory
+            try:
+                temp_cache_dir.rmdir()
+                (self.base_dir / f".cache_{activity_id}").rmdir()
+            except:
+                pass  # Ignore if directory not empty or other issues
+        
+        # Get photos list (will try cache if API fails)
         photos_list = self.get_photos_list(uid, activity_id, face_id, game_number, photo_num, pl_id)
         if not photos_list:
-            print("Failed to get photos list")
+            print("Failed to get photos list from both API and cache")
             return 0
         
         # Extract photo URLs from topicInfoList
@@ -205,7 +328,7 @@ class RunnerBarDownloader:
         
         print(f"\nDownloading {len(photo_urls)} photos to docs/images/{race_name}/{source}/")
         
-        # Create output directory
+        # Create output directory (should already exist from cache_dir)
         output_dir = self.base_dir / race_name / source
         output_dir.mkdir(parents=True, exist_ok=True)
         

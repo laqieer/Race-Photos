@@ -8,6 +8,22 @@ This document explains how to download photos from RunnerBar API and commit them
 2. Required packages: `pip install -r scripts/requirements.txt`
 3. Access to RunnerBar API (requires internet connection)
 
+## Features
+
+### API Response Caching
+
+The downloader now includes automatic caching to handle API server failures:
+
+- **First run**: Fetches data from API and saves responses to cache files
+- **API failure**: Automatically falls back to cached data if API is unavailable
+- **Subsequent runs**: Updates cache with fresh data when API is accessible
+
+Cache files are stored in the same directory as photos:
+- `docs/images/{race_name}/{source}/race_info.json` - Race information
+- `docs/images/{race_name}/{source}/photos_list.json` - Photo list
+
+This ensures the script works even when the RunnerBar API has backend issues.
+
 ## Step 1: Get Your Parameters
 
 From the RunnerBar website/app, you need:
@@ -134,8 +150,42 @@ docs/images/
     └── runnerbar/
         ├── 12345.jpg
         ├── 12346.jpg
+        ├── race_info.json      # Cached race information
+        ├── photos_list.json    # Cached photo list
         └── ...
 ```
+
+## API Response Caching Details
+
+### How Caching Works
+
+1. **First API Call**: When you first download photos, the script:
+   - Calls the RunnerBar API
+   - Saves the raw API responses to JSON files
+   - Downloads photos as usual
+
+2. **Subsequent API Failures**: If the API is unavailable:
+   - Script attempts API call
+   - On failure, automatically loads cached data
+   - Continues with photo download using cached info
+   - Shows "→ Using cached race info" or "→ Using cached photos list"
+
+3. **API Recovery**: When API becomes available again:
+   - Script successfully calls API
+   - Updates cache files with fresh data
+   - Shows "✓ Cached to race_info.json" or "✓ Cached to photos_list.json"
+
+### Cache Files
+
+- **race_info.json**: Contains full race information including title, ID, date, location
+- **photos_list.json**: Contains complete photo list with URLs and metadata
+
+### Benefits
+
+- **Resilience**: Continue working even during API outages
+- **Offline Access**: View and manage photos without API access
+- **Data Preservation**: Keep historical data even if API changes
+- **Debugging**: Inspect raw API responses for troubleshooting
 
 ## Code Verification
 
