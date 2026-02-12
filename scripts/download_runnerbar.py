@@ -267,7 +267,7 @@ class RunnerBarDownloader:
         """
         # First, try to get race info to determine the race name
         # We'll use a temporary cache location based on activity_id
-        temp_cache_dir = self.base_dir / f".cache_{activity_id}" / source
+        temp_cache_dir = self.base_dir / f"_temp_cache_{activity_id}" / source
         temp_cache_dir.mkdir(parents=True, exist_ok=True)
         self.cache_dir = temp_cache_dir
         
@@ -296,15 +296,18 @@ class RunnerBarDownloader:
                 temp_file = temp_cache_dir / cache_file
                 final_file = final_cache_dir / cache_file
                 if temp_file.exists() and not final_file.exists():
-                    temp_file.rename(final_file)
+                    try:
+                        temp_file.rename(final_file)
+                    except OSError as e:
+                        print(f"⚠ Failed to move cache file {cache_file}: {e}", file=sys.stderr)
             # Update cache_dir to final location
             self.cache_dir = final_cache_dir
             # Clean up temp directory
             try:
                 temp_cache_dir.rmdir()
-                (self.base_dir / f".cache_{activity_id}").rmdir()
-            except:
-                pass  # Ignore if directory not empty or other issues
+                (self.base_dir / f"_temp_cache_{activity_id}").rmdir()
+            except OSError:
+                pass  # Ignore if directory not empty or removal fails
         
         # Get photos list (will try cache if API fails)
         photos_list = self.get_photos_list(uid, activity_id, face_id, game_number, photo_num, pl_id)
