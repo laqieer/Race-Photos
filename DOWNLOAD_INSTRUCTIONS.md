@@ -112,15 +112,27 @@ python generate_manifest.py
 
 This creates/updates `docs/images/manifest.json` which is used by the web gallery.
 
-## Step 5: Commit Photos to Git
+## Step 5: Commit Photos and Metadata to Git
 
-Since photos are now included in the repository (`.gitignore` has been updated):
+Since photos and API cache files are now included in the repository (`.gitignore` has been updated):
 
 ```bash
 git add docs/images/
 git commit -m "Add photos from [Race Name]"
 git push
 ```
+
+**What gets committed:**
+- Downloaded photos (*.jpg, *.png, etc.)
+- `race_info.json` - Race metadata for gallery enhancement
+- `photos_list.json` - Photo metadata for future use
+- `manifest.json` - Gallery index
+
+The JSON cache files are valuable for:
+- Offline viewing of race information
+- Future gallery enhancements (showing race details, photo metadata)
+- API resilience (work during outages)
+- Historical data preservation
 
 ## Troubleshooting
 
@@ -177,8 +189,16 @@ docs/images/
 
 ### Cache Files
 
+These files are automatically saved in the same directory as photos and **committed to Git**:
+
 - **race_info.json**: Contains full race information including title, ID, date, location
 - **photos_list.json**: Contains complete photo list with URLs and metadata
+
+**Note:** These JSON files are committed to the repository along with photos. They provide:
+- Race metadata for potential gallery enhancements
+- Photo metadata (camera info, GPS coordinates, timestamps)
+- Offline access to race and photo information
+- Historical data preservation
 
 ### Benefits
 
@@ -186,6 +206,7 @@ docs/images/
 - **Offline Access**: View and manage photos without API access
 - **Data Preservation**: Keep historical data even if API changes
 - **Debugging**: Inspect raw API responses for troubleshooting
+- **Gallery Enhancement**: Metadata available for future gallery features (race details, photo info)
 
 ## Code Verification
 

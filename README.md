@@ -19,7 +19,9 @@ Race-Photos/
 │   └── images/                # Downloaded photos
 │       ├── {race}/            # Race directories
 │       │   └── {source}/      # Source directories
-│       │       └── *.jpg      # Photo files
+│       │       ├── *.jpg      # Photo files
+│       │       ├── race_info.json    # Race metadata (committed)
+│       │       └── photos_list.json  # Photo metadata (committed)
 │       └── manifest.json      # Gallery manifest
 └── README.md            # This file
 ```
@@ -154,6 +156,19 @@ Your gallery will be available at: `https://<username>.github.io/Race-Photos/`
 - **Multiple Sources**: Support for photos from different photographers
 - **Lightbox View**: Click any photo to view full size
 - **Lazy Loading**: Photos load as you scroll for better performance
+
+## 💾 Metadata Preservation
+
+The download scripts automatically save API responses as JSON files alongside photos:
+
+- **race_info.json**: Race metadata (title, date, location, etc.) committed to Git
+- **photos_list.json**: Photo metadata (camera info, GPS, timestamps, etc.) committed to Git
+
+These files provide:
+- **API Resilience**: Work offline if API is unavailable
+- **Historical Data**: Preserve race information even if API changes
+- **Future Enhancement**: Rich metadata available for gallery features
+- **Debugging**: Raw API responses for troubleshooting
 
 ## 📝 License
 
