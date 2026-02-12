@@ -75,6 +75,10 @@ Then visit http://localhost:8080, or enable GitHub Pages to view online.
 Download photos directly from RunnerBar API:
 
 ```bash
+# From API URL (extracts parameters automatically)
+python scripts/download_runnerbar.py --url "https://apiface.store.runnerbar.com/yundong/faceSearch/getFaceAndGameNumSearchPhotoV2.json?uid=3256630&activity_id=28183&face_id=7851335&game_number=B51278&photoNum=200&pl_id=3245790&source=h5"
+
+# Or with explicit parameters
 python scripts/download_runnerbar.py --activity-id 28183 --uid 3256630 --face-id 7851335 --game-number B51278 --pl-id 3245790
 
 # Or with minimal parameters

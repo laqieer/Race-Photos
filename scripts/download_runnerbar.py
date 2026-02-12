@@ -16,6 +16,7 @@ import requests
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 from copy import deepcopy
+from urllib.parse import urlparse, parse_qs
 from download_photos import PhotoDownloader
 
 
@@ -473,6 +474,9 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
+  # Download photos from API URL (extracts parameters automatically)
+  python download_runnerbar.py --url "https://apiface.store.runnerbar.com/yundong/faceSearch/getFaceAndGameNumSearchPhotoV2.json?uid=3256630&activity_id=28183&face_id=7851335&game_number=B51278&photoNum=200&pl_id=3245790&source=h5"
+
   # Download photos with all parameters
   python download_runnerbar.py --activity-id 28183 --uid 3256630 --face-id 7851335 --game-number B51278 --pl-id 3245790
 
@@ -487,8 +491,9 @@ Examples:
 """
     )
     
-    parser.add_argument('--activity-id', required=True, help='Activity ID for the race')
-    parser.add_argument('--uid', required=True, help='User ID')
+    parser.add_argument('--url', help='RunnerBar API URL to extract parameters from')
+    parser.add_argument('--activity-id', help='Activity ID for the race')
+    parser.add_argument('--uid', help='User ID')
     parser.add_argument('--face-id', help='Face ID (optional)')
     parser.add_argument('--game-number', help='Game/Bib number (optional)')
     parser.add_argument('--photo-num', type=int, default=200, help='Number of photos to retrieve (default: 200)')
@@ -496,6 +501,28 @@ Examples:
     parser.add_argument('--source', default='runnerbar', help='Source name for organizing photos (default: runnerbar)')
     
     args = parser.parse_args()
+    
+    # Extract parameters from URL if provided
+    if args.url:
+        parsed = urlparse(args.url)
+        params = parse_qs(parsed.query)
+        # URL params override defaults but not explicit CLI args
+        if not args.activity_id and 'activity_id' in params:
+            args.activity_id = params['activity_id'][0]
+        if not args.uid and 'uid' in params:
+            args.uid = params['uid'][0]
+        if not args.face_id and 'face_id' in params:
+            args.face_id = params['face_id'][0]
+        if not args.game_number and 'game_number' in params:
+            args.game_number = params['game_number'][0]
+        if 'photoNum' in params and args.photo_num == 200:
+            args.photo_num = int(params['photoNum'][0])
+        if not args.pl_id and 'pl_id' in params:
+            args.pl_id = params['pl_id'][0]
+    
+    # Validate required parameters
+    if not args.activity_id or not args.uid:
+        parser.error("--activity-id and --uid are required (provide directly or via --url)")
     
     downloader = RunnerBarDownloader()
     success_count = downloader.download_photos(
