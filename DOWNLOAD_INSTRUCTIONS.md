@@ -184,27 +184,46 @@ docs/images/
 
 3. **API Recovery**: When API becomes available again:
    - Script successfully calls API
-   - Updates cache files with fresh data
+   - **Merges new photos with existing cache** (incremental update)
+   - Preserves historical photos not in new response
+   - Updates existing photos with new data
    - Shows "✓ Cached to race_info.json" or "✓ Cached to photos_list.json"
+   - Shows "✓ Merged photo list: X existing + Y new = Z total"
 
 ### Cache Files
 
 These files are automatically saved in the same directory as photos and **committed to Git**:
 
 - **race_info.json**: Contains full race information including title, ID, date, location
-- **photos_list.json**: Contains complete photo list with URLs and metadata
+- **photos_list.json**: Contains complete photo list with URLs and metadata (**incrementally updated**)
+
+**Incremental Updates for photos_list.json:**
+
+When new photos are fetched from the API, the script:
+1. Loads the existing cached photo list
+2. Merges new photos with existing photos
+3. Deduplicates by photo ID (keeps latest version)
+4. Preserves historical photos not in the new API response
+5. Saves the complete merged list
+
+This ensures you maintain a **complete historical record** of all photos, even if:
+- API pagination changes
+- Some photos are temporarily unavailable
+- API filters affect which photos are returned
 
 **Note:** These JSON files are committed to the repository along with photos. They provide:
 - Race metadata for potential gallery enhancements
 - Photo metadata (camera info, GPS coordinates, timestamps)
 - Offline access to race and photo information
-- Historical data preservation
+- Historical data preservation (complete photo history)
 
 ### Benefits
 
 - **Resilience**: Continue working even during API outages
 - **Offline Access**: View and manage photos without API access
 - **Data Preservation**: Keep historical data even if API changes
+- **Complete History**: Maintain all photos ever downloaded, not just current API results
+- **Incremental Updates**: Only add new photos, preserve existing ones
 - **Debugging**: Inspect raw API responses for troubleshooting
 - **Gallery Enhancement**: Metadata available for future gallery features (race details, photo info)
 

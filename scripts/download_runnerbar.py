@@ -97,6 +97,63 @@ class RunnerBarDownloader:
             print(f"⚠ Failed to load cache {filename}: {e}", file=sys.stderr)
             return None
     
+    def merge_photo_lists(self, existing_data: Dict[str, Any], new_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Merge new photo list with existing cached photo list.
+        
+        This performs an incremental update, keeping historical photos that may
+        no longer appear in the API response while adding new photos.
+        
+        Args:
+            existing_data: Existing cached API response
+            new_data: New API response
+            
+        Returns:
+            Merged API response with combined photo list
+        """
+        # Extract photo lists from both sources, handling nested structure
+        existing_photos = []
+        if existing_data:
+            if 'result' in existing_data and 'topicInfoList' in existing_data['result']:
+                existing_photos = existing_data['result']['topicInfoList']
+            elif 'topicInfoList' in existing_data:
+                existing_photos = existing_data['topicInfoList']
+        
+        new_photos = []
+        if 'result' in new_data and 'topicInfoList' in new_data['result']:
+            new_photos = new_data['result']['topicInfoList']
+        elif 'topicInfoList' in new_data:
+            new_photos = new_data['topicInfoList']
+        
+        # Create a dictionary of existing photos keyed by ID for fast lookup
+        photo_dict = {}
+        for photo in existing_photos:
+            photo_id = photo.get('id') or photo.get('photoId')
+            if photo_id:
+                photo_dict[str(photo_id)] = photo
+        
+        # Merge new photos (add new ones, update existing ones)
+        for photo in new_photos:
+            photo_id = photo.get('id') or photo.get('photoId')
+            if photo_id:
+                photo_dict[str(photo_id)] = photo  # Update or add
+        
+        # Convert back to list, sorted by ID for consistency
+        merged_photos = sorted(photo_dict.values(), 
+                              key=lambda p: str(p.get('id') or p.get('photoId') or ''))
+        
+        # Create merged response preserving the structure of new_data
+        merged_data = new_data.copy()
+        if 'result' in merged_data:
+            merged_data['result'] = merged_data['result'].copy()
+            merged_data['result']['topicInfoList'] = merged_photos
+            merged_data['result']['count'] = len(merged_photos)
+        else:
+            merged_data['topicInfoList'] = merged_photos
+        
+        print(f"✓ Merged photo list: {len(existing_photos)} existing + {len(new_photos)} new = {len(merged_photos)} total")
+        return merged_data
+    
     @staticmethod
     def extract_photo_id(photo: Dict[str, Any], fallback_index: Optional[int] = None) -> str:
         """
@@ -222,9 +279,26 @@ class RunnerBarDownloader:
                 print(f"✓ Found {len(photos)} photos (legacy format)")
             
             if photos is not None:
-                # Save full response to cache if cache_dir is set
+                # Merge with existing cache for incremental updates
                 if self.cache_dir:
-                    self.save_cache('photos_list.json', data)
+                    cache_file = self.cache_dir / 'photos_list.json'
+                    existing_cached = None
+                    
+                    # Load existing cache silently (no print message during merge)
+                    if cache_file.exists():
+                        try:
+                            with open(cache_file, 'r', encoding='utf-8') as f:
+                                existing_cached = json.load(f)
+                        except (IOError, OSError, json.JSONDecodeError):
+                            pass  # If load fails, just use new data
+                    
+                    if existing_cached:
+                        # Merge new data with existing data
+                        merged_data = self.merge_photo_lists(existing_cached, data)
+                        self.save_cache('photos_list.json', merged_data)
+                    else:
+                        # No existing cache, save new data as-is
+                        self.save_cache('photos_list.json', data)
                 return photos
             else:
                 print("✗ No topicInfoList found in response", file=sys.stderr)
