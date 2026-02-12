@@ -1,0 +1,22 @@
+{
+  "races": [
+    {
+      "name": "2024-Shanghai-Marathon",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "images/2024-Shanghai-Marathon/runnerbar/12345.jpg",
+              "name": "12345.jpg"
+            },
+            {
+              "url": "images/2024-Shanghai-Marathon/runnerbar/12346.jpg",
+              "name": "12346.jpg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
