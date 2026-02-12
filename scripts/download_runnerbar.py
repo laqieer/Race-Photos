@@ -15,6 +15,7 @@ import argparse
 import requests
 from pathlib import Path
 from typing import Dict, List, Any, Optional
+from copy import deepcopy
 from download_photos import PhotoDownloader
 
 
@@ -128,24 +129,26 @@ class RunnerBarDownloader:
         # Create a dictionary of existing photos keyed by ID for fast lookup
         photo_dict = {}
         for photo in existing_photos:
-            photo_id = photo.get('id') or photo.get('photoId')
-            if photo_id:
-                photo_dict[str(photo_id)] = photo
+            # Use extract_photo_id for consistent ID handling
+            photo_id = self.extract_photo_id(photo)
+            if photo_id and not photo_id.startswith('photo_'):  # Only use actual IDs, not fallback
+                photo_dict[photo_id] = photo
         
         # Merge new photos (add new ones, update existing ones)
         for photo in new_photos:
-            photo_id = photo.get('id') or photo.get('photoId')
-            if photo_id:
-                photo_dict[str(photo_id)] = photo  # Update or add
+            # Use extract_photo_id for consistent ID handling
+            photo_id = self.extract_photo_id(photo)
+            if photo_id and not photo_id.startswith('photo_'):  # Only use actual IDs, not fallback
+                photo_dict[photo_id] = photo  # Update or add
         
         # Convert back to list, sorted by ID for consistency
-        merged_photos = sorted(photo_dict.values(), 
-                              key=lambda p: str(p.get('id') or p.get('photoId') or ''))
+        # Pre-extract IDs for efficient sorting
+        photos_with_ids = [(self.extract_photo_id(p), p) for p in photo_dict.values()]
+        merged_photos = [p for _, p in sorted(photos_with_ids, key=lambda x: x[0])]
         
-        # Create merged response preserving the structure of new_data
-        merged_data = new_data.copy()
+        # Create merged response with deep copy to avoid mutation
+        merged_data = deepcopy(new_data)
         if 'result' in merged_data:
-            merged_data['result'] = merged_data['result'].copy()
             merged_data['result']['topicInfoList'] = merged_photos
             merged_data['result']['count'] = len(merged_photos)
         else:
