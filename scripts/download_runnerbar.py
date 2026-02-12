@@ -399,6 +399,13 @@ class RunnerBarDownloader:
                 print(f"✓ Found {len(photos)} photos (legacy format)")
             
             if photos is not None:
+                # Sort photos by ID for consistent ordering in JSON
+                photos.sort(key=lambda p: self.extract_photo_id(p, 0))
+                if 'result' in data and 'topicInfoList' in data['result']:
+                    data['result']['topicInfoList'] = photos
+                elif 'topicInfoList' in data:
+                    data['topicInfoList'] = photos
+                
                 # Merge with existing cache for incremental updates
                 if self.cache_dir:
                     cache_file = self.cache_dir / 'photos_list.json'
