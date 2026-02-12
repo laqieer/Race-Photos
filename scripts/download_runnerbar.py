@@ -131,20 +131,22 @@ class RunnerBarDownloader:
         for photo in existing_photos:
             # Use extract_photo_id for consistent ID handling
             photo_id = self.extract_photo_id(photo)
-            if photo_id and not photo_id.startswith('photo_'):  # Only use actual IDs, not fallback
+            # Only merge photos with actual IDs (from 'id' or 'photoId' fields)
+            # Skip fallback generated IDs to ensure we only merge identified photos
+            if photo_id and (photo.get('id') or photo.get('photoId')):
                 photo_dict[photo_id] = photo
         
         # Merge new photos (add new ones, update existing ones)
         for photo in new_photos:
             # Use extract_photo_id for consistent ID handling
             photo_id = self.extract_photo_id(photo)
-            if photo_id and not photo_id.startswith('photo_'):  # Only use actual IDs, not fallback
+            # Only merge photos with actual IDs
+            if photo_id and (photo.get('id') or photo.get('photoId')):
                 photo_dict[photo_id] = photo  # Update or add
         
         # Convert back to list, sorted by ID for consistency
-        # Pre-extract IDs for efficient sorting
-        photos_with_ids = [(self.extract_photo_id(p), p) for p in photo_dict.values()]
-        merged_photos = [p for _, p in sorted(photos_with_ids, key=lambda x: x[0])]
+        # Reuse dictionary keys for efficient sorting
+        merged_photos = [photo_dict[photo_id] for photo_id in sorted(photo_dict.keys())]
         
         # Create merged response with deep copy to avoid mutation
         merged_data = deepcopy(new_data)
