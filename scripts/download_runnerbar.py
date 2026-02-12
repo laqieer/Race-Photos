@@ -12,6 +12,7 @@ import json
 import os
 import sys
 import argparse
+import shutil
 import time
 import requests
 from datetime import datetime
@@ -536,10 +537,9 @@ class RunnerBarDownloader:
             self.cache_dir = final_cache_dir
             # Clean up temp directory
             try:
-                temp_cache_dir.rmdir()
-                (self.base_dir / f"_temp_cache_{activity_id}").rmdir()
+                shutil.rmtree(self.base_dir / f"_temp_cache_{activity_id}", ignore_errors=True)
             except OSError:
-                pass  # Ignore if directory not empty or removal fails
+                pass
         
         # Get photos list (will try cache if API fails)
         photos_list = self.get_photos_list(uid, activity_id, face_id, game_number, photo_num, pl_id)
