@@ -25,3 +25,6 @@ Thumbs.db
 # Test files
 *.tmp
 test_*.json
+
+# Temp caches
+docs/images/_temp_cache_*/
