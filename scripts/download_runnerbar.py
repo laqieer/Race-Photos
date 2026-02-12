@@ -12,7 +12,9 @@ import json
 import os
 import sys
 import argparse
+import time
 import requests
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 from copy import deepcopy
@@ -160,6 +162,39 @@ class RunnerBarDownloader:
         print(f"✓ Merged photo list: {len(existing_photos)} existing + {len(new_photos)} new = {len(merged_photos)} total")
         return merged_data
     
+    @staticmethod
+    def parse_datetime_original(photo: Dict[str, Any]) -> Optional[float]:
+        """
+        Parse DateTimeOriginal from photo's meta_info into a timestamp.
+        
+        Args:
+            photo: Photo dictionary with meta_info field
+            
+        Returns:
+            Unix timestamp if parsed successfully, None otherwise
+        """
+        meta_info = photo.get('meta_info')
+        if not meta_info:
+            return None
+        try:
+            if isinstance(meta_info, str):
+                meta_info = json.loads(meta_info)
+            dt_str = meta_info.get('DateTimeOriginal')
+            if not dt_str:
+                return None
+            dt = datetime.strptime(dt_str, "%Y:%m:%d %H:%M:%S")
+            return dt.timestamp()
+        except (json.JSONDecodeError, ValueError, TypeError):
+            return None
+    
+    @staticmethod
+    def set_file_timestamp(filepath: Path, timestamp: float) -> None:
+        """Set the file's access and modification time to the given timestamp."""
+        try:
+            os.utime(filepath, (timestamp, timestamp))
+        except OSError:
+            pass
+
     @staticmethod
     def extract_photo_id(photo: Dict[str, Any], fallback_index: Optional[int] = None) -> str:
         """
@@ -433,7 +468,8 @@ class RunnerBarDownloader:
                 photo_id = self.extract_photo_id(photo, i)
                 photo_urls.append({
                     'url': photo['url_hq'],
-                    'id': photo_id
+                    'id': photo_id,
+                    'timestamp': self.parse_datetime_original(photo)
                 })
         
         if not photo_urls:
@@ -451,16 +487,21 @@ class RunnerBarDownloader:
         for i, photo in enumerate(photo_urls, 1):
             url = photo['url']
             photo_id = photo.get('id', f'photo_{i}')
+            timestamp = photo.get('timestamp')
             filename = self.photo_downloader.get_filename_from_url(url, str(photo_id))
             output_path = output_dir / filename
             
             # Skip if already downloaded
             if output_path.exists():
                 print(f"⊙ Skipped (exists): {filename}")
+                if timestamp:
+                    self.set_file_timestamp(output_path, timestamp)
                 success_count += 1
                 continue
             
             if self.photo_downloader.download_photo(url, output_path):
+                if timestamp:
+                    self.set_file_timestamp(output_path, timestamp)
                 success_count += 1
         
         print(f"\nCompleted: {success_count}/{len(photo_urls)} photos downloaded")
