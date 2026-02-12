@@ -88,7 +88,11 @@ The script will automatically detect which format is being used and extract the 
 
 - **Flexible JSON parsing**: Handles multiple API response formats
 - **Automatic directory creation**: Creates `docs/images/{race}/{source}/` structure
-- **Skip existing files**: Won't re-download photos that already exist
+- **Smart skip existing files**: Checks if photos already exist before downloading
+  - Detects existing files by filename
+  - Skips re-downloading, shows "⊙ Skipped (exists): {filename}"
+  - Speeds up process and reduces network requests
+  - Counts skipped files in success statistics
 - **Error handling**: Continues downloading even if some photos fail
 - **Progress tracking**: Shows download progress and statistics
 

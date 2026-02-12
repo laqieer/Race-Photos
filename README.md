@@ -157,6 +157,19 @@ Your gallery will be available at: `https://<username>.github.io/Race-Photos/`
 - **Lightbox View**: Click any photo to view full size
 - **Lazy Loading**: Photos load as you scroll for better performance
 
+## ⚡ Download Optimization
+
+The download scripts are optimized for efficiency:
+
+- **Smart Skip Existing**: Checks if files already exist before downloading
+  - Detects previously downloaded photos by filename
+  - Skips re-downloading, displays "⊙ Skipped (exists): {filename}"
+  - Significantly speeds up re-runs
+  - Reduces unnecessary network requests
+  - Safe to run multiple times
+- **API Response Caching**: Falls back to cached data if API is unavailable
+- **Resume Support**: Can resume interrupted downloads
+
 ## 💾 Metadata Preservation
 
 The download scripts automatically save API responses as JSON files alongside photos:

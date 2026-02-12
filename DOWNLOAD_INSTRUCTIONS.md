@@ -215,7 +215,10 @@ The download script (`scripts/download_runnerbar.py`) is designed to handle:
 - Extract `url_hq` from `topicInfoList` array in photos API
 - Sanitize race names for directory names
 - Handle missing or optional fields gracefully
-- Skip already downloaded photos
+- **Skip already downloaded photos** (checks file existence before download)
+  - Reduces unnecessary network requests
+  - Speeds up re-runs significantly
+  - Safe to run multiple times
 - Show detailed progress and error messages
 
 The generic download script (`scripts/download_photos.py`) supports Type 4 JSON format:
