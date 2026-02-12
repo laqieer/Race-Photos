@@ -67,15 +67,20 @@ The script automatically detects and handles various JSON structures from differ
 }
 ```
 
-### Type 4: RunnerBar API format
+### Type 4: RunnerBar API format (actual)
 ```json
 {
-  "topicInfoList": [
-    {"url_hq": "https://example.com/photo1.jpg", "photoId": "123"},
-    {"url_hq": "https://example.com/photo2.jpg", "photoId": "124"}
-  ]
+  "result": {
+    "topicInfoList": [
+      {"url_hq": "https://example.com/photo1.jpg", "photoId": "123"},
+      {"url_hq": "https://example.com/photo2.jpg", "photoId": "124"}
+    ]
+  },
+  "status": 0
 }
 ```
+
+**Note:** The RunnerBar API returns photos nested under a `result` object. Legacy cache files with `topicInfoList` at the root level are also supported for backward compatibility.
 
 The script will automatically detect which format is being used and extract the photo URLs accordingly.
 

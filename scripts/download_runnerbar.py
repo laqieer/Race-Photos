@@ -211,9 +211,17 @@ class RunnerBarDownloader:
             response.raise_for_status()
             data = response.json()
             
-            if 'topicInfoList' in data:
-                photos = data['topicInfoList']
+            # Check for photos in the actual API response structure (nested under 'result')
+            photos = None
+            if 'result' in data and 'topicInfoList' in data['result']:
+                photos = data['result']['topicInfoList']
                 print(f"✓ Found {len(photos)} photos")
+            elif 'topicInfoList' in data:
+                # Fallback for backward compatibility with old cache format
+                photos = data['topicInfoList']
+                print(f"✓ Found {len(photos)} photos (legacy format)")
+            
+            if photos is not None:
                 # Save full response to cache if cache_dir is set
                 if self.cache_dir:
                     self.save_cache('photos_list.json', data)
@@ -223,9 +231,15 @@ class RunnerBarDownloader:
                 # Try cache as fallback
                 if use_cache:
                     cached = self.load_cache('photos_list.json')
-                    if cached and 'topicInfoList' in cached:
-                        print("→ Using cached photos list")
-                        return cached['topicInfoList']
+                    if cached:
+                        # Try nested structure first (new format)
+                        if 'result' in cached and 'topicInfoList' in cached['result']:
+                            print("→ Using cached photos list")
+                            return cached['result']['topicInfoList']
+                        # Try root level (old cache format)
+                        elif 'topicInfoList' in cached:
+                            print("→ Using cached photos list (legacy format)")
+                            return cached['topicInfoList']
                 return None
                 
         except requests.RequestException as e:
@@ -233,18 +247,30 @@ class RunnerBarDownloader:
             # Try cache as fallback
             if use_cache:
                 cached = self.load_cache('photos_list.json')
-                if cached and 'topicInfoList' in cached:
-                    print("→ Using cached photos list")
-                    return cached['topicInfoList']
+                if cached:
+                    # Try nested structure first (new format)
+                    if 'result' in cached and 'topicInfoList' in cached['result']:
+                        print("→ Using cached photos list")
+                        return cached['result']['topicInfoList']
+                    # Try root level (old cache format)
+                    elif 'topicInfoList' in cached:
+                        print("→ Using cached photos list (legacy format)")
+                        return cached['topicInfoList']
             return None
         except json.JSONDecodeError as e:
             print(f"✗ Failed to parse photos JSON: {e}", file=sys.stderr)
             # Try cache as fallback
             if use_cache:
                 cached = self.load_cache('photos_list.json')
-                if cached and 'topicInfoList' in cached:
-                    print("→ Using cached photos list")
-                    return cached['topicInfoList']
+                if cached:
+                    # Try nested structure first (new format)
+                    if 'result' in cached and 'topicInfoList' in cached['result']:
+                        print("→ Using cached photos list")
+                        return cached['result']['topicInfoList']
+                    # Try root level (old cache format)
+                    elif 'topicInfoList' in cached:
+                        print("→ Using cached photos list (legacy format)")
+                        return cached['topicInfoList']
             return None
     
     def download_photos(self, activity_id: str, uid: str, face_id: str = None,

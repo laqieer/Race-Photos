@@ -35,7 +35,8 @@ class PhotoDownloader:
         - Type 1: {'photos': [{'url': '...', 'id': '...'}]}
         - Type 2: {'items': [{'image_url': '...', 'photo_id': '...'}]}
         - Type 3: {'data': {'images': [{'src': '...', 'identifier': '...'}]}}
-        - Type 4: {'topicInfoList': [{'url_hq': '...', 'photoId': '...'}]} (RunnerBar)
+        - Type 4: {'topicInfoList': [{'url_hq': '...', 'photoId': '...'}]} (RunnerBar - legacy)
+        - Type 4b: {'result': {'topicInfoList': [{'url_hq': '...', 'photoId': '...'}]}} (RunnerBar - actual API)
         
         Returns a list of dicts with normalized 'url' and 'id' keys.
         """
@@ -56,8 +57,15 @@ class PhotoDownloader:
                     'url': item.get('image_url') or item.get('url') or item.get('src'),
                     'id': item.get('photo_id') or item.get('id') or item.get('identifier')
                 })
+        elif 'result' in response_data and 'topicInfoList' in response_data['result']:
+            # Type 4b: RunnerBar API format (nested under 'result')
+            for photo in response_data['result'].get('topicInfoList', []):
+                photos.append({
+                    'url': photo.get('url_hq') or photo.get('url'),
+                    'id': photo.get('photoId') or photo.get('id')
+                })
         elif 'topicInfoList' in response_data:
-            # Type 4: RunnerBar API format
+            # Type 4: RunnerBar API format (legacy - for backward compatibility)
             for photo in response_data.get('topicInfoList', []):
                 photos.append({
                     'url': photo.get('url_hq') or photo.get('url'),
