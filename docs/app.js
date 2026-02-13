@@ -272,12 +272,34 @@ class RacePhotosGallery {
                     attribution: '&copy; OpenStreetMap contributors'
                 }).addTo(map);
 
-                const bounds = L.latLngBounds();
+                // Group photos by location
+                const locationMap = {};
                 gpsPhotos.forEach(photo => {
-                    const marker = L.marker([photo.lat, photo.lon]).addTo(map);
-                    const thumbUrl = photo.url;
-                    marker.bindPopup(`<img src="${thumbUrl}" style="max-width:200px;max-height:150px;cursor:pointer" onclick="window.galleryInstance.openLightbox('${thumbUrl}')">`);
-                    bounds.extend([photo.lat, photo.lon]);
+                    const key = `${photo.lat},${photo.lon}`;
+                    if (!locationMap[key]) {
+                        locationMap[key] = { lat: photo.lat, lon: photo.lon, photos: [] };
+                    }
+                    locationMap[key].photos.push(photo);
+                });
+
+                const bounds = L.latLngBounds();
+                Object.values(locationMap).forEach(loc => {
+                    const icon = L.divIcon({
+                        className: 'photo-cluster-icon',
+                        html: `<div class="cluster-count">${loc.photos.length}</div>`,
+                        iconSize: [36, 36]
+                    });
+                    const marker = L.marker([loc.lat, loc.lon], { icon }).addTo(map);
+
+                    const thumbsHtml = loc.photos.slice(0, 20).map(p =>
+                        `<img src="${p.url}" style="width:80px;height:60px;object-fit:cover;cursor:pointer;border-radius:4px" onclick="window.galleryInstance.openLightbox('${p.url}')">`
+                    ).join('');
+                    const moreText = loc.photos.length > 20 ? `<p style="margin:4px 0 0;font-size:12px;color:#666">+${loc.photos.length - 20} more</p>` : '';
+                    marker.bindPopup(
+                        `<div style="max-width:300px;max-height:200px;overflow-y:auto;display:flex;flex-wrap:wrap;gap:4px">${thumbsHtml}</div>${moreText}`,
+                        { maxWidth: 320 }
+                    );
+                    bounds.extend([loc.lat, loc.lon]);
                 });
 
                 map.fitBounds(bounds, { padding: [30, 30], maxZoom: 16 });
