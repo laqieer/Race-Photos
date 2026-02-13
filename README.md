@@ -11,6 +11,7 @@ Race-Photos/
 │   ├── download_runnerbar.py   # Download photos from RunnerBar API
 │   ├── download_yipai360.py    # Download photos from Yipai360 API
 │   ├── download_photoplus.py   # Download photos from PhotoPlus API
+│   ├── download_pailixiang.py  # Download photos from Pailixiang API
 │   ├── generate_manifest.py    # Generate gallery manifest
 │   ├── serve.py               # Local dev server (no cache)
 │   ├── requirements.txt        # Python dependencies
@@ -142,6 +143,33 @@ The script will:
 1. Fetch photos from the signed API URL
 2. Download original photos (without watermark) to `docs/images/{race_name}/photoplus/`
 3. Set file timestamps from EXIF metadata
+
+### Download from Pailixiang API
+
+Download photos from Pailixiang (pailixiang.com) using bib number search:
+
+```bash
+# You need two IDs from the browser:
+# 1. album-page-id: from the URL (e.g., "ia3939628040" from album_ia3939628040.html)
+# 2. album-id: from the search POST body in DevTools (a UUID like "a94acb7b-...")
+
+python scripts/download_pailixiang.py \
+  --album-page-id ia3939628040 \
+  --album-id a94acb7b-8339-429a-ace2-26b8edfcba29 \
+  --bib M01080 \
+  --place 江苏苏州
+
+# Update gallery
+python scripts/generate_manifest.py
+```
+
+To find the `album-id`: open the race page, search your bib number, then check the POST request body in DevTools (F12 → Network tab) for the `albumId` field.
+
+The script will:
+1. Initialize session from the album page
+2. Search photos by bib number
+3. Download original photos to `docs/images/{race_name}/pailixiang/`
+4. Set file timestamps from ShootTime metadata
 
 ### Download from Different Sources
 
