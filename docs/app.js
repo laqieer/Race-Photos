@@ -463,7 +463,7 @@ class RacePhotosGallery {
                             const thumbs = group.photos.map(p =>
                                 `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`
                             ).join('');
-                            const timeLabel = group.photos[0].timestamp;
+                            const timeLabel = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
                             const countLabel = group.photos.length > 1 ? ` (${group.photos.length} photos)` : '';
                             marker.bindPopup(
                                 `<div class="map-photo-popup">` +
@@ -485,7 +485,7 @@ class RacePhotosGallery {
                             const distLabel = fmtDist(group.dist);
                             sourcesContainer.appendChild(
                                 this.createSourceSection(
-                                    `${distLabel} — ${group.photos[0].timestamp}`,
+                                    `${distLabel} — ${(group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp}`,
                                     group.photos
                                 )
                             );
