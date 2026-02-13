@@ -29,6 +29,26 @@ def _lookup_location_by_gps(lat: float, lon: float) -> Dict:
     return {}
 
 
+# Place string to location mapping: "省份城市" -> (city, province, country)
+PLACE_LOCATIONS = {
+    "江苏苏州": ("苏州", "江苏", "中国"),
+    "江苏常熟": ("常熟", "江苏", "中国"),
+    "江苏张家港": ("张家港", "江苏", "中国"),
+    "云南昆明": ("昆明", "云南", "中国"),
+    "广东湛江": ("湛江", "广东", "中国"),
+}
+
+
+def _lookup_location_by_place(place: str) -> Dict:
+    """Look up city/province/country from place string like '江苏苏州'."""
+    if not place:
+        return {}
+    loc = PLACE_LOCATIONS.get(place)
+    if loc:
+        return {"city": loc[0], "province": loc[1], "country": loc[2]}
+    return {}
+
+
 def generate_manifest(base_dir: str = "docs/images") -> Dict:
     """
     Scan the images directory and generate a manifest.
@@ -73,7 +93,8 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
             "sources": []
         }
         
-        # Try to read race date from race_info.json
+        # Try to read race date and place from race_info.json
+        race_place = ""
         for source_dir in race_dir.iterdir():
             race_info_file = source_dir / "race_info.json"
             if race_info_file.exists():
@@ -91,6 +112,10 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                     if begin_time:
                         dt = datetime.fromtimestamp(begin_time, tz=timezone.utc)
                         race_data["date"] = dt.strftime("%Y-%m-%d")
+                    place = race_info.get('data', {}).get('place', '')
+                    if place:
+                        race_place = place
+                    if race_data["date"]:
                         break
                 except (IOError, json.JSONDecodeError, ValueError, TypeError):
                     pass
@@ -194,6 +219,12 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                         break
                 if race_data["city"]:
                     break
+            # Fallback: use place from race_info if GPS lookup didn't find location
+            if not race_data["city"] and race_place:
+                location = _lookup_location_by_place(race_place)
+                race_data["city"] = location.get("city", "")
+                race_data["province"] = location.get("province", "")
+                race_data["country"] = location.get("country", "")
             # Check for GPX route file
             route_file = Path("docs/routes") / (race_name + ".gpx")
             if route_file.exists():
