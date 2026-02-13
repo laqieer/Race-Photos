@@ -13,21 +13,18 @@ from pathlib import Path
 from typing import Dict, List
 
 
-# Known race locations derived from GPS coordinates
-# Format: (lat_min, lat_max, lon_min, lon_max) -> (city, province, country)
-LOCATION_TABLE = {
-    "常熟": ("常熟", "江苏", "中国"),
-    "苏州": ("苏州", "江苏", "中国"),
-    "张家港": ("张家港", "江苏", "中国"),
-    "昆明": ("昆明", "云南", "中国"),
-    "湛江": ("湛江", "广东", "中国"),
-}
+# GPS-based location lookup: (lat_min, lat_max, lon_min, lon_max) -> (city, province, country)
+GPS_LOCATIONS = [
+    (31.0, 32.0, 120.0, 121.0, "苏州", "江苏", "中国"),
+    (24.5, 25.5, 102.0, 103.5, "昆明", "云南", "中国"),
+    (20.5, 21.5, 110.0, 111.0, "湛江", "广东", "中国"),
+]
 
 
-def _guess_location(race_name: str) -> Dict:
-    """Guess city/province/country from race name keywords."""
-    for keyword, (city, province, country) in LOCATION_TABLE.items():
-        if keyword in race_name:
+def _lookup_location_by_gps(lat: float, lon: float) -> Dict:
+    """Look up city/province/country from GPS coordinates."""
+    for lat_min, lat_max, lon_min, lon_max, city, province, country in GPS_LOCATIONS:
+        if lat_min <= lat <= lat_max and lon_min <= lon <= lon_max:
             return {"city": city, "province": province, "country": country}
     return {}
 
@@ -67,13 +64,12 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
             continue
         
         race_name = race_dir.name
-        location = _guess_location(race_name)
         race_data = {
             "name": race_name,
             "date": "",
-            "city": location.get("city", ""),
-            "province": location.get("province", ""),
-            "country": location.get("country", ""),
+            "city": "",
+            "province": "",
+            "country": "",
             "sources": []
         }
         
@@ -148,6 +144,17 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                 })
         
         if race_data["sources"]:
+            # Determine location from first photo's GPS
+            for source in race_data["sources"]:
+                for photo in source["photos"]:
+                    if photo.get("lat") and photo.get("lon"):
+                        location = _lookup_location_by_gps(photo["lat"], photo["lon"])
+                        race_data["city"] = location.get("city", "")
+                        race_data["province"] = location.get("province", "")
+                        race_data["country"] = location.get("country", "")
+                        break
+                if race_data["city"]:
+                    break
             manifest["races"].append(race_data)
     
     # Sort races by date, latest first
