@@ -437,10 +437,15 @@ class RacePhotosGallery {
 
                         groupList.forEach(group => {
                             const distLabel = fmtDist(group.dist);
-                            const marker = L.circleMarker([group.lat, group.lon], {
-                                radius: 8, fillColor: '#e74c3c', color: '#fff',
-                                weight: 2, fillOpacity: 0.9
-                            }).addTo(map);
+                            const count = group.photos.length;
+                            const size = Math.max(24, 16 + count * 4);
+                            const icon = L.divIcon({
+                                className: 'photo-marker-icon',
+                                html: `<div class="photo-marker" style="width:${size}px;height:${size}px;font-size:${Math.max(11, size * 0.45)}px">${count}</div>`,
+                                iconSize: [size, size],
+                                iconAnchor: [size / 2, size / 2]
+                            });
+                            const marker = L.marker([group.lat, group.lon], { icon }).addTo(map);
                             const thumbs = group.photos.map(p =>
                                 `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`
                             ).join('');
