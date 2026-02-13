@@ -9,13 +9,17 @@ Race-Photos/
 ├── scripts/              # Batch download scripts for photos
 │   ├── download_photos.py      # Download photos from API responses
 │   ├── download_runnerbar.py   # Download photos from RunnerBar API
+│   ├── download_yipai360.py    # Download photos from Yipai360 API
 │   ├── generate_manifest.py    # Generate gallery manifest
+│   ├── serve.py               # Local dev server (no cache)
 │   ├── requirements.txt        # Python dependencies
 │   └── README.md              # Scripts documentation
 ├── docs/                 # GitHub Pages site
 │   ├── index.html             # Main gallery page
 │   ├── styles.css             # Gallery styles
 │   ├── app.js                 # Gallery JavaScript
+│   ├── routes/                # GPX route files
+│   │   └── {race}.gpx         # GPS route data
 │   └── images/                # Downloaded photos
 │       ├── {race}/            # Race directories
 │       │   └── {source}/      # Source directories
@@ -93,6 +97,26 @@ The script will:
 2. Fetch photos list from the API
 3. Download all photos to `docs/images/{race_name}/runnerbar/`
 
+### Download from Yipai360 API
+
+Download photos from Yipai360 using OCR-based bib number search:
+
+```bash
+# Search and download photos by bib number
+python scripts/download_yipai360.py --order-id 202311222019389358 --bib H1369
+
+# Update gallery
+python scripts/generate_manifest.py
+```
+
+The `order-id` can be found in the Yipai360 photo live URL (e.g., `https://www.yipai360.com/photolivepc/?orderId=202311222019389358`).
+
+The script will:
+1. Fetch race information (name, location, date)
+2. Search photos by bib number via OCR recognition
+3. Download original photos (without watermark) to `docs/images/{race_name}/yipai360/`
+4. Read EXIF metadata and set file timestamps
+
 ### Download from Different Sources
 
 ```bash
@@ -162,8 +186,12 @@ Your gallery will be available at: `https://<username>.github.io/Race-Photos/`
 ## 🎨 Gallery Features
 
 - **Responsive Design**: Works on desktop, tablet, and mobile
-- **Organized by Races**: Photos grouped by race events
-- **Multiple Sources**: Support for photos from different photographers
+- **Organized by Races**: Photos grouped by race events, sorted by date
+- **Multiple Sources**: Support for photos from different platforms (RunnerBar, Yipai360)
+- **Interactive Map**: Overview map with race locations, detail map with GPX route and photo markers
+- **GPX Route Display**: Race route with km distance markers and photo positions along the route
+- **Performance Chart**: Elevation, pace, and heart rate chart from GPX data
+- **Photo Grouping**: Photos grouped by time proximity with pace/HR metrics
 - **Lightbox View**: Click any photo to view full size
 - **Lazy Loading**: Photos load as you scroll for better performance
 
