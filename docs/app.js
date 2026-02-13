@@ -405,7 +405,7 @@ class RacePhotosGallery {
                             color: '#667eea', weight: 4, opacity: 0.8
                         }).addTo(map);
 
-                        // Group photos by distance along route (merge within 200m)
+                        // Group photos by time proximity (merge within 60s)
                         const allPhotos = race.sources.flatMap(s => s.photos);
                         const photoPositions = [];
                         allPhotos.forEach(photo => {
@@ -413,22 +413,23 @@ class RacePhotosGallery {
                             const utcMs = this.photoTimestampToUtc(photo.timestamp);
                             const pos = this.interpolatePosition(trackpoints, utcMs);
                             if (!pos) return;
-                            photoPositions.push({ photo, lat: pos.lat, lon: pos.lon, dist: pos.dist });
+                            photoPositions.push({ photo, lat: pos.lat, lon: pos.lon, dist: pos.dist, time: utcMs });
                         });
-                        photoPositions.sort((a, b) => a.dist - b.dist);
+                        photoPositions.sort((a, b) => a.time - b.time);
 
                         const groupList = [];
-                        const MERGE_DIST = 200; // meters
+                        const MERGE_TIME = 60 * 1000; // 60 seconds
                         photoPositions.forEach(pp => {
                             const last = groupList[groupList.length - 1];
-                            if (last && Math.abs(pp.dist - last.dist) < MERGE_DIST) {
+                            if (last && (pp.time - last.lastTime) < MERGE_TIME) {
                                 last.photos.push(pp.photo);
-                                // Update position to average
+                                last.lastTime = pp.time;
                                 const n = last.photos.length;
                                 last.lat = last.lat + (pp.lat - last.lat) / n;
                                 last.lon = last.lon + (pp.lon - last.lon) / n;
+                                last.dist = last.dist + (pp.dist - last.dist) / n;
                             } else {
-                                groupList.push({ lat: pp.lat, lon: pp.lon, dist: pp.dist, photos: [pp.photo] });
+                                groupList.push({ lat: pp.lat, lon: pp.lon, dist: pp.dist, lastTime: pp.time, photos: [pp.photo] });
                             }
                         });
 
