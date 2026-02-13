@@ -466,7 +466,6 @@ class RacePhotosGallery {
             card.appendChild(sourcesContainer);
         }
 
-        card.appendChild(sourcesContainer);
         this.racesContainer.appendChild(card);
     }
 
