@@ -60,10 +60,10 @@ python scripts/generate_manifest.py
 
 ### 4. View Gallery
 
-Start a local server and open in browser:
+Start a local development server (with cache disabled) and open in browser:
 
 ```bash
-python -m http.server 8080 --directory docs
+python scripts/serve.py
 ```
 
 Then visit http://localhost:8080, or enable GitHub Pages to view online.
