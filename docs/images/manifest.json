@@ -1698,6 +1698,85 @@
       "route": "routes/\u5e38\u719f\u94f6\u884c2023\u5e38\u719f\u5c1a\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e.gpx"
     },
     {
+      "name": "2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b",
+      "date": "2023-08-06",
+      "city": "\u82cf\u5dde",
+      "province": "\u6c5f\u82cf",
+      "country": "\u4e2d\u56fd",
+      "sources": [
+        {
+          "name": "pailixiang",
+          "photos": [
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/A02A7902.JPG",
+              "name": "A02A7902.JPG",
+              "timestamp": "2023-08-06 19:54:04"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/A02A7903.JPG",
+              "name": "A02A7903.JPG",
+              "timestamp": "2023-08-06 19:54:04"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/A02A7904.JPG",
+              "name": "A02A7904.JPG",
+              "timestamp": "2023-08-06 19:54:05"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/A02A7905.JPG",
+              "name": "A02A7905.JPG",
+              "timestamp": "2023-08-06 19:54:05"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/DSC_8351.JPG",
+              "name": "DSC_8351.JPG",
+              "timestamp": "2023-08-06 19:19:54"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/DSC_8352.JPG",
+              "name": "DSC_8352.JPG",
+              "timestamp": "2023-08-06 19:19:54"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/DSC_8353.JPG",
+              "name": "DSC_8353.JPG",
+              "timestamp": "2023-08-06 19:19:54"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/DSC_8354.JPG",
+              "name": "DSC_8354.JPG",
+              "timestamp": "2023-08-06 19:19:54"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/RNO_6435.JPG",
+              "name": "RNO_6435.JPG",
+              "timestamp": "2023-08-06 19:16:24"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/RNO_6436.JPG",
+              "name": "RNO_6436.JPG",
+              "timestamp": "2023-08-06 19:16:26"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/RNO_6437.JPG",
+              "name": "RNO_6437.JPG",
+              "timestamp": "2023-08-06 19:16:27"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/RNO_6438.JPG",
+              "name": "RNO_6438.JPG",
+              "timestamp": "2023-08-06 19:16:29"
+            },
+            {
+              "url": "images/2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b/pailixiang/RNO_6439.JPG",
+              "name": "RNO_6439.JPG",
+              "timestamp": "2023-08-06 19:16:29"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "2023\u82cf\u5dde\u592a\u6e56\u7cbe\u82f1\u8d5b",
       "date": "2023-06-24",
       "city": "\u82cf\u5dde",
