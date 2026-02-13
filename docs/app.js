@@ -217,11 +217,11 @@ class RacePhotosGallery {
         this.racesContainer.appendChild(statsBar);
 
         // Add map showing all races
-        const racesWithGps = this.manifest.races.filter(race =>
-            race.sources.some(s => s.photos.some(p => p.lat && p.lon))
+        const racesWithLocation = this.manifest.races.filter(race =>
+            race.sources.some(s => s.photos.some(p => p.lat && p.lon)) || race.city
         );
 
-        if (racesWithGps.length > 0 && typeof L !== 'undefined') {
+        if (racesWithLocation.length > 0 && typeof L !== 'undefined') {
             const mapContainer = document.createElement('div');
             mapContainer.id = 'races-map';
             mapContainer.className = 'race-map';
@@ -233,9 +233,11 @@ class RacePhotosGallery {
                     attribution: '&copy; OpenStreetMap contributors'
                 }).addTo(map);
 
-                // Group races by location
+                // Group races by location (GPS or city)
                 const locationMap = {};
-                racesWithGps.forEach(race => {
+                const cityCoords = {}; // city -> {lat, lon} from GPS races
+                // First pass: collect city coordinates from races with GPS
+                racesWithLocation.forEach(race => {
                     let lat, lon;
                     for (const s of race.sources) {
                         for (const p of s.photos) {
@@ -243,6 +245,25 @@ class RacePhotosGallery {
                         }
                         if (lat) break;
                     }
+                    if (lat && race.city && !cityCoords[race.city]) {
+                        cityCoords[race.city] = { lat, lon };
+                    }
+                });
+                // Second pass: group all races
+                racesWithLocation.forEach(race => {
+                    let lat, lon;
+                    for (const s of race.sources) {
+                        for (const p of s.photos) {
+                            if (p.lat && p.lon) { lat = p.lat; lon = p.lon; break; }
+                        }
+                        if (lat) break;
+                    }
+                    // Fallback to city coordinates for races without GPS
+                    if (!lat && race.city && cityCoords[race.city]) {
+                        lat = cityCoords[race.city].lat;
+                        lon = cityCoords[race.city].lon;
+                    }
+                    if (!lat) return;
                     const key = `${lat},${lon}`;
                     if (!locationMap[key]) {
                         locationMap[key] = { lat, lon, races: [] };
