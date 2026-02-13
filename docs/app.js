@@ -6,8 +6,10 @@
 class RacePhotosGallery {
     constructor() {
         this.racesContainer = document.getElementById('races-container');
+        this.manifest = null;
         this.lightbox = null;
         this.initLightbox();
+        window.addEventListener('hashchange', () => this.handleRoute());
     }
 
     /**
@@ -64,9 +66,6 @@ class RacePhotosGallery {
      */
     async scanDirectory() {
         try {
-            // Since we can't directly scan directories in a static site,
-            // we'll need to maintain a manifest file or use GitHub API
-            // For now, we'll try to load a manifest.json file
             const response = await fetch('images/manifest.json?t=' + Date.now());
             if (response.ok) {
                 const manifest = await response.json();
@@ -78,6 +77,21 @@ class RacePhotosGallery {
 
         // Return empty structure if no manifest
         return { races: [] };
+    }
+
+    /**
+     * Handle hash-based routing
+     */
+    handleRoute() {
+        const hash = decodeURIComponent(window.location.hash.slice(1));
+        if (hash) {
+            const race = this.manifest.races.find(r => r.name === hash);
+            if (race) {
+                this.renderRaceDetail(race);
+                return;
+            }
+        }
+        this.renderOverview();
     }
 
     /**
@@ -136,11 +150,12 @@ class RacePhotosGallery {
     }
 
     /**
-     * Create a race card
+     * Create a race card for the overview (no photos)
      */
     createRaceCard(race) {
-        const card = document.createElement('div');
+        const card = document.createElement('a');
         card.className = 'race-card';
+        card.href = '#' + encodeURIComponent(race.name);
 
         // Race header
         const raceHeader = document.createElement('div');
@@ -157,34 +172,18 @@ class RacePhotosGallery {
 
         raceHeader.appendChild(title);
         raceHeader.appendChild(info);
-
-        // Sources container
-        const sourcesContainer = document.createElement('div');
-        sourcesContainer.className = 'sources-container';
-
-        race.sources.forEach((source) => {
-            sourcesContainer.appendChild(
-                this.createSourceSection(source.name, source.photos)
-            );
-        });
-
         card.appendChild(raceHeader);
-        card.appendChild(sourcesContainer);
 
         return card;
     }
 
     /**
-     * Render the gallery
+     * Render the overview page with race cards only
      */
-    async render() {
-        const data = await this.scanDirectory();
-
-        // Clear loading message
+    renderOverview() {
         this.racesContainer.innerHTML = '';
 
-        if (!data.races || data.races.length === 0) {
-            // Show empty state
+        if (!this.manifest.races || this.manifest.races.length === 0) {
             const emptyState = document.createElement('div');
             emptyState.className = 'no-races';
             emptyState.innerHTML = `
@@ -198,10 +197,64 @@ class RacePhotosGallery {
             return;
         }
 
-        // Render each race
-        data.races.forEach((race) => {
+        this.manifest.races.forEach((race) => {
             this.racesContainer.appendChild(this.createRaceCard(race));
         });
+    }
+
+    /**
+     * Render a race detail page with photos
+     */
+    renderRaceDetail(race) {
+        this.racesContainer.innerHTML = '';
+
+        // Back button
+        const backLink = document.createElement('a');
+        backLink.className = 'back-link';
+        backLink.href = '#';
+        backLink.textContent = '← Back to all races';
+        this.racesContainer.appendChild(backLink);
+
+        // Race header
+        const card = document.createElement('div');
+        card.className = 'race-card';
+
+        const raceHeader = document.createElement('div');
+        raceHeader.className = 'race-header';
+
+        const title = document.createElement('h2');
+        title.textContent = race.name;
+
+        const info = document.createElement('div');
+        info.className = 'race-info';
+        const totalPhotos = race.sources.reduce((sum, src) => sum + src.photos.length, 0);
+        const dateStr = race.date ? `${race.date} • ` : '';
+        info.textContent = `${dateStr}${totalPhotos} photo${totalPhotos !== 1 ? 's' : ''}`;
+
+        raceHeader.appendChild(title);
+        raceHeader.appendChild(info);
+
+        // Sources with photos
+        const sourcesContainer = document.createElement('div');
+        sourcesContainer.className = 'sources-container';
+
+        race.sources.forEach((source) => {
+            sourcesContainer.appendChild(
+                this.createSourceSection(source.name, source.photos)
+            );
+        });
+
+        card.appendChild(raceHeader);
+        card.appendChild(sourcesContainer);
+        this.racesContainer.appendChild(card);
+    }
+
+    /**
+     * Render the gallery
+     */
+    async render() {
+        this.manifest = await this.scanDirectory();
+        this.handleRoute();
     }
 }
 
