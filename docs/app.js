@@ -308,7 +308,12 @@ class RacePhotosGallery {
                     const prev = points[points.length - 1];
                     cumDist += this.haversine(prev.lat, prev.lon, lat, lon);
                 }
-                points.push({ lat, lon, time: new Date(timeEl.textContent).getTime(), dist: cumDist });
+                const eleEl = pt.querySelector('ele');
+                const hrEl = pt.querySelector('hr');
+                const entry = { lat, lon, time: new Date(timeEl.textContent).getTime(), dist: cumDist };
+                if (eleEl) entry.ele = parseFloat(eleEl.textContent);
+                if (hrEl) entry.hr = parseInt(hrEl.textContent);
+                points.push(entry);
             }
         });
         return points;
@@ -345,6 +350,156 @@ class RacePhotosGallery {
             lon: a.lon + (b.lon - a.lon) * ratio,
             dist: a.dist + (b.dist - a.dist) * ratio
         };
+    }
+
+    /**
+     * Render elevation, pace, and heart rate chart from GPX trackpoints
+     */
+    renderGpxChart(trackpoints, container) {
+        if (typeof Chart === 'undefined' || trackpoints.length < 2) return;
+
+        // Sample trackpoints to avoid too many data points (~500 max)
+        const step = Math.max(1, Math.floor(trackpoints.length / 500));
+        const sampled = trackpoints.filter((_, i) => i % step === 0 || i === trackpoints.length - 1);
+
+        // Compute pace (min/km) using rolling window
+        const PACE_WINDOW = 30; // seconds
+        const timeLabels = [];
+        const elevationData = [];
+        const paceData = [];
+        const hrData = [];
+        let hasHr = false;
+
+        sampled.forEach((pt, idx) => {
+            // Time label in local time (UTC+8)
+            const localTime = new Date(pt.time + 8 * 3600 * 1000);
+            const hh = String(localTime.getUTCHours()).padStart(2, '0');
+            const mm = String(localTime.getUTCMinutes()).padStart(2, '0');
+            const ss = String(localTime.getUTCSeconds()).padStart(2, '0');
+            timeLabels.push(`${hh}:${mm}:${ss}`);
+
+            // Elevation
+            elevationData.push(pt.ele != null ? pt.ele : null);
+
+            // Heart rate
+            if (pt.hr != null) { hasHr = true; hrData.push(pt.hr); }
+            else hrData.push(null);
+
+            // Pace: find point ~PACE_WINDOW seconds ago
+            if (idx === 0) { paceData.push(null); return; }
+            let prev = sampled[idx - 1];
+            for (let j = idx - 1; j >= 0; j--) {
+                if (pt.time - sampled[j].time >= PACE_WINDOW * 1000) { prev = sampled[j]; break; }
+            }
+            const timeDiffMin = (pt.time - prev.time) / 60000;
+            const distDiffKm = (pt.dist - prev.dist) / 1000;
+            if (distDiffKm > 0.001 && timeDiffMin > 0) {
+                const pace = timeDiffMin / distDiffKm;
+                paceData.push(pace > 15 ? null : pace); // cap at 15 min/km
+            } else {
+                paceData.push(null);
+            }
+        });
+
+        const chartContainer = document.createElement('div');
+        chartContainer.className = 'gpx-chart-container';
+        const canvas = document.createElement('canvas');
+        canvas.id = 'gpx-chart';
+        chartContainer.appendChild(canvas);
+        container.appendChild(chartContainer);
+
+        const datasets = [
+            {
+                label: 'Elevation (m)',
+                data: elevationData,
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                fill: true,
+                yAxisID: 'yEle',
+                pointRadius: 0,
+                borderWidth: 1.5,
+                tension: 0.3
+            },
+            {
+                label: 'Pace (min/km)',
+                data: paceData,
+                borderColor: '#e74c3c',
+                yAxisID: 'yPace',
+                pointRadius: 0,
+                borderWidth: 1.5,
+                tension: 0.3
+            }
+        ];
+
+        const scales = {
+            x: { ticks: { maxTicksLimit: 10, font: { size: 10 } } },
+            yEle: {
+                type: 'linear', position: 'left',
+                title: { display: true, text: 'Elevation (m)', color: '#667eea' },
+                ticks: { color: '#667eea' },
+                grid: { drawOnChartArea: false }
+            },
+            yPace: {
+                type: 'linear', position: 'right', reverse: true,
+                title: { display: true, text: 'Pace (min/km)', color: '#e74c3c' },
+                ticks: { color: '#e74c3c' },
+                grid: { drawOnChartArea: false }
+            }
+        };
+
+        if (hasHr) {
+            datasets.push({
+                label: 'Heart Rate (bpm)',
+                data: hrData,
+                borderColor: '#f39c12',
+                yAxisID: 'yHr',
+                pointRadius: 0,
+                borderWidth: 1.5,
+                tension: 0.3
+            });
+            scales.yHr = {
+                type: 'linear', position: 'right',
+                title: { display: true, text: 'HR (bpm)', color: '#f39c12' },
+                ticks: { color: '#f39c12' },
+                grid: { drawOnChartArea: false }
+            };
+        }
+
+        new Chart(canvas, {
+            type: 'line',
+            data: { labels: timeLabels, datasets },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: {
+                        onClick: (e, legendItem, legend) => {
+                            const idx = legendItem.datasetIndex;
+                            const meta = legend.chart.getDatasetMeta(idx);
+                            meta.hidden = !meta.hidden;
+                            legend.chart.update();
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: (ctx) => {
+                                const v = ctx.parsed.y;
+                                if (v == null) return '';
+                                if (ctx.dataset.yAxisID === 'yPace') {
+                                    const mins = Math.floor(v);
+                                    const secs = Math.round((v - mins) * 60);
+                                    return `Pace: ${mins}'${String(secs).padStart(2, '0')}"`;
+                                }
+                                if (ctx.dataset.yAxisID === 'yHr') return `HR: ${v} bpm`;
+                                return `Elevation: ${v.toFixed(0)} m`;
+                            }
+                        }
+                    }
+                },
+                scales
+            }
+        });
     }
 
     /**
@@ -510,6 +665,9 @@ class RacePhotosGallery {
                         legend.addTo(map);
 
                         L.control.layers(null, { 'Distance (km)': kmLayer }, { collapsed: false }).addTo(map);
+
+                        // Render elevation/pace/heart rate chart
+                        this.renderGpxChart(trackpoints, card);
 
                         // Render photo groups below map
                         const sourcesContainer = document.createElement('div');
