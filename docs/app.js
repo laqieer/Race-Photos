@@ -214,9 +214,9 @@ class RacePhotosGallery {
                     attribution: '&copy; OpenStreetMap contributors'
                 }).addTo(map);
 
-                const bounds = L.latLngBounds();
+                // Group races by location
+                const locationMap = {};
                 racesWithGps.forEach(race => {
-                    // Get first GPS location for this race
                     let lat, lon;
                     for (const s of race.sources) {
                         for (const p of s.photos) {
@@ -224,20 +224,30 @@ class RacePhotosGallery {
                         }
                         if (lat) break;
                     }
-
+                    const key = `${lat},${lon}`;
+                    if (!locationMap[key]) {
+                        locationMap[key] = { lat, lon, races: [] };
+                    }
                     const totalPhotos = race.sources.reduce((sum, s) => sum + s.photos.length, 0);
+                    locationMap[key].races.push({ race, totalPhotos });
+                });
+
+                const bounds = L.latLngBounds();
+                Object.values(locationMap).forEach(loc => {
+                    const totalPhotos = loc.races.reduce((sum, r) => sum + r.totalPhotos, 0);
                     const icon = L.divIcon({
                         className: 'photo-cluster-icon',
-                        html: `<div class="cluster-count">${totalPhotos}</div>`,
+                        html: `<div class="cluster-count">${loc.races.length > 1 ? loc.races.length : totalPhotos}</div>`,
                         iconSize: [36, 36]
                     });
-                    const marker = L.marker([lat, lon], { icon }).addTo(map);
+                    const marker = L.marker([loc.lat, loc.lon], { icon }).addTo(map);
 
-                    const dateStr = race.date ? `<br><small>${race.date}</small>` : '';
-                    marker.bindPopup(
-                        `<a href="#${encodeURIComponent(race.name)}" style="font-weight:bold;font-size:14px">${race.name}</a>${dateStr}<br><small>${totalPhotos} photos</small>`
-                    );
-                    bounds.extend([lat, lon]);
+                    const popupHtml = loc.races.map(r => {
+                        const dateStr = r.race.date ? ` <small>(${r.race.date})</small>` : '';
+                        return `<a href="#${encodeURIComponent(r.race.name)}" style="font-weight:bold">${r.race.name}</a>${dateStr} — ${r.totalPhotos} photos`;
+                    }).join('<br>');
+                    marker.bindPopup(popupHtml, { maxWidth: 350 });
+                    bounds.extend([loc.lat, loc.lon]);
                 });
 
                 map.fitBounds(bounds, { padding: [30, 30], maxZoom: 12 });
