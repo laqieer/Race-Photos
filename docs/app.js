@@ -405,25 +405,34 @@ class RacePhotosGallery {
                             color: '#667eea', weight: 4, opacity: 0.8
                         }).addTo(map);
 
-                        // Group photos by interpolated position
+                        // Group photos by distance along route (merge within 200m)
                         const allPhotos = race.sources.flatMap(s => s.photos);
-                        const locationGroups = {};
+                        const photoPositions = [];
                         allPhotos.forEach(photo => {
                             if (!photo.timestamp) return;
                             const utcMs = this.photoTimestampToUtc(photo.timestamp);
                             const pos = this.interpolatePosition(trackpoints, utcMs);
                             if (!pos) return;
-                            // Round to ~10m precision for grouping
-                            const key = `${pos.lat.toFixed(4)},${pos.lon.toFixed(4)}`;
-                            if (!locationGroups[key]) {
-                                locationGroups[key] = { lat: pos.lat, lon: pos.lon, dist: pos.dist, photos: [] };
+                            photoPositions.push({ photo, lat: pos.lat, lon: pos.lon, dist: pos.dist });
+                        });
+                        photoPositions.sort((a, b) => a.dist - b.dist);
+
+                        const groupList = [];
+                        const MERGE_DIST = 200; // meters
+                        photoPositions.forEach(pp => {
+                            const last = groupList[groupList.length - 1];
+                            if (last && Math.abs(pp.dist - last.dist) < MERGE_DIST) {
+                                last.photos.push(pp.photo);
+                                // Update position to average
+                                const n = last.photos.length;
+                                last.lat = last.lat + (pp.lat - last.lat) / n;
+                                last.lon = last.lon + (pp.lon - last.lon) / n;
+                            } else {
+                                groupList.push({ lat: pp.lat, lon: pp.lon, dist: pp.dist, photos: [pp.photo] });
                             }
-                            locationGroups[key].photos.push(photo);
                         });
 
                         const fmtDist = (m) => m >= 1000 ? (m / 1000).toFixed(1) + ' km' : Math.round(m) + ' m';
-
-                        const groupList = Object.values(locationGroups).sort((a, b) => a.dist - b.dist);
 
                         groupList.forEach(group => {
                             const distLabel = fmtDist(group.dist);
