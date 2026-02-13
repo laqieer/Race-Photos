@@ -435,6 +435,20 @@ class RacePhotosGallery {
 
                         const fmtDist = (m) => m >= 1000 ? (m / 1000).toFixed(1) + ' km' : Math.round(m) + ' m';
 
+                        const clusterGroup = L.markerClusterGroup({
+                            maxClusterRadius: 40,
+                            iconCreateFunction: (cluster) => {
+                                const childMarkers = cluster.getAllChildMarkers();
+                                const total = childMarkers.reduce((sum, m) => sum + (m._photoCount || 0), 0);
+                                return L.divIcon({
+                                    className: 'photo-marker-icon',
+                                    html: `<div class="photo-marker">${total}</div>`,
+                                    iconSize: [28, 28],
+                                    iconAnchor: [14, 14]
+                                });
+                            }
+                        });
+
                         groupList.forEach(group => {
                             const distLabel = fmtDist(group.dist);
                             const count = group.photos.length;
@@ -444,7 +458,8 @@ class RacePhotosGallery {
                                 iconSize: [28, 28],
                                 iconAnchor: [14, 14]
                             });
-                            const marker = L.marker([group.lat, group.lon], { icon }).addTo(map);
+                            const marker = L.marker([group.lat, group.lon], { icon });
+                            marker._photoCount = count;
                             const thumbs = group.photos.map(p =>
                                 `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`
                             ).join('');
@@ -456,7 +471,9 @@ class RacePhotosGallery {
                                 `<div class="map-photo-time">${distLabel} • ${timeLabel}${countLabel}</div></div>`,
                                 { maxWidth: 300, minWidth: 120 }
                             );
+                            clusterGroup.addLayer(marker);
                         });
+                        map.addLayer(clusterGroup);
 
                         map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
                         map.invalidateSize();
