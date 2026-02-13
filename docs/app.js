@@ -178,7 +178,7 @@ class RacePhotosGallery {
     }
 
     /**
-     * Render the overview page with race cards only
+     * Render the overview page with race cards and map
      */
     renderOverview() {
         this.racesContainer.innerHTML = '';
@@ -195,6 +195,54 @@ class RacePhotosGallery {
             `;
             this.racesContainer.appendChild(emptyState);
             return;
+        }
+
+        // Add map showing all races
+        const racesWithGps = this.manifest.races.filter(race =>
+            race.sources.some(s => s.photos.some(p => p.lat && p.lon))
+        );
+
+        if (racesWithGps.length > 0 && typeof L !== 'undefined') {
+            const mapContainer = document.createElement('div');
+            mapContainer.id = 'races-map';
+            mapContainer.className = 'race-map';
+            this.racesContainer.appendChild(mapContainer);
+
+            setTimeout(() => {
+                const map = L.map('races-map');
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(map);
+
+                const bounds = L.latLngBounds();
+                racesWithGps.forEach(race => {
+                    // Get first GPS location for this race
+                    let lat, lon;
+                    for (const s of race.sources) {
+                        for (const p of s.photos) {
+                            if (p.lat && p.lon) { lat = p.lat; lon = p.lon; break; }
+                        }
+                        if (lat) break;
+                    }
+
+                    const totalPhotos = race.sources.reduce((sum, s) => sum + s.photos.length, 0);
+                    const icon = L.divIcon({
+                        className: 'photo-cluster-icon',
+                        html: `<div class="cluster-count">${totalPhotos}</div>`,
+                        iconSize: [36, 36]
+                    });
+                    const marker = L.marker([lat, lon], { icon }).addTo(map);
+
+                    const dateStr = race.date ? `<br><small>${race.date}</small>` : '';
+                    marker.bindPopup(
+                        `<a href="#${encodeURIComponent(race.name)}" style="font-weight:bold;font-size:14px">${race.name}</a>${dateStr}<br><small>${totalPhotos} photos</small>`
+                    );
+                    bounds.extend([lat, lon]);
+                });
+
+                map.fitBounds(bounds, { padding: [30, 30], maxZoom: 12 });
+                map.invalidateSize();
+            }, 100);
         }
 
         this.manifest.races.forEach((race) => {
@@ -247,65 +295,6 @@ class RacePhotosGallery {
         card.appendChild(raceHeader);
         card.appendChild(sourcesContainer);
         this.racesContainer.appendChild(card);
-
-        // Add map if any photos have GPS data
-        const gpsPhotos = [];
-        race.sources.forEach(source => {
-            source.photos.forEach(photo => {
-                if (photo.lat && photo.lon) {
-                    gpsPhotos.push(photo);
-                }
-            });
-        });
-
-        if (gpsPhotos.length > 0 && typeof L !== 'undefined') {
-            const mapContainer = document.createElement('div');
-            mapContainer.id = 'race-map';
-            mapContainer.className = 'race-map';
-            // Insert map before the race card
-            this.racesContainer.insertBefore(mapContainer, card);
-
-            // Delay map init to ensure container is rendered with correct size
-            setTimeout(() => {
-                const map = L.map('race-map');
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; OpenStreetMap contributors'
-                }).addTo(map);
-
-                // Group photos by location
-                const locationMap = {};
-                gpsPhotos.forEach(photo => {
-                    const key = `${photo.lat},${photo.lon}`;
-                    if (!locationMap[key]) {
-                        locationMap[key] = { lat: photo.lat, lon: photo.lon, photos: [] };
-                    }
-                    locationMap[key].photos.push(photo);
-                });
-
-                const bounds = L.latLngBounds();
-                Object.values(locationMap).forEach(loc => {
-                    const icon = L.divIcon({
-                        className: 'photo-cluster-icon',
-                        html: `<div class="cluster-count">${loc.photos.length}</div>`,
-                        iconSize: [36, 36]
-                    });
-                    const marker = L.marker([loc.lat, loc.lon], { icon }).addTo(map);
-
-                    const thumbsHtml = loc.photos.slice(0, 20).map(p =>
-                        `<img src="${p.url}" style="width:80px;height:60px;object-fit:cover;cursor:pointer;border-radius:4px" onclick="window.galleryInstance.openLightbox('${p.url}')">`
-                    ).join('');
-                    const moreText = loc.photos.length > 20 ? `<p style="margin:4px 0 0;font-size:12px;color:#666">+${loc.photos.length - 20} more</p>` : '';
-                    marker.bindPopup(
-                        `<div style="max-width:300px;max-height:200px;overflow-y:auto;display:flex;flex-wrap:wrap;gap:4px">${thumbsHtml}</div>${moreText}`,
-                        { maxWidth: 320 }
-                    );
-                    bounds.extend([loc.lat, loc.lon]);
-                });
-
-                map.fitBounds(bounds, { padding: [30, 30], maxZoom: 16 });
-                map.invalidateSize();
-            }, 100);
-        }
     }
 
     /**
