@@ -353,8 +353,8 @@ class RacePhotosGallery {
      */
     interpolatePosition(trackpoints, utcMs) {
         if (!trackpoints.length) return null;
-        if (utcMs <= trackpoints[0].time) return trackpoints[0];
-        if (utcMs >= trackpoints[trackpoints.length - 1].time) return trackpoints[trackpoints.length - 1];
+        // Return null for times outside GPX range
+        if (utcMs < trackpoints[0].time || utcMs > trackpoints[trackpoints.length - 1].time) return null;
 
         // Binary search for surrounding trackpoints
         let lo = 0, hi = trackpoints.length - 1;
@@ -644,14 +644,19 @@ class RacePhotosGallery {
                         // Group photos by time proximity (merge within 60s)
                         const allPhotos = race.sources.flatMap(s => s.photos);
                         const photoPositions = [];
+                        const outOfRangePhotos = [];
                         allPhotos.forEach(photo => {
                             if (!photo.timestamp) return;
                             const utcMs = this.photoTimestampToUtc(photo.timestamp);
                             const pos = this.interpolatePosition(trackpoints, utcMs);
-                            if (!pos) return;
+                            if (!pos) {
+                                outOfRangePhotos.push({ photo, time: utcMs });
+                                return;
+                            }
                             photoPositions.push({ photo, lat: pos.lat, lon: pos.lon, dist: pos.dist, time: utcMs });
                         });
                         photoPositions.sort((a, b) => a.time - b.time);
+                        outOfRangePhotos.sort((a, b) => a.time - b.time);
 
                         const groupList = [];
                         const MERGE_TIME = 10 * 1000; // 10 seconds
@@ -751,6 +756,26 @@ class RacePhotosGallery {
                                 )
                             );
                         });
+                        // Render out-of-range photos (time only, no map/distance/pace/HR)
+                        if (outOfRangePhotos.length > 0) {
+                            const oorGroups = [];
+                            const OOR_MERGE = 10 * 1000;
+                            outOfRangePhotos.forEach(pp => {
+                                const last = oorGroups[oorGroups.length - 1];
+                                if (last && (pp.time - last.lastTime) < OOR_MERGE) {
+                                    last.photos.push(pp.photo);
+                                    last.lastTime = pp.time;
+                                } else {
+                                    oorGroups.push({ lastTime: pp.time, time: pp.time, photos: [pp.photo] });
+                                }
+                            });
+                            oorGroups.forEach(group => {
+                                const timeStr = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
+                                sourcesContainer.appendChild(
+                                    this.createSourceSection(timeStr, group.photos)
+                                );
+                            });
+                        }
                         card.appendChild(sourcesContainer);
                     }, 100);
                 }
