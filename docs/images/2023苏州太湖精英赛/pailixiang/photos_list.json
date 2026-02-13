@@ -1,0 +1,37 @@
+{
+  "Code": 1,
+  "Message": "查询成功！",
+  "Data": [
+    {
+      "ID": "626cd1d7-87f9-40cd-8579-401e380f5bc3",
+      "ImageUrl": "https://thumbnail0.baidupcs.com/thumbnail/ebf1c70faqd73d127f0395a7b8a53c1a?fid=3072474267-250528-698393820287257&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-TtGhCJg4vtiVx1e7rWloHpQmpAc%3D&expires=8h&chkbd=0&chkv=0&dp-logid=777439640963731654&dp-callid=0&time=1770991200&size=c750_u1125&quality=100&vuk=3072474267&ft=image",
+      "FileSize": 3925524,
+      "Width": 3000,
+      "Height": 4500,
+      "CreateUserID": "26078ed1-3e5d-4b1c-8c2b-d231aa4c7b32",
+      "CreateUserName": "花小虎",
+      "ShootTime": "2023-06-24 08:23:00",
+      "IsShoot": true,
+      "Remark": "",
+      "Title": "",
+      "PraiseQty": 0,
+      "FaceStatus": 2,
+      "FileSize1": 4297956,
+      "IsWmImage": true,
+      "IsTransfer": true,
+      "TransferFileID": "653566431501162",
+      "TransferFileID1": "698393820287257",
+      "Name": "DSC_7556.JPG",
+      "FileName": "43473292.jpg",
+      "BigImageUrl": "https://thumbnail0.baidupcs.com/thumbnail/ebf1c70faqd73d127f0395a7b8a53c1a?fid=3072474267-250528-698393820287257&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-TtGhCJg4vtiVx1e7rWloHpQmpAc%3D&expires=8h&chkbd=0&chkv=0&dp-logid=777439640963731654&dp-callid=0&time=1770991200&size=c1600_u1600&quality=100&vuk=3072474267&ft=image",
+      "DownloadImageUrl": "fid=698393820287257&uid=ae22be7d-749e-4d5f-9c0c-bdcd4f6c0809&ext=.jpg",
+      "PayBigImageUrl": null,
+      "PayImageUrl": null,
+      "FileSizeText": "4.1M",
+      "IsGetTransferFileUrl": false
+    }
+  ],
+  "TotalCount": 1,
+  "CurrentPageIndex": 0,
+  "OptTime": "2026-02-13 23:22:25"
+}

@@ -1696,6 +1696,25 @@
         }
       ],
       "route": "routes/\u5e38\u719f\u94f6\u884c2023\u5e38\u719f\u5c1a\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e.gpx"
+    },
+    {
+      "name": "2023\u82cf\u5dde\u592a\u6e56\u7cbe\u82f1\u8d5b",
+      "date": "2023-06-24",
+      "city": "\u82cf\u5dde",
+      "province": "\u6c5f\u82cf",
+      "country": "\u4e2d\u56fd",
+      "sources": [
+        {
+          "name": "pailixiang",
+          "photos": [
+            {
+              "url": "images/2023\u82cf\u5dde\u592a\u6e56\u7cbe\u82f1\u8d5b/pailixiang/DSC_7556.JPG",
+              "name": "DSC_7556.JPG",
+              "timestamp": "2023-06-24 08:23:00"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

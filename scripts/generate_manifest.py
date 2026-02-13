@@ -131,6 +131,14 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                         race_place = place
                     if race_data["date"]:
                         break
+                    # Pailixiang / generic format
+                    if not race_data["date"] and race_info.get('date'):
+                        race_data["date"] = race_info['date']
+                    place = race_info.get('place', '') or place
+                    if place:
+                        race_place = place
+                    if race_data["date"]:
+                        break
                 except (IOError, json.JSONDecodeError, ValueError, TypeError):
                     pass
         
@@ -190,6 +198,17 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                         meta["timestamp"] = dt.strftime("%Y-%m-%d %H:%M:%S")
                                     except (ValueError, OSError):
                                         pass
+                                if meta:
+                                    photo_meta[fname] = meta
+                    # Pailixiang format
+                    if 'Data' in photos_data and isinstance(photos_data['Data'], list):
+                        for p in photos_data['Data']:
+                            fname = p.get('Name', p.get('FileName', ''))
+                            if fname:
+                                meta = {}
+                                shoot_time = p.get('ShootTime', '')
+                                if shoot_time:
+                                    meta["timestamp"] = shoot_time
                                 if meta:
                                     photo_meta[fname] = meta
                 except (IOError, json.JSONDecodeError):
