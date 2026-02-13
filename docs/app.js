@@ -438,12 +438,11 @@ class RacePhotosGallery {
                         groupList.forEach(group => {
                             const distLabel = fmtDist(group.dist);
                             const count = group.photos.length;
-                            const size = Math.max(24, 16 + count * 4);
                             const icon = L.divIcon({
                                 className: 'photo-marker-icon',
-                                html: `<div class="photo-marker" style="width:${size}px;height:${size}px;font-size:${Math.max(11, size * 0.45)}px">${count}</div>`,
-                                iconSize: [size, size],
-                                iconAnchor: [size / 2, size / 2]
+                                html: `<div class="photo-marker">${count}</div>`,
+                                iconSize: [28, 28],
+                                iconAnchor: [14, 14]
                             });
                             const marker = L.marker([group.lat, group.lon], { icon }).addTo(map);
                             const thumbs = group.photos.map(p =>
