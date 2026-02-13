@@ -468,7 +468,7 @@ class RacePhotosGallery {
                             marker.bindPopup(
                                 `<div class="map-photo-popup">` +
                                 `<div class="map-photo-scroll">${thumbs}</div>` +
-                                `<div class="map-photo-time">${distLabel} • ${timeLabel}${countLabel}</div></div>`,
+                                `<div class="map-photo-time">${timeLabel} • ${distLabel}${countLabel}</div></div>`,
                                 { maxWidth: 300, minWidth: 120 }
                             );
                             clusterGroup.addLayer(marker);
@@ -485,7 +485,7 @@ class RacePhotosGallery {
                             const distLabel = fmtDist(group.dist);
                             sourcesContainer.appendChild(
                                 this.createSourceSection(
-                                    `${distLabel} — ${(group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp}`,
+                                    `${(group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp} — ${distLabel}`,
                                     group.photos
                                 )
                             );
