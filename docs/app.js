@@ -503,6 +503,46 @@ class RacePhotosGallery {
     }
 
     /**
+     * Get pace (min/km) and heart rate at a given UTC time from trackpoints
+     */
+    getMetricsAtTime(trackpoints, utcMs) {
+        const WINDOW = 30 * 1000; // 30 seconds window for pace
+        // Find index via binary search
+        let lo = 0, hi = trackpoints.length - 1;
+        while (lo < hi - 1) {
+            const mid = (lo + hi) >> 1;
+            if (trackpoints[mid].time <= utcMs) lo = mid;
+            else hi = mid;
+        }
+        const pt = trackpoints[lo];
+        // Heart rate: interpolate from nearest point
+        const hr = pt.hr != null ? pt.hr : (trackpoints[hi] && trackpoints[hi].hr != null ? trackpoints[hi].hr : null);
+        // Pace: find point ~WINDOW ago
+        let prev = pt;
+        for (let j = lo; j >= 0; j--) {
+            if (pt.time - trackpoints[j].time >= WINDOW) { prev = trackpoints[j]; break; }
+        }
+        let pace = null;
+        const timeDiffMin = (pt.time - prev.time) / 60000;
+        const distDiffKm = (pt.dist - prev.dist) / 1000;
+        if (distDiffKm > 0.001 && timeDiffMin > 0) {
+            pace = timeDiffMin / distDiffKm;
+            if (pace > 15) pace = null;
+        }
+        return { pace, hr };
+    }
+
+    /**
+     * Format pace as M'SS"
+     */
+    formatPace(pace) {
+        if (pace == null) return '';
+        const mins = Math.floor(pace);
+        const secs = Math.round((pace - mins) * 60);
+        return `${mins}'${String(secs).padStart(2, '0')}"`;
+    }
+
+    /**
      * Render a race detail page with photos
      */
     async renderRaceDetail(race) {
@@ -604,7 +644,7 @@ class RacePhotosGallery {
                                 last.lon = last.lon + (pp.lon - last.lon) / n;
                                 last.dist = last.dist + (pp.dist - last.dist) / n;
                             } else {
-                                groupList.push({ lat: pp.lat, lon: pp.lon, dist: pp.dist, lastTime: pp.time, photos: [pp.photo] });
+                                groupList.push({ lat: pp.lat, lon: pp.lon, dist: pp.dist, lastTime: pp.time, time: pp.time, photos: [pp.photo] });
                             }
                         });
 
@@ -626,6 +666,13 @@ class RacePhotosGallery {
 
                         groupList.forEach(group => {
                             const distLabel = fmtDist(group.dist);
+                            const metrics = this.getMetricsAtTime(trackpoints, group.time);
+                            const metricsParts = [];
+                            if (metrics.pace) metricsParts.push(`⏱ ${this.formatPace(metrics.pace)}/km`);
+                            if (metrics.hr) metricsParts.push(`❤️ ${metrics.hr} bpm`);
+                            const metricsLabel = metricsParts.length ? ' • ' + metricsParts.join(' • ') : '';
+                            group.metricsLabel = metricsParts.join(' • ');
+
                             const count = group.photos.length;
                             const icon = L.divIcon({
                                 className: 'photo-marker-icon',
@@ -643,7 +690,7 @@ class RacePhotosGallery {
                             marker.bindPopup(
                                 `<div class="map-photo-popup">` +
                                 `<div class="map-photo-scroll">${thumbs}</div>` +
-                                `<div class="map-photo-time">${timeLabel} • ${distLabel}${countLabel}</div></div>`,
+                                `<div class="map-photo-time">${timeLabel} • ${distLabel}${metricsLabel}${countLabel}</div></div>`,
                                 { maxWidth: 300, minWidth: 120 }
                             );
                             clusterGroup.addLayer(marker);
@@ -674,9 +721,11 @@ class RacePhotosGallery {
                         sourcesContainer.className = 'sources-container';
                         groupList.forEach(group => {
                             const distLabel = fmtDist(group.dist);
+                            const timeStr = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
+                            const metricsSuffix = group.metricsLabel ? ` • ${group.metricsLabel}` : '';
                             sourcesContainer.appendChild(
                                 this.createSourceSection(
-                                    `${(group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp} — ${distLabel}`,
+                                    `${timeStr} — ${distLabel}${metricsSuffix}`,
                                     group.photos
                                 )
                             );
