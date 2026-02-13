@@ -237,7 +237,7 @@ class RacePhotosGallery {
                     const totalPhotos = loc.races.reduce((sum, r) => sum + r.totalPhotos, 0);
                     const icon = L.divIcon({
                         className: 'photo-cluster-icon',
-                        html: `<div class="cluster-count">${loc.races.length > 1 ? loc.races.length : totalPhotos}</div>`,
+                        html: `<div class="cluster-count">${loc.races.length}</div>`,
                         iconSize: [36, 36]
                     });
                     const marker = L.marker([loc.lat, loc.lon], { icon }).addTo(map);
