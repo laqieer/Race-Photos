@@ -316,8 +316,11 @@ class RacePhotosGallery {
         sourcesContainer.className = 'sources-container';
 
         race.sources.forEach((source) => {
+            const sortedPhotos = [...source.photos].sort((a, b) =>
+                (a.timestamp || '').localeCompare(b.timestamp || '')
+            );
             sourcesContainer.appendChild(
-                this.createSourceSection(source.name, source.photos)
+                this.createSourceSection(source.name, sortedPhotos)
             );
         });
 

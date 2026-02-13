@@ -96,8 +96,8 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
             source_name = source_dir.name
             photos = []
             
-            # Load GPS data from photos_list.json if available
-            gps_lookup = {}
+            # Load metadata from photos_list.json if available
+            photo_meta = {}
             photos_list_file = source_dir / "photos_list.json"
             if photos_list_file.exists():
                 try:
@@ -112,10 +112,22 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                         url_hq = p.get('url_hq', '')
                         if url_hq:
                             fname = url_hq.rsplit('/', 1)[-1]
+                            meta = {}
                             lat = p.get('gps_latitude')
                             lon = p.get('gps_longitude')
                             if lat and lon:
-                                gps_lookup[fname] = {"lat": lat, "lon": lon}
+                                meta["lat"] = lat
+                                meta["lon"] = lon
+                            mi = p.get('meta_info', '{}')
+                            try:
+                                mi_data = json.loads(mi) if isinstance(mi, str) else mi
+                                dt = mi_data.get('DateTimeOriginal', '')
+                                if dt:
+                                    meta["timestamp"] = dt.replace(':', '-', 2)
+                            except (json.JSONDecodeError, ValueError):
+                                pass
+                            if meta:
+                                photo_meta[fname] = meta
                 except (IOError, json.JSONDecodeError):
                     pass
             
@@ -131,10 +143,13 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                             "url": relative_path.as_posix(),
                             "name": photo_file.name
                         }
-                        gps = gps_lookup.get(photo_file.name)
-                        if gps:
-                            entry["lat"] = gps["lat"]
-                            entry["lon"] = gps["lon"]
+                        meta = photo_meta.get(photo_file.name, {})
+                        if "lat" in meta:
+                            entry["lat"] = meta["lat"]
+                        if "lon" in meta:
+                            entry["lon"] = meta["lon"]
+                        if "timestamp" in meta:
+                            entry["timestamp"] = meta["timestamp"]
                         photos.append(entry)
             
             if photos:
