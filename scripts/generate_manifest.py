@@ -8,6 +8,7 @@ of all races and their photo sources.
 
 import json
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List
 
@@ -21,6 +22,7 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
         "races": [
             {
                 "name": "race-name",
+                "date": "2024-01-21",
                 "sources": [
                     {
                         "name": "source-name",
@@ -42,14 +44,30 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
     
     # Scan for race directories
     for race_dir in sorted(base_path.iterdir()):
-        if not race_dir.is_dir() or race_dir.name.startswith('.'):
+        if not race_dir.is_dir() or race_dir.name.startswith('.') or race_dir.name.startswith('_'):
             continue
         
         race_name = race_dir.name
         race_data = {
             "name": race_name,
+            "date": "",
             "sources": []
         }
+        
+        # Try to read race date from race_info.json
+        for source_dir in race_dir.iterdir():
+            race_info_file = source_dir / "race_info.json"
+            if race_info_file.exists():
+                try:
+                    with open(race_info_file, 'r', encoding='utf-8') as f:
+                        race_info = json.load(f)
+                    start_time = race_info.get('activity', {}).get('start_time')
+                    if start_time:
+                        dt = datetime.fromtimestamp(start_time / 1000, tz=timezone.utc)
+                        race_data["date"] = dt.strftime("%Y-%m-%d")
+                        break
+                except (IOError, json.JSONDecodeError, ValueError, TypeError):
+                    pass
         
         # Scan for source directories within each race
         for source_dir in sorted(race_dir.iterdir()):
@@ -80,6 +98,9 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
         
         if race_data["sources"]:
             manifest["races"].append(race_data)
+    
+    # Sort races by date, latest first
+    manifest["races"].sort(key=lambda r: r.get("date", ""), reverse=True)
     
     return manifest
 

@@ -152,7 +152,8 @@ class RacePhotosGallery {
         const info = document.createElement('div');
         info.className = 'race-info';
         const totalPhotos = race.sources.reduce((sum, src) => sum + src.photos.length, 0);
-        info.textContent = `${race.sources.length} source${race.sources.length !== 1 ? 's' : ''} • ${totalPhotos} photo${totalPhotos !== 1 ? 's' : ''}`;
+        const dateStr = race.date ? `${race.date} • ` : '';
+        info.textContent = `${dateStr}${race.sources.length} source${race.sources.length !== 1 ? 's' : ''} • ${totalPhotos} photo${totalPhotos !== 1 ? 's' : ''}`;
 
         raceHeader.appendChild(title);
         raceHeader.appendChild(info);
