@@ -406,10 +406,10 @@ class RacePhotosGallery {
                         }).addTo(map);
 
                         // Add km distance markers along the route
+                        const kmLayer = L.layerGroup().addTo(map);
                         const totalDist = trackpoints[trackpoints.length - 1].dist;
                         for (let km = 1; km * 1000 <= totalDist; km++) {
                             const targetDist = km * 1000;
-                            // Find trackpoint segment crossing this distance
                             let i = 0;
                             while (i < trackpoints.length - 1 && trackpoints[i + 1].dist < targetDist) i++;
                             const a = trackpoints[i], b = trackpoints[i + 1];
@@ -422,7 +422,7 @@ class RacePhotosGallery {
                                 iconSize: [20, 20],
                                 iconAnchor: [10, 10]
                             });
-                            L.marker([lat, lon], { icon: kmIcon, interactive: false }).addTo(map);
+                            L.marker([lat, lon], { icon: kmIcon, interactive: false }).addTo(kmLayer);
                         }
 
                         // Group photos by time proximity (merge within 60s)
@@ -508,6 +508,8 @@ class RacePhotosGallery {
                             return div;
                         };
                         legend.addTo(map);
+
+                        L.control.layers(null, { 'Distance (km)': kmLayer }, { collapsed: false }).addTo(map);
 
                         // Render photo groups below map
                         const sourcesContainer = document.createElement('div');
