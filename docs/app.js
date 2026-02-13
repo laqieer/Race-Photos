@@ -67,7 +67,7 @@ class RacePhotosGallery {
             // Since we can't directly scan directories in a static site,
             // we'll need to maintain a manifest file or use GitHub API
             // For now, we'll try to load a manifest.json file
-            const response = await fetch('images/manifest.json');
+            const response = await fetch('images/manifest.json?t=' + Date.now());
             if (response.ok) {
                 const manifest = await response.json();
                 return manifest;
