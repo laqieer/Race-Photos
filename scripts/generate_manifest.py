@@ -177,6 +177,21 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                 photo_meta[fname] = meta
                     # Yipai360 format — skip createDateTime (upload time, not capture time)
                     # EXIF DateTimeOriginal will be read directly from photos below
+                    # PhotoPlus format
+                    if 'pics_array' in photos_data:
+                        for p in photos_data['pics_array']:
+                            fname = p.get('pic_name', '')
+                            if fname:
+                                meta = {}
+                                ts = p.get('exif_timestamp')
+                                if ts:
+                                    try:
+                                        dt = datetime.fromtimestamp(int(ts), tz=timezone(timedelta(hours=8)))
+                                        meta["timestamp"] = dt.strftime("%Y-%m-%d %H:%M:%S")
+                                    except (ValueError, OSError):
+                                        pass
+                                if meta:
+                                    photo_meta[fname] = meta
                 except (IOError, json.JSONDecodeError):
                     pass
             
