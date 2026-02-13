@@ -498,6 +498,17 @@ class RacePhotosGallery {
                         map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
                         map.invalidateSize();
 
+                        // Add legend
+                        const legend = L.control({ position: 'bottomright' });
+                        legend.onAdd = () => {
+                            const div = L.DomUtil.create('div', 'map-legend');
+                            div.innerHTML =
+                                '<div class="legend-item"><span class="legend-icon km-marker">1</span> Distance (km)</div>' +
+                                '<div class="legend-item"><span class="legend-icon photo-marker">3</span> Photo count</div>';
+                            return div;
+                        };
+                        legend.addTo(map);
+
                         // Render photo groups below map
                         const sourcesContainer = document.createElement('div');
                         sourcesContainer.className = 'sources-container';
