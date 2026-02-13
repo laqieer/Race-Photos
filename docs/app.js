@@ -418,7 +418,7 @@ class RacePhotosGallery {
                         photoPositions.sort((a, b) => a.time - b.time);
 
                         const groupList = [];
-                        const MERGE_TIME = 60 * 1000; // 60 seconds
+                        const MERGE_TIME = 10 * 1000; // 10 seconds
                         photoPositions.forEach(pp => {
                             const last = groupList[groupList.length - 1];
                             if (last && (pp.time - last.lastTime) < MERGE_TIME) {
