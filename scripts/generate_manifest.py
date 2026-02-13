@@ -80,9 +80,16 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                 try:
                     with open(race_info_file, 'r', encoding='utf-8') as f:
                         race_info = json.load(f)
+                    # RunnerBar format
                     start_time = race_info.get('activity', {}).get('start_time')
                     if start_time:
                         dt = datetime.fromtimestamp(start_time / 1000, tz=timezone.utc)
+                        race_data["date"] = dt.strftime("%Y-%m-%d")
+                        break
+                    # Yipai360 format
+                    begin_time = race_info.get('data', {}).get('beginTime')
+                    if begin_time:
+                        dt = datetime.fromtimestamp(begin_time, tz=timezone.utc)
                         race_data["date"] = dt.strftime("%Y-%m-%d")
                         break
                 except (IOError, json.JSONDecodeError, ValueError, TypeError):
@@ -104,6 +111,7 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                     with open(photos_list_file, 'r', encoding='utf-8') as f:
                         photos_data = json.load(f)
                     photo_list = []
+                    # RunnerBar format
                     if 'result' in photos_data and 'topicInfoList' in photos_data['result']:
                         photo_list = photos_data['result']['topicInfoList']
                     elif 'topicInfoList' in photos_data:
@@ -128,6 +136,22 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                 pass
                             if meta:
                                 photo_meta[fname] = meta
+                    # Yipai360 format
+                    if 'photos' in photos_data:
+                        for p in photos_data['photos']:
+                            fname = p.get('fname', '')
+                            if fname:
+                                meta = {}
+                                create_dt = p.get('createDateTime')
+                                if create_dt:
+                                    try:
+                                        ts = int(create_dt) / 1000
+                                        dt = datetime.fromtimestamp(ts, tz=timezone.utc)
+                                        meta["timestamp"] = dt.strftime("%Y-%m-%d %H:%M:%S")
+                                    except (ValueError, OSError):
+                                        pass
+                                if meta:
+                                    photo_meta[fname] = meta
                 except (IOError, json.JSONDecodeError):
                     pass
             
