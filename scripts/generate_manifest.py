@@ -8,7 +8,7 @@ of all races and their photo sources.
 
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Dict, List
 
@@ -47,6 +47,20 @@ def _lookup_location_by_place(place: str) -> Dict:
     if loc:
         return {"city": loc[0], "province": loc[1], "country": loc[2]}
     return {}
+
+
+def _read_exif_datetime(filepath: Path) -> str:
+    """Read DateTimeOriginal from EXIF data, return as 'YYYY-MM-DD HH:MM:SS' or ''."""
+    try:
+        import piexif
+        data = piexif.load(str(filepath))
+        dto = data.get('Exif', {}).get(piexif.ExifIFD.DateTimeOriginal, b'')
+        if dto:
+            dt_str = dto.decode() if isinstance(dto, bytes) else dto
+            return dt_str.replace(':', '-', 2)
+    except Exception:
+        pass
+    return ""
 
 
 def generate_manifest(base_dir: str = "docs/images") -> Dict:
@@ -110,7 +124,7 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                     # Yipai360 format
                     begin_time = race_info.get('data', {}).get('beginTime')
                     if begin_time:
-                        dt = datetime.fromtimestamp(begin_time, tz=timezone.utc)
+                        dt = datetime.fromtimestamp(begin_time, tz=timezone(timedelta(hours=8)))
                         race_data["date"] = dt.strftime("%Y-%m-%d")
                     place = race_info.get('data', {}).get('place', '')
                     if place:
@@ -161,22 +175,8 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                 pass
                             if meta:
                                 photo_meta[fname] = meta
-                    # Yipai360 format
-                    if 'photos' in photos_data:
-                        for p in photos_data['photos']:
-                            fname = p.get('fname', '')
-                            if fname:
-                                meta = {}
-                                create_dt = p.get('createDateTime')
-                                if create_dt:
-                                    try:
-                                        ts = int(create_dt) / 1000
-                                        dt = datetime.fromtimestamp(ts, tz=timezone.utc)
-                                        meta["timestamp"] = dt.strftime("%Y-%m-%d %H:%M:%S")
-                                    except (ValueError, OSError):
-                                        pass
-                                if meta:
-                                    photo_meta[fname] = meta
+                    # Yipai360 format — skip createDateTime (upload time, not capture time)
+                    # EXIF DateTimeOriginal will be read directly from photos below
                 except (IOError, json.JSONDecodeError):
                     pass
             
@@ -199,6 +199,11 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                             entry["lon"] = meta["lon"]
                         if "timestamp" in meta:
                             entry["timestamp"] = meta["timestamp"]
+                        else:
+                            # Fallback: read EXIF DateTimeOriginal from image
+                            ts = _read_exif_datetime(photo_file)
+                            if ts:
+                                entry["timestamp"] = ts
                         photos.append(entry)
             
             if photos:
