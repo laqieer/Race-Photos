@@ -120,16 +120,17 @@ The script will:
 
 ### Download from PhotoPlus API
 
-Download photos from PhotoPlus (live.photoplus.cn) using bib number search:
+Download photos from PhotoPlus (live.photoplus.cn) using bib number or face search:
 
 ```bash
-# The API requires signed URLs. Open the race page in your browser, search your bib number,
-# and copy the network request URL from DevTools (F12 → Network tab).
-# The recognize API URL looks like:
-# https://live.photoplus.cn/home/pic/self/recognize?list={activityNos}&number={bib}&faceUrl=&faceHash=&ppSign=&_s={signature}&_t={timestamp}
+# The API requires signed URLs. Open the race page in your browser, search by bib number
+# or face photo, and copy the network request URL from DevTools (F12 → Network tab).
 
-# Then run the download with the full API URL:
-python scripts/download_photoplus.py --url "https://live.photoplus.cn/home/pic/self/recognize?list=70266832,74915292&number=30483&faceUrl=&faceHash=&ppSign=&_s=67674545fd6699dca2c173e0692bb181&_t=1770985586207"
+# Bib number search:
+python scripts/download_photoplus.py --url "https://live.photoplus.cn/home/pic/self/recognize?list=70266832,74915292&number=30483&..."
+
+# Face search:
+python scripts/download_photoplus.py --url "https://live.photoplus.cn/home/findme/activitys/pic?url=...&hash=...&activityNos=...&..."
 
 # Update gallery
 python scripts/generate_manifest.py

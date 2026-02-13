@@ -132,7 +132,9 @@ class PhotoPlusDownloader:
 def main():
     parser = argparse.ArgumentParser(description='Download photos from PhotoPlus')
     parser.add_argument('--url', required=True,
-                        help='Full signed API URL from browser (includes _s and _t params)')
+                        help='Full signed API URL from browser. Supports both bib search '
+                             '(/home/pic/self/recognize) and face search '
+                             '(/home/findme/activitys/pic) URLs')
     parser.add_argument('--base-dir', default='docs/images',
                         help='Base directory for photos')
     args = parser.parse_args()
