@@ -10,6 +10,7 @@ Race-Photos/
 │   ├── download_photos.py      # Download photos from API responses
 │   ├── download_runnerbar.py   # Download photos from RunnerBar API
 │   ├── download_yipai360.py    # Download photos from Yipai360 API
+│   ├── download_photoplus.py   # Download photos from PhotoPlus API
 │   ├── generate_manifest.py    # Generate gallery manifest
 │   ├── serve.py               # Local dev server (no cache)
 │   ├── requirements.txt        # Python dependencies
@@ -116,6 +117,30 @@ The script will:
 2. Search photos by bib number via OCR recognition
 3. Download original photos (without watermark) to `docs/images/{race_name}/yipai360/`
 4. Read EXIF metadata and set file timestamps
+
+### Download from PhotoPlus API
+
+Download photos from PhotoPlus (live.photoplus.cn) using bib number search:
+
+```bash
+# The API requires signed URLs. Open the race page in your browser, search your bib number,
+# and copy the network request URL from DevTools (F12 → Network tab).
+# The recognize API URL looks like:
+# https://live.photoplus.cn/home/pic/self/recognize?list={activityNos}&number={bib}&faceUrl=&faceHash=&ppSign=&_s={signature}&_t={timestamp}
+
+# Then run the download with the full API URL:
+python scripts/download_photoplus.py --url "https://live.photoplus.cn/home/pic/self/recognize?list=70266832,74915292&number=30483&faceUrl=&faceHash=&ppSign=&_s=67674545fd6699dca2c173e0692bb181&_t=1770985586207"
+
+# Update gallery
+python scripts/generate_manifest.py
+```
+
+> **Note:** The `_s` (signature) and `_t` (timestamp) parameters expire quickly. You must provide a fresh URL each time.
+
+The script will:
+1. Fetch photos from the signed API URL
+2. Download original photos (without watermark) to `docs/images/{race_name}/photoplus/`
+3. Set file timestamps from EXIF metadata
 
 ### Download from Different Sources
 
