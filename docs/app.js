@@ -265,20 +265,24 @@ class RacePhotosGallery {
             // Insert map before the race card
             this.racesContainer.insertBefore(mapContainer, card);
 
-            const map = L.map('race-map');
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
+            // Delay map init to ensure container is rendered with correct size
+            setTimeout(() => {
+                const map = L.map('race-map');
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(map);
 
-            const bounds = L.latLngBounds();
-            gpsPhotos.forEach(photo => {
-                const marker = L.marker([photo.lat, photo.lon]).addTo(map);
-                const thumbUrl = photo.url;
-                marker.bindPopup(`<img src="${thumbUrl}" style="max-width:200px;max-height:150px;cursor:pointer" onclick="window.galleryInstance.openLightbox('${thumbUrl}')">`);
-                bounds.extend([photo.lat, photo.lon]);
-            });
+                const bounds = L.latLngBounds();
+                gpsPhotos.forEach(photo => {
+                    const marker = L.marker([photo.lat, photo.lon]).addTo(map);
+                    const thumbUrl = photo.url;
+                    marker.bindPopup(`<img src="${thumbUrl}" style="max-width:200px;max-height:150px;cursor:pointer" onclick="window.galleryInstance.openLightbox('${thumbUrl}')">`);
+                    bounds.extend([photo.lat, photo.lon]);
+                });
 
-            map.fitBounds(bounds, { padding: [30, 30], maxZoom: 16 });
+                map.fitBounds(bounds, { padding: [30, 30], maxZoom: 16 });
+                map.invalidateSize();
+            }, 100);
         }
     }
 
