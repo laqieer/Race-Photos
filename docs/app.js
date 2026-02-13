@@ -404,11 +404,18 @@ class RacePhotosGallery {
                             locationGroups[key].photos.push(photo);
                         });
 
-                        Object.values(locationGroups).forEach(group => {
+                        const groupList = Object.values(locationGroups).sort((a, b) =>
+                            (a.photos[0].timestamp || '').localeCompare(b.photos[0].timestamp || '')
+                        );
+
+                        let groupIdx = 0;
+                        groupList.forEach(group => {
+                            groupIdx++;
                             const marker = L.circleMarker([group.lat, group.lon], {
                                 radius: 8, fillColor: '#e74c3c', color: '#fff',
                                 weight: 2, fillOpacity: 0.9
                             }).addTo(map);
+                            group.index = groupIdx;
                             const thumbs = group.photos.map(p =>
                                 `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`
                             ).join('');
@@ -417,13 +424,26 @@ class RacePhotosGallery {
                             marker.bindPopup(
                                 `<div class="map-photo-popup">` +
                                 `<div class="map-photo-scroll">${thumbs}</div>` +
-                                `<div class="map-photo-time">${timeLabel}${countLabel}</div></div>`,
+                                `<div class="map-photo-time">#${groupIdx} ${timeLabel}${countLabel}</div></div>`,
                                 { maxWidth: 300, minWidth: 120 }
                             );
                         });
 
                         map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
                         map.invalidateSize();
+
+                        // Render photo groups below map
+                        const sourcesContainer = document.createElement('div');
+                        sourcesContainer.className = 'sources-container';
+                        groupList.forEach(group => {
+                            sourcesContainer.appendChild(
+                                this.createSourceSection(
+                                    `#${group.index} — ${group.photos[0].timestamp}`,
+                                    group.photos
+                                )
+                            );
+                        });
+                        card.appendChild(sourcesContainer);
                     }, 100);
                 }
             } catch (e) {
@@ -431,18 +451,20 @@ class RacePhotosGallery {
             }
         }
 
-        // Sources with photos
-        const sourcesContainer = document.createElement('div');
-        sourcesContainer.className = 'sources-container';
-
-        race.sources.forEach((source) => {
-            const sortedPhotos = [...source.photos].sort((a, b) =>
-                (a.timestamp || '').localeCompare(b.timestamp || '')
-            );
-            sourcesContainer.appendChild(
-                this.createSourceSection(source.name, sortedPhotos)
-            );
-        });
+        // Fallback: show photos grouped by source if no route map was rendered
+        if (!race.route || typeof L === 'undefined') {
+            const sourcesContainer = document.createElement('div');
+            sourcesContainer.className = 'sources-container';
+            race.sources.forEach((source) => {
+                const sortedPhotos = [...source.photos].sort((a, b) =>
+                    (a.timestamp || '').localeCompare(b.timestamp || '')
+                );
+                sourcesContainer.appendChild(
+                    this.createSourceSection(source.name, sortedPhotos)
+                );
+            });
+            card.appendChild(sourcesContainer);
+        }
 
         card.appendChild(sourcesContainer);
         this.racesContainer.appendChild(card);
