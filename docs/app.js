@@ -353,8 +353,12 @@ class RacePhotosGallery {
      */
     interpolatePosition(trackpoints, utcMs) {
         if (!trackpoints.length) return null;
-        // Return null for times outside GPX range
-        if (utcMs < trackpoints[0].time || utcMs > trackpoints[trackpoints.length - 1].time) return null;
+        const TOLERANCE = 30 * 1000; // 30 seconds
+        // Return null for times outside GPX range (with tolerance)
+        if (utcMs < trackpoints[0].time - TOLERANCE || utcMs > trackpoints[trackpoints.length - 1].time + TOLERANCE) return null;
+        // Clamp to range
+        if (utcMs <= trackpoints[0].time) return trackpoints[0];
+        if (utcMs >= trackpoints[trackpoints.length - 1].time) return trackpoints[trackpoints.length - 1];
 
         // Binary search for surrounding trackpoints
         let lo = 0, hi = trackpoints.length - 1;
