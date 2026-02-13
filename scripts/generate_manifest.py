@@ -86,7 +86,7 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                         # Use relative path from docs directory
                         relative_path = photo_file.relative_to(Path('docs'))
                         photos.append({
-                            "url": str(relative_path),
+                            "url": relative_path.as_posix(),
                             "name": photo_file.name
                         })
             
