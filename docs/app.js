@@ -788,18 +788,45 @@ class RacePhotosGallery {
             }
         }
 
-        // Fallback: show photos grouped by source if no route map was rendered
+        // Fallback: show photos grouped by time if no route map was rendered
         if (!race.route || typeof L === 'undefined') {
             const sourcesContainer = document.createElement('div');
             sourcesContainer.className = 'sources-container';
-            race.sources.forEach((source) => {
-                const sortedPhotos = [...source.photos].sort((a, b) =>
-                    (a.timestamp || '').localeCompare(b.timestamp || '')
-                );
-                sourcesContainer.appendChild(
-                    this.createSourceSection(source.name, sortedPhotos)
-                );
-            });
+            const allPhotos = race.sources.flatMap(s => s.photos);
+            const withTime = allPhotos.filter(p => p.timestamp);
+            if (withTime.length > 0) {
+                withTime.sort((a, b) => a.timestamp.localeCompare(b.timestamp));
+                const MERGE_TIME = 10 * 1000;
+                const groups = [];
+                withTime.forEach(photo => {
+                    const utcMs = this.photoTimestampToUtc(photo.timestamp);
+                    const last = groups[groups.length - 1];
+                    if (last && (utcMs - last.lastTime) < MERGE_TIME) {
+                        last.photos.push(photo);
+                        last.lastTime = utcMs;
+                    } else {
+                        groups.push({ time: utcMs, lastTime: utcMs, photos: [photo] });
+                    }
+                });
+                groups.forEach(group => {
+                    const timeStr = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
+                    sourcesContainer.appendChild(
+                        this.createSourceSection(timeStr, group.photos)
+                    );
+                });
+                const noTime = allPhotos.filter(p => !p.timestamp);
+                if (noTime.length > 0) {
+                    sourcesContainer.appendChild(
+                        this.createSourceSection('Other', noTime)
+                    );
+                }
+            } else {
+                race.sources.forEach((source) => {
+                    sourcesContainer.appendChild(
+                        this.createSourceSection(source.name, source.photos)
+                    );
+                });
+            }
             card.appendChild(sourcesContainer);
         }
 
