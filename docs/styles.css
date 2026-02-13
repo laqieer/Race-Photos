@@ -296,12 +296,24 @@ a.race-card {
 }
 
 /* Map photo popup */
-.map-photo-popup img {
-    width: 200px;
-    max-height: 150px;
+.map-photo-popup {
+    max-width: 280px;
+}
+
+.map-photo-scroll {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    max-width: 280px;
+    padding-bottom: 4px;
+}
+
+.map-photo-scroll img {
+    width: 100px;
+    height: 75px;
     object-fit: cover;
     border-radius: 4px;
-    display: block;
+    flex-shrink: 0;
 }
 
 .map-photo-time {

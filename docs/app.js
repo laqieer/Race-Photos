@@ -388,22 +388,37 @@ class RacePhotosGallery {
                             color: '#667eea', weight: 4, opacity: 0.8
                         }).addTo(map);
 
-                        // Place photo markers
+                        // Group photos by interpolated position
                         const allPhotos = race.sources.flatMap(s => s.photos);
+                        const locationGroups = {};
                         allPhotos.forEach(photo => {
                             if (!photo.timestamp) return;
                             const utcMs = this.photoTimestampToUtc(photo.timestamp);
                             const pos = this.interpolatePosition(trackpoints, utcMs);
                             if (!pos) return;
-                            const marker = L.circleMarker([pos.lat, pos.lon], {
+                            // Round to ~10m precision for grouping
+                            const key = `${pos.lat.toFixed(4)},${pos.lon.toFixed(4)}`;
+                            if (!locationGroups[key]) {
+                                locationGroups[key] = { lat: pos.lat, lon: pos.lon, photos: [] };
+                            }
+                            locationGroups[key].photos.push(photo);
+                        });
+
+                        Object.values(locationGroups).forEach(group => {
+                            const marker = L.circleMarker([group.lat, group.lon], {
                                 radius: 8, fillColor: '#e74c3c', color: '#fff',
                                 weight: 2, fillOpacity: 0.9
                             }).addTo(map);
+                            const thumbs = group.photos.map(p =>
+                                `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`
+                            ).join('');
+                            const timeLabel = group.photos[0].timestamp;
+                            const countLabel = group.photos.length > 1 ? ` (${group.photos.length} photos)` : '';
                             marker.bindPopup(
                                 `<div class="map-photo-popup">` +
-                                `<img src="${photo.url}" alt="${photo.name}" loading="lazy">` +
-                                `<div class="map-photo-time">${photo.timestamp}</div></div>`,
-                                { maxWidth: 250 }
+                                `<div class="map-photo-scroll">${thumbs}</div>` +
+                                `<div class="map-photo-time">${timeLabel}${countLabel}</div></div>`,
+                                { maxWidth: 300, minWidth: 120 }
                             );
                         });
 
