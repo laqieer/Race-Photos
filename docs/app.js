@@ -280,9 +280,60 @@ class RacePhotosGallery {
     }
 
     /**
+     * Parse GPX XML and return array of {lat, lon, time} trackpoints
+     */
+    parseGpx(xmlText) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(xmlText, 'text/xml');
+        const trkpts = doc.querySelectorAll('trkpt');
+        const points = [];
+        trkpts.forEach(pt => {
+            const lat = parseFloat(pt.getAttribute('lat'));
+            const lon = parseFloat(pt.getAttribute('lon'));
+            const timeEl = pt.querySelector('time');
+            if (timeEl && !isNaN(lat) && !isNaN(lon)) {
+                points.push({ lat, lon, time: new Date(timeEl.textContent).getTime() });
+            }
+        });
+        return points;
+    }
+
+    /**
+     * Convert photo local timestamp (UTC+8) to UTC milliseconds
+     */
+    photoTimestampToUtc(timestamp) {
+        // timestamp format: "2024-01-21 07:33:44"
+        return new Date(timestamp.replace(' ', 'T') + '+08:00').getTime();
+    }
+
+    /**
+     * Interpolate lat/lon from GPX trackpoints for a given UTC time
+     */
+    interpolatePosition(trackpoints, utcMs) {
+        if (!trackpoints.length) return null;
+        if (utcMs <= trackpoints[0].time) return trackpoints[0];
+        if (utcMs >= trackpoints[trackpoints.length - 1].time) return trackpoints[trackpoints.length - 1];
+
+        // Binary search for surrounding trackpoints
+        let lo = 0, hi = trackpoints.length - 1;
+        while (lo < hi - 1) {
+            const mid = (lo + hi) >> 1;
+            if (trackpoints[mid].time <= utcMs) lo = mid;
+            else hi = mid;
+        }
+
+        const a = trackpoints[lo], b = trackpoints[hi];
+        const ratio = (utcMs - a.time) / (b.time - a.time);
+        return {
+            lat: a.lat + (b.lat - a.lat) * ratio,
+            lon: a.lon + (b.lon - a.lon) * ratio
+        };
+    }
+
+    /**
      * Render a race detail page with photos
      */
-    renderRaceDetail(race) {
+    async renderRaceDetail(race) {
         this.racesContainer.innerHTML = '';
 
         // Back button
@@ -310,6 +361,60 @@ class RacePhotosGallery {
 
         raceHeader.appendChild(title);
         raceHeader.appendChild(info);
+        card.appendChild(raceHeader);
+
+        // Route map
+        if (race.route && typeof L !== 'undefined') {
+            const mapContainer = document.createElement('div');
+            mapContainer.id = 'race-detail-map';
+            mapContainer.className = 'race-map';
+            card.appendChild(mapContainer);
+
+            try {
+                const res = await fetch(race.route + '?t=' + Date.now());
+                const gpxText = await res.text();
+                const trackpoints = this.parseGpx(gpxText);
+
+                if (trackpoints.length > 0) {
+                    setTimeout(() => {
+                        const map = L.map('race-detail-map');
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; OpenStreetMap contributors'
+                        }).addTo(map);
+
+                        // Draw route polyline
+                        const routeCoords = trackpoints.map(p => [p.lat, p.lon]);
+                        const polyline = L.polyline(routeCoords, {
+                            color: '#667eea', weight: 4, opacity: 0.8
+                        }).addTo(map);
+
+                        // Place photo markers
+                        const allPhotos = race.sources.flatMap(s => s.photos);
+                        allPhotos.forEach(photo => {
+                            if (!photo.timestamp) return;
+                            const utcMs = this.photoTimestampToUtc(photo.timestamp);
+                            const pos = this.interpolatePosition(trackpoints, utcMs);
+                            if (!pos) return;
+                            const marker = L.circleMarker([pos.lat, pos.lon], {
+                                radius: 8, fillColor: '#e74c3c', color: '#fff',
+                                weight: 2, fillOpacity: 0.9
+                            }).addTo(map);
+                            marker.bindPopup(
+                                `<div class="map-photo-popup">` +
+                                `<img src="${photo.url}" alt="${photo.name}" loading="lazy">` +
+                                `<div class="map-photo-time">${photo.timestamp}</div></div>`,
+                                { maxWidth: 250 }
+                            );
+                        });
+
+                        map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+                        map.invalidateSize();
+                    }, 100);
+                }
+            } catch (e) {
+                console.log('Failed to load GPX route:', e);
+            }
+        }
 
         // Sources with photos
         const sourcesContainer = document.createElement('div');
@@ -324,7 +429,6 @@ class RacePhotosGallery {
             );
         });
 
-        card.appendChild(raceHeader);
         card.appendChild(sourcesContainer);
         this.racesContainer.appendChild(card);
     }

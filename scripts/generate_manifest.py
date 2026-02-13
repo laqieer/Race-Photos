@@ -170,6 +170,10 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                         break
                 if race_data["city"]:
                     break
+            # Check for GPX route file
+            route_file = Path("docs/routes") / (race_name + ".gpx")
+            if route_file.exists():
+                race_data["route"] = "routes/" + race_name + ".gpx"
             manifest["races"].append(race_data)
     
     # Sort races by date, latest first
