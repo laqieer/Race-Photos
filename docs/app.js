@@ -280,19 +280,35 @@ class RacePhotosGallery {
     }
 
     /**
-     * Parse GPX XML and return array of {lat, lon, time} trackpoints
+     * Haversine distance between two points in meters
+     */
+    haversine(lat1, lon1, lat2, lon2) {
+        const R = 6371000;
+        const toRad = d => d * Math.PI / 180;
+        const dLat = toRad(lat2 - lat1), dLon = toRad(lon2 - lon1);
+        const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+        return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    }
+
+    /**
+     * Parse GPX XML and return array of {lat, lon, time, dist} trackpoints
      */
     parseGpx(xmlText) {
         const parser = new DOMParser();
         const doc = parser.parseFromString(xmlText, 'text/xml');
         const trkpts = doc.querySelectorAll('trkpt');
         const points = [];
+        let cumDist = 0;
         trkpts.forEach(pt => {
             const lat = parseFloat(pt.getAttribute('lat'));
             const lon = parseFloat(pt.getAttribute('lon'));
             const timeEl = pt.querySelector('time');
             if (timeEl && !isNaN(lat) && !isNaN(lon)) {
-                points.push({ lat, lon, time: new Date(timeEl.textContent).getTime() });
+                if (points.length > 0) {
+                    const prev = points[points.length - 1];
+                    cumDist += this.haversine(prev.lat, prev.lon, lat, lon);
+                }
+                points.push({ lat, lon, time: new Date(timeEl.textContent).getTime(), dist: cumDist });
             }
         });
         return points;
@@ -307,7 +323,7 @@ class RacePhotosGallery {
     }
 
     /**
-     * Interpolate lat/lon from GPX trackpoints for a given UTC time
+     * Interpolate lat/lon/dist from GPX trackpoints for a given UTC time
      */
     interpolatePosition(trackpoints, utcMs) {
         if (!trackpoints.length) return null;
@@ -326,7 +342,8 @@ class RacePhotosGallery {
         const ratio = (utcMs - a.time) / (b.time - a.time);
         return {
             lat: a.lat + (b.lat - a.lat) * ratio,
-            lon: a.lon + (b.lon - a.lon) * ratio
+            lon: a.lon + (b.lon - a.lon) * ratio,
+            dist: a.dist + (b.dist - a.dist) * ratio
         };
     }
 
@@ -399,23 +416,21 @@ class RacePhotosGallery {
                             // Round to ~10m precision for grouping
                             const key = `${pos.lat.toFixed(4)},${pos.lon.toFixed(4)}`;
                             if (!locationGroups[key]) {
-                                locationGroups[key] = { lat: pos.lat, lon: pos.lon, photos: [] };
+                                locationGroups[key] = { lat: pos.lat, lon: pos.lon, dist: pos.dist, photos: [] };
                             }
                             locationGroups[key].photos.push(photo);
                         });
 
-                        const groupList = Object.values(locationGroups).sort((a, b) =>
-                            (a.photos[0].timestamp || '').localeCompare(b.photos[0].timestamp || '')
-                        );
+                        const fmtDist = (m) => m >= 1000 ? (m / 1000).toFixed(1) + ' km' : Math.round(m) + ' m';
 
-                        let groupIdx = 0;
+                        const groupList = Object.values(locationGroups).sort((a, b) => a.dist - b.dist);
+
                         groupList.forEach(group => {
-                            groupIdx++;
+                            const distLabel = fmtDist(group.dist);
                             const marker = L.circleMarker([group.lat, group.lon], {
                                 radius: 8, fillColor: '#e74c3c', color: '#fff',
                                 weight: 2, fillOpacity: 0.9
                             }).addTo(map);
-                            group.index = groupIdx;
                             const thumbs = group.photos.map(p =>
                                 `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`
                             ).join('');
@@ -424,7 +439,7 @@ class RacePhotosGallery {
                             marker.bindPopup(
                                 `<div class="map-photo-popup">` +
                                 `<div class="map-photo-scroll">${thumbs}</div>` +
-                                `<div class="map-photo-time">#${groupIdx} ${timeLabel}${countLabel}</div></div>`,
+                                `<div class="map-photo-time">${distLabel} • ${timeLabel}${countLabel}</div></div>`,
                                 { maxWidth: 300, minWidth: 120 }
                             );
                         });
@@ -436,9 +451,10 @@ class RacePhotosGallery {
                         const sourcesContainer = document.createElement('div');
                         sourcesContainer.className = 'sources-container';
                         groupList.forEach(group => {
+                            const distLabel = fmtDist(group.dist);
                             sourcesContainer.appendChild(
                                 this.createSourceSection(
-                                    `#${group.index} — ${group.photos[0].timestamp}`,
+                                    `${distLabel} — ${group.photos[0].timestamp}`,
                                     group.photos
                                 )
                             );
