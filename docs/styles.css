@@ -231,6 +231,15 @@ a.race-card {
     text-decoration: underline;
 }
 
+/* Map */
+.race-map {
+    height: 400px;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
 /* Footer */
 footer {
     text-align: center;

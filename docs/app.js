@@ -247,6 +247,39 @@ class RacePhotosGallery {
         card.appendChild(raceHeader);
         card.appendChild(sourcesContainer);
         this.racesContainer.appendChild(card);
+
+        // Add map if any photos have GPS data
+        const gpsPhotos = [];
+        race.sources.forEach(source => {
+            source.photos.forEach(photo => {
+                if (photo.lat && photo.lon) {
+                    gpsPhotos.push(photo);
+                }
+            });
+        });
+
+        if (gpsPhotos.length > 0 && typeof L !== 'undefined') {
+            const mapContainer = document.createElement('div');
+            mapContainer.id = 'race-map';
+            mapContainer.className = 'race-map';
+            // Insert map before the race card
+            this.racesContainer.insertBefore(mapContainer, card);
+
+            const map = L.map('race-map');
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            const bounds = L.latLngBounds();
+            gpsPhotos.forEach(photo => {
+                const marker = L.marker([photo.lat, photo.lon]).addTo(map);
+                const thumbUrl = photo.url;
+                marker.bindPopup(`<img src="${thumbUrl}" style="max-width:200px;max-height:150px;cursor:pointer" onclick="window.galleryInstance.openLightbox('${thumbUrl}')">`);
+                bounds.extend([photo.lat, photo.lon]);
+            });
+
+            map.fitBounds(bounds, { padding: [30, 30], maxZoom: 16 });
+        }
     }
 
     /**
@@ -261,5 +294,6 @@ class RacePhotosGallery {
 // Initialize the gallery when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     const gallery = new RacePhotosGallery();
+    window.galleryInstance = gallery;
     gallery.render();
 });

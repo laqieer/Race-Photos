@@ -77,6 +77,29 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
             source_name = source_dir.name
             photos = []
             
+            # Load GPS data from photos_list.json if available
+            gps_lookup = {}
+            photos_list_file = source_dir / "photos_list.json"
+            if photos_list_file.exists():
+                try:
+                    with open(photos_list_file, 'r', encoding='utf-8') as f:
+                        photos_data = json.load(f)
+                    photo_list = []
+                    if 'result' in photos_data and 'topicInfoList' in photos_data['result']:
+                        photo_list = photos_data['result']['topicInfoList']
+                    elif 'topicInfoList' in photos_data:
+                        photo_list = photos_data['topicInfoList']
+                    for p in photo_list:
+                        url_hq = p.get('url_hq', '')
+                        if url_hq:
+                            fname = url_hq.rsplit('/', 1)[-1]
+                            lat = p.get('gps_latitude')
+                            lon = p.get('gps_longitude')
+                            if lat and lon:
+                                gps_lookup[fname] = {"lat": lat, "lon": lon}
+                except (IOError, json.JSONDecodeError):
+                    pass
+            
             # Scan for photos within each source
             for photo_file in sorted(source_dir.iterdir()):
                 if photo_file.is_file() and not photo_file.name.startswith('.'):
@@ -85,10 +108,15 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                     if ext in ['.jpg', '.jpeg', '.png', '.gif', '.webp']:
                         # Use relative path from docs directory
                         relative_path = photo_file.relative_to(Path('docs'))
-                        photos.append({
+                        entry = {
                             "url": relative_path.as_posix(),
                             "name": photo_file.name
-                        })
+                        }
+                        gps = gps_lookup.get(photo_file.name)
+                        if gps:
+                            entry["lat"] = gps["lat"]
+                            entry["lon"] = gps["lon"]
+                        photos.append(entry)
             
             if photos:
                 race_data["sources"].append({
