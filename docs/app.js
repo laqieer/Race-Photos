@@ -178,7 +178,7 @@ class RacePhotosGallery {
     }
 
     /**
-     * Render the overview page with race cards and map
+     * Render the overview page with stats, race cards and map
      */
     renderOverview() {
         this.racesContainer.innerHTML = '';
@@ -196,6 +196,25 @@ class RacePhotosGallery {
             this.racesContainer.appendChild(emptyState);
             return;
         }
+
+        // Compute stats
+        const races = this.manifest.races;
+        const totalRaces = races.length;
+        const totalPhotos = races.reduce((sum, r) => sum + r.sources.reduce((s, src) => s + src.photos.length, 0), 0);
+        const countries = new Set(races.map(r => r.country).filter(Boolean));
+        const provinces = new Set(races.map(r => r.province).filter(Boolean));
+        const cities = new Set(races.map(r => r.city).filter(Boolean));
+
+        const statsBar = document.createElement('div');
+        statsBar.className = 'stats-bar';
+        statsBar.innerHTML = `
+            <div class="stat-item"><span class="stat-value">${totalRaces}</span><span class="stat-label">Races</span></div>
+            <div class="stat-item"><span class="stat-value">${countries.size}</span><span class="stat-label">Countries</span></div>
+            <div class="stat-item"><span class="stat-value">${provinces.size}</span><span class="stat-label">Provinces</span></div>
+            <div class="stat-item"><span class="stat-value">${cities.size}</span><span class="stat-label">Cities</span></div>
+            <div class="stat-item"><span class="stat-value">${totalPhotos}</span><span class="stat-label">Photos</span></div>
+        `;
+        this.racesContainer.appendChild(statsBar);
 
         // Add map showing all races
         const racesWithGps = this.manifest.races.filter(race =>

@@ -3,6 +3,9 @@
     {
       "name": "\u4e2d\u56fd\u4f53\u80b2\u5f69\u7968\u676f_2024_\u7ea2\u6811\u6797\u4e4b\u57ce_\u6e5b\u6c5f\u534a\u7a0b\u9a6c\u62c9\u677e\u8d5b",
       "date": "2024-01-21",
+      "city": "\u6e5b\u6c5f",
+      "province": "\u5e7f\u4e1c",
+      "country": "\u4e2d\u56fd",
       "sources": [
         {
           "name": "runnerbar",
@@ -668,6 +671,9 @@
     {
       "name": "2023\u4e0a\u5408\u6606\u660e\u9a6c\u62c9\u677e",
       "date": "2023-12-31",
+      "city": "\u6606\u660e",
+      "province": "\u4e91\u5357",
+      "country": "\u4e2d\u56fd",
       "sources": [
         {
           "name": "runnerbar",
@@ -745,6 +751,9 @@
     {
       "name": "\u82cf\u5dde\u73af\u9633\u5c71\u534a\u7a0b\u9a6c\u62c9\u677e",
       "date": "2023-12-10",
+      "city": "\u82cf\u5dde",
+      "province": "\u6c5f\u82cf",
+      "country": "\u4e2d\u56fd",
       "sources": [
         {
           "name": "runnerbar",
@@ -1002,6 +1011,9 @@
     {
       "name": "2023\u5f20\u5bb6\u6e2f\u4e1c\u6e21\u534a\u7a0b\u9a6c\u62c9\u677e",
       "date": "2023-12-02",
+      "city": "\u5f20\u5bb6\u6e2f",
+      "province": "\u6c5f\u82cf",
+      "country": "\u4e2d\u56fd",
       "sources": [
         {
           "name": "runnerbar",
@@ -1073,6 +1085,9 @@
     {
       "name": "2023\u82cf\u5dde_\u73af\u592a\u6e561\u53f7\u516c\u8def_\u9a6c\u62c9\u677e",
       "date": "2023-11-18",
+      "city": "\u82cf\u5dde",
+      "province": "\u6c5f\u82cf",
+      "country": "\u4e2d\u56fd",
       "sources": [
         {
           "name": "runnerbar",
@@ -1162,6 +1177,9 @@
     {
       "name": "\u5e38\u719f\u94f6\u884c2023\u5e38\u719f\u5c1a\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e",
       "date": "2023-10-28",
+      "city": "\u5e38\u719f",
+      "province": "\u6c5f\u82cf",
+      "country": "\u4e2d\u56fd",
       "sources": [
         {
           "name": "runnerbar",

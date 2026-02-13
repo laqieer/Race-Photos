@@ -13,6 +13,25 @@ from pathlib import Path
 from typing import Dict, List
 
 
+# Known race locations derived from GPS coordinates
+# Format: (lat_min, lat_max, lon_min, lon_max) -> (city, province, country)
+LOCATION_TABLE = {
+    "常熟": ("常熟", "江苏", "中国"),
+    "苏州": ("苏州", "江苏", "中国"),
+    "张家港": ("张家港", "江苏", "中国"),
+    "昆明": ("昆明", "云南", "中国"),
+    "湛江": ("湛江", "广东", "中国"),
+}
+
+
+def _guess_location(race_name: str) -> Dict:
+    """Guess city/province/country from race name keywords."""
+    for keyword, (city, province, country) in LOCATION_TABLE.items():
+        if keyword in race_name:
+            return {"city": city, "province": province, "country": country}
+    return {}
+
+
 def generate_manifest(base_dir: str = "docs/images") -> Dict:
     """
     Scan the images directory and generate a manifest.
@@ -48,9 +67,13 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
             continue
         
         race_name = race_dir.name
+        location = _guess_location(race_name)
         race_data = {
             "name": race_name,
             "date": "",
+            "city": location.get("city", ""),
+            "province": location.get("province", ""),
+            "country": location.get("country", ""),
             "sources": []
         }
         
