@@ -405,6 +405,26 @@ class RacePhotosGallery {
                             color: '#667eea', weight: 4, opacity: 0.8
                         }).addTo(map);
 
+                        // Add km distance markers along the route
+                        const totalDist = trackpoints[trackpoints.length - 1].dist;
+                        for (let km = 1; km * 1000 <= totalDist; km++) {
+                            const targetDist = km * 1000;
+                            // Find trackpoint segment crossing this distance
+                            let i = 0;
+                            while (i < trackpoints.length - 1 && trackpoints[i + 1].dist < targetDist) i++;
+                            const a = trackpoints[i], b = trackpoints[i + 1];
+                            const ratio = (targetDist - a.dist) / (b.dist - a.dist);
+                            const lat = a.lat + (b.lat - a.lat) * ratio;
+                            const lon = a.lon + (b.lon - a.lon) * ratio;
+                            const kmIcon = L.divIcon({
+                                className: 'km-marker-icon',
+                                html: `<div class="km-marker">${km}</div>`,
+                                iconSize: [20, 20],
+                                iconAnchor: [10, 10]
+                            });
+                            L.marker([lat, lon], { icon: kmIcon, interactive: false }).addTo(map);
+                        }
+
                         // Group photos by time proximity (merge within 60s)
                         const allPhotos = race.sources.flatMap(s => s.photos);
                         const photoPositions = [];
