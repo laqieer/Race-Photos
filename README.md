@@ -12,6 +12,7 @@ Race-Photos/
 │   ├── download_yipai360.py    # Download photos from Yipai360 API
 │   ├── download_photoplus.py   # Download photos from PhotoPlus API
 │   ├── download_pailixiang.py  # Download photos from Pailixiang API
+│   ├── download_runff.py      # Download photos from RunFF API
 │   ├── generate_manifest.py    # Generate gallery manifest
 │   ├── serve.py               # Local dev server (no cache)
 │   ├── requirements.txt        # Python dependencies
@@ -170,6 +171,35 @@ The script will:
 2. Search photos by bib number
 3. Download original photos to `docs/images/{race_name}/pailixiang/`
 4. Set file timestamps from ShootTime metadata
+
+### Download from RunFF API
+
+Download photos from RunFF (www.runff.com / chinarun.com) using bib number search:
+
+```bash
+# You need three IDs from the browser's network request:
+# 1. race-id: from the URL (e.g., "4039" from s4039.html)
+# 2. fid: from the getPhotoList request body <fid> field
+# 3. bib: your bib number (e.g., "B30483")
+
+# Authentication cookie is required - copy it from browser DevTools
+python scripts/download_runff.py \
+  --race-id 4039 \
+  --fid 24584147 \
+  --bib B30483 \
+  --race-name "苏州环阳山半程马拉松" \
+  --cookie "bxmssmemberinfo=userinfo=..."
+
+# Update gallery
+python scripts/generate_manifest.py
+```
+
+To find the parameters: open the race page on RunFF WeChat mini program, search your bib number, then check the POST request in DevTools for the XML body containing `<fid>` and `<number>` fields.
+
+The script will:
+1. Search photos by bib number via the XML API
+2. Download "big" resolution photos from CDN (`p.chinarun.com`)
+3. Set file timestamps from Unix timestamp metadata
 
 ### Download from Different Sources
 

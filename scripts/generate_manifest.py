@@ -211,6 +211,22 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                     meta["timestamp"] = shoot_time
                                 if meta:
                                     photo_meta[fname] = meta
+                    # RunFF format (list of dicts with big/small/ts)
+                    if isinstance(photos_data, list) and photos_data and 'big' in photos_data[0]:
+                        for p in photos_data:
+                            big_path = p.get('big', '')
+                            if big_path:
+                                fname = big_path.rsplit('/', 1)[-1]
+                                meta = {}
+                                ts = p.get('ts')
+                                if ts:
+                                    try:
+                                        dt = datetime.fromtimestamp(int(ts), tz=timezone(timedelta(hours=8)))
+                                        meta["timestamp"] = dt.strftime("%Y-%m-%d %H:%M:%S")
+                                    except (ValueError, OSError):
+                                        pass
+                                if meta:
+                                    photo_meta[fname] = meta
                 except (IOError, json.JSONDecodeError):
                     pass
             
