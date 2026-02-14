@@ -39,6 +39,18 @@ PLACE_LOCATIONS = {
     "广东湛江": ("湛江", "广东", "中国"),
 }
 
+# City center coordinates for map display fallback
+CITY_COORDS = {
+    "苏州": (31.2990, 120.5853),
+    "无锡": (31.4912, 120.3119),
+    "常熟": (31.6538, 120.7522),
+    "张家港": (31.8756, 120.5536),
+    "昆明": (25.0389, 102.7183),
+    "湛江": (21.2707, 110.3594),
+}
+
+
+
 
 def _lookup_location_by_place(place: str) -> Dict:
     """Look up city/province/country from place string like '江苏苏州'."""
@@ -308,6 +320,28 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
             route_file = Path("docs/routes") / (race_name + ".gpx")
             if route_file.exists():
                 race_data["route"] = "routes/" + race_name + ".gpx"
+            # Set race-level lat/lon: prefer GPX route starting point, then city center
+            if route_file.exists():
+                try:
+                    import xml.etree.ElementTree as ET
+                    tree = ET.parse(route_file)
+                    ns = {'gpx': 'http://www.topografix.com/GPX/1/1'}
+                    trkpt = tree.find('.//gpx:trkpt', ns)
+                    if trkpt is None:
+                        trkpt = tree.find('.//{http://www.topografix.com/GPX/1/1}trkpt')
+                    if trkpt is None:
+                        trkpt = tree.find('.//trkpt')
+                    if trkpt is not None:
+                        race_data["lat"] = float(trkpt.get('lat'))
+                        race_data["lon"] = float(trkpt.get('lon'))
+                except Exception:
+                    pass
+            # Fallback: city center coordinates
+            if "lat" not in race_data and race_data["city"]:
+                coords = CITY_COORDS.get(race_data["city"])
+                if coords:
+                    race_data["lat"] = coords[0]
+                    race_data["lon"] = coords[1]
             manifest["races"].append(race_data)
     
     # Sort races by date, latest first

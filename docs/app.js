@@ -218,7 +218,7 @@ class RacePhotosGallery {
 
         // Add map showing all races
         const racesWithLocation = this.manifest.races.filter(race =>
-            race.sources.some(s => s.photos.some(p => p.lat && p.lon)) || race.city
+            race.sources.some(s => s.photos.some(p => p.lat && p.lon)) || (race.lat && race.lon) || race.city
         );
 
         if (racesWithLocation.length > 0 && typeof L !== 'undefined') {
@@ -252,13 +252,21 @@ class RacePhotosGallery {
                 // Second pass: group all races
                 racesWithLocation.forEach(race => {
                     let lat, lon;
-                    for (const s of race.sources) {
-                        for (const p of s.photos) {
-                            if (p.lat && p.lon) { lat = p.lat; lon = p.lon; break; }
-                        }
-                        if (lat) break;
+                    // Prefer race-level coordinates (from GPX route or city)
+                    if (race.lat && race.lon) {
+                        lat = race.lat;
+                        lon = race.lon;
                     }
-                    // Fallback to city coordinates for races without GPS
+                    // Fallback to photo-level GPS
+                    if (!lat) {
+                        for (const s of race.sources) {
+                            for (const p of s.photos) {
+                                if (p.lat && p.lon) { lat = p.lat; lon = p.lon; break; }
+                            }
+                            if (lat) break;
+                        }
+                    }
+                    // Fallback to city coordinates from other races
                     if (!lat && race.city && cityCoords[race.city]) {
                         lat = cityCoords[race.city].lat;
                         lon = cityCoords[race.city].lon;
