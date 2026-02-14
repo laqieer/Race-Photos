@@ -1789,6 +1789,25 @@
       "route": "routes/2023\u82cf\u5dde_\u73af\u592a\u6e561\u53f7\u516c\u8def_\u9a6c\u62c9\u677e.gpx"
     },
     {
+      "name": "2023COLMO\u73af\u8821\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e",
+      "date": "2023-11-05",
+      "city": "",
+      "province": "",
+      "country": "",
+      "sources": [
+        {
+          "name": "ihuipao",
+          "photos": [
+            {
+              "url": "images/2023COLMO\u73af\u8821\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e/ihuipao/20231105_125850_656efeeeda1cd.jpg",
+              "name": "20231105_125850_656efeeeda1cd.jpg",
+              "timestamp": "2023-11-05 12:58:50"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "\u5e38\u719f\u94f6\u884c2023\u5e38\u719f\u5c1a\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e",
       "date": "2023-10-28",
       "city": "\u82cf\u5dde",

@@ -32,6 +32,7 @@ def _lookup_location_by_gps(lat: float, lon: float) -> Dict:
 # Place string to location mapping: "省份城市" -> (city, province, country)
 PLACE_LOCATIONS = {
     "江苏苏州": ("苏州", "江苏", "中国"),
+    "江苏无锡": ("无锡", "江苏", "中国"),
     "江苏常熟": ("常熟", "江苏", "中国"),
     "江苏张家港": ("张家港", "江苏", "中国"),
     "云南昆明": ("昆明", "云南", "中国"),
@@ -122,21 +123,29 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                         race_data["date"] = dt.strftime("%Y-%m-%d")
                         break
                     # Yipai360 format
-                    begin_time = race_info.get('data', {}).get('beginTime')
-                    if begin_time:
-                        dt = datetime.fromtimestamp(begin_time, tz=timezone(timedelta(hours=8)))
-                        race_data["date"] = dt.strftime("%Y-%m-%d")
-                    place = race_info.get('data', {}).get('place', '')
-                    if place:
-                        race_place = place
+                    data_field = race_info.get('data', {})
+                    if isinstance(data_field, dict):
+                        begin_time = data_field.get('beginTime')
+                        if begin_time:
+                            dt = datetime.fromtimestamp(begin_time, tz=timezone(timedelta(hours=8)))
+                            race_data["date"] = dt.strftime("%Y-%m-%d")
+                        place = data_field.get('place', '')
+                        if place:
+                            race_place = place
                     if race_data["date"]:
                         break
                     # Pailixiang / generic format
                     if not race_data["date"] and race_info.get('date'):
                         race_data["date"] = race_info['date']
-                    place = race_info.get('place', '') or place
+                    place = race_info.get('place', '') or race_place
                     if place:
                         race_place = place
+                    if race_data["date"]:
+                        break
+                    # iHuiPao format
+                    cutdown = race_info.get('cutdown', '')
+                    if cutdown:
+                        race_data["date"] = cutdown[:10]
                     if race_data["date"]:
                         break
                 except (IOError, json.JSONDecodeError, ValueError, TypeError):
@@ -209,6 +218,21 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                 shoot_time = p.get('ShootTime', '')
                                 if shoot_time:
                                     meta["timestamp"] = shoot_time
+                                if meta:
+                                    photo_meta[fname] = meta
+                    # iHuiPao format (list of dicts with shoot_at/origin)
+                    if isinstance(photos_data, list) and photos_data and 'shoot_at' in photos_data[0]:
+                        for p in photos_data:
+                            origin = p.get('origin', '')
+                            shoot_at = p.get('shoot_at', '')
+                            if origin:
+                                fname = origin.rsplit('/', 1)[-1].split('?')[0]
+                                if shoot_at:
+                                    ts_prefix = shoot_at.replace('-', '').replace(' ', '_').replace(':', '')
+                                    fname = f"{ts_prefix}_{fname}"
+                                meta = {}
+                                if shoot_at:
+                                    meta["timestamp"] = shoot_at
                                 if meta:
                                     photo_meta[fname] = meta
                     # RunFF format (list of dicts with big/small/ts)

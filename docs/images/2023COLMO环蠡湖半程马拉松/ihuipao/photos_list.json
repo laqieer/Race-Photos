@@ -1,0 +1,127 @@
+[
+  {
+    "id": "L51XZa20wJY5GjAM6vG9",
+    "uid": "yEKg2G80L7By5joMndz3",
+    "albumid": 246,
+    "watermask": 0,
+    "md5": "8356f5cfabad72686c64349f34ff8c76",
+    "uniqid": "",
+    "filename": "/tree/2769-0737:DCIM/document/2769-0737:DCIM/101EOS1D/BB1I1804.JPG",
+    "size": 3185025,
+    "url": "//weruns3.obs.cn-east-3.myhuaweicloud.com/246/middle/654747d986fd1.jpg?x-image-process=image/rotate,0/resize,w_1000",
+    "origin": "//weruns3.obs.cn-east-3.myhuaweicloud.com/photo/origin/656efeeeda1cd.jpg",
+    "shoot_at": "2023-11-05 12:58:50",
+    "geo": null,
+    "orientation": 0,
+    "make": "",
+    "width": 4320,
+    "height": 2880,
+    "paynum": 0,
+    "face_num": 2,
+    "bright": 0,
+    "contrast": 0,
+    "sharpen": 0,
+    "blur_r": 0,
+    "blur_s": 0,
+    "quality_at": null,
+    "visible": 1,
+    "netdiskid": 0,
+    "apply_at": "2024-04-18 12:50:39",
+    "ocr": "SHANGHA",
+    "ocr_at": null,
+    "created_at": "2023-11-05 15:44:25",
+    "updated_at": "2023-12-05 18:43:59",
+    "deleted_at": null,
+    "faces": [
+      {
+        "id": 7717794,
+        "photo_id": 2958160,
+        "face_set": "faceset17",
+        "x": 378,
+        "y": 37,
+        "width": 60,
+        "height": 69,
+        "faceid": "VrRrjsYg",
+        "created_at": "2023-11-05 15:44:26",
+        "updated_at": "2023-11-05 15:44:26",
+        "deleted_at": null,
+        "url": "//weruns3.obs.cn-east-3.myhuaweicloud.com/246/middle/654747d986fd1.jpg?x-image-process=image/rotate,0/resize,w_1000/crop,h_83,w_83,x_367,y_30"
+      },
+      {
+        "id": 7717795,
+        "photo_id": 2958160,
+        "face_set": "faceset17",
+        "x": 172,
+        "y": 248,
+        "width": 42,
+        "height": 48,
+        "faceid": "e8ELCpFH",
+        "created_at": "2023-11-05 15:44:26",
+        "updated_at": "2023-11-05 15:44:26",
+        "deleted_at": null,
+        "url": "//weruns3.obs.cn-east-3.myhuaweicloud.com/246/middle/654747d986fd1.jpg?x-image-process=image/rotate,0/resize,w_1000/crop,h_58,w_58,x_164,y_243"
+      }
+    ],
+    "bib": [
+      {
+        "id": 1430195,
+        "photo_id": 2958160,
+        "bib": "20719",
+        "created_at": "2023-11-05 15:44:27",
+        "updated_at": "2023-11-05 15:44:27",
+        "deleted_at": null
+      },
+      {
+        "id": 1430196,
+        "photo_id": 2958160,
+        "bib": "029",
+        "created_at": "2023-11-05 15:44:27",
+        "updated_at": "2023-11-05 15:44:27",
+        "deleted_at": null
+      },
+      {
+        "id": 1430197,
+        "photo_id": 2958160,
+        "bib": "19056",
+        "created_at": "2023-11-05 15:44:27",
+        "updated_at": "2023-11-05 15:44:27",
+        "deleted_at": null
+      },
+      {
+        "id": 1430198,
+        "photo_id": 2958160,
+        "bib": "1906",
+        "created_at": "2023-11-05 15:44:27",
+        "updated_at": "2023-11-05 15:44:27",
+        "deleted_at": null
+      }
+    ],
+    "water": [
+      {
+        "id": 99,
+        "albumid": 246,
+        "name": "COLMO",
+        "watermask": "//stor.ihuipao.com/image/9ab8992768e058e50be8cbab843190a5.png",
+        "width": 100,
+        "position": "bottom",
+        "x": 0,
+        "y": 0,
+        "weight": 60,
+        "created_at": "2023-11-03 10:37:05",
+        "updated_at": "2023-11-03 10:37:05",
+        "deleted_at": null,
+        "hashid": "NVMOAJr4DZY9mwlezPka"
+      }
+    ],
+    "user": {
+      "id": 1942839,
+      "avatar": "//stor.ihuipao.com/image/dae4880cb200c1fb450fb6d6c1f133cb.jpg?imageView2/1/w/300/q/100",
+      "name": "寒絮한솜",
+      "gender": "",
+      "mobile": "13511210623",
+      "idnum": "",
+      "hashid": "yEKg2G80L7By5joMndz3",
+      "uid": 1942839
+    }
+  }
+]
