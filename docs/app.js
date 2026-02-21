@@ -433,7 +433,6 @@ class RacePhotosGallery {
         // Compute pace (min/km) using rolling window
         const PACE_WINDOW = 30; // seconds
         const timeLabels = [];
-        const distLabels = [];
         const elevationData = [];
         const paceData = [];
         const hrData = [];
@@ -446,9 +445,6 @@ class RacePhotosGallery {
             const mm = String(localTime.getUTCMinutes()).padStart(2, '0');
             const ss = String(localTime.getUTCSeconds()).padStart(2, '0');
             timeLabels.push(`${hh}:${mm}:${ss}`);
-
-            // Distance label in km
-            distLabels.push((pt.dist / 1000).toFixed(2));
 
             // Elevation
             elevationData.push(pt.ele != null ? pt.ele : null);
@@ -475,20 +471,10 @@ class RacePhotosGallery {
 
         const chartContainer = document.createElement('div');
         chartContainer.className = 'gpx-chart-container';
-
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'chart-axis-toggle';
-        toggleBtn.textContent = 'X: Time';
-        container.appendChild(toggleBtn);
-
         const canvas = document.createElement('canvas');
         canvas.id = 'gpx-chart';
         chartContainer.appendChild(canvas);
         container.appendChild(chartContainer);
-
-        // Set canvas size from container after layout
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
 
         const datasets = [
             {
@@ -514,7 +500,7 @@ class RacePhotosGallery {
         ];
 
         const scales = {
-            x: { ticks: { maxTicksLimit: 10, font: { size: 10 } }, title: { display: true, text: 'Time', font: { size: 11 } } },
+            x: { ticks: { maxTicksLimit: 10, font: { size: 10 } } },
             yEle: {
                 type: 'linear', position: 'left',
                 title: { display: true, text: 'Elevation (m)', color: '#667eea' },
@@ -547,7 +533,7 @@ class RacePhotosGallery {
             };
         }
 
-        const chart = new Chart(canvas, {
+        new Chart(canvas, {
             type: 'line',
             data: { labels: timeLabels, datasets },
             options: {
@@ -581,15 +567,6 @@ class RacePhotosGallery {
                 },
                 scales
             }
-        });
-
-        let showDist = false;
-        toggleBtn.addEventListener('click', () => {
-            showDist = !showDist;
-            toggleBtn.textContent = showDist ? 'X: Distance' : 'X: Time';
-            chart.data.labels = showDist ? distLabels : timeLabels;
-            chart.options.scales.x.title.text = showDist ? 'Distance (km)' : 'Time';
-            chart.update('none');
         });
     }
 

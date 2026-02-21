@@ -316,28 +316,8 @@ a.race-card {
 /* GPX Chart */
 .gpx-chart-container {
     width: 100%;
-    height: 220px;
-    max-height: 220px;
-    padding: 0 1.5rem 1rem;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.chart-axis-toggle {
-    float: right;
-    margin: 0 1.5rem 0.25rem 0;
-    padding: 3px 10px;
-    font-size: 11px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: #f8f8f8;
-    cursor: pointer;
-    color: #555;
-}
-
-.chart-axis-toggle:hover {
-    background: #eee;
-    border-color: #999;
+    height: 250px;
+    padding: 1rem 1.5rem;
 }
 
 /* Map legend */
