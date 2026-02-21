@@ -155,11 +155,29 @@ a.race-card {
     transform: scale(1.05);
 }
 
-.photo-item img {
+.photo-item img,
+.photo-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.photo-item.video-item::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+
+.photo-item.video-item:hover::after {
+    opacity: 0;
 }
 
 .photo-item .photo-placeholder {

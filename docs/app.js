@@ -20,9 +20,7 @@ class RacePhotosGallery {
         this.lightbox.className = 'lightbox';
         this.lightbox.innerHTML = `
             <span class="lightbox-close">&times;</span>
-            <div class="lightbox-content">
-                <img src="" alt="Full size photo">
-            </div>
+            <div class="lightbox-content"></div>
         `;
         document.body.appendChild(this.lightbox);
 
@@ -48,9 +46,14 @@ class RacePhotosGallery {
     /**
      * Open lightbox with specified image
      */
-    openLightbox(imageSrc) {
-        const img = this.lightbox.querySelector('img');
-        img.src = imageSrc;
+    openLightbox(mediaSrc) {
+        const content = this.lightbox.querySelector('.lightbox-content');
+        const isVideo = /\.(mp4|mov|webm)$/i.test(mediaSrc);
+        if (isVideo) {
+            content.innerHTML = `<video src="${mediaSrc}" controls autoplay style="max-width:90vw;max-height:90vh"></video>`;
+        } else {
+            content.innerHTML = `<img src="${mediaSrc}" alt="Full size photo">`;
+        }
         this.lightbox.classList.add('active');
     }
 
@@ -58,6 +61,8 @@ class RacePhotosGallery {
      * Close the lightbox
      */
     closeLightbox() {
+        const video = this.lightbox.querySelector('video');
+        if (video) video.pause();
         this.lightbox.classList.remove('active');
     }
 
@@ -104,15 +109,27 @@ class RacePhotosGallery {
         photos.forEach((photo) => {
             const photoItem = document.createElement('div');
             photoItem.className = 'photo-item';
+            const isVideo = /\.(mp4|mov|webm)$/i.test(photo.url);
 
-            const img = document.createElement('img');
-            img.src = photo.url;
-            img.alt = photo.name;
-            img.loading = 'lazy';
+            if (isVideo) {
+                photoItem.classList.add('video-item');
+                const video = document.createElement('video');
+                video.src = photo.url;
+                video.muted = true;
+                video.loop = true;
+                video.playsInline = true;
+                video.preload = 'metadata';
+                video.addEventListener('mouseenter', () => video.play());
+                video.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+                photoItem.appendChild(video);
+            } else {
+                const img = document.createElement('img');
+                img.src = photo.url;
+                img.alt = photo.name;
+                img.loading = 'lazy';
+                photoItem.appendChild(img);
+            }
 
-            photoItem.appendChild(img);
-
-            // Add click handler for lightbox
             photoItem.addEventListener('click', () => {
                 this.openLightbox(photo.url);
             });
@@ -720,9 +737,13 @@ class RacePhotosGallery {
                             });
                             const marker = L.marker([group.lat, group.lon], { icon });
                             marker._photoCount = count;
-                            const thumbs = group.photos.map(p =>
-                                `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`
-                            ).join('');
+                            const thumbs = group.photos.map(p => {
+                                const isVid = /\.(mp4|mov|webm)$/i.test(p.url);
+                                if (isVid) {
+                                    return `<video src="${p.url}" muted loop playsinline preload="metadata" style="cursor:pointer;max-height:120px" onclick="window.galleryInstance.openLightbox('${p.url}')" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`;
+                                }
+                                return `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`;
+                            }).join('');
                             const timeLabel = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
                             const countLabel = group.photos.length > 1 ? ` (${group.photos.length} photos)` : '';
                             marker.bindPopup(

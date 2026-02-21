@@ -197,9 +197,10 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                             mi = p.get('meta_info', '{}')
                             try:
                                 mi_data = json.loads(mi) if isinstance(mi, str) else mi
-                                dt = mi_data.get('DateTimeOriginal', '')
-                                if dt:
-                                    meta["timestamp"] = dt.replace(':', '-', 2)
+                                if mi_data:
+                                    dt = mi_data.get('DateTimeOriginal', '')
+                                    if dt:
+                                        meta["timestamp"] = dt.replace(':', '-', 2)
                             except (json.JSONDecodeError, ValueError):
                                 pass
                             if meta:
@@ -271,7 +272,7 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                 if photo_file.is_file() and not photo_file.name.startswith('.'):
                     # Check if it's an image file
                     ext = photo_file.suffix.lower()
-                    if ext in ['.jpg', '.jpeg', '.png', '.gif', '.webp']:
+                    if ext in ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.mp4']:
                         # Use relative path from docs directory
                         relative_path = photo_file.relative_to(Path('docs'))
                         entry = {
