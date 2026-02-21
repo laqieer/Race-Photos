@@ -481,15 +481,17 @@ class RacePhotosGallery {
         toggleBtn.textContent = 'X: Time';
         container.appendChild(toggleBtn);
 
-        const canvasWrapper = document.createElement('div');
-        canvasWrapper.style.position = 'relative';
-        canvasWrapper.style.width = '100%';
-        canvasWrapper.style.height = '100%';
         const canvas = document.createElement('canvas');
         canvas.id = 'gpx-chart';
-        canvasWrapper.appendChild(canvas);
-        chartContainer.appendChild(canvasWrapper);
+        chartContainer.appendChild(canvas);
         container.appendChild(chartContainer);
+
+        // Set canvas size explicitly after it's in the DOM
+        const resizeCanvas = () => {
+            canvas.width = chartContainer.clientWidth;
+            canvas.height = chartContainer.clientHeight;
+        };
+        requestAnimationFrame(resizeCanvas);
 
         const datasets = [
             {
@@ -552,8 +554,7 @@ class RacePhotosGallery {
             type: 'line',
             data: { labels: timeLabels, datasets },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
+                responsive: false,
                 interaction: { mode: 'index', intersect: false },
                 plugins: {
                     legend: {
@@ -591,6 +592,12 @@ class RacePhotosGallery {
             chart.data.labels = showDist ? distLabels : timeLabels;
             chart.options.scales.x.title.text = showDist ? 'Distance (km)' : 'Time';
             chart.update('none');
+        });
+
+        window.addEventListener('resize', () => {
+            canvas.width = chartContainer.clientWidth;
+            canvas.height = chartContainer.clientHeight;
+            chart.resize();
         });
     }
 
