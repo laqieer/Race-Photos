@@ -486,12 +486,9 @@ class RacePhotosGallery {
         chartContainer.appendChild(canvas);
         container.appendChild(chartContainer);
 
-        // Set canvas size explicitly after it's in the DOM
-        const resizeCanvas = () => {
-            canvas.width = chartContainer.clientWidth;
-            canvas.height = chartContainer.clientHeight;
-        };
-        requestAnimationFrame(resizeCanvas);
+        // Set canvas size from container after layout
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
 
         const datasets = [
             {
@@ -554,7 +551,8 @@ class RacePhotosGallery {
             type: 'line',
             data: { labels: timeLabels, datasets },
             options: {
-                responsive: false,
+                responsive: true,
+                maintainAspectRatio: false,
                 interaction: { mode: 'index', intersect: false },
                 plugins: {
                     legend: {
@@ -592,12 +590,6 @@ class RacePhotosGallery {
             chart.data.labels = showDist ? distLabels : timeLabels;
             chart.options.scales.x.title.text = showDist ? 'Distance (km)' : 'Time';
             chart.update('none');
-        });
-
-        window.addEventListener('resize', () => {
-            canvas.width = chartContainer.clientWidth;
-            canvas.height = chartContainer.clientHeight;
-            chart.resize();
         });
     }
 
