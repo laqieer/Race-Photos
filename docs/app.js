@@ -585,7 +585,7 @@ class RacePhotosGallery {
             toggleBtn.textContent = showDist ? 'X: Distance' : 'X: Time';
             chart.data.labels = showDist ? distLabels : timeLabels;
             chart.options.scales.x.title.text = showDist ? 'Distance (km)' : 'Time';
-            chart.update();
+            chart.update('none');
         });
     }
 
