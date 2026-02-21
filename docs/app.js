@@ -692,8 +692,12 @@ class RacePhotosGallery {
                         const allPhotos = race.sources.flatMap(s => s.photos);
                         const photoPositions = [];
                         const outOfRangePhotos = [];
+                        const noTimestampPhotos = [];
                         allPhotos.forEach(photo => {
-                            if (!photo.timestamp) return;
+                            if (!photo.timestamp) {
+                                noTimestampPhotos.push(photo);
+                                return;
+                            }
                             const utcMs = this.photoTimestampToUtc(photo.timestamp);
                             const pos = this.interpolatePosition(trackpoints, utcMs);
                             if (!pos) {
@@ -826,6 +830,11 @@ class RacePhotosGallery {
                                     this.createSourceSection(timeStr, group.photos)
                                 );
                             });
+                        }
+                        if (noTimestampPhotos.length > 0) {
+                            sourcesContainer.appendChild(
+                                this.createSourceSection('Other', noTimestampPhotos)
+                            );
                         }
                         card.appendChild(sourcesContainer);
                     }, 100);

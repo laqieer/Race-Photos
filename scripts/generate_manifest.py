@@ -195,14 +195,27 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                 meta["lat"] = lat
                                 meta["lon"] = lon
                             mi = p.get('meta_info', '{}')
-                            try:
-                                mi_data = json.loads(mi) if isinstance(mi, str) else mi
-                                if mi_data:
-                                    dt = mi_data.get('DateTimeOriginal', '')
-                                    if dt:
-                                        meta["timestamp"] = dt.replace(':', '-', 2)
-                            except (json.JSONDecodeError, ValueError):
-                                pass
+                            # For videos, meta_info is a URL string, not JSON
+                            if isinstance(mi, str) and mi.startswith('http'):
+                                # Video: file on disk is named from meta_info URL
+                                vid_fname = mi.rsplit('/', 1)[-1]
+                                vid_meta = dict(meta)
+                                # Extract date from filename pattern YYYYMMDD_...
+                                parts = vid_fname.split('_')
+                                if len(parts) >= 1 and len(parts[0]) == 8 and parts[0].isdigit():
+                                    d = parts[0]
+                                    vid_meta["timestamp"] = f"{d[:4]}-{d[4:6]}-{d[6:8]} 00:00:00"
+                                if vid_meta:
+                                    photo_meta[vid_fname] = vid_meta
+                            else:
+                                try:
+                                    mi_data = json.loads(mi) if isinstance(mi, str) else mi
+                                    if mi_data:
+                                        dt = mi_data.get('DateTimeOriginal', '')
+                                        if dt:
+                                            meta["timestamp"] = dt.replace(':', '-', 2)
+                                except (json.JSONDecodeError, ValueError):
+                                    pass
                             if meta:
                                 photo_meta[fname] = meta
                     # Yipai360 format — skip createDateTime (upload time, not capture time)
