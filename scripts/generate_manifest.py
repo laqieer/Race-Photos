@@ -364,13 +364,18 @@ def main():
         json.dump(manifest, f, indent=2)
     
     race_count = len(manifest["races"])
-    photo_count = sum(
-        len(source["photos"])
-        for race in manifest["races"] 
+    all_items = [
+        p for race in manifest["races"]
         for source in race["sources"]
-    )
+        for p in source["photos"]
+    ]
+    video_count = sum(1 for p in all_items if p.get("url", "").lower().endswith((".mp4", ".mov", ".webm")))
+    photo_count = len(all_items) - video_count
     
-    print(f"✓ Manifest generated: {race_count} race(s), {photo_count} photo(s)")
+    counts = f"{photo_count} photo(s)"
+    if video_count:
+        counts += f", {video_count} video(s)"
+    print(f"✓ Manifest generated: {race_count} race(s), {counts}")
     print(f"✓ Saved to: {output_path}")
 
 

@@ -100,6 +100,18 @@ class RacePhotosGallery {
     }
 
     /**
+     * Count photos and videos in an items array, return formatted string
+     */
+    formatMediaCount(items) {
+        const videos = items.filter(p => /\.(mp4|mov|webm)$/i.test(p.url || p.name || '')).length;
+        const photos = items.length - videos;
+        const parts = [];
+        if (photos) parts.push(`${photos} photo${photos !== 1 ? 's' : ''}`);
+        if (videos) parts.push(`${videos} video${videos !== 1 ? 's' : ''}`);
+        return parts.join(', ') || '0 photos';
+    }
+
+    /**
      * Create a photo grid for a source
      */
     createPhotoGrid(photos, source) {
@@ -155,7 +167,7 @@ class RacePhotosGallery {
 
         const count = document.createElement('span');
         count.className = 'photo-count';
-        count.textContent = `${photos.length} photo${photos.length !== 1 ? 's' : ''}`;
+        count.textContent = this.formatMediaCount(photos);
 
         header.appendChild(title);
         header.appendChild(count);
@@ -185,7 +197,8 @@ class RacePhotosGallery {
         info.className = 'race-info';
         const totalPhotos = race.sources.reduce((sum, src) => sum + src.photos.length, 0);
         const dateStr = race.date ? `${race.date} • ` : '';
-        info.textContent = `${dateStr}${race.sources.length} source${race.sources.length !== 1 ? 's' : ''} • ${totalPhotos} photo${totalPhotos !== 1 ? 's' : ''}`;
+        const allItems = race.sources.flatMap(s => s.photos);
+        info.textContent = `${dateStr}${race.sources.length} source${race.sources.length !== 1 ? 's' : ''} • ${this.formatMediaCount(allItems)}`;
 
         raceHeader.appendChild(title);
         raceHeader.appendChild(info);
@@ -217,7 +230,9 @@ class RacePhotosGallery {
         // Compute stats
         const races = this.manifest.races;
         const totalRaces = races.length;
-        const totalPhotos = races.reduce((sum, r) => sum + r.sources.reduce((s, src) => s + src.photos.length, 0), 0);
+        const allMedia = races.flatMap(r => r.sources.flatMap(s => s.photos));
+        const totalVideos = allMedia.filter(p => /\.(mp4|mov|webm)$/i.test(p.url || p.name || '')).length;
+        const totalPhotos = allMedia.length - totalVideos;
         const countries = new Set(races.map(r => r.country).filter(Boolean));
         const provinces = new Set(races.map(r => r.province).filter(Boolean));
         const cities = new Set(races.map(r => r.city).filter(Boolean));
@@ -230,6 +245,7 @@ class RacePhotosGallery {
             <div class="stat-item"><span class="stat-value">${provinces.size}</span><span class="stat-label">Provinces</span></div>
             <div class="stat-item"><span class="stat-value">${cities.size}</span><span class="stat-label">Cities</span></div>
             <div class="stat-item"><span class="stat-value">${totalPhotos}</span><span class="stat-label">Photos</span></div>
+            ${totalVideos ? `<div class="stat-item"><span class="stat-value">${totalVideos}</span><span class="stat-label">Videos</span></div>` : ''}
         `;
         this.racesContainer.appendChild(statsBar);
 
@@ -299,6 +315,7 @@ class RacePhotosGallery {
                     if (!lat) return;
 
                     const totalPhotos = race.sources.reduce((sum, s) => sum + s.photos.length, 0);
+                    const mediaLabel = this.formatMediaCount(race.sources.flatMap(s => s.photos));
                     const icon = L.divIcon({
                         className: 'photo-cluster-icon',
                         html: `<div class="cluster-count">1</div>`,
@@ -307,7 +324,7 @@ class RacePhotosGallery {
                     const marker = L.marker([lat, lon], { icon, raceCount: 1 });
                     const dateStr = race.date ? ` <small>(${race.date})</small>` : '';
                     marker.bindPopup(
-                        `<a href="#${encodeURIComponent(race.name)}" style="font-weight:bold">${race.name}</a>${dateStr} — ${totalPhotos} photos`,
+                        `<a href="#${encodeURIComponent(race.name)}" style="font-weight:bold">${race.name}</a>${dateStr} — ${mediaLabel}`,
                         { maxWidth: 350 }
                     );
                     clusterGroup.addLayer(marker);
@@ -619,7 +636,8 @@ class RacePhotosGallery {
         info.className = 'race-info';
         const totalPhotos = race.sources.reduce((sum, src) => sum + src.photos.length, 0);
         const dateStr = race.date ? `${race.date} • ` : '';
-        info.textContent = `${dateStr}${totalPhotos} photo${totalPhotos !== 1 ? 's' : ''}`;
+        const allItems = race.sources.flatMap(s => s.photos);
+        info.textContent = `${dateStr}${this.formatMediaCount(allItems)}`;
 
         raceHeader.appendChild(title);
         raceHeader.appendChild(info);
