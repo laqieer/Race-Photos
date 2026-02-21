@@ -233,10 +233,7 @@ class RacePhotosGallery {
                     attribution: '&copy; OpenStreetMap contributors'
                 }).addTo(map);
 
-                // Group races by location (GPS or city)
-                const locationMap = {};
-                const cityCoords = {}; // city -> {lat, lon} from GPS races
-                // First pass: collect city coordinates from races with GPS
+                const cityCoords = {};
                 racesWithLocation.forEach(race => {
                     let lat, lon;
                     for (const s of race.sources) {
@@ -249,15 +246,27 @@ class RacePhotosGallery {
                         cityCoords[race.city] = { lat, lon };
                     }
                 });
-                // Second pass: group all races
+
+                const clusterGroup = L.markerClusterGroup({
+                    iconCreateFunction(cluster) {
+                        const count = cluster.getAllChildMarkers()
+                            .reduce((sum, m) => sum + (m.options.raceCount || 1), 0);
+                        const size = count > 5 ? 44 : 36;
+                        return L.divIcon({
+                            className: 'photo-cluster-icon',
+                            html: `<div class="cluster-count">${count}</div>`,
+                            iconSize: [size, size]
+                        });
+                    },
+                    maxClusterRadius: 40,
+                    spiderfyOnMaxZoom: true,
+                    showCoverageOnHover: false
+                });
+
+                const bounds = L.latLngBounds();
                 racesWithLocation.forEach(race => {
                     let lat, lon;
-                    // Prefer race-level coordinates (from GPX route or city)
-                    if (race.lat && race.lon) {
-                        lat = race.lat;
-                        lon = race.lon;
-                    }
-                    // Fallback to photo-level GPS
+                    if (race.lat && race.lon) { lat = race.lat; lon = race.lon; }
                     if (!lat) {
                         for (const s of race.sources) {
                             for (const p of s.photos) {
@@ -266,38 +275,29 @@ class RacePhotosGallery {
                             if (lat) break;
                         }
                     }
-                    // Fallback to city coordinates from other races
                     if (!lat && race.city && cityCoords[race.city]) {
                         lat = cityCoords[race.city].lat;
                         lon = cityCoords[race.city].lon;
                     }
                     if (!lat) return;
-                    const key = `${lat},${lon}`;
-                    if (!locationMap[key]) {
-                        locationMap[key] = { lat, lon, races: [] };
-                    }
-                    const totalPhotos = race.sources.reduce((sum, s) => sum + s.photos.length, 0);
-                    locationMap[key].races.push({ race, totalPhotos });
-                });
 
-                const bounds = L.latLngBounds();
-                Object.values(locationMap).forEach(loc => {
-                    const totalPhotos = loc.races.reduce((sum, r) => sum + r.totalPhotos, 0);
+                    const totalPhotos = race.sources.reduce((sum, s) => sum + s.photos.length, 0);
                     const icon = L.divIcon({
                         className: 'photo-cluster-icon',
-                        html: `<div class="cluster-count">${loc.races.length}</div>`,
+                        html: `<div class="cluster-count">1</div>`,
                         iconSize: [36, 36]
                     });
-                    const marker = L.marker([loc.lat, loc.lon], { icon }).addTo(map);
-
-                    const popupHtml = loc.races.map(r => {
-                        const dateStr = r.race.date ? ` <small>(${r.race.date})</small>` : '';
-                        return `<a href="#${encodeURIComponent(r.race.name)}" style="font-weight:bold">${r.race.name}</a>${dateStr} — ${r.totalPhotos} photos`;
-                    }).join('<br>');
-                    marker.bindPopup(popupHtml, { maxWidth: 350 });
-                    bounds.extend([loc.lat, loc.lon]);
+                    const marker = L.marker([lat, lon], { icon, raceCount: 1 });
+                    const dateStr = race.date ? ` <small>(${race.date})</small>` : '';
+                    marker.bindPopup(
+                        `<a href="#${encodeURIComponent(race.name)}" style="font-weight:bold">${race.name}</a>${dateStr} — ${totalPhotos} photos`,
+                        { maxWidth: 350 }
+                    );
+                    clusterGroup.addLayer(marker);
+                    bounds.extend([lat, lon]);
                 });
 
+                map.addLayer(clusterGroup);
                 map.fitBounds(bounds, { padding: [30, 30], maxZoom: 12 });
                 map.invalidateSize();
             }, 100);
