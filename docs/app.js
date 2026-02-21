@@ -481,9 +481,14 @@ class RacePhotosGallery {
         toggleBtn.textContent = 'X: Time';
         container.appendChild(toggleBtn);
 
+        const canvasWrapper = document.createElement('div');
+        canvasWrapper.style.position = 'relative';
+        canvasWrapper.style.width = '100%';
+        canvasWrapper.style.height = '100%';
         const canvas = document.createElement('canvas');
         canvas.id = 'gpx-chart';
-        chartContainer.appendChild(canvas);
+        canvasWrapper.appendChild(canvas);
+        chartContainer.appendChild(canvasWrapper);
         container.appendChild(chartContainer);
 
         const datasets = [
