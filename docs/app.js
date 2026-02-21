@@ -479,7 +479,7 @@ class RacePhotosGallery {
         const toggleBtn = document.createElement('button');
         toggleBtn.className = 'chart-axis-toggle';
         toggleBtn.textContent = 'X: Time';
-        chartContainer.appendChild(toggleBtn);
+        container.appendChild(toggleBtn);
 
         const canvas = document.createElement('canvas');
         canvas.id = 'gpx-chart';
