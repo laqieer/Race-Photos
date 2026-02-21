@@ -13,6 +13,7 @@ Race-Photos/
 │   ├── download_photoplus.py   # Download photos from PhotoPlus API
 │   ├── download_pailixiang.py  # Download photos from Pailixiang API
 │   ├── download_runff.py      # Download photos from RunFF API
+│   ├── download_ihuipao.py    # Download photos from iHuiPao API
 │   ├── generate_manifest.py    # Generate gallery manifest
 │   ├── serve.py               # Local dev server (no cache)
 │   ├── requirements.txt        # Python dependencies
@@ -23,10 +24,11 @@ Race-Photos/
 │   ├── app.js                 # Gallery JavaScript
 │   ├── routes/                # GPX route files
 │   │   └── {race}.gpx         # GPS route data
-│   └── images/                # Downloaded photos
+│   └── images/                # Downloaded photos & videos
 │       ├── {race}/            # Race directories
 │       │   └── {source}/      # Source directories
 │       │       ├── *.jpg      # Photo files
+│       │       ├── *.mp4      # Video files
 │       │       ├── race_info.json    # Race metadata (committed)
 │       │       └── photos_list.json  # Photo metadata (committed)
 │       └── manifest.json      # Gallery manifest
@@ -201,6 +203,38 @@ The script will:
 2. Download "big" resolution photos from CDN (`p.chinarun.com`)
 3. Set file timestamps from Unix timestamp metadata
 
+### Download from iHuiPao API
+
+Download photos from iHuiPao (api.ihuipao.com) using face search, ID card, or purchased photos:
+
+```bash
+# Download purchased photos (requires API token from browser DevTools)
+python scripts/download_ihuipao.py \
+  --token "YOUR_TOKEN" \
+  --race-name "2023COLMO环蠡湖半程马拉松" \
+  --race-id "BKn6NygxDqkP0qPZebWM" \
+  --mode purchases
+
+# Search by face image URL
+python scripts/download_ihuipao.py \
+  --token "YOUR_TOKEN" \
+  --race-name "2023COLMO环蠡湖半程马拉松" \
+  --album-id "Xn6MVGlkDod2jwvZWQB3" \
+  --face-url "https://stor.ihuipao.com/image/..." \
+  --mode face
+
+# Update gallery
+python scripts/generate_manifest.py
+```
+
+To find the parameters: open the iHuiPao WeChat mini program, use browser DevTools to capture the API requests, and copy the `_token` from any request body.
+
+The script will:
+1. Fetch race information
+2. Search/retrieve photos via the selected mode
+3. Download original photos (without watermark) from Huawei OBS CDN
+4. Set file timestamps from shoot_at metadata
+
 ### Download from Different Sources
 
 ```bash
@@ -271,12 +305,13 @@ Your gallery will be available at: `https://<username>.github.io/Race-Photos/`
 
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Organized by Races**: Photos grouped by race events, sorted by date
-- **Multiple Sources**: Support for photos from different platforms (RunnerBar, Yipai360)
-- **Interactive Map**: Overview map with race locations, detail map with GPX route and photo markers
+- **Multiple Sources**: Support for photos from different platforms (RunnerBar, Yipai360, PhotoPlus, Pailixiang, RunFF, iHuiPao)
+- **Interactive Map**: Overview map with clustered race markers, detail map with GPX route and photo markers
 - **GPX Route Display**: Race route with km distance markers and photo positions along the route
 - **Performance Chart**: Elevation, pace, and heart rate chart from GPX data
 - **Photo Grouping**: Photos grouped by time proximity with pace/HR metrics
-- **Lightbox View**: Click any photo to view full size
+- **Lightbox View**: Click any photo or video to view full size
+- **Video Support**: Videos displayed with play icon overlay, hover-to-preview, and full playback in lightbox
 - **Lazy Loading**: Photos load as you scroll for better performance
 
 ## ⚡ Download Optimization
