@@ -318,6 +318,26 @@ a.race-card {
     width: 100%;
     height: 250px;
     padding: 1rem 1.5rem;
+    position: relative;
+}
+
+.chart-axis-toggle {
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    z-index: 10;
+    padding: 3px 10px;
+    font-size: 11px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f8f8f8;
+    cursor: pointer;
+    color: #555;
+}
+
+.chart-axis-toggle:hover {
+    background: #eee;
+    border-color: #999;
 }
 
 /* Map legend */
