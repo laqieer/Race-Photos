@@ -200,11 +200,6 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                 # Video: file on disk is named from meta_info URL
                                 vid_fname = mi.rsplit('/', 1)[-1]
                                 vid_meta = dict(meta)
-                                # Extract date from filename pattern YYYYMMDD_...
-                                parts = vid_fname.split('_')
-                                if len(parts) >= 1 and len(parts[0]) == 8 and parts[0].isdigit():
-                                    d = parts[0]
-                                    vid_meta["timestamp"] = f"{d[:4]}-{d[4:6]}-{d[6:8]} 00:00:00"
                                 if vid_meta:
                                     photo_meta[vid_fname] = vid_meta
                             else:
