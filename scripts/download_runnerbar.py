@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-Download photos from RunnerBar API.
+Download photos and videos from RunnerBar API.
 
-This script handles downloading race photos from RunnerBar's API,
+This script handles downloading race photos and videos from RunnerBar's API,
 which requires two API calls:
 1. Get race info to retrieve the race name
-2. Get photos list to retrieve photo URLs
+2. Get photos list to retrieve photo/video URLs
+
+Ads (media_show_type=2) are automatically skipped.
+Videos (media_show_type=4) are downloaded from the meta_info URL,
+along with their cover image from url_hq.
 """
 
 import json
@@ -550,6 +554,10 @@ class RunnerBarDownloader:
         # Extract photo URLs from topicInfoList
         photo_urls = []
         for i, photo in enumerate(photos_list, 1):
+            media_type = photo.get('media_show_type', 1)
+            # Skip ads
+            if media_type == 2:
+                continue
             if 'url_hq' in photo and photo['url_hq']:
                 photo_id = self.extract_photo_id(photo, i)
                 photo_urls.append({
@@ -558,12 +566,27 @@ class RunnerBarDownloader:
                     'timestamp': self.parse_datetime_original(photo),
                     'gps': self.parse_gps_info(photo)
                 })
+                # For videos, also download the video file from meta_info
+                if media_type == 4:
+                    mi = photo.get('meta_info', '')
+                    if isinstance(mi, str) and mi.startswith('http'):
+                        photo_urls.append({
+                            'url': mi,
+                            'id': f'{photo_id}_video',
+                            'timestamp': None,
+                            'gps': None
+                        })
         
         if not photo_urls:
             print("No url_hq found in photos list")
             return 0
         
-        print(f"\nDownloading {len(photo_urls)} photos to docs/images/{race_name}/{source}/")
+        video_count = sum(1 for p in photo_urls if p['url'].lower().endswith(('.mp4', '.mov', '.webm')))
+        photo_count = len(photo_urls) - video_count
+        counts = f"{photo_count} photos"
+        if video_count:
+            counts += f" + {video_count} videos"
+        print(f"\nDownloading {counts} to docs/images/{race_name}/{source}/")
         
         # Create output directory (should already exist from cache_dir)
         output_dir = self.base_dir / race_name / source
