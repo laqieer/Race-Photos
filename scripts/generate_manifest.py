@@ -173,6 +173,8 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
             
             # Load metadata from photos_list.json if available
             photo_meta = {}
+            video_cover_map = {}  # video_filename -> cover_filename
+            cover_video_map = {}  # cover_filename -> video_filename
             photos_list_file = source_dir / "photos_list.json"
             if photos_list_file.exists():
                 try:
@@ -202,6 +204,9 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                                 vid_meta = dict(meta)
                                 if vid_meta:
                                     photo_meta[vid_fname] = vid_meta
+                                # Map video to its cover (url_hq)
+                                video_cover_map[vid_fname] = fname
+                                cover_video_map[fname] = vid_fname
                             else:
                                 try:
                                     mi_data = json.loads(mi) if isinstance(mi, str) else mi
@@ -300,6 +305,26 @@ def generate_manifest(base_dir: str = "docs/images") -> Dict:
                             if ts:
                                 entry["timestamp"] = ts
                         photos.append(entry)
+            
+            # Add poster field to videos and reorder so covers follow their videos
+            if video_cover_map:
+                # Build URL lookup by filename
+                url_by_name = {e["name"]: e["url"] for e in photos}
+                for entry in photos:
+                    cover_name = video_cover_map.get(entry["name"])
+                    if cover_name and cover_name in url_by_name:
+                        entry["poster"] = url_by_name[cover_name]
+                # Reorder: remove covers, insert each after its video
+                cover_names = set(cover_video_map.keys())
+                covers_by_name = {e["name"]: e for e in photos if e["name"] in cover_names}
+                photos = [e for e in photos if e["name"] not in cover_names]
+                reordered = []
+                for e in photos:
+                    reordered.append(e)
+                    cover_name = video_cover_map.get(e["name"])
+                    if cover_name and cover_name in covers_by_name:
+                        reordered.append(covers_by_name[cover_name])
+                photos = reordered
             
             if photos:
                 race_data["sources"].append({

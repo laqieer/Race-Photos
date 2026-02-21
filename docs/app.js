@@ -131,6 +131,7 @@ class RacePhotosGallery {
                 video.loop = true;
                 video.playsInline = true;
                 video.preload = 'metadata';
+                if (photo.poster) video.poster = photo.poster;
                 video.addEventListener('mouseenter', () => video.play());
                 video.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
                 photoItem.appendChild(video);
@@ -762,7 +763,8 @@ class RacePhotosGallery {
                             const thumbs = group.photos.map(p => {
                                 const isVid = /\.(mp4|mov|webm)$/i.test(p.url);
                                 if (isVid) {
-                                    return `<video src="${p.url}" muted loop playsinline preload="metadata" style="cursor:pointer;max-height:120px" onclick="window.galleryInstance.openLightbox('${p.url}')" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`;
+                                    const posterAttr = p.poster ? ` poster="${p.poster}"` : '';
+                                    return `<video src="${p.url}" muted loop playsinline preload="metadata"${posterAttr} style="cursor:pointer;max-height:120px" onclick="window.galleryInstance.openLightbox('${p.url}')" onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>`;
                                 }
                                 return `<img src="${p.url}" alt="${p.name}" loading="lazy" style="cursor:pointer" onclick="window.galleryInstance.openLightbox('${p.url}')">`;
                             }).join('');
