@@ -29,3 +29,6 @@ test_*.json
 
 # Temp caches
 docs/images/_temp_cache_*/
+
+# Node
+node_modules/

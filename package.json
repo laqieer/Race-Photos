@@ -1,0 +1,27 @@
+{
+  "name": "race-photos",
+  "version": "1.0.0",
+  "description": "[![Deploy to GitHub Pages](https://github.com/laqieer/Race-Photos/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/laqieer/Race-Photos/actions/workflows/deploy-pages.yml)\r [![Vibe Coded](https://img.shields.io/badge/vibe-coded-%23ff69b4?style=flat)](https://github.com/topics/vibe-coding)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laqieer/Race-Photos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laqieer/Race-Photos/issues"
+  },
+  "homepage": "https://github.com/laqieer/Race-Photos#readme",
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  }
+}
