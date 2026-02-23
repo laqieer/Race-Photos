@@ -1100,7 +1100,8 @@
       ],
       "route": "routes/\u4e2d\u56fd\u4f53\u80b2\u5f69\u7968\u676f_2024_\u7ea2\u6811\u6797\u4e4b\u57ce_\u6e5b\u6c5f\u534a\u7a0b\u9a6c\u62c9\u677e\u8d5b.gpx",
       "lat": 21.212761,
-      "lon": 110.416452
+      "lon": 110.416452,
+      "strava_url": "https://www.strava.com/activities/11350922107"
     },
     {
       "name": "2023\u4e0a\u5408\u6606\u660e\u9a6c\u62c9\u677e",
@@ -1339,7 +1340,8 @@
       ],
       "route": "routes/2023\u4e0a\u5408\u6606\u660e\u9a6c\u62c9\u677e.gpx",
       "lat": 24.983157,
-      "lon": 102.649438
+      "lon": 102.649438,
+      "strava_url": "https://www.strava.com/activities/11399979948"
     },
     {
       "name": "\u82cf\u5dde\u73af\u9633\u5c71\u534a\u7a0b\u9a6c\u62c9\u677e",
@@ -1776,7 +1778,8 @@
       ],
       "route": "routes/\u82cf\u5dde\u73af\u9633\u5c71\u534a\u7a0b\u9a6c\u62c9\u677e.gpx",
       "lat": 31.338887,
-      "lon": 120.467237
+      "lon": 120.467237,
+      "strava_url": "https://www.strava.com/activities/11400065142"
     },
     {
       "name": "2023\u5f20\u5bb6\u6e2f\u4e1c\u6e21\u534a\u7a0b\u9a6c\u62c9\u677e",
@@ -1863,7 +1866,8 @@
       ],
       "route": "routes/2023\u5f20\u5bb6\u6e2f\u4e1c\u6e21\u534a\u7a0b\u9a6c\u62c9\u677e.gpx",
       "lat": 31.878473,
-      "lon": 120.543054
+      "lon": 120.543054,
+      "strava_url": "https://www.strava.com/activities/11400242144"
     },
     {
       "name": "2023\u82cf\u5dde\u5927\u5b66\u6821\u56ed\u9a6c\u62c9\u677e\u66a8\u6c5f\u82cf\u7701\u5927\u5b66\u751f\u9a6c\u62c9\u677e\u8054\u8d5b",
@@ -2012,7 +2016,8 @@
       ],
       "route": "routes/2023\u82cf\u5dde\u5927\u5b66\u6821\u56ed\u9a6c\u62c9\u677e\u66a8\u6c5f\u82cf\u7701\u5927\u5b66\u751f\u9a6c\u62c9\u677e\u8054\u8d5b.gpx",
       "lat": 31.302053,
-      "lon": 120.641079
+      "lon": 120.641079,
+      "strava_url": "https://www.strava.com/activities/11400242147"
     },
     {
       "name": "2023\u82cf\u5dde_\u73af\u592a\u6e561\u53f7\u516c\u8def_\u9a6c\u62c9\u677e",
@@ -2120,7 +2125,8 @@
       ],
       "route": "routes/2023\u82cf\u5dde_\u73af\u592a\u6e561\u53f7\u516c\u8def_\u9a6c\u62c9\u677e.gpx",
       "lat": 31.180785,
-      "lon": 120.596656
+      "lon": 120.596656,
+      "strava_url": "https://www.strava.com/activities/11400242093"
     },
     {
       "name": "2023COLMO\u73af\u8821\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e",
@@ -2142,7 +2148,8 @@
       ],
       "route": "routes/2023COLMO\u73af\u8821\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e.gpx",
       "lat": 31.540816,
-      "lon": 120.259752
+      "lon": 120.259752,
+      "strava_url": "https://www.strava.com/activities/11400242067"
     },
     {
       "name": "\u5e38\u719f\u94f6\u884c2023\u5e38\u719f\u5c1a\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e",
@@ -2243,7 +2250,8 @@
       ],
       "route": "routes/\u5e38\u719f\u94f6\u884c2023\u5e38\u719f\u5c1a\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e.gpx",
       "lat": 31.633617,
-      "lon": 120.687028
+      "lon": 120.687028,
+      "strava_url": "https://www.strava.com/activities/11400242062"
     },
     {
       "name": "2023\u5434\u6c5f\u8def\u8dd1\u8054\u8d5b\u603b\u51b3\u8d5b",
