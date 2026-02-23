@@ -658,6 +658,12 @@ class RacePhotosGallery {
             stravaLink.className = 'strava-link';
             stravaLink.innerHTML = '🏃 View on Strava';
             raceHeader.appendChild(stravaLink);
+
+            const gpxLink = document.createElement('a');
+            gpxLink.href = race.strava_url + '/export_gpx';
+            gpxLink.className = 'strava-link gpx-download';
+            gpxLink.innerHTML = '📥 Download GPX';
+            raceHeader.appendChild(gpxLink);
         }
         card.appendChild(raceHeader);
 

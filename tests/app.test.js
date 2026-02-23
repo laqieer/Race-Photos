@@ -764,6 +764,20 @@ describe('renderRaceDetail', () => {
         };
         await gallery.renderRaceDetail(race);
         expect(document.querySelector('.strava-link')).toBeNull();
+        expect(document.querySelector('.gpx-download')).toBeNull();
+    });
+
+    test('shows GPX download link when strava_url is present', async () => {
+        const race = {
+            name: 'GPX Race',
+            strava_url: 'https://www.strava.com/activities/12345',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        const gpxLink = document.querySelector('.gpx-download');
+        expect(gpxLink).not.toBeNull();
+        expect(gpxLink.href).toBe('https://www.strava.com/activities/12345/export_gpx');
+        expect(gpxLink.textContent).toContain('Download GPX');
     });
 
     test('renders race detail with timestamps grouped by time', async () => {
