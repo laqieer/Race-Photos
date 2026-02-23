@@ -102,14 +102,17 @@ a.race-card {
 .strava-link {
     display: inline-block;
     margin-top: 0.5rem;
-    color: #fc4c02;
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
+    background: #fc4c02;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
 }
 
 .strava-link:hover {
-    text-decoration: underline;
+    background: #e04400;
 }
 
 /* Sources */
