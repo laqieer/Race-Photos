@@ -2,13 +2,57 @@
  * @jest-environment jsdom
  */
 
+// Mock Leaflet
+const mockMarker = {
+    bindPopup: jest.fn().mockReturnThis(),
+    addTo: jest.fn().mockReturnThis(),
+    _photoCount: 0,
+};
+const mockPolyline = {
+    addTo: jest.fn().mockReturnThis(),
+    getBounds: jest.fn().mockReturnValue([[0, 0], [1, 1]]),
+};
+const mockLayerGroup = { addTo: jest.fn().mockReturnThis() };
+const mockClusterGroup = {
+    addLayer: jest.fn(),
+};
+const mockMap = {
+    addLayer: jest.fn(),
+    fitBounds: jest.fn(),
+    invalidateSize: jest.fn(),
+};
+const mockControl = { addTo: jest.fn(), onAdd: null };
+
+const mockControlFn = jest.fn().mockReturnValue(mockControl);
+mockControlFn.layers = jest.fn().mockReturnValue(mockControl);
+
+global.L = {
+    map: jest.fn().mockReturnValue(mockMap),
+    tileLayer: jest.fn().mockReturnValue({ addTo: jest.fn() }),
+    marker: jest.fn().mockReturnValue(mockMarker),
+    polyline: jest.fn().mockReturnValue(mockPolyline),
+    layerGroup: jest.fn().mockReturnValue(mockLayerGroup),
+    latLngBounds: jest.fn().mockReturnValue({ extend: jest.fn() }),
+    divIcon: jest.fn().mockReturnValue({}),
+    markerClusterGroup: jest.fn().mockReturnValue(mockClusterGroup),
+    control: mockControlFn,
+    DomUtil: { create: jest.fn().mockReturnValue(document.createElement('div')) },
+};
+
+// Stub HTMLMediaElement methods not implemented in jsdom
+window.HTMLMediaElement.prototype.pause = jest.fn();
+window.HTMLMediaElement.prototype.play = jest.fn().mockResolvedValue(undefined);
+
 const { RacePhotosGallery } = require('../docs/app');
 
 let gallery;
 
 beforeEach(() => {
     document.body.innerHTML = '<div id="races-container"></div>';
+    window.location.hash = '';
+    jest.clearAllMocks();
     gallery = new RacePhotosGallery();
+    gallery.manifest = { races: [] };
 });
 
 describe('formatMediaCount', () => {
@@ -184,6 +228,33 @@ describe('getMetricsAtTime', () => {
         expect(metrics.pace).not.toBeNull();
         expect(metrics.pace).toBeGreaterThan(0);
     });
+
+    test('returns null pace when no distance', () => {
+        const pts = [
+            { lat: 0, lon: 0, time: 0, dist: 0 },
+            { lat: 0, lon: 0, time: 1000, dist: 0 },
+        ];
+        const metrics = gallery.getMetricsAtTime(pts, 1000);
+        expect(metrics.pace).toBeNull();
+    });
+
+    test('returns null hr when no hr data', () => {
+        const pts = [
+            { lat: 0, lon: 0, time: 0, dist: 0 },
+            { lat: 0, lon: 0, time: 1000, dist: 100 },
+        ];
+        const metrics = gallery.getMetricsAtTime(pts, 0);
+        expect(metrics.hr).toBeNull();
+    });
+
+    test('caps pace at 15 min/km', () => {
+        const pts = [
+            { lat: 0, lon: 0, time: 0, dist: 0, hr: 100 },
+            { lat: 0, lon: 0, time: 60000, dist: 1, hr: 100 },
+        ];
+        const metrics = gallery.getMetricsAtTime(pts, 60000);
+        expect(metrics.pace).toBeNull();
+    });
 });
 
 describe('parseGpx', () => {
@@ -261,6 +332,16 @@ describe('parseGpx', () => {
         expect(points[1].dist).toBeGreaterThan(points[0].dist);
         expect(points[2].dist).toBeGreaterThan(points[1].dist);
     });
+
+    test('omits ele/hr when not present', () => {
+        const xml = `<?xml version="1.0"?>
+        <gpx><trk><trkseg>
+            <trkpt lat="30.0" lon="120.0"><time>2024-01-01T00:00:00Z</time></trkpt>
+        </trkseg></trk></gpx>`;
+        const points = gallery.parseGpx(xml);
+        expect(points[0].ele).toBeUndefined();
+        expect(points[0].hr).toBeUndefined();
+    });
 });
 
 describe('createPhotoGrid', () => {
@@ -285,6 +366,21 @@ describe('createPhotoGrid', () => {
         expect(video.poster).toContain('cover.jpg');
         expect(grid.querySelector('.video-item')).not.toBeNull();
     });
+
+    test('video without poster has no poster attribute', () => {
+        const photos = [{ url: 'test.mp4', name: 'test.mp4' }];
+        const grid = gallery.createPhotoGrid(photos, 'test');
+        const video = grid.querySelector('video');
+        expect(video.poster).toBe('');
+    });
+
+    test('photo click triggers lightbox', () => {
+        const photos = [{ url: 'test.jpg', name: 'test.jpg' }];
+        const grid = gallery.createPhotoGrid(photos, 'test');
+        const item = grid.querySelector('.photo-item');
+        item.click();
+        expect(gallery.lightbox.classList.contains('active')).toBe(true);
+    });
 });
 
 describe('lightbox', () => {
@@ -300,6 +396,59 @@ describe('lightbox', () => {
     test('opens lightbox for video', () => {
         gallery.openLightbox('test.mp4');
         expect(gallery.lightbox.querySelector('video')).not.toBeNull();
+    });
+
+    test('close button closes lightbox', () => {
+        gallery.openLightbox('test.jpg');
+        gallery.lightbox.querySelector('.lightbox-close').click();
+        expect(gallery.lightbox.classList.contains('active')).toBe(false);
+    });
+
+    test('clicking lightbox backdrop closes it', () => {
+        gallery.openLightbox('test.jpg');
+        gallery.lightbox.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        expect(gallery.lightbox.classList.contains('active')).toBe(false);
+    });
+
+    test('clicking lightbox content does not close it', () => {
+        gallery.openLightbox('test.jpg');
+        const content = gallery.lightbox.querySelector('.lightbox-content');
+        content.dispatchEvent(new MouseEvent('click', { bubbles: false }));
+        expect(gallery.lightbox.classList.contains('active')).toBe(true);
+    });
+
+    test('Escape key closes lightbox', () => {
+        gallery.openLightbox('test.jpg');
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+        expect(gallery.lightbox.classList.contains('active')).toBe(false);
+    });
+
+    test('Escape key does nothing when lightbox is not active', () => {
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+        expect(gallery.lightbox.classList.contains('active')).toBe(false);
+    });
+
+    test('other keys do not close lightbox', () => {
+        gallery.openLightbox('test.jpg');
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+        expect(gallery.lightbox.classList.contains('active')).toBe(true);
+    });
+});
+
+describe('createSourceSection', () => {
+    test('creates section with header and grid', () => {
+        const photos = [{ url: 'a.jpg', name: 'a.jpg' }, { url: 'b.jpg', name: 'b.jpg' }];
+        const section = gallery.createSourceSection('TestSource', photos);
+        expect(section.className).toBe('source-section');
+        expect(section.querySelector('h3').textContent).toBe('TestSource');
+        expect(section.querySelector('.photo-count').textContent).toBe('2 photos');
+        expect(section.querySelector('.photo-grid')).not.toBeNull();
+    });
+
+    test('shows mixed media count', () => {
+        const photos = [{ url: 'a.jpg', name: 'a.jpg' }, { url: 'v.mp4', name: 'v.mp4' }];
+        const section = gallery.createSourceSection('Mix', photos);
+        expect(section.querySelector('.photo-count').textContent).toBe('1 photo, 1 video');
     });
 });
 
@@ -317,6 +466,29 @@ describe('createRaceCard', () => {
         expect(card.href).toContain('Test%20Race');
         expect(card.textContent).toContain('Test Race');
         expect(card.textContent).toContain('1 photo, 1 video');
+    });
+
+    test('handles race without date', () => {
+        const race = {
+            name: 'No Date Race',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg' }] }],
+        };
+        const card = gallery.createRaceCard(race);
+        expect(card.textContent).toContain('No Date Race');
+        expect(card.textContent).not.toContain('2024');
+    });
+
+    test('handles multiple sources', () => {
+        const race = {
+            name: 'Multi',
+            date: '2024-01-01',
+            sources: [
+                { name: 's1', photos: [{ url: 'a.jpg' }] },
+                { name: 's2', photos: [{ url: 'b.jpg' }] },
+            ],
+        };
+        const card = gallery.createRaceCard(race);
+        expect(card.textContent).toContain('2 sources');
     });
 });
 
@@ -341,5 +513,495 @@ describe('renderOverview', () => {
         gallery.renderOverview();
         expect(document.querySelector('.stats-bar')).not.toBeNull();
         expect(document.querySelector('.race-card')).not.toBeNull();
+    });
+
+    test('stats include video count when videos exist', () => {
+        gallery.manifest = {
+            races: [{
+                name: 'R',
+                country: 'China',
+                province: 'P',
+                city: 'C',
+                sources: [{ name: 's', photos: [{ url: 'a.jpg' }, { url: 'v.mp4' }] }],
+            }],
+        };
+        gallery.renderOverview();
+        const stats = document.querySelector('.stats-bar');
+        expect(stats.textContent).toContain('Videos');
+    });
+
+    test('stats omit video count when no videos', () => {
+        gallery.manifest = {
+            races: [{
+                name: 'R',
+                country: 'China',
+                province: 'P',
+                city: 'C',
+                sources: [{ name: 's', photos: [{ url: 'a.jpg' }] }],
+            }],
+        };
+        gallery.renderOverview();
+        const stats = document.querySelector('.stats-bar');
+        expect(stats.textContent).not.toContain('Videos');
+    });
+
+    test('renders multiple race cards', () => {
+        gallery.manifest = {
+            races: [
+                { name: 'R1', sources: [{ name: 's', photos: [{ url: 'a.jpg' }] }] },
+                { name: 'R2', sources: [{ name: 's', photos: [{ url: 'b.jpg' }] }] },
+            ],
+        };
+        gallery.renderOverview();
+        expect(document.querySelectorAll('.race-card')).toHaveLength(2);
+    });
+
+    test('creates map when races have locations', () => {
+        jest.useFakeTimers();
+        gallery.manifest = {
+            races: [{
+                name: 'MapRace',
+                date: '2024-01-01',
+                city: 'TestCity',
+                sources: [{
+                    name: 's',
+                    photos: [{ url: 'a.jpg', lat: 30, lon: 120 }],
+                }],
+            }],
+        };
+        gallery.renderOverview();
+        expect(document.querySelector('#races-map')).not.toBeNull();
+        jest.advanceTimersByTime(200);
+        expect(L.map).toHaveBeenCalledWith('races-map');
+        expect(L.markerClusterGroup).toHaveBeenCalled();
+        jest.useRealTimers();
+    });
+
+    test('map uses race lat/lon when available', () => {
+        jest.useFakeTimers();
+        gallery.manifest = {
+            races: [{
+                name: 'R',
+                lat: 25,
+                lon: 110,
+                sources: [{ name: 's', photos: [{ url: 'a.jpg' }] }],
+            }],
+        };
+        gallery.renderOverview();
+        jest.advanceTimersByTime(200);
+        expect(L.marker).toHaveBeenCalled();
+        jest.useRealTimers();
+    });
+
+    test('map uses city coords fallback', () => {
+        jest.useFakeTimers();
+        gallery.manifest = {
+            races: [
+                {
+                    name: 'R1',
+                    city: 'SharedCity',
+                    sources: [{ name: 's', photos: [{ url: 'a.jpg', lat: 30, lon: 120 }] }],
+                },
+                {
+                    name: 'R2',
+                    city: 'SharedCity',
+                    sources: [{ name: 's', photos: [{ url: 'b.jpg' }] }],
+                },
+            ],
+        };
+        gallery.renderOverview();
+        jest.advanceTimersByTime(200);
+        expect(L.marker).toHaveBeenCalledTimes(2);
+        jest.useRealTimers();
+    });
+
+    test('skips races without any location info', () => {
+        jest.useFakeTimers();
+        gallery.manifest = {
+            races: [
+                {
+                    name: 'WithLoc',
+                    sources: [{ name: 's', photos: [{ url: 'a.jpg', lat: 30, lon: 120 }] }],
+                },
+                {
+                    name: 'NoLoc',
+                    sources: [{ name: 's', photos: [{ url: 'b.jpg' }] }],
+                },
+            ],
+        };
+        gallery.renderOverview();
+        jest.advanceTimersByTime(200);
+        expect(L.marker).toHaveBeenCalledTimes(1);
+        jest.useRealTimers();
+    });
+
+    test('race without date omits date in popup', () => {
+        jest.useFakeTimers();
+        gallery.manifest = {
+            races: [{
+                name: 'NoDate',
+                sources: [{ name: 's', photos: [{ url: 'a.jpg', lat: 30, lon: 120 }] }],
+            }],
+        };
+        gallery.renderOverview();
+        jest.advanceTimersByTime(200);
+        const popupCall = mockMarker.bindPopup.mock.calls[0][0];
+        expect(popupCall).not.toContain('<small>');
+        jest.useRealTimers();
+    });
+});
+
+describe('scanDirectory', () => {
+    test('returns manifest on successful fetch', async () => {
+        const mockManifest = { races: [{ name: 'Test' }] };
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            json: () => Promise.resolve(mockManifest),
+        });
+        const result = await gallery.scanDirectory();
+        expect(result).toEqual(mockManifest);
+    });
+
+    test('returns empty races on fetch failure', async () => {
+        global.fetch = jest.fn().mockRejectedValue(new Error('Network error'));
+        const result = await gallery.scanDirectory();
+        expect(result).toEqual({ races: [] });
+    });
+
+    test('returns empty races on non-ok response', async () => {
+        global.fetch = jest.fn().mockResolvedValue({ ok: false });
+        const result = await gallery.scanDirectory();
+        expect(result).toEqual({ races: [] });
+    });
+});
+
+describe('handleRoute', () => {
+    test('renders overview when no hash', () => {
+        gallery.manifest = { races: [] };
+        window.location.hash = '';
+        gallery.handleRoute();
+        expect(document.querySelector('.no-races')).not.toBeNull();
+    });
+
+    test('renders overview when hash does not match any race', () => {
+        gallery.manifest = {
+            races: [{
+                name: 'Existing Race',
+                sources: [{ name: 's', photos: [{ url: 'a.jpg' }] }],
+            }],
+        };
+        window.location.hash = '#NonExistent';
+        gallery.handleRoute();
+        expect(document.querySelector('.stats-bar')).not.toBeNull();
+    });
+
+    test('renders race detail when hash matches', async () => {
+        const race = {
+            name: 'My Race',
+            sources: [{ name: 's', photos: [{ url: 'a.jpg', name: 'a' }] }],
+        };
+        gallery.manifest = { races: [race] };
+        window.location.hash = '#My Race';
+        gallery.handleRoute();
+        // renderRaceDetail is async, wait
+        await new Promise(r => setTimeout(r, 0));
+        expect(document.querySelector('.back-link')).not.toBeNull();
+        expect(document.querySelector('h2').textContent).toBe('My Race');
+    });
+});
+
+describe('renderRaceDetail', () => {
+    test('renders race detail without route (fallback by source)', async () => {
+        const race = {
+            name: 'Test Race',
+            date: '2024-01-01',
+            sources: [
+                { name: 'src1', photos: [{ url: 'a.jpg', name: 'a.jpg' }] },
+                { name: 'src2', photos: [{ url: 'b.jpg', name: 'b.jpg' }] },
+            ],
+        };
+        await gallery.renderRaceDetail(race);
+        expect(document.querySelector('.back-link')).not.toBeNull();
+        expect(document.querySelector('.race-header h2').textContent).toBe('Test Race');
+        expect(document.querySelectorAll('.source-section')).toHaveLength(2);
+    });
+
+    test('renders race detail with timestamps grouped by time', async () => {
+        const race = {
+            name: 'Timed Race',
+            date: '2024-01-01',
+            sources: [{
+                name: 'src',
+                photos: [
+                    { url: 'a.jpg', name: 'a.jpg', timestamp: '2024-01-01 08:00:00' },
+                    { url: 'b.jpg', name: 'b.jpg', timestamp: '2024-01-01 08:00:05' },
+                    { url: 'c.jpg', name: 'c.jpg', timestamp: '2024-01-01 09:00:00' },
+                ],
+            }],
+        };
+        await gallery.renderRaceDetail(race);
+        // Two time groups: 08:00:xx and 09:00:00
+        const sections = document.querySelectorAll('.source-section');
+        expect(sections.length).toBe(2);
+    });
+
+    test('renders "Other" section for photos without timestamps', async () => {
+        const race = {
+            name: 'Mixed Race',
+            sources: [{
+                name: 'src',
+                photos: [
+                    { url: 'a.jpg', name: 'a.jpg', timestamp: '2024-01-01 08:00:00' },
+                    { url: 'b.jpg', name: 'b.jpg' },
+                ],
+            }],
+        };
+        await gallery.renderRaceDetail(race);
+        const sections = document.querySelectorAll('.source-section');
+        const lastSection = sections[sections.length - 1];
+        expect(lastSection.querySelector('h3').textContent).toBe('Other');
+    });
+
+    test('renders race detail without date', async () => {
+        const race = {
+            name: 'No Date',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        const info = document.querySelector('.race-info');
+        expect(info.textContent).toBe('1 photo');
+    });
+
+    test('renders back link with correct href', async () => {
+        const race = {
+            name: 'R',
+            sources: [{ name: 's', photos: [{ url: 'a.jpg', name: 'a' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        expect(document.querySelector('.back-link').href).toContain('#');
+    });
+
+    test('renders race detail with GPX route', async () => {
+        jest.useFakeTimers();
+        const gpxXml = `<?xml version="1.0"?>
+        <gpx><trk><trkseg>
+            <trkpt lat="30.0" lon="120.0"><ele>10</ele><time>2024-01-01T00:00:00Z</time></trkpt>
+            <trkpt lat="30.01" lon="120.01"><ele>15</ele><time>2024-01-01T00:05:00Z</time></trkpt>
+            <trkpt lat="30.02" lon="120.02"><ele>20</ele><time>2024-01-01T00:10:00Z</time></trkpt>
+        </trkseg></trk></gpx>`;
+
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            text: () => Promise.resolve(gpxXml),
+        });
+        global.Chart = jest.fn();
+
+        const race = {
+            name: 'GPX Race',
+            date: '2024-01-01',
+            route: 'routes/test.gpx',
+            sources: [{
+                name: 'src',
+                photos: [
+                    { url: 'a.jpg', name: 'a.jpg', timestamp: '2024-01-01 08:02:00' },
+                    { url: 'b.jpg', name: 'b.jpg', timestamp: '2024-01-01 08:08:00' },
+                    { url: 'c.jpg', name: 'c.jpg' },
+                ],
+            }],
+        };
+        await gallery.renderRaceDetail(race);
+        jest.advanceTimersByTime(200);
+
+        expect(document.querySelector('#race-detail-map')).not.toBeNull();
+        expect(L.map).toHaveBeenCalledWith('race-detail-map');
+        expect(L.polyline).toHaveBeenCalled();
+
+        delete global.Chart;
+        jest.useRealTimers();
+    });
+
+    test('handles GPX fetch failure gracefully', async () => {
+        global.fetch = jest.fn().mockRejectedValue(new Error('Network error'));
+
+        const race = {
+            name: 'Fail Route',
+            route: 'routes/fail.gpx',
+            sources: [{ name: 's', photos: [{ url: 'a.jpg', name: 'a' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        // Should not crash, card still rendered
+        expect(document.querySelector('.race-card')).not.toBeNull();
+    });
+
+    test('groups out-of-range photos separately', async () => {
+        jest.useFakeTimers();
+        const gpxXml = `<?xml version="1.0"?>
+        <gpx><trk><trkseg>
+            <trkpt lat="30.0" lon="120.0"><ele>10</ele><time>2024-01-01T00:00:00Z</time></trkpt>
+            <trkpt lat="30.01" lon="120.01"><ele>15</ele><time>2024-01-01T00:05:00Z</time></trkpt>
+        </trkseg></trk></gpx>`;
+
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            text: () => Promise.resolve(gpxXml),
+        });
+        global.Chart = jest.fn();
+
+        const race = {
+            name: 'OOR Race',
+            route: 'routes/test.gpx',
+            sources: [{
+                name: 'src',
+                photos: [
+                    { url: 'a.jpg', name: 'a.jpg', timestamp: '2024-01-01 08:02:00' },
+                    { url: 'b.jpg', name: 'b.jpg', timestamp: '2024-01-01 12:00:00' },
+                ],
+            }],
+        };
+        await gallery.renderRaceDetail(race);
+        jest.advanceTimersByTime(200);
+
+        // Photo b should be out of range
+        expect(L.markerClusterGroup).toHaveBeenCalled();
+
+        delete global.Chart;
+        jest.useRealTimers();
+    });
+});
+
+describe('renderGpxChart', () => {
+    test('returns early when Chart is undefined', () => {
+        delete global.Chart;
+        const container = document.createElement('div');
+        const trackpoints = [
+            { lat: 0, lon: 0, time: 0, dist: 0, ele: 10 },
+            { lat: 1, lon: 1, time: 60000, dist: 1000, ele: 20 },
+        ];
+        gallery.renderGpxChart(trackpoints, container);
+        expect(container.querySelector('.gpx-chart-container')).toBeNull();
+    });
+
+    test('returns early when less than 2 trackpoints', () => {
+        global.Chart = jest.fn();
+        const container = document.createElement('div');
+        gallery.renderGpxChart([{ lat: 0, lon: 0, time: 0, dist: 0 }], container);
+        expect(container.querySelector('.gpx-chart-container')).toBeNull();
+        delete global.Chart;
+    });
+
+    test('creates chart with elevation and pace', () => {
+        global.Chart = jest.fn();
+        const container = document.createElement('div');
+        const trackpoints = [
+            { lat: 0, lon: 0, time: 0, dist: 0, ele: 10 },
+            { lat: 0.01, lon: 0, time: 60000, dist: 1000, ele: 20 },
+            { lat: 0.02, lon: 0, time: 120000, dist: 2000, ele: 15 },
+        ];
+        gallery.renderGpxChart(trackpoints, container);
+        expect(container.querySelector('.gpx-chart-container')).not.toBeNull();
+        expect(container.querySelector('canvas')).not.toBeNull();
+        expect(Chart).toHaveBeenCalledTimes(1);
+        const chartCall = Chart.mock.calls[0];
+        expect(chartCall[1].type).toBe('line');
+        expect(chartCall[1].data.datasets.length).toBe(2); // elevation + pace
+        delete global.Chart;
+    });
+
+    test('includes heart rate dataset when available', () => {
+        global.Chart = jest.fn();
+        const container = document.createElement('div');
+        const trackpoints = [
+            { lat: 0, lon: 0, time: 0, dist: 0, ele: 10, hr: 120 },
+            { lat: 0.01, lon: 0, time: 60000, dist: 1000, ele: 20, hr: 140 },
+            { lat: 0.02, lon: 0, time: 120000, dist: 2000, ele: 15, hr: 150 },
+        ];
+        gallery.renderGpxChart(trackpoints, container);
+        const chartCall = Chart.mock.calls[0];
+        expect(chartCall[1].data.datasets.length).toBe(3); // elevation + pace + hr
+        expect(chartCall[1].options.scales.yHr).toBeDefined();
+        delete global.Chart;
+    });
+
+    test('tooltip callbacks format correctly', () => {
+        global.Chart = jest.fn();
+        const container = document.createElement('div');
+        const trackpoints = [
+            { lat: 0, lon: 0, time: 0, dist: 0, ele: 10, hr: 120 },
+            { lat: 0.01, lon: 0, time: 60000, dist: 1000, ele: 20, hr: 140 },
+        ];
+        gallery.renderGpxChart(trackpoints, container);
+        const tooltipLabel = Chart.mock.calls[0][1].options.plugins.tooltip.callbacks.label;
+
+        expect(tooltipLabel({ parsed: { y: null }, dataset: { yAxisID: 'yEle' } })).toBe('');
+        expect(tooltipLabel({ parsed: { y: 100 }, dataset: { yAxisID: 'yEle' } })).toBe('Elevation: 100 m');
+        expect(tooltipLabel({ parsed: { y: 5.5 }, dataset: { yAxisID: 'yPace' } })).toContain("5'30\"");
+        expect(tooltipLabel({ parsed: { y: 145 }, dataset: { yAxisID: 'yHr' } })).toBe('HR: 145 bpm');
+        delete global.Chart;
+    });
+
+    test('legend onClick toggles dataset visibility', () => {
+        global.Chart = jest.fn();
+        const container = document.createElement('div');
+        const trackpoints = [
+            { lat: 0, lon: 0, time: 0, dist: 0, ele: 10 },
+            { lat: 0.01, lon: 0, time: 60000, dist: 1000, ele: 20 },
+        ];
+        gallery.renderGpxChart(trackpoints, container);
+        const legendOnClick = Chart.mock.calls[0][1].options.plugins.legend.onClick;
+
+        const mockMeta = { hidden: false };
+        const mockLegend = {
+            chart: {
+                getDatasetMeta: jest.fn().mockReturnValue(mockMeta),
+                update: jest.fn(),
+            },
+        };
+        legendOnClick(null, { datasetIndex: 0 }, mockLegend);
+        expect(mockMeta.hidden).toBe(true);
+        expect(mockLegend.chart.update).toHaveBeenCalled();
+
+        legendOnClick(null, { datasetIndex: 0 }, mockLegend);
+        expect(mockMeta.hidden).toBe(false);
+        delete global.Chart;
+    });
+
+    test('handles trackpoints without elevation', () => {
+        global.Chart = jest.fn();
+        const container = document.createElement('div');
+        const trackpoints = [
+            { lat: 0, lon: 0, time: 0, dist: 0 },
+            { lat: 0.01, lon: 0, time: 60000, dist: 1000 },
+        ];
+        gallery.renderGpxChart(trackpoints, container);
+        const chartData = Chart.mock.calls[0][1].data;
+        expect(chartData.datasets[0].data).toEqual([null, null]);
+        delete global.Chart;
+    });
+
+    test('caps pace at 15 min/km', () => {
+        global.Chart = jest.fn();
+        const container = document.createElement('div');
+        // Very slow: 60 min for 1m distance = 60000 min/km
+        const trackpoints = [
+            { lat: 0, lon: 0, time: 0, dist: 0, ele: 10 },
+            { lat: 0, lon: 0, time: 3600000, dist: 1, ele: 10 },
+        ];
+        gallery.renderGpxChart(trackpoints, container);
+        const paceData = Chart.mock.calls[0][1].data.datasets[1].data;
+        expect(paceData[1]).toBeNull();
+        delete global.Chart;
+    });
+});
+
+describe('render', () => {
+    test('calls scanDirectory and handleRoute', async () => {
+        const mockManifest = { races: [] };
+        global.fetch = jest.fn().mockResolvedValue({
+            ok: true,
+            json: () => Promise.resolve(mockManifest),
+        });
+        await gallery.render();
+        expect(gallery.manifest).toEqual(mockManifest);
+        expect(document.querySelector('.no-races')).not.toBeNull();
     });
 });
