@@ -7,18 +7,6 @@ My photos from various races, organized and displayed in a beautiful web gallery
 ```
 Race-Photos/
 ├── scripts/              # Private submodule (Race-Photos-Scripts)
-│   ├── download_photos.py      # Download photos from API responses
-│   ├── download_runnerbar.py   # Download photos from RunnerBar API
-│   ├── download_yipai360.py    # Download photos from Yipai360 API
-│   ├── download_photoplus.py   # Download photos from PhotoPlus API
-│   ├── download_pailixiang.py  # Download photos from Pailixiang API
-│   ├── download_runff.py      # Download photos from RunFF API
-│   ├── download_ihuipao.py    # Download photos from iHuiPao API
-│   ├── download_strava_gpx.py  # Download GPX routes from Strava API
-│   ├── fix_gpx_elevation.py    # Fix barometric altimeter errors in GPX
-│   ├── generate_manifest.py    # Generate gallery manifest
-│   ├── requirements.txt        # Python dependencies
-│   └── README.md              # Scripts documentation
 ├── docs/                 # GitHub Pages site
 │   ├── index.html             # Main gallery page
 │   ├── styles.css             # Gallery styles
