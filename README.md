@@ -4,6 +4,7 @@
 [![Tests](https://github.com/laqieer/Race-Photos/actions/workflows/test.yml/badge.svg)](https://github.com/laqieer/Race-Photos/actions/workflows/test.yml)
 [![Coverage](https://img.shields.io/endpoint?url=https://laqieer.github.io/Race-Photos/coverage.json)](https://github.com/laqieer/Race-Photos/actions/workflows/deploy-pages.yml)
 [![Vibe Coded](https://img.shields.io/badge/vibe-coded-%23ff69b4?style=flat)](https://github.com/topics/vibe-coding)
+[![Mirror](https://img.shields.io/badge/mirror-Gitee-red)](https://gitee.com/laqieer/Race-Photos)
 
 My photos from various races, organized and displayed in a beautiful web gallery.
 
