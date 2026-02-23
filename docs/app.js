@@ -667,15 +667,16 @@ class RacePhotosGallery {
         }
         card.appendChild(raceHeader);
 
-        // Route map
-        if (race.route && typeof L !== 'undefined') {
+        // Route map - fetch GPX from Strava if available, fall back to local route file
+        const gpxUrl = race.strava_url ? race.strava_url + '/export_gpx' : race.route;
+        if (gpxUrl && typeof L !== 'undefined') {
             const mapContainer = document.createElement('div');
             mapContainer.id = 'race-detail-map';
             mapContainer.className = 'race-map';
             card.appendChild(mapContainer);
 
             try {
-                const res = await fetch(race.route + '?t=' + Date.now());
+                const res = await fetch(gpxUrl + (gpxUrl.includes('?') ? '&' : '?') + 't=' + Date.now());
                 const gpxText = await res.text();
                 const trackpoints = this.parseGpx(gpxText);
 

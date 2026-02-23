@@ -853,7 +853,7 @@ describe('renderRaceDetail', () => {
         const race = {
             name: 'GPX Race',
             date: '2024-01-01',
-            route: 'routes/test.gpx',
+            strava_url: 'https://www.strava.com/activities/12345',
             sources: [{
                 name: 'src',
                 photos: [
@@ -879,12 +879,56 @@ describe('renderRaceDetail', () => {
 
         const race = {
             name: 'Fail Route',
-            route: 'routes/fail.gpx',
+            strava_url: 'https://www.strava.com/activities/99999',
             sources: [{ name: 's', photos: [{ url: 'a.jpg', name: 'a' }] }],
         };
         await gallery.renderRaceDetail(race);
         // Should not crash, card still rendered
         expect(document.querySelector('.race-card')).not.toBeNull();
+    });
+
+    test('fetches GPX from strava_url/export_gpx when strava_url is set', async () => {
+        jest.useFakeTimers();
+        const gpxXml = `<?xml version="1.0"?>
+        <gpx><trk><trkseg>
+            <trkpt lat="30.0" lon="120.0"><ele>10</ele><time>2024-01-01T00:00:00Z</time></trkpt>
+            <trkpt lat="30.01" lon="120.01"><ele>15</ele><time>2024-01-01T00:05:00Z</time></trkpt>
+        </trkseg></trk></gpx>`;
+        global.fetch = jest.fn().mockResolvedValue({ ok: true, text: () => Promise.resolve(gpxXml) });
+        global.Chart = jest.fn();
+
+        const race = {
+            name: 'Strava GPX',
+            strava_url: 'https://www.strava.com/activities/12345',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        jest.advanceTimersByTime(200);
+        const fetchUrl = global.fetch.mock.calls[0][0];
+        expect(fetchUrl).toMatch(/^https:\/\/www\.strava\.com\/activities\/12345\/export_gpx/);
+        jest.useRealTimers();
+    });
+
+    test('falls back to race.route when strava_url is absent', async () => {
+        jest.useFakeTimers();
+        const gpxXml = `<?xml version="1.0"?>
+        <gpx><trk><trkseg>
+            <trkpt lat="30.0" lon="120.0"><ele>10</ele><time>2024-01-01T00:00:00Z</time></trkpt>
+            <trkpt lat="30.01" lon="120.01"><ele>15</ele><time>2024-01-01T00:05:00Z</time></trkpt>
+        </trkseg></trk></gpx>`;
+        global.fetch = jest.fn().mockResolvedValue({ ok: true, text: () => Promise.resolve(gpxXml) });
+        global.Chart = jest.fn();
+
+        const race = {
+            name: 'Local GPX',
+            route: 'routes/local.gpx',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        jest.advanceTimersByTime(200);
+        const fetchUrl = global.fetch.mock.calls[0][0];
+        expect(fetchUrl).toMatch(/^routes\/local\.gpx/);
+        jest.useRealTimers();
     });
 
     test('groups out-of-range photos separately', async () => {
@@ -903,7 +947,7 @@ describe('renderRaceDetail', () => {
 
         const race = {
             name: 'OOR Race',
-            route: 'routes/test.gpx',
+            strava_url: 'https://www.strava.com/activities/12345',
             sources: [{
                 name: 'src',
                 photos: [
