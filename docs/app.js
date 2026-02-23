@@ -642,6 +642,14 @@ class RacePhotosGallery {
 
         raceHeader.appendChild(title);
         raceHeader.appendChild(info);
+        if (race.strava_url) {
+            const stravaLink = document.createElement('a');
+            stravaLink.href = race.strava_url;
+            stravaLink.target = '_blank';
+            stravaLink.className = 'strava-link';
+            stravaLink.innerHTML = '🏃 View on Strava';
+            raceHeader.appendChild(stravaLink);
+        }
         card.appendChild(raceHeader);
 
         // Route map

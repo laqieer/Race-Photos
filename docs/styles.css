@@ -99,6 +99,19 @@ a.race-card {
     opacity: 0.9;
 }
 
+.strava-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #fc4c02;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.strava-link:hover {
+    text-decoration: underline;
+}
+
 /* Sources */
 .sources-container {
     padding: 1.5rem;
