@@ -1,5 +1,7 @@
 # Race-Photos
 
+[![Deploy to GitHub Pages](https://github.com/laqieer/Race-Photos/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/laqieer/Race-Photos/actions/workflows/deploy-pages.yml)
+
 My photos from various races, organized and displayed in a beautiful web gallery.
 
 🔗 **Live site**: https://laqieer.github.io/Race-Photos/
