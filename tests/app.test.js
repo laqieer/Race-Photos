@@ -556,6 +556,23 @@ describe('renderOverview', () => {
         expect(document.querySelectorAll('.race-card')).toHaveLength(2);
     });
 
+    test('shows links bar with race results and certificates', () => {
+        gallery.manifest = {
+            races: [{ name: 'R', sources: [{ name: 's', photos: [{ url: 'a.jpg' }] }] }],
+        };
+        gallery.renderOverview();
+        const linksBar = document.querySelector('.links-bar');
+        expect(linksBar).not.toBeNull();
+        const links = linksBar.querySelectorAll('a');
+        expect(links).toHaveLength(2);
+        expect(links[0].href).toContain('running_race');
+        expect(links[0].textContent).toContain('Race Results');
+        expect(links[1].href).toContain('running_cert');
+        expect(links[1].textContent).toContain('Race Certificates');
+        expect(links[0].target).toBe('_blank');
+        expect(links[1].target).toBe('_blank');
+    });
+
     test('creates map when races have locations', () => {
         jest.useFakeTimers();
         gallery.manifest = {
@@ -724,6 +741,29 @@ describe('renderRaceDetail', () => {
         expect(document.querySelector('.back-link')).not.toBeNull();
         expect(document.querySelector('.race-header h2').textContent).toBe('Test Race');
         expect(document.querySelectorAll('.source-section')).toHaveLength(2);
+    });
+
+    test('shows Strava link when strava_url is present', async () => {
+        const race = {
+            name: 'Strava Race',
+            strava_url: 'https://www.strava.com/activities/12345',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        const stravaLink = document.querySelector('.strava-link');
+        expect(stravaLink).not.toBeNull();
+        expect(stravaLink.href).toBe('https://www.strava.com/activities/12345');
+        expect(stravaLink.target).toBe('_blank');
+        expect(stravaLink.textContent).toContain('Strava');
+    });
+
+    test('does not show Strava link when strava_url is absent', async () => {
+        const race = {
+            name: 'No Strava',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        expect(document.querySelector('.strava-link')).toBeNull();
     });
 
     test('renders race detail with timestamps grouped by time', async () => {
