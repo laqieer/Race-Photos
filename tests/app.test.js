@@ -781,6 +781,19 @@ describe('renderRaceDetail', () => {
         expect(gpxLink.textContent).toContain('Download GPX');
     });
 
+    test('GPX download prefers local route over strava export', async () => {
+        const race = {
+            name: 'Local GPX',
+            route: 'routes/test.gpx',
+            strava_url: 'https://www.strava.com/activities/12345',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        const gpxLink = document.querySelector('.gpx-download');
+        expect(gpxLink.getAttribute('href')).toBe('routes/test.gpx');
+        expect(gpxLink.download).toBeDefined();
+    });
+
     test('renders race detail with timestamps grouped by time', async () => {
         const race = {
             name: 'Timed Race',

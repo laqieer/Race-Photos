@@ -660,7 +660,8 @@ class RacePhotosGallery {
             raceHeader.appendChild(stravaLink);
 
             const gpxLink = document.createElement('a');
-            gpxLink.href = race.strava_url + '/export_gpx';
+            gpxLink.href = race.route || (race.strava_url + '/export_gpx');
+            gpxLink.download = '';
             gpxLink.className = 'strava-link gpx-download';
             gpxLink.innerHTML = '📥 Download GPX';
             raceHeader.appendChild(gpxLink);
