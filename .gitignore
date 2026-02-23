@@ -29,6 +29,3 @@ test_*.json
 
 # Temp caches
 docs/images/_temp_cache_*/
-
-# Credentials
-strava_token.json
