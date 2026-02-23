@@ -70,9 +70,25 @@ def download_gpx(activity_id: str, token: str, output_path: Path):
     ]
 
     hr_data = streams.get('heartrate')
+    alt_data = streams.get('altitude')
+
+    # Fix bad elevation at start (Strava barometer calibration issue)
+    if alt_data:
+        median_ele = sorted(alt_data)[len(alt_data) // 2]
+        threshold = 50  # meters from median
+        first_good = 0
+        for j, e in enumerate(alt_data):
+            if abs(e - median_ele) < threshold:
+                first_good = j
+                break
+        if first_good > 0:
+            stable_val = alt_data[first_good]
+            for j in range(first_good):
+                alt_data[j] = stable_val
+
     for i in range(len(streams['latlng'])):
         lat, lon = streams['latlng'][i]
-        ele = streams.get('altitude', [None] * len(streams['latlng']))[i]
+        ele = alt_data[i] if alt_data else None
         t = start_time + timedelta(seconds=streams['time'][i])
         time_str = t.strftime('%Y-%m-%dT%H:%M:%SZ')
         gpx_lines.append(f'      <trkpt lat="{lat}" lon="{lon}">')
