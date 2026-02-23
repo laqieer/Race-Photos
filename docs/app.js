@@ -676,8 +676,16 @@ class RacePhotosGallery {
             card.appendChild(mapContainer);
 
             try {
-                const res = await fetch(gpxUrl + (gpxUrl.includes('?') ? '&' : '?') + 't=' + Date.now());
-                const gpxText = await res.text();
+                // Cache GPX in localStorage to avoid Strava rate limits
+                const cacheKey = 'gpx_' + gpxUrl;
+                let gpxText = null;
+                try { gpxText = localStorage.getItem(cacheKey); } catch (e) {}
+                if (!gpxText) {
+                    const res = await fetch(gpxUrl + (gpxUrl.includes('?') ? '&' : '?') + 't=' + Date.now());
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    gpxText = await res.text();
+                    try { localStorage.setItem(cacheKey, gpxText); } catch (e) {}
+                }
                 const trackpoints = this.parseGpx(gpxText);
 
                 if (trackpoints.length > 0) {

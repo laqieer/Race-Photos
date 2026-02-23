@@ -894,6 +894,7 @@ describe('renderRaceDetail', () => {
             <trkpt lat="30.0" lon="120.0"><ele>10</ele><time>2024-01-01T00:00:00Z</time></trkpt>
             <trkpt lat="30.01" lon="120.01"><ele>15</ele><time>2024-01-01T00:05:00Z</time></trkpt>
         </trkseg></trk></gpx>`;
+        localStorage.clear();
         global.fetch = jest.fn().mockResolvedValue({ ok: true, text: () => Promise.resolve(gpxXml) });
         global.Chart = jest.fn();
 
@@ -928,6 +929,31 @@ describe('renderRaceDetail', () => {
         jest.advanceTimersByTime(200);
         const fetchUrl = global.fetch.mock.calls[0][0];
         expect(fetchUrl).toMatch(/^routes\/local\.gpx/);
+        jest.useRealTimers();
+    });
+
+    test('uses cached GPX from localStorage on second load', async () => {
+        jest.useFakeTimers();
+        const gpxXml = `<?xml version="1.0"?>
+        <gpx><trk><trkseg>
+            <trkpt lat="30.0" lon="120.0"><ele>10</ele><time>2024-01-01T00:00:00Z</time></trkpt>
+            <trkpt lat="30.01" lon="120.01"><ele>15</ele><time>2024-01-01T00:05:00Z</time></trkpt>
+        </trkseg></trk></gpx>`;
+        const cacheKey = 'gpx_https://www.strava.com/activities/12345/export_gpx';
+        localStorage.setItem(cacheKey, gpxXml);
+        global.fetch = jest.fn();
+        global.Chart = jest.fn();
+
+        const race = {
+            name: 'Cached GPX',
+            strava_url: 'https://www.strava.com/activities/12345',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        jest.advanceTimersByTime(200);
+        expect(global.fetch).not.toHaveBeenCalled();
+        expect(document.querySelector('#race-detail-map')).not.toBeNull();
+        localStorage.removeItem(cacheKey);
         jest.useRealTimers();
     });
 
