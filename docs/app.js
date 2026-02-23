@@ -667,8 +667,8 @@ class RacePhotosGallery {
         }
         card.appendChild(raceHeader);
 
-        // Route map - fetch GPX from Strava if available, fall back to local route file
-        const gpxUrl = race.strava_url ? race.strava_url + '/export_gpx' : race.route;
+        // Route map - use local GPX file, fall back to Strava export
+        const gpxUrl = race.route || (race.strava_url ? race.strava_url + '/export_gpx' : null);
         if (gpxUrl && typeof L !== 'undefined') {
             const mapContainer = document.createElement('div');
             mapContainer.id = 'race-detail-map';
