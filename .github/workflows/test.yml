@@ -43,9 +43,24 @@ jobs:
           });
           fs.writeFileSync('test-report/report.md', lines.join('\n'));
           "
+      - name: Generate coverage summary
+        if: always()
+        run: |
+          node -e "
+          var fs = require('fs');
+          var c = JSON.parse(fs.readFileSync('test-report/coverage/coverage-summary.json','utf8'));
+          var t = c.total;
+          var lines = ['\n# Coverage Report\n'];
+          lines.push('| Category | Covered | Total | % |');
+          lines.push('|----------|---------|-------|---|');
+          ['lines','statements','functions','branches'].forEach(function(k) {
+            lines.push('| ' + k.charAt(0).toUpperCase() + k.slice(1) + ' | ' + t[k].covered + ' | ' + t[k].total + ' | ' + t[k].pct + '% |');
+          });
+          fs.writeFileSync('test-report/coverage-report.md', lines.join('\n'));
+          "
       - name: Publish test report summary
         if: always()
-        run: cat test-report/report.md >> $GITHUB_STEP_SUMMARY
+        run: cat test-report/report.md >> $GITHUB_STEP_SUMMARY && cat test-report/coverage-report.md >> $GITHUB_STEP_SUMMARY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
