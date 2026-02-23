@@ -95,6 +95,10 @@ Your gallery will be available at: `https://<username>.github.io/Race-Photos/`
 - **Video Support**: Videos displayed with play icon overlay, hover-to-preview, and full playback in lightbox
 - **Lazy Loading**: Photos load as you scroll for better performance
 
+## 🤖 Built with GitHub Copilot
+
+This project was entirely coded by [GitHub Copilot](https://github.com/features/copilot) — including the gallery frontend, download scripts, manifest generator, GPX processing, and CI/CD workflow.
+
 ## 📝 License
 
 All photos are property of their respective owners.
