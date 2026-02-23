@@ -97,7 +97,7 @@ Your gallery will be available at: `https://<username>.github.io/Race-Photos/`
 
 ## 🤖 Built with GitHub Copilot
 
-This project was entirely coded by [GitHub Copilot](https://github.com/features/copilot) — including the gallery frontend, download scripts, manifest generator, GPX processing, and CI/CD workflow.
+This project was entirely coded by [GitHub Copilot](https://github.com/features/copilot) powered by Claude Sonnet 4 (Anthropic) — including the gallery frontend, download scripts, manifest generator, GPX processing, and CI/CD workflow.
 
 ## 📝 License
 
