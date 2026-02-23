@@ -20,7 +20,7 @@ Race-Photos/
 │   ├── styles.css             # Gallery styles
 │   ├── app.js                 # Gallery JavaScript
 │   ├── routes/                # GPX route files
-│   │   └── {race}.gpx         # GPS route data
+│   │   └── {race}.gpx         # GPS route data (with Strava metadata)
 │   └── images/                # Downloaded photos & videos
 │       ├── {race}/            # Race directories
 │       │   └── {source}/      # Source directories
@@ -29,6 +29,11 @@ Race-Photos/
 │       │       ├── race_info.json    # Race metadata (committed)
 │       │       └── photos_list.json  # Photo metadata (committed)
 │       └── manifest.json      # Gallery manifest
+├── .github/workflows/    # CI/CD
+│   ├── deploy-pages.yml       # Deploy to GitHub Pages + coverage
+│   └── test.yml               # Run tests + upload report artifact
+├── tests/                # Unit tests (Jest + jsdom)
+│   └── app.test.js            # Gallery frontend tests
 ├── serve.py             # Local dev server (no cache)
 └── README.md            # This file
 ```
@@ -79,14 +84,9 @@ Then visit http://localhost:8080, or enable GitHub Pages to view online.
 
 ## 🌐 GitHub Pages
 
-To enable GitHub Pages:
+The site is deployed automatically via GitHub Actions (see `.github/workflows/deploy-pages.yml`). It also runs tests with coverage and publishes a test report artifact.
 
-1. Go to repository Settings → Pages
-2. Set Source to "Deploy from a branch"
-3. Select branch: `main`, folder: `/docs`
-4. Save
-
-Your gallery will be available at: `https://<username>.github.io/Race-Photos/`
+Your gallery is available at: `https://<username>.github.io/Race-Photos/`
 
 ## 🎨 Gallery Features
 
@@ -97,9 +97,20 @@ Your gallery will be available at: `https://<username>.github.io/Race-Photos/`
 - **GPX Route Display**: Race route with km distance markers and photo positions along the route
 - **Performance Chart**: Elevation, pace, and heart rate chart from GPX data
 - **Photo Grouping**: Photos grouped by time proximity with pace/HR metrics
+- **Strava Integration**: Link to Strava activity and GPX download on race detail pages
+- **External Links**: Quick access to race results and certificates from overview page
 - **Lightbox View**: Click any photo or video to view full size
 - **Video Support**: Videos displayed with play icon overlay, hover-to-preview, and full playback in lightbox
 - **Lazy Loading**: Photos load as you scroll for better performance
+
+## 🧪 Testing
+
+```bash
+npm test              # Run tests
+npm run test:report   # Run tests with JSON report output
+```
+
+Tests use Jest with jsdom and cover gallery rendering, GPX parsing, photo grouping, lightbox, and more. Test reports are uploaded as CI artifacts on every push.
 
 ## 🤖 Built with GitHub Copilot
 
