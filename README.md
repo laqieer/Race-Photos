@@ -17,7 +17,6 @@ Race-Photos/
 │   ├── download_strava_gpx.py  # Download GPX routes from Strava API
 │   ├── fix_gpx_elevation.py    # Fix barometric altimeter errors in GPX
 │   ├── generate_manifest.py    # Generate gallery manifest
-│   ├── serve.py               # Local dev server (no cache)
 │   ├── requirements.txt        # Python dependencies
 │   └── README.md              # Scripts documentation
 ├── docs/                 # GitHub Pages site
@@ -34,6 +33,7 @@ Race-Photos/
 │       │       ├── race_info.json    # Race metadata (committed)
 │       │       └── photos_list.json  # Photo metadata (committed)
 │       └── manifest.json      # Gallery manifest
+├── serve.py             # Local dev server (no cache)
 └── README.md            # This file
 ```
 
@@ -76,7 +76,7 @@ python scripts/generate_manifest.py
 Start a local development server (with cache disabled) and open in browser:
 
 ```bash
-python scripts/serve.py
+python serve.py
 ```
 
 Then visit http://localhost:8080, or enable GitHub Pages to view online.
