@@ -62,7 +62,7 @@ pip install -r requirements.txt
 
 ### 3. Download Photos & Generate Manifest
 
-See the [scripts README](scripts/README.md) for detailed usage of each download script.
+See the [scripts README](https://github.com/laqieer/Race-Photos-Scripts/blob/main/README.md) for detailed usage of each download script.
 
 ```bash
 # Download photos (see scripts README for platform-specific commands)
