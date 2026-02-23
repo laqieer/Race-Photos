@@ -250,6 +250,15 @@ class RacePhotosGallery {
         `;
         this.racesContainer.appendChild(statsBar);
 
+        // Related links
+        const linksBar = document.createElement('div');
+        linksBar.className = 'links-bar';
+        linksBar.innerHTML = `
+            <a href="https://laqieer.github.io/running_race/" target="_blank">📊 Race Results</a>
+            <a href="https://laqieer.github.io/running_cert/" target="_blank">🏅 Race Certificates</a>
+        `;
+        this.racesContainer.appendChild(linksBar);
+
         // Add map showing all races
         const racesWithLocation = this.manifest.races.filter(race =>
             race.sources.some(s => s.photos.some(p => p.lat && p.lon)) || (race.lat && race.lon) || race.city
