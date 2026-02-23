@@ -255,7 +255,7 @@ class RacePhotosGallery {
         linksBar.className = 'links-bar';
         linksBar.innerHTML = `
             <a href="https://laqieer.github.io/running_race/" target="_blank">📊 Race Results</a>
-            <a href="https://laqieer.github.io/running_cert/" target="_blank">🏅 Race Certificates</a>
+            <a href="https://laqieer.github.io/running_cert/real_cert.html" target="_blank">🏅 Race Certificates</a>
         `;
         this.racesContainer.appendChild(linksBar);
 
