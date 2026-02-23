@@ -102,6 +102,7 @@ a.race-card {
 .strava-link {
     display: inline-block;
     margin-top: 0.5rem;
+    margin-right: 0.5rem;
     color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
