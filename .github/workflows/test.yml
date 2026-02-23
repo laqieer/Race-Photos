@@ -18,4 +18,37 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npm test
+      - run: mkdir -p test-report && npm run test:report
+      - name: Generate test report summary
+        if: always()
+        run: |
+          node -e "
+          const fs = require('fs');
+          const r = JSON.parse(fs.readFileSync('test-report/results.json','utf8'));
+          const lines = ['# Test Report\n'];
+          lines.push('| Metric | Value |');
+          lines.push('|--------|-------|');
+          lines.push('| Tests | ' + r.numPassedTests + ' passed, ' + r.numFailedTests + ' failed, ' + r.numTotalTests + ' total |');
+          lines.push('| Suites | ' + r.numPassedTestSuites + ' passed, ' + r.numFailedTestSuites + ' failed, ' + r.numTotalTestSuites + ' total |');
+          var s = r.testResults[0];
+          var time = s ? ((s.endTime - s.startTime) / 1000).toFixed(2) : '?';
+          lines.push('| Time | ' + time + 's |');
+          lines.push('| Status | ' + (r.success ? '✅ PASSED' : '❌ FAILED') + ' |\n');
+          r.testResults.forEach(function(suite) {
+            lines.push('## ' + suite.name.split('/').pop());
+            suite.assertionResults.forEach(function(t) {
+              var icon = t.status === 'passed' ? '✅' : '❌';
+              lines.push('- ' + icon + ' ' + t.ancestorTitles.join(' > ') + ' > ' + t.title + ' (' + t.duration + 'ms)');
+            });
+          });
+          fs.writeFileSync('test-report/report.md', lines.join('\n'));
+          "
+      - name: Publish test report summary
+        if: always()
+        run: cat test-report/report.md >> $GITHUB_STEP_SUMMARY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-report
+          path: test-report/
+          retention-days: 30
