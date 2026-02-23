@@ -6,7 +6,7 @@ My photos from various races, organized and displayed in a beautiful web gallery
 
 ```
 Race-Photos/
-├── scripts/              # Batch download scripts for photos
+├── scripts/              # Private submodule (Race-Photos-Scripts)
 │   ├── download_photos.py      # Download photos from API responses
 │   ├── download_runnerbar.py   # Download photos from RunnerBar API
 │   ├── download_yipai360.py    # Download photos from Yipai360 API
@@ -39,14 +39,27 @@ Race-Photos/
 
 ## 🚀 Quick Start
 
-### 1. Install Dependencies
+### 1. Clone with Submodule
+
+The download scripts are stored in a private submodule. Clone with:
+
+```bash
+git clone --recurse-submodules https://github.com/laqieer/Race-Photos.git
+
+# Or if already cloned:
+git submodule update --init --recursive
+```
+
+> **Note:** The `scripts/` submodule points to a private repo ([Race-Photos-Scripts](https://github.com/laqieer/Race-Photos-Scripts)). You need access to clone it. The gallery itself works without the submodule — only the download/management scripts require it.
+
+### 2. Install Dependencies
 
 ```bash
 cd scripts
 pip install -r requirements.txt
 ```
 
-### 2. Download Photos
+### 3. Download Photos
 
 Save API response to a JSON file, then run:
 
@@ -61,7 +74,7 @@ python scripts/download_photos.py marathon_api.json marathon2024 official
 
 This downloads photos to: `docs/images/marathon2024/official/`
 
-### 3. Generate Gallery Manifest
+### 4. Generate Gallery Manifest
 
 After downloading photos, update the gallery:
 
@@ -69,7 +82,7 @@ After downloading photos, update the gallery:
 python scripts/generate_manifest.py
 ```
 
-### 4. View Gallery
+### 5. View Gallery
 
 Start a local development server (with cache disabled) and open in browser:
 
