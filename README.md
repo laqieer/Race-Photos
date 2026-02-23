@@ -14,6 +14,8 @@ Race-Photos/
 │   ├── download_pailixiang.py  # Download photos from Pailixiang API
 │   ├── download_runff.py      # Download photos from RunFF API
 │   ├── download_ihuipao.py    # Download photos from iHuiPao API
+│   ├── download_strava_gpx.py  # Download GPX routes from Strava API
+│   ├── fix_gpx_elevation.py    # Fix barometric altimeter errors in GPX
 │   ├── generate_manifest.py    # Generate gallery manifest
 │   ├── serve.py               # Local dev server (no cache)
 │   ├── requirements.txt        # Python dependencies
@@ -247,6 +249,28 @@ python scripts/download_photos.py photographer_a.json marathon2024 photographerA
 # Update gallery
 python scripts/generate_manifest.py
 ```
+
+### Download GPX Routes from Strava
+
+Download GPX route files from Strava API for race detail maps:
+
+```bash
+# First-time setup: run OAuth flow to get access token (saved to strava_token.json)
+# Then download GPX by Strava activity ID:
+python scripts/download_strava_gpx.py 17456965834 -o "docs/routes/MyRace.gpx"
+
+# Auto-name from activity title:
+python scripts/download_strava_gpx.py 17456965834
+
+# Fix barometric altimeter calibration errors at start of GPX:
+python scripts/fix_gpx_elevation.py docs/routes/MyRace.gpx          # fix in-place
+python scripts/fix_gpx_elevation.py docs/routes/MyRace.gpx --dry-run # preview only
+
+# Update gallery
+python scripts/generate_manifest.py
+```
+
+> **Design Decision:** GPX routes are pre-downloaded as static files and committed to the repository, rather than fetched from Strava API at runtime. This is because the gallery is hosted on GitHub Pages (static site) and calling the Strava API from the frontend would expose the access token to anyone visiting the site. The token file (`strava_token.json`) is gitignored to prevent credential leaks.
 
 ### Supported JSON Formats
 
