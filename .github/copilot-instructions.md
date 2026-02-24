@@ -31,4 +31,14 @@ No build step — the frontend is vanilla HTML/CSS/JS served directly from `docs
 - GPX files are stored locally in `docs/routes/{race}.gpx` and cached in `localStorage` to avoid Strava rate limits
 - Always update documentation (README, etc.) after making code changes
 - Always add unit tests and E2E tests for new changes when possible
-- Always check CI status after pushing — three workflows: Tests, Deploy to GitHub Pages, E2E Tests (triggered after deploy)
+
+## Workflow for New Changes
+
+1. Make code changes
+2. Run unit tests locally: `npm test` — fix until all pass
+3. Start local server: `python -m http.server 8081 --directory docs`
+4. Run E2E tests locally: `BASE_URL=http://localhost:8081 npx playwright test` — fix until all pass
+5. Update README and other docs to reflect the changes
+6. Commit and push
+7. Check all three CI workflows pass (Tests → Deploy → E2E)
+8. If CI fails, fix, and repeat from step 2
