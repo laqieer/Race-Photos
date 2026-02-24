@@ -34,3 +34,5 @@ docs/images/_temp_cache_*/
 node_modules/
 coverage/
 test-report/
+test-results/
+playwright-report/

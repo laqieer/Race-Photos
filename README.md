@@ -2,6 +2,7 @@
 
 [![Deploy to GitHub Pages](https://github.com/laqieer/Race-Photos/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/laqieer/Race-Photos/actions/workflows/deploy-pages.yml)
 [![Tests](https://github.com/laqieer/Race-Photos/actions/workflows/test.yml/badge.svg)](https://github.com/laqieer/Race-Photos/actions/workflows/test.yml)
+[![E2E](https://github.com/laqieer/Race-Photos/actions/workflows/e2e.yml/badge.svg)](https://github.com/laqieer/Race-Photos/actions/workflows/e2e.yml)
 [![Coverage](https://img.shields.io/endpoint?url=https://laqieer.github.io/Race-Photos/coverage.json)](https://github.com/laqieer/Race-Photos/actions/workflows/test.yml)
 [![Vibe Coded](https://img.shields.io/badge/vibe-coded-%23ff69b4?style=flat)](https://github.com/topics/vibe-coding)
 [![Mirror](https://img.shields.io/badge/mirror-Gitee-red)](https://gitee.com/laqieer/Race-Photos)
@@ -31,9 +32,12 @@ Race-Photos/
 │       └── manifest.json      # Gallery manifest
 ├── .github/workflows/    # CI/CD
 │   ├── deploy-pages.yml       # Deploy to GitHub Pages + coverage
-│   └── test.yml               # Run tests + upload report artifact
-├── tests/                # Unit tests (Jest + jsdom)
-│   └── app.test.js            # Gallery frontend tests
+│   ├── test.yml               # Run unit tests + upload report artifact
+│   └── e2e.yml                # Run E2E tests after deployment
+├── tests/                # Tests
+│   ├── app.test.js            # Unit tests (Jest + jsdom)
+│   └── e2e/                   # E2E tests (Playwright)
+│       └── gallery.spec.js    # Gallery E2E tests
 ├── serve.py             # Local dev server (no cache)
 └── README.md            # This file
 ```
@@ -106,11 +110,12 @@ Your gallery is available at: `https://<username>.github.io/Race-Photos/`
 ## 🧪 Testing
 
 ```bash
-npm test              # Run tests
-npm run test:report   # Run tests with JSON report output
+npm test                    # Run unit tests
+npm run test:report         # Run unit tests with coverage report
+npx playwright test         # Run E2E tests against live site
 ```
 
-Tests use Jest with jsdom and cover gallery rendering, GPX parsing, photo grouping, lightbox, and more. Test reports are uploaded as CI artifacts on every push.
+Unit tests use Jest with jsdom. E2E tests use Playwright against the deployed GitHub Pages site. Test reports are uploaded as CI artifacts on every push.
 
 ## 🤖 Built with GitHub Copilot
 
