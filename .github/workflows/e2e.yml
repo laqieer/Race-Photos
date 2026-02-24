@@ -23,24 +23,47 @@ jobs:
       - name: Generate E2E report summary
         if: always()
         run: |
-          if [ -f test-report/e2e/index.html ]; then
-            echo "# E2E Test Report" > test-report/e2e/summary.md
-            echo "" >> test-report/e2e/summary.md
-            echo "| Metric | Value |" >> test-report/e2e/summary.md
-            echo "|--------|-------|" >> test-report/e2e/summary.md
-            # Extract results from last-run.json
-            if [ -f test-report/e2e/last-run.json ]; then
-              node -e "
-              var fs = require('fs');
-              var r = JSON.parse(fs.readFileSync('test-report/e2e/last-run.json','utf8'));
-              var status = r.status === 'passed' ? '✅ PASSED' : '❌ FAILED';
-              console.log('| Status | ' + status + ' |');
-              console.log('| Duration | ' + (r.stats.duration / 1000).toFixed(2) + 's |');
-              console.log('| Expected | ' + r.stats.expected + ' |');
-              if (r.stats.unexpected) console.log('| Failed | ' + r.stats.unexpected + ' |');
-              if (r.stats.flaky) console.log('| Flaky | ' + r.stats.flaky + ' |');
-              " >> test-report/e2e/summary.md
-            fi
+          if [ -f test-report/e2e/results.json ]; then
+            node -e "
+            var fs = require('fs');
+            var r = JSON.parse(fs.readFileSync('test-report/e2e/results.json','utf8'));
+            var lines = ['# E2E Test Report\n'];
+            lines.push('| Metric | Value |');
+            lines.push('|--------|-------|');
+            var passed = 0, failed = 0, flaky = 0, skipped = 0;
+            r.suites.forEach(function walk(s) {
+              (s.specs || []).forEach(function(spec) {
+                spec.tests.forEach(function(t) {
+                  if (t.status === 'expected') passed++;
+                  else if (t.status === 'unexpected') failed++;
+                  else if (t.status === 'flaky') flaky++;
+                  else if (t.status === 'skipped') skipped++;
+                });
+              });
+              (s.suites || []).forEach(walk);
+            });
+            var total = passed + failed + flaky + skipped;
+            var status = failed === 0 ? '✅ PASSED' : '❌ FAILED';
+            lines.push('| Status | ' + status + ' |');
+            lines.push('| Passed | ' + passed + ' |');
+            if (failed) lines.push('| Failed | ' + failed + ' |');
+            if (flaky) lines.push('| Flaky | ' + flaky + ' |');
+            if (skipped) lines.push('| Skipped | ' + skipped + ' |');
+            lines.push('| Total | ' + total + ' |');
+            var duration = (r.stats.duration / 1000).toFixed(2);
+            lines.push('| Duration | ' + duration + 's |\n');
+            r.suites.forEach(function walk(s) {
+              if (s.title) lines.push('## ' + s.title);
+              (s.specs || []).forEach(function(spec) {
+                spec.tests.forEach(function(t) {
+                  var icon = t.status === 'expected' ? '✅' : t.status === 'flaky' ? '⚠️' : '❌';
+                  lines.push('- ' + icon + ' ' + spec.title);
+                });
+              });
+              (s.suites || []).forEach(walk);
+            });
+            fs.writeFileSync('test-report/e2e/summary.md', lines.join('\n'));
+            " 
             cat test-report/e2e/summary.md >> $GITHUB_STEP_SUMMARY
           fi
       - uses: actions/upload-artifact@v4

@@ -5,7 +5,7 @@ module.exports = defineConfig({
     testDir: './tests/e2e',
     timeout: 30000,
     retries: 1,
-    reporter: [['html', { outputFolder: 'test-report/e2e', open: 'never' }], ['list']],
+    reporter: [['html', { outputFolder: 'test-report/e2e', open: 'never' }], ['json', { outputFile: 'test-report/e2e/results.json' }], ['list']],
     use: {
         baseURL: 'https://laqieer.github.io/Race-Photos/',
         screenshot: 'only-on-failure',
