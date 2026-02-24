@@ -375,17 +375,17 @@ class RacePhotosGallery {
                             try { geojson = JSON.parse(localStorage.getItem(cacheKey)); } catch (e) {}
                             if (!geojson) {
                                 const res = await fetch(
-                                    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(city)}&country=China&format=json&polygon_geojson=1&limit=1`
+                                    `https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(city)}&format=json&polygon_geojson=1&limit=1&featuretype=city`
                                 );
                                 const data = await res.json();
-                                if (data[0] && data[0].geojson) {
+                                if (data[0] && data[0].geojson && data[0].geojson.type !== 'Point') {
                                     geojson = data[0].geojson;
                                     try { localStorage.setItem(cacheKey, JSON.stringify(geojson)); } catch (e) {}
                                 }
                                 // Respect Nominatim rate limit (1 req/sec)
                                 await new Promise(r => setTimeout(r, 1100));
                             }
-                            if (geojson) {
+                            if (geojson && geojson.type !== 'Point') {
                                 L.geoJSON(geojson, {
                                     style: {
                                         color: '#667eea',

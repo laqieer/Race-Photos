@@ -39,15 +39,21 @@ test.describe('Gallery Overview', () => {
         await expect(map).toBeVisible({ timeout: 10000 });
     });
 
-    test('overview map has city glow circles', async ({ page }) => {
+    test('overview map has city boundary areas', async ({ page }) => {
         await page.goto('./');
         const map = page.locator('#races-map');
         await expect(map).toBeVisible({ timeout: 10000 });
-        // Leaflet renders circles as SVG paths inside the map
-        const circles = map.locator('path.leaflet-interactive');
-        await expect(circles.first()).toBeVisible({ timeout: 10000 });
-        const count = await circles.count();
-        expect(count).toBeGreaterThan(0);
+        // City boundaries are loaded async from Nominatim; wait for SVG polygons
+        const boundaries = map.locator('path.leaflet-interactive');
+        await expect(boundaries.first()).toBeAttached({ timeout: 15000 });
+        // Verify at least one boundary polygon has a non-degenerate path
+        await page.waitForFunction(() => {
+            const paths = document.querySelectorAll('#races-map path.leaflet-interactive');
+            return Array.from(paths).some(p => {
+                const d = p.getAttribute('d') || '';
+                return d.length > 30;
+            });
+        }, { timeout: 15000 });
     });
 
     test('footer has GitHub link', async ({ page }) => {
