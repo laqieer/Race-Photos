@@ -97,7 +97,7 @@ Your gallery is available at: `https://<username>.github.io/Race-Photos/`
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Organized by Races**: Photos grouped by race events, sorted by date
 - **Multiple Sources**: Support for photos from different race photo platforms
-- **Interactive Map**: Overview map with clustered race markers, detail map with GPX route and photo markers
+- **Interactive Map**: Overview map with clustered race markers and city glow circles, detail map with GPX route and photo markers
 - **GPX Route Display**: Race route with km distance markers and photo positions along the route
 - **Performance Chart**: Elevation, pace, and heart rate chart from GPX data
 - **Photo Grouping**: Photos grouped by time proximity with pace/HR metrics
@@ -113,6 +113,7 @@ Your gallery is available at: `https://<username>.github.io/Race-Photos/`
 npm test                    # Run unit tests
 npm run test:report         # Run unit tests with coverage report
 npx playwright test         # Run E2E tests against live site
+BASE_URL=http://localhost:8081 npx playwright test  # Run E2E tests locally
 ```
 
 Unit tests use Jest with jsdom. E2E tests use Playwright against the deployed GitHub Pages site. Test reports are uploaded as CI artifacts on every push.
