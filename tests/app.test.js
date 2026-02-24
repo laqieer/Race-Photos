@@ -34,6 +34,7 @@ global.L = {
     layerGroup: jest.fn().mockReturnValue(mockLayerGroup),
     latLngBounds: jest.fn().mockReturnValue({ extend: jest.fn() }),
     circle: jest.fn().mockReturnValue({ addTo: jest.fn() }),
+    geoJSON: jest.fn().mockReturnValue({ addTo: jest.fn() }),
     divIcon: jest.fn().mockReturnValue({}),
     markerClusterGroup: jest.fn().mockReturnValue(mockClusterGroup),
     control: mockControlFn,

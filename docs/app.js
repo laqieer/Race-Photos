@@ -341,7 +341,7 @@ class RacePhotosGallery {
                     bounds.extend([lat, lon]);
                 });
 
-                // Light up city areas with glowing circles
+                // Aggregate races by city for boundary rendering
                 const cityRaceCounts = {};
                 racesWithLocation.forEach(race => {
                     const city = race.city || 'unknown';
@@ -360,29 +360,55 @@ class RacePhotosGallery {
                     if (!lat && cityCoords[city]) { lat = cityCoords[city].lat; lon = cityCoords[city].lon; }
                     if (lat) { cityRaceCounts[city].lat = lat; cityRaceCounts[city].lon = lon; }
                 });
-                Object.entries(cityRaceCounts).forEach(([city, info]) => {
-                    if (!info.lat) return;
-                    const radius = 8000 + info.count * 3000;
-                    L.circle([info.lat, info.lon], {
-                        radius,
-                        color: '#667eea',
-                        fillColor: '#667eea',
-                        fillOpacity: 0.12,
-                        weight: 1,
-                        opacity: 0.3
-                    }).addTo(map);
-                    L.circle([info.lat, info.lon], {
-                        radius: radius * 0.6,
-                        color: '#764ba2',
-                        fillColor: '#764ba2',
-                        fillOpacity: 0.10,
-                        weight: 0,
-                    }).addTo(map);
-                });
 
                 map.addLayer(clusterGroup);
                 map.fitBounds(bounds, { padding: [30, 30], maxZoom: 12 });
                 map.invalidateSize();
+
+                // Light up real city areas (async, non-blocking)
+                (async () => {
+                    for (const [city, info] of Object.entries(cityRaceCounts)) {
+                        if (!info.lat) continue;
+                        try {
+                            const cacheKey = 'city_boundary_' + city;
+                            let geojson = null;
+                            try { geojson = JSON.parse(localStorage.getItem(cacheKey)); } catch (e) {}
+                            if (!geojson) {
+                                const res = await fetch(
+                                    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(city)}&country=China&format=json&polygon_geojson=1&limit=1`
+                                );
+                                const data = await res.json();
+                                if (data[0] && data[0].geojson) {
+                                    geojson = data[0].geojson;
+                                    try { localStorage.setItem(cacheKey, JSON.stringify(geojson)); } catch (e) {}
+                                }
+                                // Respect Nominatim rate limit (1 req/sec)
+                                await new Promise(r => setTimeout(r, 1100));
+                            }
+                            if (geojson) {
+                                L.geoJSON(geojson, {
+                                    style: {
+                                        color: '#667eea',
+                                        fillColor: '#667eea',
+                                        fillOpacity: 0.15,
+                                        weight: 2,
+                                        opacity: 0.4
+                                    }
+                                }).addTo(map);
+                                continue;
+                            }
+                        } catch (e) {}
+                        // Fallback to circle
+                        L.circle([info.lat, info.lon], {
+                            radius: 8000 + info.count * 3000,
+                            color: '#667eea',
+                            fillColor: '#667eea',
+                            fillOpacity: 0.12,
+                            weight: 1,
+                            opacity: 0.3
+                        }).addTo(map);
+                    }
+                })();
             }, 100);
         }
 
