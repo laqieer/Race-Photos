@@ -7,7 +7,7 @@ module.exports = defineConfig({
     retries: 1,
     reporter: [['html', { outputFolder: 'test-report/e2e', open: 'never' }], ['json', { outputFile: 'test-report/e2e/results.json' }], ['list']],
     use: {
-        baseURL: 'https://laqieer.github.io/Race-Photos/',
+        baseURL: process.env.BASE_URL || 'https://laqieer.github.io/Race-Photos/',
         screenshot: 'only-on-failure',
         trace: 'on-first-retry',
     },

@@ -39,6 +39,17 @@ test.describe('Gallery Overview', () => {
         await expect(map).toBeVisible({ timeout: 10000 });
     });
 
+    test('overview map has city glow circles', async ({ page }) => {
+        await page.goto('./');
+        const map = page.locator('#races-map');
+        await expect(map).toBeVisible({ timeout: 10000 });
+        // Leaflet renders circles as SVG paths inside the map
+        const circles = map.locator('path.leaflet-interactive');
+        await expect(circles.first()).toBeVisible({ timeout: 10000 });
+        const count = await circles.count();
+        expect(count).toBeGreaterThan(0);
+    });
+
     test('footer has GitHub link', async ({ page }) => {
         await page.goto('./');
         const githubLink = page.locator('footer a[href*="github.com"]');

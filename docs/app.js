@@ -341,6 +341,45 @@ class RacePhotosGallery {
                     bounds.extend([lat, lon]);
                 });
 
+                // Light up city areas with glowing circles
+                const cityRaceCounts = {};
+                racesWithLocation.forEach(race => {
+                    const city = race.city || 'unknown';
+                    if (!cityRaceCounts[city]) cityRaceCounts[city] = { count: 0, lat: 0, lon: 0 };
+                    cityRaceCounts[city].count++;
+                    let lat, lon;
+                    if (race.lat && race.lon) { lat = race.lat; lon = race.lon; }
+                    if (!lat) {
+                        for (const s of race.sources) {
+                            for (const p of s.photos) {
+                                if (p.lat && p.lon) { lat = p.lat; lon = p.lon; break; }
+                            }
+                            if (lat) break;
+                        }
+                    }
+                    if (!lat && cityCoords[city]) { lat = cityCoords[city].lat; lon = cityCoords[city].lon; }
+                    if (lat) { cityRaceCounts[city].lat = lat; cityRaceCounts[city].lon = lon; }
+                });
+                Object.entries(cityRaceCounts).forEach(([city, info]) => {
+                    if (!info.lat) return;
+                    const radius = 8000 + info.count * 3000;
+                    L.circle([info.lat, info.lon], {
+                        radius,
+                        color: '#667eea',
+                        fillColor: '#667eea',
+                        fillOpacity: 0.12,
+                        weight: 1,
+                        opacity: 0.3
+                    }).addTo(map);
+                    L.circle([info.lat, info.lon], {
+                        radius: radius * 0.6,
+                        color: '#764ba2',
+                        fillColor: '#764ba2',
+                        fillOpacity: 0.10,
+                        weight: 0,
+                    }).addTo(map);
+                });
+
                 map.addLayer(clusterGroup);
                 map.fitBounds(bounds, { padding: [30, 30], maxZoom: 12 });
                 map.invalidateSize();

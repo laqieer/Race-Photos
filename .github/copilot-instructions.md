@@ -30,5 +30,5 @@ No build step — the frontend is vanilla HTML/CSS/JS served directly from `docs
 - `app.js` must work both in browsers (DOM + CDN libs) and in Node.js (Jest) — guard exports with `typeof module !== 'undefined'`
 - GPX files are stored locally in `docs/routes/{race}.gpx` and cached in `localStorage` to avoid Strava rate limits
 - Always update documentation (README, etc.) after making code changes
-- Always add unit tests for new changes when possible
+- Always add unit tests and E2E tests for new changes when possible
 - Always check CI status after pushing — three workflows: Tests, Deploy to GitHub Pages, E2E Tests (triggered after deploy)
