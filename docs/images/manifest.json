@@ -3,9 +3,9 @@
     {
       "name": "2026\u6e05\u8fdc\u5e02\u6e05\u65b0\u533a\u9f99\u9888\u9547\u4e61\u6751\u8fce\u6625\u534a\u9a6c\u8d5b",
       "date": "2026-02-19",
-      "city": "",
-      "province": "",
-      "country": "",
+      "city": "\u6e05\u8fdc",
+      "province": "\u5e7f\u4e1c",
+      "country": "\u4e2d\u56fd",
       "sources": [
         {
           "name": "runnerbar",
@@ -2131,9 +2131,9 @@
     {
       "name": "2023COLMO\u73af\u8821\u6e56\u534a\u7a0b\u9a6c\u62c9\u677e",
       "date": "2023-11-05",
-      "city": "",
-      "province": "",
-      "country": "",
+      "city": "\u65e0\u9521",
+      "province": "\u6c5f\u82cf",
+      "country": "\u4e2d\u56fd",
       "sources": [
         {
           "name": "ihuipao",
