@@ -7,7 +7,7 @@
 [![Vibe Coded](https://img.shields.io/badge/vibe-coded-%23ff69b4?style=flat)](https://github.com/topics/vibe-coding)
 [![Mirror](https://img.shields.io/badge/mirror-Gitee-red)](https://gitee.com/laqieer/Race-Photos)
 
-My photos from various races, organized and displayed in a beautiful web gallery.
+My photos and videos from various races, organized and displayed in a beautiful web gallery.
 
 🔗 **Live site**: https://laqieer.github.io/Race-Photos/
 
