@@ -8,6 +8,38 @@
       "country": "",
       "sources": [
         {
+          "name": "kailishi",
+          "photos": [
+            {
+              "url": "images/2026\u6c5f\u6cb9\u9a6c\u62c9\u677e/kailishi/60d1114d_35km_644.MP4",
+              "name": "60d1114d_35km_644.MP4",
+              "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+            },
+            {
+              "url": "images/2026\u6c5f\u6cb9\u9a6c\u62c9\u677e/kailishi/aivideosplit_62_30km_B10261_41080_49080_50.mp4",
+              "name": "aivideosplit_62_30km_B10261_41080_49080_50.mp4",
+              "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+            },
+            {
+              "url": "images/2026\u6c5f\u6cb9\u9a6c\u62c9\u677e/kailishi/b81dddbf_B10261_V.mp4",
+              "name": "b81dddbf_B10261_V.mp4",
+              "timestamp": "2026-03-01 19:11:53",
+              "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+            },
+            {
+              "url": "images/2026\u6c5f\u6cb9\u9a6c\u62c9\u677e/kailishi/d2ac1a8d_B10261_H.mp4",
+              "name": "d2ac1a8d_B10261_H.mp4",
+              "timestamp": "2026-03-01 19:11:50",
+              "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+            },
+            {
+              "url": "images/2026\u6c5f\u6cb9\u9a6c\u62c9\u677e/kailishi/e363a439_35KM_70.MP4",
+              "name": "e363a439_35KM_70.MP4",
+              "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+            }
+          ]
+        },
+        {
           "name": "runff",
           "photos": [
             {

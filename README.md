@@ -7,7 +7,7 @@
 [![Vibe Coded](https://img.shields.io/badge/vibe-coded-%23ff69b4?style=flat)](https://github.com/topics/vibe-coding)
 [![Mirror](https://img.shields.io/badge/mirror-Gitee-red)](https://gitee.com/laqieer/Race-Photos)
 
-My photos and videos from various races, organized and displayed in a beautiful web gallery.
+My photos and videos from various races and platforms, organized and displayed in a beautiful web gallery.
 
 🔗 **Live site**: https://laqieer.github.io/Race-Photos/
 
@@ -69,7 +69,7 @@ pip install -r requirements.txt
 See the [scripts README](https://github.com/laqieer/Race-Photos-Scripts/blob/main/README.md) for detailed usage of each download script.
 
 ```bash
-# Download photos (see scripts README for platform-specific commands)
+# Download photos/videos (see scripts README for platform-specific commands, including Kailishi)
 python scripts/download_<platform>.py [options]
 
 # Update gallery
