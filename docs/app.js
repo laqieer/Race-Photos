@@ -826,6 +826,51 @@ class RacePhotosGallery {
 
                         const fmtDist = (m) => m >= 1000 ? (m / 1000).toFixed(1) + ' km' : Math.round(m) + ' m';
 
+                        const sourcesContainer = document.createElement('div');
+                        sourcesContainer.className = 'sources-container';
+                        groupList.forEach(group => {
+                            const metrics = this.getMetricsAtTime(trackpoints, group.time);
+                            const metricsParts = [];
+                            if (metrics.pace) metricsParts.push(`⏱ ${this.formatPace(metrics.pace)}/km`);
+                            if (metrics.hr) metricsParts.push(`❤️ ${metrics.hr} bpm`);
+                            group.metricsLabel = metricsParts.join(' • ');
+                            const distLabel = fmtDist(group.dist);
+                            const timeStr = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
+                            const metricsSuffix = group.metricsLabel ? ` • ${group.metricsLabel}` : '';
+                            sourcesContainer.appendChild(
+                                this.createSourceSection(
+                                    `${timeStr} — ${distLabel}${metricsSuffix}`,
+                                    group.photos
+                                )
+                            );
+                        });
+                        // Render out-of-range photos (time only, no map/distance/pace/HR)
+                        if (outOfRangePhotos.length > 0) {
+                            const oorGroups = [];
+                            const OOR_MERGE = 10 * 1000;
+                            outOfRangePhotos.forEach(pp => {
+                                const last = oorGroups[oorGroups.length - 1];
+                                if (last && (pp.time - last.lastTime) < OOR_MERGE) {
+                                    last.photos.push(pp.photo);
+                                    last.lastTime = pp.time;
+                                } else {
+                                    oorGroups.push({ lastTime: pp.time, time: pp.time, photos: [pp.photo] });
+                                }
+                            });
+                            oorGroups.forEach(group => {
+                                const timeStr = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
+                                sourcesContainer.appendChild(
+                                    this.createSourceSection(timeStr, group.photos)
+                                );
+                            });
+                        }
+                        if (noTimestampPhotos.length > 0) {
+                            sourcesContainer.appendChild(
+                                this.createSourceSection('Other', noTimestampPhotos)
+                            );
+                        }
+                        card.appendChild(sourcesContainer);
+
                         const clusterGroup = L.markerClusterGroup({
                             maxClusterRadius: 40,
                             iconCreateFunction: (cluster) => {
@@ -842,12 +887,7 @@ class RacePhotosGallery {
 
                         groupList.forEach(group => {
                             const distLabel = fmtDist(group.dist);
-                            const metrics = this.getMetricsAtTime(trackpoints, group.time);
-                            const metricsParts = [];
-                            if (metrics.pace) metricsParts.push(`⏱ ${this.formatPace(metrics.pace)}/km`);
-                            if (metrics.hr) metricsParts.push(`❤️ ${metrics.hr} bpm`);
-                            const metricsLabel = metricsParts.length ? ' • ' + metricsParts.join(' • ') : '';
-                            group.metricsLabel = metricsParts.join(' • ');
+                            const metricsLabel = group.metricsLabel ? ' • ' + group.metricsLabel : '';
 
                             const count = group.photos.length;
                             const icon = L.divIcon({
@@ -896,47 +936,6 @@ class RacePhotosGallery {
 
                         // Render elevation/pace/heart rate chart
                         this.renderGpxChart(trackpoints, card);
-
-                        // Render photo groups below map
-                        const sourcesContainer = document.createElement('div');
-                        sourcesContainer.className = 'sources-container';
-                        groupList.forEach(group => {
-                            const distLabel = fmtDist(group.dist);
-                            const timeStr = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
-                            const metricsSuffix = group.metricsLabel ? ` • ${group.metricsLabel}` : '';
-                            sourcesContainer.appendChild(
-                                this.createSourceSection(
-                                    `${timeStr} — ${distLabel}${metricsSuffix}`,
-                                    group.photos
-                                )
-                            );
-                        });
-                        // Render out-of-range photos (time only, no map/distance/pace/HR)
-                        if (outOfRangePhotos.length > 0) {
-                            const oorGroups = [];
-                            const OOR_MERGE = 10 * 1000;
-                            outOfRangePhotos.forEach(pp => {
-                                const last = oorGroups[oorGroups.length - 1];
-                                if (last && (pp.time - last.lastTime) < OOR_MERGE) {
-                                    last.photos.push(pp.photo);
-                                    last.lastTime = pp.time;
-                                } else {
-                                    oorGroups.push({ lastTime: pp.time, time: pp.time, photos: [pp.photo] });
-                                }
-                            });
-                            oorGroups.forEach(group => {
-                                const timeStr = (group.photos[0].timestamp || '').split(' ')[1] || group.photos[0].timestamp;
-                                sourcesContainer.appendChild(
-                                    this.createSourceSection(timeStr, group.photos)
-                                );
-                            });
-                        }
-                        if (noTimestampPhotos.length > 0) {
-                            sourcesContainer.appendChild(
-                                this.createSourceSection('Other', noTimestampPhotos)
-                            );
-                        }
-                        card.appendChild(sourcesContainer);
                     }, 100);
                 }
             } catch (e) {
