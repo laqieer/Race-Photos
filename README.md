@@ -23,7 +23,7 @@ Race-Photos/
 │   ├── routes/                # GPX route files
 │   │   └── {race}.gpx         # GPS route data (with Strava metadata)
 │   └── images/                # Downloaded photos & videos
-│       ├── {race}/            # Race directories
+│       ├── {race}/            # Race directories (sanitized race titles)
 │       │   └── {source}/      # Source directories
 │       │       ├── *.jpg      # Photo files
 │       │       ├── *.mp4      # Video files
