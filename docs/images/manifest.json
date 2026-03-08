@@ -160,8 +160,10 @@
           ]
         }
       ],
-      "lat": 30.8943,
-      "lon": 120.0868
+      "route": "routes/2026\u9996\u5c4a\u957f\u5174\u592a\u6e569\u53f7\u516c\u8def\u73ab\u7470\u8dd1\u5609\u5e74\u534e.gpx",
+      "lat": 31.042278,
+      "lon": 119.98763,
+      "strava_url": "https://www.strava.com/activities/17631774092"
     },
     {
       "name": "2026\u6c5f\u6cb9\u9a6c\u62c9\u677e",
