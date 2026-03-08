@@ -376,6 +376,14 @@ describe('createPhotoGrid', () => {
         expect(video.poster).toBe('');
     });
 
+    test('supports absolute external media URLs', () => {
+        const photos = [{ url: 'https://user-images.githubusercontent.com/example/photo.jpg', name: 'photo.jpg' }];
+        const grid = gallery.createPhotoGrid(photos, 'external');
+        const img = grid.querySelector('img');
+        expect(img).not.toBeNull();
+        expect(img.src).toBe('https://user-images.githubusercontent.com/example/photo.jpg');
+    });
+
     test('photo click triggers lightbox', () => {
         const photos = [{ url: 'test.jpg', name: 'test.jpg' }];
         const grid = gallery.createPhotoGrid(photos, 'test');

@@ -28,7 +28,8 @@ Race-Photos/
 │       │       ├── *.jpg      # Photo files
 │       │       ├── *.mp4      # Video files
 │       │       ├── race_info.json    # Race metadata (committed)
-│       │       └── photos_list.json  # Photo metadata (committed)
+│       │       ├── photos_list.json  # Photo metadata (committed)
+│       │       └── external_media.json # Optional externally hosted media mapping
 │       └── manifest.json      # Gallery manifest
 ├── .github/workflows/    # CI/CD
 │   ├── deploy-pages.yml       # Deploy to GitHub Pages + coverage
@@ -75,6 +76,8 @@ python scripts/download_<platform>.py [options]
 # Update gallery
 python scripts/generate_manifest.py
 ```
+
+For media-migration pilots, a source directory can also include `external_media.json` with absolute CDN/wiki attachment URLs while keeping metadata in the main repository.
 
 ### 4. View Gallery
 
