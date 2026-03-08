@@ -77,7 +77,7 @@ python scripts/download_<platform>.py [options]
 python scripts/generate_manifest.py
 ```
 
-For media-migration pilots, a source directory can also include `external_media.json` with absolute CDN/wiki attachment URLs while keeping metadata in the main repository.
+For media-migration pilots, a source directory can also include `external_media.json` with absolute external URLs (for example GitHub release asset URLs) while keeping metadata in the main repository.
 
 ### 4. View Gallery
 
