@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "host": "github-release-assets",
+  "host": "mixed-external",
   "release_tag": "media-2026-inmuu-aef2a13986",
   "race": "2026 温州市全民健身迎新跑暨温州10公里大众等级达标赛",
   "source": "inmuu",
@@ -154,6 +154,26 @@
       "name": "IMG_7489.jpeg",
       "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7489.jpeg",
       "timestamp": "2026-02-07 08:46:32"
+    },
+    {
+      "name": "3uH9AqX9.jpg",
+      "url": "https://s.tupianzhibo.cn/image/jpeg/20260207/042958/3uH9AqX9.jpg",
+      "timestamp": "2026-02-07 08:46:31"
+    },
+    {
+      "name": "3Scgi1fZ.jpg",
+      "url": "https://s.tupianzhibo.cn/image/jpeg/20260207/042957/3Scgi1fZ.jpg",
+      "timestamp": "2026-02-07 08:46:30"
+    },
+    {
+      "name": "3vfPRrbJ.jpg",
+      "url": "https://s.tupianzhibo.cn/image/jpeg/20260207/042956/3vfPRrbJ.jpg",
+      "timestamp": "2026-02-07 08:46:30"
+    },
+    {
+      "name": "11lBZlC.jpg",
+      "url": "https://s.tupianzhibo.cn/image/jpeg/20260207/042956/11lBZlC.jpg",
+      "timestamp": "2026-02-07 08:46:30"
     }
   ]
 }
