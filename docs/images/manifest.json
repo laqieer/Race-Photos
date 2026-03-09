@@ -160,10 +160,8 @@
           ]
         }
       ],
-      "route": "routes/2026首届长兴太湖9号公路玫瑰跑嘉年华.gpx",
-      "lat": 31.042278,
-      "lon": 119.98763,
-      "strava_url": "https://www.strava.com/activities/17631774092"
+      "lat": 30.8943,
+      "lon": 120.0868
     },
     {
       "name": "2026江油马拉松",
@@ -1462,11 +1460,7 @@
             }
           ]
         }
-      ],
-      "route": "routes/2026江油马拉松.gpx",
-      "lat": 31.786785,
-      "lon": 104.757127,
-      "strava_url": "https://www.strava.com/activities/17559380975"
+      ]
     },
     {
       "name": "2026清远市清新区龙颈镇乡村迎春半马赛",
@@ -1785,10 +1779,8 @@
           ]
         }
       ],
-      "route": "routes/2026清远市清新区龙颈镇乡村迎春半马赛.gpx",
-      "lat": 23.793614,
-      "lon": 112.824999,
-      "strava_url": "https://www.strava.com/activities/17457383387"
+      "lat": 23.682,
+      "lon": 113.0562
     },
     {
       "name": "中国体育彩票杯_2024_红树林之城_湛江半程马拉松赛",
@@ -2566,10 +2558,8 @@
           ]
         }
       ],
-      "route": "routes/中国体育彩票杯_2024_红树林之城_湛江半程马拉松赛.gpx",
-      "lat": 21.212761,
-      "lon": 110.416452,
-      "strava_url": "https://www.strava.com/activities/11350922107"
+      "lat": 21.2707,
+      "lon": 110.3594
     },
     {
       "name": "2023上合昆明马拉松",
@@ -2806,10 +2796,8 @@
           ]
         }
       ],
-      "route": "routes/2023上合昆明马拉松.gpx",
-      "lat": 24.983157,
-      "lon": 102.649438,
-      "strava_url": "https://www.strava.com/activities/11399979948"
+      "lat": 25.0389,
+      "lon": 102.7183
     },
     {
       "name": "苏州环阳山半程马拉松",
@@ -3244,10 +3232,8 @@
           ]
         }
       ],
-      "route": "routes/苏州环阳山半程马拉松.gpx",
-      "lat": 31.338887,
-      "lon": 120.467237,
-      "strava_url": "https://www.strava.com/activities/11400065142"
+      "lat": 31.299,
+      "lon": 120.5853
     },
     {
       "name": "2023张家港东渡半程马拉松",
@@ -3332,10 +3318,8 @@
           ]
         }
       ],
-      "route": "routes/2023张家港东渡半程马拉松.gpx",
-      "lat": 31.878473,
-      "lon": 120.543054,
-      "strava_url": "https://www.strava.com/activities/11400242144"
+      "lat": 31.299,
+      "lon": 120.5853
     },
     {
       "name": "2023苏州大学校园马拉松暨江苏省大学生马拉松联赛",
@@ -3482,10 +3466,8 @@
           ]
         }
       ],
-      "route": "routes/2023苏州大学校园马拉松暨江苏省大学生马拉松联赛.gpx",
-      "lat": 31.302053,
-      "lon": 120.641079,
-      "strava_url": "https://www.strava.com/activities/11400242147"
+      "lat": 31.299,
+      "lon": 120.5853
     },
     {
       "name": "2023苏州_环太湖1号公路_马拉松",
@@ -3591,10 +3573,8 @@
           ]
         }
       ],
-      "route": "routes/2023苏州_环太湖1号公路_马拉松.gpx",
-      "lat": 31.180785,
-      "lon": 120.596656,
-      "strava_url": "https://www.strava.com/activities/11400242093"
+      "lat": 31.299,
+      "lon": 120.5853
     },
     {
       "name": "2023COLMO环蠡湖半程马拉松",
@@ -3614,10 +3594,8 @@
           ]
         }
       ],
-      "route": "routes/2023COLMO环蠡湖半程马拉松.gpx",
-      "lat": 31.540816,
-      "lon": 120.259752,
-      "strava_url": "https://www.strava.com/activities/11400242067"
+      "lat": 31.4912,
+      "lon": 120.3119
     },
     {
       "name": "常熟银行2023常熟尚湖半程马拉松",
@@ -3716,10 +3694,8 @@
           ]
         }
       ],
-      "route": "routes/常熟银行2023常熟尚湖半程马拉松.gpx",
-      "lat": 31.633617,
-      "lon": 120.687028,
-      "strava_url": "https://www.strava.com/activities/11400242062"
+      "lat": 31.299,
+      "lon": 120.5853
     },
     {
       "name": "2023吴江路跑联赛总决赛",
@@ -3822,6 +3798,170 @@
       ],
       "lat": 31.299,
       "lon": 120.5853
+    },
+    {
+      "name": "2026 温州市全民健身迎新跑暨温州10公里大众等级达标赛",
+      "date": "",
+      "city": "",
+      "province": "",
+      "country": "",
+      "sources": [
+        {
+          "name": "inmuu",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7457.jpeg",
+              "name": "IMG_7457.jpeg",
+              "timestamp": "2026-02-07 08:17:00"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7458.jpeg",
+              "name": "IMG_7458.jpeg",
+              "timestamp": "2026-02-07 08:17:01"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7459.jpeg",
+              "name": "IMG_7459.jpeg",
+              "timestamp": "2026-02-07 08:17:01"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7463.jpeg",
+              "name": "IMG_7463.jpeg",
+              "timestamp": "2026-02-07 08:46:28"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7464.jpeg",
+              "name": "IMG_7464.jpeg",
+              "timestamp": "2026-02-07 08:46:31"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7465.jpeg",
+              "name": "IMG_7465.jpeg",
+              "timestamp": "2026-02-07 08:46:32"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7466.jpeg",
+              "name": "IMG_7466.jpeg",
+              "timestamp": "2026-02-07 08:46:33"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7467.jpeg",
+              "name": "IMG_7467.jpeg",
+              "timestamp": "2026-02-07 08:46:26"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7468.jpeg",
+              "name": "IMG_7468.jpeg",
+              "timestamp": "2026-02-07 08:46:26"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7469.jpeg",
+              "name": "IMG_7469.jpeg",
+              "timestamp": "2026-02-07 08:46:27"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7470.jpeg",
+              "name": "IMG_7470.jpeg",
+              "timestamp": "2026-02-07 08:46:28"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7471.jpeg",
+              "name": "IMG_7471.jpeg",
+              "timestamp": "2026-02-07 08:46:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7472.jpeg",
+              "name": "IMG_7472.jpeg",
+              "timestamp": "2026-02-07 08:46:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7473.jpeg",
+              "name": "IMG_7473.jpeg",
+              "timestamp": "2026-02-07 08:46:26"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7474.jpeg",
+              "name": "IMG_7474.jpeg",
+              "timestamp": "2026-02-07 08:46:26"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7475.jpeg",
+              "name": "IMG_7475.jpeg",
+              "timestamp": "2026-02-07 08:46:27"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7476.jpeg",
+              "name": "IMG_7476.jpeg",
+              "timestamp": "2026-02-07 08:46:28"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7477.jpeg",
+              "name": "IMG_7477.jpeg",
+              "timestamp": "2026-02-07 08:46:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7478.jpeg",
+              "name": "IMG_7478.jpeg",
+              "timestamp": "2026-02-07 08:46:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7479.jpeg",
+              "name": "IMG_7479.jpeg",
+              "timestamp": "2026-02-07 08:46:32"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7480.jpeg",
+              "name": "IMG_7480.jpeg",
+              "timestamp": "2026-02-07 08:46:27"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7481.jpeg",
+              "name": "IMG_7481.jpeg",
+              "timestamp": "2026-02-07 08:46:27"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7482.jpeg",
+              "name": "IMG_7482.jpeg",
+              "timestamp": "2026-02-07 08:46:26"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7483.jpeg",
+              "name": "IMG_7483.jpeg",
+              "timestamp": "2026-02-07 08:46:27"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7484.jpeg",
+              "name": "IMG_7484.jpeg",
+              "timestamp": "2026-02-07 08:46:28"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7485.jpeg",
+              "name": "IMG_7485.jpeg",
+              "timestamp": "2026-02-07 08:46:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7486.jpeg",
+              "name": "IMG_7486.jpeg",
+              "timestamp": "2026-02-07 08:46:31"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7487.jpeg",
+              "name": "IMG_7487.jpeg",
+              "timestamp": "2026-02-07 08:46:32"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7488.jpeg",
+              "name": "IMG_7488.jpeg",
+              "timestamp": "2026-02-07 08:46:32"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-inmuu-aef2a13986/IMG_7489.jpeg",
+              "name": "IMG_7489.jpeg",
+              "timestamp": "2026-02-07 08:46:32"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
