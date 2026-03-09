@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-label="Play video preview">
+  <image href="https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-cfe0f1a4fb/34795_8159324008415463169_09ed1d3f_cb26_45d3_b6b1_55bd09a84023.jpeg" x="0" y="0" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="0" y="0" width="1280" height="720" fill="rgba(17,24,39,0.28)"/>
+  <circle cx="640" cy="360" r="108" fill="rgba(17,24,39,0.78)" stroke="white" stroke-width="18"/>
+  <polygon points="605,295 605,425 720,360" fill="white"/>
+  <rect x="36" y="36" rx="18" ry="18" width="176" height="64" fill="rgba(17,24,39,0.78)"/>
+  <text x="124" y="79" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="white">VIDEO</text>
+</svg>
