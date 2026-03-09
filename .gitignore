@@ -30,6 +30,7 @@ test_*.json
 
 # Temp caches
 docs/images/_temp_cache_*/
+@AutomationLog.txt
 
 # Node
 node_modules/
