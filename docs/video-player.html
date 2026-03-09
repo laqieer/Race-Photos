@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Photos Video Player</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111827;
+            color: #f9fafb;
+        }
+
+        main {
+            width: min(960px, 100%);
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        .player-shell {
+            background: rgba(17, 24, 39, 0.92);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        h1 {
+            margin-top: 0;
+            word-break: break-word;
+        }
+
+        video {
+            width: 100%;
+            max-height: 75vh;
+            border-radius: 12px;
+            background: #000;
+        }
+
+        .links {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        a {
+            color: #93c5fd;
+        }
+
+        .error {
+            border: 1px solid #ef4444;
+            border-radius: 12px;
+            padding: 16px;
+            background: rgba(127, 29, 29, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="player-shell">
+            <h1 id="title">Video Player</h1>
+            <div id="content"></div>
+        </div>
+    </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const src = params.get('src');
+        const poster = params.get('poster');
+        const title = params.get('title') || 'Race Photos Video';
+
+        document.title = `${title} - Race Photos Video Player`;
+        document.getElementById('title').textContent = title;
+
+        const content = document.getElementById('content');
+        const isValidUrl = typeof src === 'string' && /^https?:\/\//i.test(src);
+
+        if (!isValidUrl) {
+            content.innerHTML = '<div class="error"><strong>Invalid video URL.</strong><p>Open this page with a ?src=https://... query parameter.</p></div>';
+        } else {
+            const posterAttr = poster ? ` poster="${poster}"` : '';
+            content.innerHTML = `
+                <video controls autoplay playsinline${posterAttr}>
+                    <source src="${src}">
+                    Your browser does not support HTML video playback.
+                </video>
+                <div class="links">
+                    <a href="${src}">Open video file directly</a>
+                    <a href="./">Back to gallery</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

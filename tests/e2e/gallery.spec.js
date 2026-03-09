@@ -172,3 +172,17 @@ test.describe('Route Map', () => {
         }
     });
 });
+
+test.describe('Video Player', () => {
+    test('video player page renders requested video', async ({ page }) => {
+        const src = encodeURIComponent('https://github.com/laqieer/Race-Photos/releases/download/media-2026-runff-342f4d47c0/20260301081926_792_000024.mp4');
+        const poster = encodeURIComponent('https://github.com/laqieer/Race-Photos/releases/download/media-2026-runff-342f4d47c0/20260301081926_792_000024.jpg');
+        const title = encodeURIComponent('RunFF video preview');
+        await page.goto(`./video-player.html?src=${src}&poster=${poster}&title=${title}`);
+        await expect(page).toHaveTitle('RunFF video preview - Race Photos Video Player');
+        const video = page.locator('video');
+        await expect(video).toBeVisible();
+        await expect(video).toHaveAttribute('poster', /20260301081926_792_000024\.jpg/);
+        await expect(page.locator('a[href*=".mp4"]')).toBeVisible();
+    });
+});
