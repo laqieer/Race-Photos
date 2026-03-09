@@ -77,7 +77,7 @@ python scripts/download_<platform>.py [options]
 python scripts/generate_manifest.py
 ```
 
-The gallery now supports committing only metadata while serving photos/videos from stable external URLs (for example GitHub release asset URLs) via per-source `external_media.json` files, including data imported by the generic release-asset workflow in the scripts submodule.
+The gallery now supports committing only metadata while serving photos/videos from stable external URLs (for example GitHub release asset URLs) via per-source `external_media.json` files, including both the generic release-asset workflow and source-specific rehosting flows such as inmuu API imports in the scripts submodule.
 
 ### 4. View Gallery
 
