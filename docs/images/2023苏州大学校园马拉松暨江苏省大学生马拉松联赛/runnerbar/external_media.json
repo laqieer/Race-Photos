@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2023-runnerbar-8acb4a5ad7",
+  "race": "2023苏州大学校园马拉松暨江苏省大学生马拉松联赛",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1702177331167_f7fd13e1_76c7_4e33_8ea1_0462760bc10b.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2023-runnerbar-8acb4a5ad7/1702177331167_f7fd13e1_76c7_4e33_8ea1_0462760bc10b.jpg",
+      "timestamp": "2023-11-25 14:48:28",
+      "lat": 31.29834,
+      "lon": 120.58319
+    }
+  ]
+}

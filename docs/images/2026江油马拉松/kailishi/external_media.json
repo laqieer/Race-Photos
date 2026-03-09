@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2026-kailishi-726146c473",
+  "race": "2026江油马拉松",
+  "source": "kailishi",
+  "items": [
+    {
+      "name": "60d1114d_35km_644.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-kailishi-726146c473/60d1114d_35km_644.MP4",
+      "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+    },
+    {
+      "name": "aivideosplit_62_30km_B10261_41080_49080_50.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-kailishi-726146c473/aivideosplit_62_30km_B10261_41080_49080_50.mp4",
+      "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+    },
+    {
+      "name": "b81dddbf_B10261_V.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-kailishi-726146c473/b81dddbf_B10261_V.mp4",
+      "timestamp": "2026-03-01 19:11:53",
+      "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+    },
+    {
+      "name": "d2ac1a8d_B10261_H.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-kailishi-726146c473/d2ac1a8d_B10261_H.mp4",
+      "timestamp": "2026-03-01 19:11:50",
+      "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+    },
+    {
+      "name": "e363a439_35KM_70.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-kailishi-726146c473/e363a439_35KM_70.MP4",
+      "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2026/20260301jiangyou/uservideoposter.png"
+    }
+  ]
+}

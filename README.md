@@ -22,14 +22,14 @@ Race-Photos/
 │   ├── app.js                 # Gallery JavaScript
 │   ├── routes/                # GPX route files
 │   │   └── {race}.gpx         # GPS route data (with Strava metadata)
-│   └── images/                # Downloaded photos & videos
+│   └── images/                # Race media metadata + optional local media cache
 │       ├── {race}/            # Race directories (sanitized race titles)
 │       │   └── {source}/      # Source directories
-│       │       ├── *.jpg      # Photo files
-│       │       ├── *.mp4      # Video files
+│       │       ├── *.jpg      # Optional local photo/video files before migration
+│       │       ├── *.mp4      # Optional local photo/video files before migration
 │       │       ├── race_info.json    # Race metadata (committed)
 │       │       ├── photos_list.json  # Photo metadata (committed)
-│       │       └── external_media.json # Optional externally hosted media mapping
+│       │       └── external_media.json # Externally hosted media mapping
 │       └── manifest.json      # Gallery manifest
 ├── .github/workflows/    # CI/CD
 │   ├── deploy-pages.yml       # Deploy to GitHub Pages + coverage
@@ -77,7 +77,7 @@ python scripts/download_<platform>.py [options]
 python scripts/generate_manifest.py
 ```
 
-For media-migration pilots, a source directory can also include `external_media.json` with absolute external URLs (for example GitHub release asset URLs) while keeping metadata in the main repository.
+The gallery now supports committing only metadata while serving photos/videos from stable external URLs (for example GitHub release asset URLs) via per-source `external_media.json` files.
 
 ### 4. View Gallery
 
