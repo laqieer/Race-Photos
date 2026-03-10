@@ -2794,6 +2794,87 @@
       "lon": 120.029863
     },
     {
+      "name": "2026徐闻马拉松",
+      "date": "2026-01-18",
+      "city": "湛江",
+      "province": "广东",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768700416860_df8da0b8_9d7c_45aa_80a2_a5924178ed10.jpeg",
+              "name": "1768700416860_df8da0b8_9d7c_45aa_80a2_a5924178ed10.jpeg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 08:32:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703591573_5f2d240c_5feb_4546_8dde_64f2b3027692.jpg",
+              "name": "1768703591573_5f2d240c_5feb_4546_8dde_64f2b3027692.jpg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 07:39:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703592351_fe945e10_e02a_4ecc_93d8_543a62ea165f.jpg",
+              "name": "1768703592351_fe945e10_e02a_4ecc_93d8_543a62ea165f.jpg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 07:39:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703593770_70a26de8_665a_463f_bd20_e5182c3d1a10.jpg",
+              "name": "1768703593770_70a26de8_665a_463f_bd20_e5182c3d1a10.jpg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 07:39:10"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703594214_3d6e1bed_5793_4e63_97d3_bf9fc4155383.jpg",
+              "name": "1768703594214_3d6e1bed_5793_4e63_97d3_bf9fc4155383.jpg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 07:39:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703595597_bf148a93_7bd0_4d06_9a64_389c6d23f19d.jpg",
+              "name": "1768703595597_bf148a93_7bd0_4d06_9a64_389c6d23f19d.jpg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 07:39:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703595632_8b890392_f129_4dfb_b403_a94ec3d6e1cc.jpg",
+              "name": "1768703595632_8b890392_f129_4dfb_b403_a94ec3d6e1cc.jpg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 07:39:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703595974_634241ce_0d6e_44e2_a8ee_cd18cf7b3a35.jpg",
+              "name": "1768703595974_634241ce_0d6e_44e2_a8ee_cd18cf7b3a35.jpg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 07:39:09"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703597250_dc75de52_efbc_4fbb_8fe4_fd514f4c00d2.jpg",
+              "name": "1768703597250_dc75de52_efbc_4fbb_8fe4_fd514f4c00d2.jpg",
+              "lat": 21.27134,
+              "lon": 110.35894,
+              "timestamp": "2026-01-18 07:39:09"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/17087958267",
+      "route": "routes/2026徐闻马拉松.gpx",
+      "lat": 20.479715,
+      "lon": 110.311647
+    },
+    {
       "name": "中国体育彩票杯_2024_红树林之城_湛江半程马拉松赛",
       "date": "2024-01-21",
       "city": "湛江",

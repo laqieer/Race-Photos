@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2026-runnerbar-e99764a378",
+  "race": "2026徐闻马拉松",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1768700416860_df8da0b8_9d7c_45aa_80a2_a5924178ed10.jpeg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768700416860_df8da0b8_9d7c_45aa_80a2_a5924178ed10.jpeg",
+      "timestamp": "2026-01-18 08:32:39",
+      "lat": 21.27134,
+      "lon": 110.35894
+    },
+    {
+      "name": "1768703591573_5f2d240c_5feb_4546_8dde_64f2b3027692.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703591573_5f2d240c_5feb_4546_8dde_64f2b3027692.jpg",
+      "timestamp": "2026-01-18 07:39:08",
+      "lat": 21.27134,
+      "lon": 110.35894
+    },
+    {
+      "name": "1768703592351_fe945e10_e02a_4ecc_93d8_543a62ea165f.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703592351_fe945e10_e02a_4ecc_93d8_543a62ea165f.jpg",
+      "timestamp": "2026-01-18 07:39:08",
+      "lat": 21.27134,
+      "lon": 110.35894
+    },
+    {
+      "name": "1768703593770_70a26de8_665a_463f_bd20_e5182c3d1a10.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703593770_70a26de8_665a_463f_bd20_e5182c3d1a10.jpg",
+      "timestamp": "2026-01-18 07:39:10",
+      "lat": 21.27134,
+      "lon": 110.35894
+    },
+    {
+      "name": "1768703594214_3d6e1bed_5793_4e63_97d3_bf9fc4155383.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703594214_3d6e1bed_5793_4e63_97d3_bf9fc4155383.jpg",
+      "timestamp": "2026-01-18 07:39:08",
+      "lat": 21.27134,
+      "lon": 110.35894
+    },
+    {
+      "name": "1768703595597_bf148a93_7bd0_4d06_9a64_389c6d23f19d.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703595597_bf148a93_7bd0_4d06_9a64_389c6d23f19d.jpg",
+      "timestamp": "2026-01-18 07:39:08",
+      "lat": 21.27134,
+      "lon": 110.35894
+    },
+    {
+      "name": "1768703595632_8b890392_f129_4dfb_b403_a94ec3d6e1cc.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703595632_8b890392_f129_4dfb_b403_a94ec3d6e1cc.jpg",
+      "timestamp": "2026-01-18 07:39:08",
+      "lat": 21.27134,
+      "lon": 110.35894
+    },
+    {
+      "name": "1768703595974_634241ce_0d6e_44e2_a8ee_cd18cf7b3a35.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703595974_634241ce_0d6e_44e2_a8ee_cd18cf7b3a35.jpg",
+      "timestamp": "2026-01-18 07:39:09",
+      "lat": 21.27134,
+      "lon": 110.35894
+    },
+    {
+      "name": "1768703597250_dc75de52_efbc_4fbb_8fe4_fd514f4c00d2.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-e99764a378/1768703597250_dc75de52_efbc_4fbb_8fe4_fd514f4c00d2.jpg",
+      "timestamp": "2026-01-18 07:39:09",
+      "lat": 21.27134,
+      "lon": 110.35894
+    }
+  ]
+}
