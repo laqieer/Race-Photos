@@ -5943,6 +5943,27 @@
       "country": "中国",
       "sources": [
         {
+          "name": "meipaipai",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-96056bc961/10269_._20251012211741260350.mp4",
+              "name": "10269_._20251012211741260350.mp4"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-96056bc961/10269_20251012121420816534.mp4",
+              "name": "10269_20251012121420816534.mp4"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-96056bc961/10269_20251012132746640177.mp4",
+              "name": "10269_20251012132746640177.mp4"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-96056bc961/10269_A10269_._20251012215825536810.mp4",
+              "name": "10269_A10269_._20251012215825536810.mp4"
+            }
+          ]
+        },
+        {
           "name": "runnerbar",
           "photos": [
             {
