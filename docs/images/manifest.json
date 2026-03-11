@@ -3866,6 +3866,21 @@
       "country": "中国",
       "sources": [
         {
+          "name": "feipaom",
+          "photos": [
+            {
+              "url": "images/海南航空_2025海口马拉松/feipaom/28f8dcbb_D50525_H.mp4",
+              "name": "28f8dcbb_D50525_H.mp4",
+              "timestamp": "2025-12-29 14:52:06"
+            },
+            {
+              "url": "images/海南航空_2025海口马拉松/feipaom/65a8297d_D50525_V.mp4",
+              "name": "65a8297d_D50525_V.mp4",
+              "timestamp": "2025-12-29 14:52:06"
+            }
+          ]
+        },
+        {
           "name": "runff",
           "photos": [
             {
