@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-media-feipaom-95d65afd33",
+  "race": "海南航空_2025海口马拉松",
+  "source": "feipaom",
+  "items": [
+    {
+      "name": "28f8dcbb_D50525_H.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-feipaom-95d65afd33/28f8dcbb_D50525_H.mp4",
+      "timestamp": "2025-12-29 14:52:06"
+    },
+    {
+      "name": "65a8297d_D50525_V.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-feipaom-95d65afd33/65a8297d_D50525_V.mp4",
+      "timestamp": "2025-12-29 14:52:06"
+    }
+  ]
+}
