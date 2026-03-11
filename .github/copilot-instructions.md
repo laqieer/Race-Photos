@@ -18,13 +18,13 @@ No build step — the frontend is vanilla HTML/CSS/JS served directly from `docs
 
 **Data pipeline (scripts/):** A private Git submodule ([Race-Photos-Scripts](https://github.com/laqieer/Race-Photos-Scripts)) containing Python scripts that download photos from various Chinese race photo platforms (RunnerBar, Pailixiang, PhotoPlus, Yipai360, RunFF, iHuiPao) and Strava GPX routes. `generate_manifest.py` scans `docs/images/` to produce `manifest.json`. Each race directory has cached `race_info.json` and `photos_list.json`.
 
-**Data flow:** Download scripts → `docs/images/{race}/{source}/` photos + JSON caches → `generate_manifest.py` → `docs/images/manifest.json` → `app.js` renders gallery.
+**Data flow:** Download scripts → local media staging + `docs/images/{race}/{source}/` JSON caches → shared release-asset upload workflow → `external_media.json` / metadata in `docs/images/{race}/{source}/` → `generate_manifest.py` → `docs/images/manifest.json` → `app.js` renders gallery.
 
 **Testing:** Unit tests (`tests/app.test.js`) run in jsdom with mocked Leaflet/DOM APIs. E2E tests (`tests/e2e/gallery.spec.js`) run Playwright against the deployed GitHub Pages site. Jest ignores the `tests/e2e/` directory; Playwright only runs from it.
 
 ## Key Conventions
 
-- Photos are committed to Git in `docs/images/{race}/{source}/` — the `.gitignore` explicitly allows this
+- Never commit media binaries to Git; always upload photos/videos to release assets and keep only metadata (`race_info.json`, `photos_list.json`, `external_media.json`, manifest data) in the repo
 - Photo timestamps are UTC+8 (China Standard Time); `photoTimestampToUtc()` converts them
 - Download scripts skip already-existing files and cache API responses (`race_info.json`, `photos_list.json`) for offline/incremental use
 - `app.js` must work both in browsers (DOM + CDN libs) and in Node.js (Jest) — guard exports with `typeof module !== 'undefined'`

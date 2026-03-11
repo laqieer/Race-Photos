@@ -33,6 +33,18 @@ docs/images/_temp_cache_*/
 @AutomationLog.txt
 .wiki.git/
 
+# Local media staging: keep metadata, publish binaries via release assets instead
+docs/images/**/*.jpg
+docs/images/**/*.jpeg
+docs/images/**/*.png
+docs/images/**/*.gif
+docs/images/**/*.webp
+docs/images/**/*.mp4
+docs/images/**/*.mov
+docs/images/**/*.m4v
+docs/images/**/*.heic
+docs/images/**/*.heif
+
 # Node
 node_modules/
 coverage/
