@@ -70,7 +70,7 @@ pip install -r requirements.txt
 See the [scripts README](https://github.com/laqieer/Race-Photos-Scripts/blob/main/README.md) for detailed usage of each download script.
 
 ```bash
-# Download photos/videos (see scripts README for platform-specific commands, including Kailishi, Alltuu, and RunFF's automatic multi-page fetch for >200 photos)
+# Download photos/videos (see scripts README for platform-specific commands, including Kailishi, Alltuu, Feipaom, and RunFF's automatic multi-page fetch for >200 photos)
 python scripts/download_<platform>.py [options]
 
 # Update gallery
