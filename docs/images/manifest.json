@@ -4446,8 +4446,9 @@
         }
       ],
       "strava_url": "https://www.strava.com/activities/16872800179",
-      "lat": 20.044,
-      "lon": 110.198
+      "route": "routes/海南航空_2025海口马拉松.gpx",
+      "lat": 20.019033,
+      "lon": 110.345423
     },
     {
       "name": "海南航空_2025海口马拉松-早餐跑",
@@ -4940,8 +4941,9 @@
         }
       ],
       "strava_url": "https://www.strava.com/activities/16849477196",
-      "lat": 20.044,
-      "lon": 110.198
+      "route": "routes/海南航空_2025海口马拉松-早餐跑.gpx",
+      "lat": 20.048973,
+      "lon": 110.312563
     },
     {
       "name": "中国体育彩票杯_2024_红树林之城_湛江半程马拉松赛",
