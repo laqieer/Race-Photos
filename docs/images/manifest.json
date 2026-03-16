@@ -1,6 +1,60 @@
 {
   "races": [
     {
+      "name": "2026太湖花亭湖半程马拉松",
+      "date": "2026-03-14",
+      "city": "苏州",
+      "province": "江苏",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-b06591fb41/1773545086718_55fdcf4a_df72_4caf_92bc_2c542ce6f066.jpg",
+              "name": "1773545086718_55fdcf4a_df72_4caf_92bc_2c542ce6f066.jpg",
+              "lat": 30.54294,
+              "lon": 117.06354,
+              "timestamp": "2026-03-15 09:34:37"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-b06591fb41/1773545102304_3a33d2c6_2d36_4717_a2f6_3ab49111cc42.jpg",
+              "name": "1773545102304_3a33d2c6_2d36_4717_a2f6_3ab49111cc42.jpg",
+              "lat": 30.54294,
+              "lon": 117.06354,
+              "timestamp": "2026-03-15 09:34:37"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-b06591fb41/1773545105343_d231c16b_0be4_4419_973c_4a6d27bdc754.jpg",
+              "name": "1773545105343_d231c16b_0be4_4419_973c_4a6d27bdc754.jpg",
+              "lat": 30.54294,
+              "lon": 117.06354,
+              "timestamp": "2026-03-15 09:34:37"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-b06591fb41/1773545107978_2ba40745_7759_404a_b9ef_4a5e6b0f16a8.jpg",
+              "name": "1773545107978_2ba40745_7759_404a_b9ef_4a5e6b0f16a8.jpg",
+              "lat": 30.54294,
+              "lon": 117.06354,
+              "timestamp": "2026-03-15 09:34:37"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-b06591fb41/20260315_5083056_8226296251306909441_8b0d894cda87f7f70842ba01604e3b7e.MP4",
+              "name": "20260315_5083056_8226296251306909441_8b0d894cda87f7f70842ba01604e3b7e.MP4",
+              "poster": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-b06591fb41/34987_8226296251306909441_f4d1552c_13f6_46ec_8f78_f37a8e1c2359.jpeg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-b06591fb41/34987_8226296251306909441_f4d1552c_13f6_46ec_8f78_f37a8e1c2359.jpeg",
+              "name": "34987_8226296251306909441_f4d1552c_13f6_46ec_8f78_f37a8e1c2359.jpeg"
+            }
+          ]
+        }
+      ],
+      "route": "routes/2026太湖花亭湖半程马拉松.gpx",
+      "lat": 30.448443,
+      "lon": 116.271096
+    },
+    {
       "name": "2026首届长兴太湖9号公路玫瑰跑嘉年华",
       "date": "2026-03-07",
       "city": "湖州",
