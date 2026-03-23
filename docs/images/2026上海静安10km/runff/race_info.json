@@ -1,0 +1,17 @@
+{
+  "source": "runff",
+  "race_id": "5248",
+  "race_page": "https://www.runff.com/html/live/s5248.html",
+  "queries": [
+    {
+      "fid": "24820471",
+      "bib": "A15905",
+      "label": "provided bib search"
+    },
+    {
+      "fid": "24821559",
+      "bib": "",
+      "label": "provided secondary request"
+    }
+  ]
+}
