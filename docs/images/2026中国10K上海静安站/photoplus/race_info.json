@@ -1,0 +1,31 @@
+{
+  "activity_name": "2026中国10K上海静安站",
+  "activity_no": 56281051,
+  "source": "photoplus",
+  "race_name": "2026中国10K上海静安站",
+  "status": "release-backed",
+  "queries": [
+    {
+      "label": "provided face search 1",
+      "attempt": "original",
+      "success": true,
+      "raw_count": 62,
+      "unique_added": 52
+    },
+    {
+      "label": "provided face search 2",
+      "attempt": "original",
+      "success": true,
+      "raw_count": 41,
+      "unique_added": 2
+    },
+    {
+      "label": "provided bib search",
+      "attempt": "original",
+      "success": true,
+      "raw_count": 23,
+      "unique_added": 0
+    }
+  ],
+  "release_tag": "media-2026-photoplus-271619a19c"
+}
