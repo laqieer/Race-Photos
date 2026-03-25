@@ -7924,6 +7924,38 @@
       "lon": 103.287919
     },
     {
+      "name": "2024眉山仁寿半程马拉松",
+      "date": "2024-02-25",
+      "city": "眉山",
+      "province": "四川",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-52f2a99501/1708827601037_a15c081c_1a49_403d_8630_0b32bd7189ac.JPG",
+              "name": "1708827601037_a15c081c_1a49_403d_8630_0b32bd7189ac.JPG",
+              "lat": 30.07563,
+              "lon": 103.84851,
+              "timestamp": "2024-02-25 08:51:01"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-52f2a99501/1708834821893_aafa0bbc_d7f0_4e29_ac0e_cec435ceec87.jpg",
+              "name": "1708834821893_aafa0bbc_d7f0_4e29_ac0e_cec435ceec87.jpg",
+              "lat": 30.07563,
+              "lon": 103.84851,
+              "timestamp": "2024-02-25 08:36:00"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/11369282316",
+      "route": "routes/2024眉山仁寿半程马拉松.gpx",
+      "lat": 30.006555,
+      "lon": 104.164551
+    },
+    {
       "name": "中国体育彩票杯_2024_红树林之城_湛江半程马拉松赛",
       "date": "2024-01-21",
       "city": "湛江",

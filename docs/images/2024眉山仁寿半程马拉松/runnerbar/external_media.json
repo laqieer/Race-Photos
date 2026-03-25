@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-runnerbar-52f2a99501",
+  "race": "2024眉山仁寿半程马拉松",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1708827601037_a15c081c_1a49_403d_8630_0b32bd7189ac.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-52f2a99501/1708827601037_a15c081c_1a49_403d_8630_0b32bd7189ac.JPG",
+      "timestamp": "2024-02-25 08:51:01",
+      "lat": 30.07563,
+      "lon": 103.84851
+    },
+    {
+      "name": "1708834821893_aafa0bbc_d7f0_4e29_ac0e_cec435ceec87.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-52f2a99501/1708834821893_aafa0bbc_d7f0_4e29_ac0e_cec435ceec87.jpg",
+      "timestamp": "2024-02-25 08:36:00",
+      "lat": 30.07563,
+      "lon": 103.84851
+    }
+  ]
+}
