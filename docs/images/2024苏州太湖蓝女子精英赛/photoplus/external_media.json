@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-photoplus-c20b2ef4bb",
+  "race": "2024苏州太湖蓝女子精英赛",
+  "source": "photoplus",
+  "items": [
+    {
+      "name": "IMG_3313.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-c20b2ef4bb/IMG_3313.JPG",
+      "timestamp": "2024-03-03 09:36:32"
+    },
+    {
+      "name": "IMG_3314.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-c20b2ef4bb/IMG_3314.JPG",
+      "timestamp": "2024-03-03 12:07:05"
+    },
+    {
+      "name": "IMG_3315.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-c20b2ef4bb/IMG_3315.JPG",
+      "timestamp": "2024-03-03 11:22:22"
+    },
+    {
+      "name": "YHL04324.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-c20b2ef4bb/YHL04324.JPG",
+      "timestamp": "2024-03-03 09:37:35"
+    },
+    {
+      "name": "YHL04325.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-c20b2ef4bb/YHL04325.JPG",
+      "timestamp": "2024-03-03 09:37:35"
+    },
+    {
+      "name": "YHL04328.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-c20b2ef4bb/YHL04328.JPG",
+      "timestamp": "2024-03-03 09:37:36"
+    }
+  ]
+}
