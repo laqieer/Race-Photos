@@ -2,7 +2,7 @@
   "races": [
     {
       "name": "2026中国10K上海静安站",
-      "date": "2026-03-21",
+      "date": "2026-03-22",
       "city": "上海",
       "province": "上海",
       "country": "中国",
@@ -868,7 +868,7 @@
     },
     {
       "name": "2026太湖花亭湖半程马拉松",
-      "date": "2026-03-14",
+      "date": "2026-03-15",
       "city": "苏州",
       "province": "江苏",
       "country": "中国",
@@ -1247,7 +1247,7 @@
     },
     {
       "name": "2026江油马拉松",
-      "date": "2026-02-28",
+      "date": "2026-03-01",
       "city": "",
       "province": "",
       "country": "",
@@ -2550,7 +2550,7 @@
     },
     {
       "name": "2026清远市清新区龙颈镇乡村迎春半马赛",
-      "date": "2026-02-19",
+      "date": "2026-02-20",
       "city": "清远",
       "province": "广东",
       "country": "中国",
@@ -3060,7 +3060,7 @@
     },
     {
       "name": "2026运满满好运10KM_常州站",
-      "date": "2026-01-23",
+      "date": "2026-01-24",
       "city": "常州",
       "province": "江苏",
       "country": "中国",
@@ -4059,7 +4059,7 @@
     },
     {
       "name": "2026中国田径协会10公里精英赛_苏州_太仓站",
-      "date": "2025-12-31",
+      "date": "2026-01-01",
       "city": "苏州",
       "province": "江苏",
       "country": "中国",
@@ -4940,7 +4940,7 @@
     },
     {
       "name": "海南航空_2025海口马拉松",
-      "date": "2025-12-27",
+      "date": "2025-12-28",
       "city": "海口",
       "province": "海南",
       "country": "中国",
@@ -6187,7 +6187,7 @@
     },
     {
       "name": "海南航空_2025海口马拉松-早餐跑",
-      "date": "2025-12-26",
+      "date": "2025-12-27",
       "city": "海口",
       "province": "海南",
       "country": "中国",
@@ -7017,7 +7017,7 @@
     },
     {
       "name": "2025昆明半程马拉松",
-      "date": "2025-10-11",
+      "date": "2025-10-12",
       "city": "昆明",
       "province": "云南",
       "country": "中国",
@@ -7922,6 +7922,136 @@
       "route": "routes/2025昆明半程马拉松.gpx",
       "lat": 24.776701,
       "lon": 103.287919
+    },
+    {
+      "name": "2024苏州太湖蓝女子精英赛",
+      "date": "2024-03-03",
+      "city": "苏州",
+      "province": "江苏",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432001894_9567c107_923b_4325_b905_9a1cfe669cdf.jpg",
+              "name": "1709432001894_9567c107_923b_4325_b905_9a1cfe669cdf.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:25:22"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432002039_a874530b_3ff1_466e_8abb_daa2221b0a8f.jpg",
+              "name": "1709432002039_a874530b_3ff1_466e_8abb_daa2221b0a8f.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:25:22"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432002201_4efee0c9_4c55_4487_bcda_477c1ea8fac0.jpg",
+              "name": "1709432002201_4efee0c9_4c55_4487_bcda_477c1ea8fac0.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:25:22"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432232525_293fa7a6_d377_4f2e_93eb_9ccbe095fceb.JPG",
+              "name": "1709432232525_293fa7a6_d377_4f2e_93eb_9ccbe095fceb.JPG",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:03:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432234686_d4ccd238_70a8_4f39_927f_a3d0fea804ae.JPG",
+              "name": "1709432234686_d4ccd238_70a8_4f39_927f_a3d0fea804ae.JPG",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:03:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432788526_24823971_d6aa_41a4_bc27_84e7feb62917.jpg",
+              "name": "1709432788526_24823971_d6aa_41a4_bc27_84e7feb62917.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432788926_d8720857_fd1c_4cce_a0c6_c7d976162052.jpg",
+              "name": "1709432788926_d8720857_fd1c_4cce_a0c6_c7d976162052.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432789939_f285b6a0_1045_4ede_a158_42e8f4287136.jpg",
+              "name": "1709432789939_f285b6a0_1045_4ede_a158_42e8f4287136.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432790309_3f5433bb_5ed6_4c25_9a9e_0365f8c08d92.jpg",
+              "name": "1709432790309_3f5433bb_5ed6_4c25_9a9e_0365f8c08d92.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432790874_170faca3_7666_4c18_9135_4f0402da4cd7.jpg",
+              "name": "1709432790874_170faca3_7666_4c18_9135_4f0402da4cd7.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432791262_5f9cb07d_1b38_4940_90d3_2b77813ff358.jpg",
+              "name": "1709432791262_5f9cb07d_1b38_4940_90d3_2b77813ff358.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432791651_8704e0f7_8dec_4aaa_ad77_af142e8bdbd0.jpg",
+              "name": "1709432791651_8704e0f7_8dec_4aaa_ad77_af142e8bdbd0.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432792127_062c75d4_205b_40c5_878b_9406fdd27bbe.jpg",
+              "name": "1709432792127_062c75d4_205b_40c5_878b_9406fdd27bbe.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709432793085_73bf5aea_76cb_43a2_b1ba_58d27d5ccd01.jpg",
+              "name": "1709432793085_73bf5aea_76cb_43a2_b1ba_58d27d5ccd01.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:10:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709434466979_75383645_ce9c_4e91_912f_d70521006db6.JPG",
+              "name": "1709434466979_75383645_ce9c_4e91_912f_d70521006db6.JPG",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 09:51:52"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-214e7739c5/1709442423109_4b699b0c_880b_456f_a1d7_7b6f93c28019.jpg",
+              "name": "1709442423109_4b699b0c_880b_456f_a1d7_7b6f93c28019.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-03-03 08:13:11"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/11369497663",
+      "route": "routes/2024苏州太湖蓝女子精英赛.gpx",
+      "lat": 31.214305,
+      "lon": 120.410416
     },
     {
       "name": "2024眉山仁寿半程马拉松",
@@ -9651,7 +9781,7 @@
     },
     {
       "name": "2023张家港东渡半程马拉松",
-      "date": "2023-12-02",
+      "date": "2023-12-03",
       "city": "苏州",
       "province": "江苏",
       "country": "中国",
@@ -9889,7 +10019,7 @@
     },
     {
       "name": "2023苏州_环太湖1号公路_马拉松",
-      "date": "2023-11-18",
+      "date": "2023-11-19",
       "city": "苏州",
       "province": "江苏",
       "country": "中国",
@@ -10021,7 +10151,7 @@
     },
     {
       "name": "常熟银行2023常熟尚湖半程马拉松",
-      "date": "2023-10-28",
+      "date": "2023-10-29",
       "city": "苏州",
       "province": "江苏",
       "country": "中国",
