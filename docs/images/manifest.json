@@ -1,6 +1,99 @@
 {
   "races": [
     {
+      "name": "2026武马奔腾万米精英排位赛",
+      "date": "2026-04-04",
+      "city": "",
+      "province": "",
+      "country": "",
+      "sources": [
+        {
+          "name": "pixcheese",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_6614.JPG",
+              "name": "ZWB_6614.JPG",
+              "timestamp": "2026-04-04 10:13:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_6626.JPG",
+              "name": "ZWB_6626.JPG",
+              "timestamp": "2026-04-04 10:15:01"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_6641.JPG",
+              "name": "ZWB_6641.JPG",
+              "timestamp": "2026-04-04 10:16:26"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_6759.JPG",
+              "name": "ZWB_6759.JPG",
+              "timestamp": "2026-04-04 10:19:35"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7085.JPG",
+              "name": "ZWB_7085.JPG",
+              "timestamp": "2026-04-04 10:30:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7086.JPG",
+              "name": "ZWB_7086.JPG",
+              "timestamp": "2026-04-04 10:30:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7088.JPG",
+              "name": "ZWB_7088.JPG",
+              "timestamp": "2026-04-04 10:30:55"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7138.JPG",
+              "name": "ZWB_7138.JPG",
+              "timestamp": "2026-04-04 10:32:34"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7139.JPG",
+              "name": "ZWB_7139.JPG",
+              "timestamp": "2026-04-04 10:32:34"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7140.JPG",
+              "name": "ZWB_7140.JPG",
+              "timestamp": "2026-04-04 10:32:34"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7141.JPG",
+              "name": "ZWB_7141.JPG",
+              "timestamp": "2026-04-04 10:32:34"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7351.JPG",
+              "name": "ZWB_7351.JPG",
+              "timestamp": "2026-04-04 10:40:48"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7452.JPG",
+              "name": "ZWB_7452.JPG",
+              "timestamp": "2026-04-04 10:50:36"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7527.JPG",
+              "name": "ZWB_7527.JPG",
+              "timestamp": "2026-04-04 10:55:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-pixcheese-2648af0a92/ZWB_7529.JPG",
+              "name": "ZWB_7529.JPG",
+              "timestamp": "2026-04-04 10:55:21"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/17969396962/overview",
+      "route": "routes/2026武马奔腾万米精英排位赛.gpx",
+      "lat": 39.389169,
+      "lon": 117.003702
+    },
+    {
       "name": "2026中国田径协会10公里精英赛_无锡_阳山站",
       "date": "2026-03-29",
       "city": "无锡",
