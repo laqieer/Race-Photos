@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-runnerbar-999cc18e28",
+  "race": "2024芜湖航空马拉松暨中国10公里精英赛",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1711862042404_907551ee_ee47_43ca_b53f_4f56fc8968ae.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-999cc18e28/1711862042404_907551ee_ee47_43ca_b53f_4f56fc8968ae.jpg",
+      "timestamp": "2024-03-31 08:04:13",
+      "lat": 31.35246,
+      "lon": 118.43313
+    },
+    {
+      "name": "1711862044751_f842174a_c309_47cf_af57_66712453251a.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-999cc18e28/1711862044751_f842174a_c309_47cf_af57_66712453251a.jpg",
+      "timestamp": "2024-03-31 08:04:13",
+      "lat": 31.35246,
+      "lon": 118.43313
+    },
+    {
+      "name": "1711862049480_fa15ed1e_1bda_41f0_a7c6_fb6fedf106cc.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-999cc18e28/1711862049480_fa15ed1e_1bda_41f0_a7c6_fb6fedf106cc.jpg",
+      "timestamp": "2024-03-31 08:04:13",
+      "lat": 31.35246,
+      "lon": 118.43313
+    }
+  ]
+}

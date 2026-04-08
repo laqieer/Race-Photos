@@ -8518,6 +8518,45 @@
       "lon": 103.287919
     },
     {
+      "name": "2024芜湖航空马拉松暨中国10公里精英赛",
+      "date": "2024-03-31",
+      "city": "芜湖",
+      "province": "安徽",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-999cc18e28/1711862042404_907551ee_ee47_43ca_b53f_4f56fc8968ae.jpg",
+              "name": "1711862042404_907551ee_ee47_43ca_b53f_4f56fc8968ae.jpg",
+              "lat": 31.35246,
+              "lon": 118.43313,
+              "timestamp": "2024-03-31 08:04:13"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-999cc18e28/1711862044751_f842174a_c309_47cf_af57_66712453251a.jpg",
+              "name": "1711862044751_f842174a_c309_47cf_af57_66712453251a.jpg",
+              "lat": 31.35246,
+              "lon": 118.43313,
+              "timestamp": "2024-03-31 08:04:13"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-999cc18e28/1711862049480_fa15ed1e_1bda_41f0_a7c6_fb6fedf106cc.jpg",
+              "name": "1711862049480_fa15ed1e_1bda_41f0_a7c6_fb6fedf106cc.jpg",
+              "lat": 31.35246,
+              "lon": 118.43313,
+              "timestamp": "2024-03-31 08:04:13"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/11346134597/overview",
+      "route": "routes/2024芜湖航空马拉松暨中国10公里精英赛.gpx",
+      "lat": 31.135889,
+      "lon": 118.631947
+    },
+    {
       "name": "2024南京江宁大学城半程马拉松",
       "date": "2024-03-24",
       "city": "南京",
