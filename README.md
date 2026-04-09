@@ -70,7 +70,7 @@ pip install -r requirements.txt
 See the [scripts README](https://github.com/laqieer/Race-Photos-Scripts/blob/main/README.md) for detailed usage of each download script.
 
 ```bash
-# Download photos/videos (see scripts README for platform-specific commands, including Kailishi, PixCheese share face search, PhotoPlus merged bib + face search imports, Alltuu's signed GET/POST bib search requests, Feipaom, RunFF's automatic multi-page fetch for >200 photos, and Yipai360 bib plus filename search)
+# Download photos/videos (see scripts README for platform-specific commands, including Kailishi, Luojiweiye/RockySports app-list imports, PixCheese share face search, PhotoPlus merged bib + face search imports, Alltuu's signed GET/POST bib search requests, Feipaom, RunFF's automatic multi-page fetch for >200 photos, and Yipai360 bib plus filename search)
 python scripts/download_<platform>.py [options]
 
 # Update gallery
