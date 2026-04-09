@@ -8518,6 +8518,73 @@
       "lon": 103.287919
     },
     {
+      "name": "2024莱山半程马拉松",
+      "date": "2024-05-12",
+      "city": "烟台",
+      "province": "山东",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715478049782_f392797c_a3f4_4741_8fd0_bfeb4fa9f2da.JPG",
+              "name": "1715478049782_f392797c_a3f4_4741_8fd0_bfeb4fa9f2da.JPG",
+              "lat": 37.46353,
+              "lon": 121.44801,
+              "timestamp": "2024-05-12 08:46:17"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480612036_10535d63_4f1c_469c_8dd5_a7c4ff987ca0.jpg",
+              "name": "1715480612036_10535d63_4f1c_469c_8dd5_a7c4ff987ca0.jpg",
+              "lat": 37.46353,
+              "lon": 121.44801,
+              "timestamp": "2024-05-12 08:58:47"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480612069_a80d79e5_9a40_4c78_a6e1_ace649524df6.jpg",
+              "name": "1715480612069_a80d79e5_9a40_4c78_a6e1_ace649524df6.jpg",
+              "lat": 37.46353,
+              "lon": 121.44801,
+              "timestamp": "2024-05-12 08:58:47"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480614070_d939dfe4_8191_4737_8faf_a978e93968b1.jpg",
+              "name": "1715480614070_d939dfe4_8191_4737_8faf_a978e93968b1.jpg",
+              "lat": 37.46353,
+              "lon": 121.44801,
+              "timestamp": "2024-05-12 08:58:48"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480614076_ca35c9c9_4bb3_44f3_82b1_a0e43dc31024.jpg",
+              "name": "1715480614076_ca35c9c9_4bb3_44f3_82b1_a0e43dc31024.jpg",
+              "lat": 37.46353,
+              "lon": 121.44801,
+              "timestamp": "2024-05-12 08:58:47"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480615074_f572af42_ab26_4694_a079_39ee7c1ae15b.jpg",
+              "name": "1715480615074_f572af42_ab26_4694_a079_39ee7c1ae15b.jpg",
+              "lat": 37.46353,
+              "lon": 121.44801,
+              "timestamp": "2024-05-12 08:58:49"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480615117_cf54bed4_7260_411c_a339_f37d586d8d0f.jpg",
+              "name": "1715480615117_cf54bed4_7260_411c_a339_f37d586d8d0f.jpg",
+              "lat": 37.46353,
+              "lon": 121.44801,
+              "timestamp": "2024-05-12 08:58:49"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/11390077207",
+      "route": "routes/2024莱山半程马拉松.gpx",
+      "lat": 37.372045,
+      "lon": 121.386818
+    },
+    {
       "name": "保利发展2024肥西紫蓬山半程马拉松赛",
       "date": "2024-04-27",
       "city": "合肥",

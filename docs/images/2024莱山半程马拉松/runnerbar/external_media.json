@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-runnerbar-5f9f9bc215",
+  "race": "2024莱山半程马拉松",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1715478049782_f392797c_a3f4_4741_8fd0_bfeb4fa9f2da.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715478049782_f392797c_a3f4_4741_8fd0_bfeb4fa9f2da.JPG",
+      "timestamp": "2024-05-12 08:46:17",
+      "lat": 37.46353,
+      "lon": 121.44801
+    },
+    {
+      "name": "1715480612036_10535d63_4f1c_469c_8dd5_a7c4ff987ca0.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480612036_10535d63_4f1c_469c_8dd5_a7c4ff987ca0.jpg",
+      "timestamp": "2024-05-12 08:58:47",
+      "lat": 37.46353,
+      "lon": 121.44801
+    },
+    {
+      "name": "1715480612069_a80d79e5_9a40_4c78_a6e1_ace649524df6.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480612069_a80d79e5_9a40_4c78_a6e1_ace649524df6.jpg",
+      "timestamp": "2024-05-12 08:58:47",
+      "lat": 37.46353,
+      "lon": 121.44801
+    },
+    {
+      "name": "1715480614070_d939dfe4_8191_4737_8faf_a978e93968b1.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480614070_d939dfe4_8191_4737_8faf_a978e93968b1.jpg",
+      "timestamp": "2024-05-12 08:58:48",
+      "lat": 37.46353,
+      "lon": 121.44801
+    },
+    {
+      "name": "1715480614076_ca35c9c9_4bb3_44f3_82b1_a0e43dc31024.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480614076_ca35c9c9_4bb3_44f3_82b1_a0e43dc31024.jpg",
+      "timestamp": "2024-05-12 08:58:47",
+      "lat": 37.46353,
+      "lon": 121.44801
+    },
+    {
+      "name": "1715480615074_f572af42_ab26_4694_a079_39ee7c1ae15b.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480615074_f572af42_ab26_4694_a079_39ee7c1ae15b.jpg",
+      "timestamp": "2024-05-12 08:58:49",
+      "lat": 37.46353,
+      "lon": 121.44801
+    },
+    {
+      "name": "1715480615117_cf54bed4_7260_411c_a339_f37d586d8d0f.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-5f9f9bc215/1715480615117_cf54bed4_7260_411c_a339_f37d586d8d0f.jpg",
+      "timestamp": "2024-05-12 08:58:49",
+      "lat": 37.46353,
+      "lon": 121.44801
+    }
+  ]
+}
