@@ -100,7 +100,7 @@ Your gallery is available at: `https://<username>.github.io/Race-Photos/`
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Organized by Races**: Photos grouped by race events, sorted by date
 - **Multiple Sources**: Support for photos from different race photo platforms
-- **Interactive Map**: Overview map with clustered race markers and highlighted city boundaries, using GPS/place fallbacks when source metadata is sparse, plus detail maps with GPX routes and photo markers
+- **Interactive Map**: Overview map with clustered race markers and highlighted city boundaries, using GPS/place/name-keyword fallbacks when source metadata is sparse, plus detail maps with GPX routes and photo markers
 - **GPX Route Display**: Race route with km distance markers and photo positions along the route
 - **Performance Chart**: Elevation, pace, and heart rate chart from GPX data
 - **Photo Grouping**: Photos grouped by time proximity with pace/HR metrics
