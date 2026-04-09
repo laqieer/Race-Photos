@@ -70,7 +70,7 @@ pip install -r requirements.txt
 See the [scripts README](https://github.com/laqieer/Race-Photos-Scripts/blob/main/README.md) for detailed usage of each download script.
 
 ```bash
-# Download photos/videos (see scripts README for platform-specific commands, including Kailishi, PixCheese share face search, Alltuu's signed GET/POST bib search requests, Feipaom, RunFF's automatic multi-page fetch for >200 photos, and Yipai360 bib plus filename search)
+# Download photos/videos (see scripts README for platform-specific commands, including Kailishi, PixCheese share face search, PhotoPlus merged bib + face search imports, Alltuu's signed GET/POST bib search requests, Feipaom, RunFF's automatic multi-page fetch for >200 photos, and Yipai360 bib plus filename search)
 python scripts/download_<platform>.py [options]
 
 # Update gallery
@@ -100,7 +100,7 @@ Your gallery is available at: `https://<username>.github.io/Race-Photos/`
 - **Responsive Design**: Works on desktop, tablet, and mobile
 - **Organized by Races**: Photos grouped by race events, sorted by date
 - **Multiple Sources**: Support for photos from different race photo platforms
-- **Interactive Map**: Overview map with clustered race markers and highlighted city boundaries, detail map with GPX route and photo markers
+- **Interactive Map**: Overview map with clustered race markers and highlighted city boundaries, using GPS/place fallbacks when source metadata is sparse, plus detail maps with GPX routes and photo markers
 - **GPX Route Display**: Race route with km distance markers and photo positions along the route
 - **Performance Chart**: Elevation, pace, and heart rate chart from GPX data
 - **Photo Grouping**: Photos grouped by time proximity with pace/HR metrics

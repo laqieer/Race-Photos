@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-photoplus-8e6a121de9",
+  "race": "2024中国田径协会10公里精英赛_嘉善_大云站",
+  "source": "photoplus",
+  "items": [
+    {
+      "name": "1I3A1373.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-8e6a121de9/1I3A1373.JPG",
+      "timestamp": "2024-04-21 08:49:38"
+    },
+    {
+      "name": "1I3A1374.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-8e6a121de9/1I3A1374.JPG",
+      "timestamp": "2024-04-21 08:49:38"
+    },
+    {
+      "name": "7N5A3856.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-8e6a121de9/7N5A3856.JPG",
+      "timestamp": "2024-04-21 08:05:24"
+    },
+    {
+      "name": "7N5A3857.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-8e6a121de9/7N5A3857.JPG",
+      "timestamp": "2024-04-21 08:05:24"
+    },
+    {
+      "name": "7N5A3858.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-8e6a121de9/7N5A3858.JPG",
+      "timestamp": "2024-04-21 08:05:24"
+    },
+    {
+      "name": "DSC08052.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-8e6a121de9/DSC08052.JPG",
+      "timestamp": "2024-04-21 08:00:35"
+    },
+    {
+      "name": "DSC08053.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-8e6a121de9/DSC08053.JPG",
+      "timestamp": "2024-04-21 08:00:36"
+    }
+  ]
+}
