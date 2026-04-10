@@ -8518,6 +8518,80 @@
       "lon": 103.287919
     },
     {
+      "name": "2024长三角女王跑系列赛暨苏州10K精英赛",
+      "date": "2024-11-16",
+      "city": "苏州",
+      "province": "江苏",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-613e283733/1731721791317_232f5bdd_6045_4ae6_9156_34eafb447d58.jpg",
+              "name": "1731721791317_232f5bdd_6045_4ae6_9156_34eafb447d58.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-11-16 09:15:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-613e283733/1731721791391_a75beaaf_d9b8_4ea9_8a63_29f2ec4ecb70.jpg",
+              "name": "1731721791391_a75beaaf_d9b8_4ea9_8a63_29f2ec4ecb70.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-11-16 09:15:52"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-613e283733/1731721791393_e1553e5a_c296_481e_8a08_dff81c596451.jpg",
+              "name": "1731721791393_e1553e5a_c296_481e_8a08_dff81c596451.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-11-16 09:15:52"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-613e283733/1731721791410_fbd08d6b_b9e4_4742_9414_624e522b2d3e.jpg",
+              "name": "1731721791410_fbd08d6b_b9e4_4742_9414_624e522b2d3e.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-11-16 09:15:52"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-613e283733/1731721791528_e851a110_08d7_4dc2_816c_980f2aed75e8.jpg",
+              "name": "1731721791528_e851a110_08d7_4dc2_816c_980f2aed75e8.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-11-16 09:15:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-613e283733/1731721791641_486760b6_e4a8_491a_b251_f243d4f1c9da.jpg",
+              "name": "1731721791641_486760b6_e4a8_491a_b251_f243d4f1c9da.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-11-16 09:15:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-613e283733/1731721791658_04094776_2064_4e20_9f71_9b5685d1e363.jpg",
+              "name": "1731721791658_04094776_2064_4e20_9f71_9b5685d1e363.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-11-16 09:15:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runnerbar-613e283733/1731721791832_3d4dde98_b1c1_4e3c_a0d3_8df294c72f25.jpg",
+              "name": "1731721791832_3d4dde98_b1c1_4e3c_a0d3_8df294c72f25.jpg",
+              "lat": 31.29834,
+              "lon": 120.58319,
+              "timestamp": "2024-11-16 09:15:54"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/12910836335/overview",
+      "route": "routes/2024长三角女王跑系列赛暨苏州10K精英赛.gpx",
+      "lat": 31.43973,
+      "lon": 120.40754
+    },
+    {
       "name": "2024兰州马拉松",
       "date": "2024-05-26",
       "city": "兰州",
