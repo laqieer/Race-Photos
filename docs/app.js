@@ -8,6 +8,7 @@ class RacePhotosGallery {
         this.racesContainer = document.getElementById('races-container');
         this.manifest = null;
         this.lightbox = null;
+        this.boundaryCacheVersion = 'v2';
         this.nominatimDelayMs = 1100;
         this.initLightbox();
         window.addEventListener('hashchange', () => this.handleRoute());
@@ -221,7 +222,7 @@ class RacePhotosGallery {
     }
 
     buildBoundaryCacheKey(location) {
-        return 'city_boundary_' + (this.getBoundaryLookupKey(location) || 'unknown');
+        return `city_boundary_${this.boundaryCacheVersion}_` + (this.getBoundaryLookupKey(location) || 'unknown');
     }
 
     buildBoundaryQueryUrls(location) {
@@ -242,20 +243,25 @@ class RacePhotosGallery {
             const structuredParams = new URLSearchParams({
                 format: 'json',
                 polygon_geojson: '1',
-                limit: '1'
+                limit: '5'
             });
             structuredParams.set('city', city);
             if (province) structuredParams.set('state', province);
             if (country) structuredParams.set('country', country);
             addUrl('https://nominatim.openstreetmap.org/search', structuredParams);
 
-            const qParts = [city, province, country].filter(Boolean);
+            const qParts = [];
+            [city, province, country].forEach(part => {
+                const value = String(part || '').trim();
+                if (!value || qParts.includes(value)) return;
+                qParts.push(value);
+            });
             if (qParts.length) {
                 const textParams = new URLSearchParams({
                     q: qParts.join(' '),
                     format: 'json',
                     polygon_geojson: '1',
-                    limit: '1'
+                    limit: '5'
                 });
                 addUrl('https://nominatim.openstreetmap.org/search', textParams);
             }
@@ -264,6 +270,15 @@ class RacePhotosGallery {
         const lat = Number(location.lat);
         const lon = Number(location.lon);
         if (Number.isFinite(lat) && Number.isFinite(lon)) {
+            const reverseDistrictParams = new URLSearchParams({
+                lat: String(lat),
+                lon: String(lon),
+                format: 'jsonv2',
+                polygon_geojson: '1',
+                zoom: '8'
+            });
+            addUrl('https://nominatim.openstreetmap.org/reverse', reverseDistrictParams);
+
             const reverseParams = new URLSearchParams({
                 lat: String(lat),
                 lon: String(lon),
@@ -277,19 +292,57 @@ class RacePhotosGallery {
         return urls;
     }
 
-    extractBoundaryGeoJson(payload) {
-        if (Array.isArray(payload)) {
-            for (const item of payload) {
-                if (item && item.geojson && item.geojson.type && item.geojson.type !== 'Point') {
-                    return item.geojson;
-                }
+    getBoundaryCandidateScore(item, location) {
+        if (!item || !item.geojson || !item.geojson.type || item.geojson.type === 'Point') {
+            return Number.NEGATIVE_INFINITY;
+        }
+
+        const category = String(item.class || item.category || '').toLowerCase();
+        const type = String(item.type || '').toLowerCase();
+        const addresstype = String(item.addresstype || '').toLowerCase();
+        const searchText = `${item.name || ''} ${item.display_name || ''}`.replace(/\s+/g, '').toLowerCase();
+        let score = 0;
+
+        if (category === 'boundary') score += 200;
+        if (type === 'administrative') score += 120;
+        if (category === 'place') score += 60;
+        if (['state', 'province', 'city', 'county', 'district', 'borough', 'suburb', 'town', 'municipality', 'village', 'region'].includes(addresstype)) {
+            score += 60;
+        }
+        if (['railway', 'landuse', 'amenity', 'tourism', 'building', 'office', 'shop', 'highway', 'leisure', 'man_made'].includes(category)) {
+            score -= 240;
+        }
+        if (['station', 'commercial', 'industrial', 'retail', 'platform', 'parking'].includes(type)) {
+            score -= 180;
+        }
+
+        const matchTerms = [location.city, location.province, location.country]
+            .filter(Boolean)
+            .map(value => String(value).replace(/\s+/g, '').toLowerCase());
+        [...new Set(matchTerms)].forEach(term => {
+            if (term && searchText.includes(term)) score += 15;
+        });
+
+        const placeRank = Number(item.place_rank);
+        if (Number.isFinite(placeRank)) {
+            if (placeRank <= 18) score += 20;
+            if (placeRank >= 22) score -= 30;
+        }
+
+        return score;
+    }
+
+    extractBoundaryCandidate(payload, location) {
+        const items = Array.isArray(payload) ? payload : [payload];
+        let bestCandidate = null;
+        for (const item of items) {
+            const score = this.getBoundaryCandidateScore(item, location);
+            if (!Number.isFinite(score)) continue;
+            if (!bestCandidate || score > bestCandidate.score) {
+                bestCandidate = { geojson: item.geojson, score };
             }
-            return null;
         }
-        if (payload && payload.geojson && payload.geojson.type && payload.geojson.type !== 'Point') {
-            return payload.geojson;
-        }
-        return null;
+        return bestCandidate;
     }
 
     async fetchBoundaryGeoJson(location) {
@@ -307,11 +360,12 @@ class RacePhotosGallery {
         for (let i = 0; i < urls.length; i++) {
             try {
                 const res = await fetch(urls[i]);
+                if (!res.ok) continue;
                 const data = await res.json();
-                const geojson = this.extractBoundaryGeoJson(data);
-                if (geojson) {
-                    try { localStorage.setItem(cacheKey, JSON.stringify(geojson)); } catch (e) {}
-                    return geojson;
+                const candidate = this.extractBoundaryCandidate(data, location);
+                if (candidate && candidate.score >= 100) {
+                    try { localStorage.setItem(cacheKey, JSON.stringify(candidate.geojson)); } catch (e) {}
+                    return candidate.geojson;
                 }
             } catch (e) {}
             if (i < urls.length - 1 && this.nominatimDelayMs > 0) {
