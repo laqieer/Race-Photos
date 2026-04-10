@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-runff-3e5849fed9",
+  "race": "2024海南_三亚_马拉松",
+  "source": "runff",
+  "items": [
+    {
+      "name": "20241229100939_995_000002.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runff-3e5849fed9/20241229100939_995_000002.jpg",
+      "timestamp": "2024-12-29 10:09:39"
+    },
+    {
+      "name": "20241229100939_995_000027.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runff-3e5849fed9/20241229100939_995_000027.jpg",
+      "timestamp": "2024-12-29 10:09:39"
+    },
+    {
+      "name": "20241229100939_995_000035.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runff-3e5849fed9/20241229100939_995_000035.jpg",
+      "timestamp": "2024-12-29 10:09:39"
+    },
+    {
+      "name": "20241229100939_995_000038.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-runff-3e5849fed9/20241229100939_995_000038.jpg",
+      "timestamp": "2024-12-29 10:09:39"
+    }
+  ]
+}
