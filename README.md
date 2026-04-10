@@ -67,10 +67,10 @@ pip install -r requirements.txt
 
 ### 3. Download Photos & Generate Manifest
 
-See the [scripts README](https://github.com/laqieer/Race-Photos-Scripts/blob/main/README.md) for detailed usage of each download script.
+See the [scripts README](https://github.com/laqieer/Race-Photos-Scripts/blob/main/README.md) for platform-specific download commands and the release-upload workflow.
 
 ```bash
-# Download photos/videos (see scripts README for platform-specific commands, including Kailishi, Luojiweiye/RockySports app-list imports, PixCheese share face search, PhotoPlus merged bib + face search imports, Alltuu's signed GET/POST bib search requests, Feipaom, RunFF's automatic multi-page fetch for >200 photos, and Yipai360 bib plus filename search)
+# Download photos/videos (see scripts README for platform-specific commands)
 python scripts/download_<platform>.py [options]
 
 # Update gallery
