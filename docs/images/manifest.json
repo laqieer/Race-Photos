@@ -356,9 +356,9 @@
     {
       "name": "2026武马奔腾万米精英排位赛",
       "date": "2026-04-04",
-      "city": "",
-      "province": "",
-      "country": "",
+      "city": "天津",
+      "province": "天津",
+      "country": "中国",
       "sources": [
         {
           "name": "pixcheese",
@@ -1842,9 +1842,9 @@
     {
       "name": "2026江油马拉松",
       "date": "2026-03-01",
-      "city": "",
-      "province": "",
-      "country": "",
+      "city": "绵阳",
+      "province": "四川",
+      "country": "中国",
       "sources": [
         {
           "name": "kailishi",
@@ -8520,9 +8520,9 @@
     {
       "name": "2024海南_三亚_马拉松",
       "date": "2024-12-29",
-      "city": "",
-      "province": "",
-      "country": "",
+      "city": "三亚",
+      "province": "海南",
+      "country": "中国",
       "sources": [
         {
           "name": "runff",
@@ -8675,9 +8675,9 @@
     {
       "name": "2024中国田径协会10公里精英赛_扬州站",
       "date": "2024-12-15",
-      "city": "",
-      "province": "",
-      "country": "",
+      "city": "扬州",
+      "province": "江苏",
+      "country": "中国",
       "sources": [
         {
           "name": "runnerbar",
@@ -9116,7 +9116,7 @@
     {
       "name": "2024长三角女王跑系列赛暨苏州10K精英赛",
       "date": "2024-11-16",
-      "city": "苏州",
+      "city": "无锡",
       "province": "江苏",
       "country": "中国",
       "sources": [
