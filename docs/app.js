@@ -8,6 +8,7 @@ class RacePhotosGallery {
         this.racesContainer = document.getElementById('races-container');
         this.manifest = null;
         this.lightbox = null;
+        this.nominatimDelayMs = 1100;
         this.initLightbox();
         window.addEventListener('hashchange', () => this.handleRoute());
     }
@@ -208,6 +209,119 @@ class RacePhotosGallery {
         return card;
     }
 
+    getBoundaryLookupKey(location) {
+        const namedKey = [location.country, location.province, location.city].filter(Boolean).join('|');
+        if (namedKey) return namedKey;
+        const lat = Number(location.lat);
+        const lon = Number(location.lon);
+        if (Number.isFinite(lat) && Number.isFinite(lon)) {
+            return `coords:${lat.toFixed(3)},${lon.toFixed(3)}`;
+        }
+        return '';
+    }
+
+    buildBoundaryCacheKey(location) {
+        return 'city_boundary_' + (this.getBoundaryLookupKey(location) || 'unknown');
+    }
+
+    buildBoundaryQueryUrls(location) {
+        const urls = [];
+        const seen = new Set();
+        const addUrl = (base, params) => {
+            const url = `${base}?${params.toString()}`;
+            if (!seen.has(url)) {
+                seen.add(url);
+                urls.push(url);
+            }
+        };
+
+        const city = location.city || '';
+        const province = location.province || '';
+        const country = location.country || '';
+        if (city) {
+            const structuredParams = new URLSearchParams({
+                format: 'json',
+                polygon_geojson: '1',
+                limit: '1'
+            });
+            structuredParams.set('city', city);
+            if (province) structuredParams.set('state', province);
+            if (country) structuredParams.set('country', country);
+            addUrl('https://nominatim.openstreetmap.org/search', structuredParams);
+
+            const qParts = [city, province, country].filter(Boolean);
+            if (qParts.length) {
+                const textParams = new URLSearchParams({
+                    q: qParts.join(' '),
+                    format: 'json',
+                    polygon_geojson: '1',
+                    limit: '1'
+                });
+                addUrl('https://nominatim.openstreetmap.org/search', textParams);
+            }
+        }
+
+        const lat = Number(location.lat);
+        const lon = Number(location.lon);
+        if (Number.isFinite(lat) && Number.isFinite(lon)) {
+            const reverseParams = new URLSearchParams({
+                lat: String(lat),
+                lon: String(lon),
+                format: 'jsonv2',
+                polygon_geojson: '1',
+                zoom: '10'
+            });
+            addUrl('https://nominatim.openstreetmap.org/reverse', reverseParams);
+        }
+
+        return urls;
+    }
+
+    extractBoundaryGeoJson(payload) {
+        if (Array.isArray(payload)) {
+            for (const item of payload) {
+                if (item && item.geojson && item.geojson.type && item.geojson.type !== 'Point') {
+                    return item.geojson;
+                }
+            }
+            return null;
+        }
+        if (payload && payload.geojson && payload.geojson.type && payload.geojson.type !== 'Point') {
+            return payload.geojson;
+        }
+        return null;
+    }
+
+    async fetchBoundaryGeoJson(location) {
+        if (typeof fetch === 'undefined') return null;
+
+        const cacheKey = this.buildBoundaryCacheKey(location);
+        try {
+            const cached = JSON.parse(localStorage.getItem(cacheKey));
+            if (cached && cached.type && cached.type !== 'Point') {
+                return cached;
+            }
+        } catch (e) {}
+
+        const urls = this.buildBoundaryQueryUrls(location);
+        for (let i = 0; i < urls.length; i++) {
+            try {
+                const res = await fetch(urls[i]);
+                const data = await res.json();
+                const geojson = this.extractBoundaryGeoJson(data);
+                if (geojson) {
+                    try { localStorage.setItem(cacheKey, JSON.stringify(geojson)); } catch (e) {}
+                    return geojson;
+                }
+            } catch (e) {}
+            if (i < urls.length - 1 && this.nominatimDelayMs > 0) {
+                await new Promise(resolve => setTimeout(resolve, this.nominatimDelayMs));
+            }
+        }
+
+        return null;
+    }
+
     /**
      * Render the overview page with stats, race cards and map
      */
@@ -279,14 +393,22 @@ class RacePhotosGallery {
                 const cityCoords = {};
                 racesWithLocation.forEach(race => {
                     let lat, lon;
+                    if (race.lat && race.lon) { lat = race.lat; lon = race.lon; }
                     for (const s of race.sources) {
                         for (const p of s.photos) {
                             if (p.lat && p.lon) { lat = p.lat; lon = p.lon; break; }
                         }
                         if (lat) break;
                     }
-                    if (lat && race.city && !cityCoords[race.city]) {
-                        cityCoords[race.city] = { lat, lon };
+                    const locationKey = this.getBoundaryLookupKey({
+                        city: race.city || '',
+                        province: race.province || '',
+                        country: race.country || '',
+                        lat,
+                        lon
+                    });
+                    if (lat && locationKey && !cityCoords[locationKey]) {
+                        cityCoords[locationKey] = { lat, lon };
                     }
                 });
 
@@ -318,9 +440,16 @@ class RacePhotosGallery {
                             if (lat) break;
                         }
                     }
-                    if (!lat && race.city && cityCoords[race.city]) {
-                        lat = cityCoords[race.city].lat;
-                        lon = cityCoords[race.city].lon;
+                    const locationKey = this.getBoundaryLookupKey({
+                        city: race.city || '',
+                        province: race.province || '',
+                        country: race.country || '',
+                        lat,
+                        lon
+                    });
+                    if (!lat && locationKey && cityCoords[locationKey]) {
+                        lat = cityCoords[locationKey].lat;
+                        lon = cityCoords[locationKey].lon;
                     }
                     if (!lat) return;
 
@@ -344,9 +473,6 @@ class RacePhotosGallery {
                 // Aggregate races by city for boundary rendering
                 const cityRaceCounts = {};
                 racesWithLocation.forEach(race => {
-                    const city = race.city || 'unknown';
-                    if (!cityRaceCounts[city]) cityRaceCounts[city] = { count: 0, lat: 0, lon: 0 };
-                    cityRaceCounts[city].count++;
                     let lat, lon;
                     if (race.lat && race.lon) { lat = race.lat; lon = race.lon; }
                     if (!lat) {
@@ -357,8 +483,24 @@ class RacePhotosGallery {
                             if (lat) break;
                         }
                     }
-                    if (!lat && cityCoords[city]) { lat = cityCoords[city].lat; lon = cityCoords[city].lon; }
-                    if (lat) { cityRaceCounts[city].lat = lat; cityRaceCounts[city].lon = lon; }
+                    const locationInfo = {
+                        city: race.city || '',
+                        province: race.province || '',
+                        country: race.country || '',
+                        lat,
+                        lon
+                    };
+                    const locationKey = this.getBoundaryLookupKey(locationInfo);
+                    if (!locationKey) return;
+                    if (!cityRaceCounts[locationKey]) {
+                        cityRaceCounts[locationKey] = {
+                            ...locationInfo,
+                            count: 0
+                        };
+                    }
+                    cityRaceCounts[locationKey].count++;
+                    if (!lat && cityCoords[locationKey]) { lat = cityCoords[locationKey].lat; lon = cityCoords[locationKey].lon; }
+                    if (lat) { cityRaceCounts[locationKey].lat = lat; cityRaceCounts[locationKey].lon = lon; }
                 });
 
                 map.addLayer(clusterGroup);
@@ -367,37 +509,21 @@ class RacePhotosGallery {
 
                 // Light up real city areas (async, non-blocking)
                 (async () => {
-                    for (const [city, info] of Object.entries(cityRaceCounts)) {
+                    for (const info of Object.values(cityRaceCounts)) {
                         if (!info.lat) continue;
-                        try {
-                            const cacheKey = 'city_boundary_' + city;
-                            let geojson = null;
-                            try { geojson = JSON.parse(localStorage.getItem(cacheKey)); } catch (e) {}
-                            if (!geojson) {
-                                const res = await fetch(
-                                    `https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(city)}&format=json&polygon_geojson=1&limit=1&featuretype=city`
-                                );
-                                const data = await res.json();
-                                if (data[0] && data[0].geojson && data[0].geojson.type !== 'Point') {
-                                    geojson = data[0].geojson;
-                                    try { localStorage.setItem(cacheKey, JSON.stringify(geojson)); } catch (e) {}
+                        const geojson = await this.fetchBoundaryGeoJson(info);
+                        if (geojson) {
+                            L.geoJSON(geojson, {
+                                style: {
+                                    color: '#667eea',
+                                    fillColor: '#667eea',
+                                    fillOpacity: 0.15,
+                                    weight: 2,
+                                    opacity: 0.4
                                 }
-                                // Respect Nominatim rate limit (1 req/sec)
-                                await new Promise(r => setTimeout(r, 1100));
-                            }
-                            if (geojson && geojson.type !== 'Point') {
-                                L.geoJSON(geojson, {
-                                    style: {
-                                        color: '#667eea',
-                                        fillColor: '#667eea',
-                                        fillOpacity: 0.15,
-                                        weight: 2,
-                                        opacity: 0.4
-                                    }
-                                }).addTo(map);
-                                continue;
-                            }
-                        } catch (e) {}
+                            }).addTo(map);
+                            continue;
+                        }
                         // Fallback to circle
                         L.circle([info.lat, info.lon], {
                             radius: 8000 + info.count * 3000,

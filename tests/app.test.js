@@ -702,6 +702,66 @@ describe('scanDirectory', () => {
     });
 });
 
+describe('boundary lookups', () => {
+    beforeEach(() => {
+        localStorage.clear();
+        gallery.nominatimDelayMs = 0;
+    });
+
+    afterEach(() => {
+        delete global.fetch;
+    });
+
+    test('fetchBoundaryGeoJson falls back from structured city lookup to text search', async () => {
+        const polygon = { type: 'Polygon', coordinates: [] };
+        global.fetch = jest.fn()
+            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve([]) })
+            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve([{ geojson: polygon }]) });
+
+        const location = { city: '嘉善', province: '浙江', country: '中国', lat: 30.8, lon: 120.9 };
+        const geojson = await gallery.fetchBoundaryGeoJson(location);
+
+        expect(global.fetch).toHaveBeenCalledTimes(2);
+        const firstUrl = new URL(global.fetch.mock.calls[0][0]);
+        expect(firstUrl.pathname).toContain('/search');
+        expect(firstUrl.searchParams.get('city')).toBe('嘉善');
+        expect(firstUrl.searchParams.get('state')).toBe('浙江');
+        expect(firstUrl.searchParams.get('country')).toBe('中国');
+
+        const secondUrl = new URL(global.fetch.mock.calls[1][0]);
+        expect(secondUrl.pathname).toContain('/search');
+        expect(secondUrl.searchParams.get('q')).toBe('嘉善 浙江 中国');
+        expect(geojson).toEqual(polygon);
+
+        const cacheKey = gallery.buildBoundaryCacheKey(location);
+        expect(JSON.parse(localStorage.getItem(cacheKey))).toEqual(polygon);
+    });
+
+    test('fetchBoundaryGeoJson falls back to reverse geocoding when name lookups miss', async () => {
+        const polygon = { type: 'Polygon', coordinates: [] };
+        global.fetch = jest.fn()
+            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve([]) })
+            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve([]) })
+            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({ geojson: polygon }) });
+
+        const geojson = await gallery.fetchBoundaryGeoJson({
+            city: 'TestCounty',
+            province: 'TestProvince',
+            country: '中国',
+            lat: 20.1,
+            lon: 110.3,
+        });
+
+        expect(global.fetch).toHaveBeenCalledTimes(3);
+        const thirdUrl = new URL(global.fetch.mock.calls[2][0]);
+        expect(thirdUrl.pathname).toContain('/reverse');
+        expect(thirdUrl.searchParams.get('zoom')).toBe('10');
+        expect(parseFloat(thirdUrl.searchParams.get('lat'))).toBeCloseTo(20.1);
+        expect(parseFloat(thirdUrl.searchParams.get('lon'))).toBeCloseTo(110.3);
+        expect(geojson).toEqual(polygon);
+    });
+});
+
 describe('handleRoute', () => {
     test('renders overview when no hash', () => {
         gallery.manifest = { races: [] };
