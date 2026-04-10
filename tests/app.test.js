@@ -729,7 +729,7 @@ describe('boundary lookups', () => {
                 }])
             });
 
-        const location = { city: '嘉善', province: '浙江', country: '中国', lat: 30.8, lon: 120.9 };
+        const location = { city: '嘉善', province: '浙江', country: '中国' };
         const geojson = await gallery.fetchBoundaryGeoJson(location);
 
         expect(global.fetch).toHaveBeenCalledTimes(2);
@@ -746,6 +746,35 @@ describe('boundary lookups', () => {
 
         const cacheKey = gallery.buildBoundaryCacheKey(location);
         expect(JSON.parse(localStorage.getItem(cacheKey))).toEqual(polygon);
+    });
+
+    test('fetchBoundaryGeoJson prefers prefecture-level reverse boundaries over county-level city names', async () => {
+        const polygon = { type: 'Polygon', coordinates: [] };
+        global.fetch = jest.fn().mockResolvedValueOnce({
+            ok: true,
+            json: () => Promise.resolve({
+                category: 'boundary',
+                type: 'administrative',
+                addresstype: 'city',
+                place_rank: 10,
+                display_name: '嘉兴市, 浙江省, 中国',
+                geojson: polygon
+            })
+        });
+
+        const geojson = await gallery.fetchBoundaryGeoJson({
+            city: '嘉善',
+            province: '浙江',
+            country: '中国',
+            lat: 30.812066,
+            lon: 120.971589,
+        });
+
+        expect(global.fetch).toHaveBeenCalledTimes(1);
+        const firstUrl = new URL(global.fetch.mock.calls[0][0]);
+        expect(firstUrl.pathname).toContain('/reverse');
+        expect(firstUrl.searchParams.get('zoom')).toBe('7');
+        expect(geojson).toEqual(polygon);
     });
 
     test('fetchBoundaryGeoJson ignores low-quality polygons and keeps searching for boundaries', async () => {
@@ -775,7 +804,7 @@ describe('boundary lookups', () => {
                 }])
             });
 
-        const location = { city: '上海', province: '上海', country: '中国', lat: 31.28, lon: 121.44 };
+        const location = { city: '上海', province: '上海', country: '中国' };
         const geojson = await gallery.fetchBoundaryGeoJson(location);
 
         expect(global.fetch).toHaveBeenCalledTimes(2);
@@ -785,17 +814,16 @@ describe('boundary lookups', () => {
         expect(geojson).toEqual(boundaryPolygon);
     });
 
-    test('fetchBoundaryGeoJson falls back to reverse geocoding when name lookups miss', async () => {
+    test('fetchBoundaryGeoJson falls back from prefecture reverse lookup to detailed reverse lookup', async () => {
         const polygon = { type: 'Polygon', coordinates: [] };
         global.fetch = jest.fn()
-            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve([]) })
-            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve([]) })
+            .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve({}) })
             .mockResolvedValueOnce({
                 ok: true,
                 json: () => Promise.resolve({
                     category: 'boundary',
                     type: 'administrative',
-                    addresstype: 'city',
+                    addresstype: 'town',
                     place_rank: 12,
                     display_name: 'TestCounty, TestProvince, 中国',
                     geojson: polygon
@@ -803,19 +831,19 @@ describe('boundary lookups', () => {
             });
 
         const geojson = await gallery.fetchBoundaryGeoJson({
-            city: 'TestCounty',
-            province: 'TestProvince',
-            country: '中国',
             lat: 20.1,
             lon: 110.3,
         });
 
-        expect(global.fetch).toHaveBeenCalledTimes(3);
-        const thirdUrl = new URL(global.fetch.mock.calls[2][0]);
-        expect(thirdUrl.pathname).toContain('/reverse');
-        expect(thirdUrl.searchParams.get('zoom')).toBe('8');
-        expect(parseFloat(thirdUrl.searchParams.get('lat'))).toBeCloseTo(20.1);
-        expect(parseFloat(thirdUrl.searchParams.get('lon'))).toBeCloseTo(110.3);
+        expect(global.fetch).toHaveBeenCalledTimes(2);
+        const firstUrl = new URL(global.fetch.mock.calls[0][0]);
+        expect(firstUrl.pathname).toContain('/reverse');
+        expect(firstUrl.searchParams.get('zoom')).toBe('7');
+        const secondUrl = new URL(global.fetch.mock.calls[1][0]);
+        expect(secondUrl.pathname).toContain('/reverse');
+        expect(secondUrl.searchParams.get('zoom')).toBe('10');
+        expect(parseFloat(secondUrl.searchParams.get('lat'))).toBeCloseTo(20.1);
+        expect(parseFloat(secondUrl.searchParams.get('lon'))).toBeCloseTo(110.3);
         expect(geojson).toEqual(polygon);
     });
 });

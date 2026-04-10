@@ -8,7 +8,7 @@ class RacePhotosGallery {
         this.racesContainer = document.getElementById('races-container');
         this.manifest = null;
         this.lightbox = null;
-        this.boundaryCacheVersion = 'v2';
+        this.boundaryCacheVersion = 'v3';
         this.nominatimDelayMs = 1100;
         this.initLightbox();
         window.addEventListener('hashchange', () => this.handleRoute());
@@ -236,6 +236,19 @@ class RacePhotosGallery {
             }
         };
 
+        const lat = Number(location.lat);
+        const lon = Number(location.lon);
+        if (Number.isFinite(lat) && Number.isFinite(lon)) {
+            const reversePrefectureParams = new URLSearchParams({
+                lat: String(lat),
+                lon: String(lon),
+                format: 'jsonv2',
+                polygon_geojson: '1',
+                zoom: '7'
+            });
+            addUrl('https://nominatim.openstreetmap.org/reverse', reversePrefectureParams);
+        }
+
         const city = location.city || '';
         const province = location.province || '';
         const country = location.country || '';
@@ -267,18 +280,7 @@ class RacePhotosGallery {
             }
         }
 
-        const lat = Number(location.lat);
-        const lon = Number(location.lon);
         if (Number.isFinite(lat) && Number.isFinite(lon)) {
-            const reverseDistrictParams = new URLSearchParams({
-                lat: String(lat),
-                lon: String(lon),
-                format: 'jsonv2',
-                polygon_geojson: '1',
-                zoom: '8'
-            });
-            addUrl('https://nominatim.openstreetmap.org/reverse', reverseDistrictParams);
-
             const reverseParams = new URLSearchParams({
                 lat: String(lat),
                 lon: String(lon),
@@ -290,6 +292,10 @@ class RacePhotosGallery {
         }
 
         return urls;
+    }
+
+    isPreferredBoundaryLevel(addresstype) {
+        return ['state', 'province', 'city', 'municipality', 'region'].includes(addresstype);
     }
 
     getBoundaryCandidateScore(item, location) {
@@ -306,9 +312,9 @@ class RacePhotosGallery {
         if (category === 'boundary') score += 200;
         if (type === 'administrative') score += 120;
         if (category === 'place') score += 60;
-        if (['state', 'province', 'city', 'county', 'district', 'borough', 'suburb', 'town', 'municipality', 'village', 'region'].includes(addresstype)) {
-            score += 60;
-        }
+        if (this.isPreferredBoundaryLevel(addresstype)) score += 120;
+        if (['county', 'district', 'borough', 'locality'].includes(addresstype)) score += 30;
+        if (['suburb', 'town', 'village', 'hamlet'].includes(addresstype)) score -= 20;
         if (['railway', 'landuse', 'amenity', 'tourism', 'building', 'office', 'shop', 'highway', 'leisure', 'man_made'].includes(category)) {
             score -= 240;
         }
@@ -339,7 +345,11 @@ class RacePhotosGallery {
             const score = this.getBoundaryCandidateScore(item, location);
             if (!Number.isFinite(score)) continue;
             if (!bestCandidate || score > bestCandidate.score) {
-                bestCandidate = { geojson: item.geojson, score };
+                bestCandidate = {
+                    geojson: item.geojson,
+                    score,
+                    addresstype: String(item.addresstype || '').toLowerCase()
+                };
             }
         }
         return bestCandidate;
@@ -357,13 +367,17 @@ class RacePhotosGallery {
         } catch (e) {}
 
         const urls = this.buildBoundaryQueryUrls(location);
+        let bestCandidate = null;
         for (let i = 0; i < urls.length; i++) {
             try {
                 const res = await fetch(urls[i]);
                 if (!res.ok) continue;
                 const data = await res.json();
                 const candidate = this.extractBoundaryCandidate(data, location);
-                if (candidate && candidate.score >= 100) {
+                if (candidate && (!bestCandidate || candidate.score > bestCandidate.score)) {
+                    bestCandidate = candidate;
+                }
+                if (candidate && candidate.score >= 100 && this.isPreferredBoundaryLevel(candidate.addresstype)) {
                     try { localStorage.setItem(cacheKey, JSON.stringify(candidate.geojson)); } catch (e) {}
                     return candidate.geojson;
                 }
@@ -371,6 +385,11 @@ class RacePhotosGallery {
             if (i < urls.length - 1 && this.nominatimDelayMs > 0) {
                 await new Promise(resolve => setTimeout(resolve, this.nominatimDelayMs));
             }
+        }
+
+        if (bestCandidate && bestCandidate.score >= 100) {
+            try { localStorage.setItem(cacheKey, JSON.stringify(bestCandidate.geojson)); } catch (e) {}
+            return bestCandidate.geojson;
         }
 
         return null;
