@@ -6,5 +6,19 @@
   "race_page": "https://www.runff.com/html/live/s5241.html",
   "date": "2026-03-29",
   "place": "江苏无锡",
-  "strava_url": "https://www.strava.com/activities/17895970096"
+  "strava_url": "https://www.strava.com/activities/17895970096",
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2026-runff-original-edaa4fd275",
+    "count": 23
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2026-runff-original-watermark-652e3a6c35",
+    "count": 23
+  }
 }
