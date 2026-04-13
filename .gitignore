@@ -33,6 +33,9 @@ docs/images/_temp_cache_*/
 @AutomationLog.txt
 .wiki.git/
 
+# Local auth/session files
+runff_cookie.txt
+
 # Local media staging: keep metadata, publish binaries via release assets instead
 docs/images/**/*.jpg
 docs/images/**/*.jpeg
