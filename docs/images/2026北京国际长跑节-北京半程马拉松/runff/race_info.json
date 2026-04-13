@@ -4,11 +4,11 @@
   "fid": "25303100",
   "bib": "B0261",
   "race_page": "https://www.runff.com/html/live/s5286.html",
-  "watermark_review": {
+  "watermark": {
     "status": "release-backed",
     "host": "github-release-assets",
-    "subdir": "watermark-review",
-    "release_tag": "media-2026-runff-watermark-review-dfa9564e96",
+    "subdir": "watermark",
+    "release_tag": "media-2026-runff-watermark-e23e816f6e",
     "count": 105
   }
 }
