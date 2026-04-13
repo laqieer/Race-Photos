@@ -3,5 +3,12 @@
   "race_id": "5286",
   "fid": "25303100",
   "bib": "B0261",
-  "race_page": "https://www.runff.com/html/live/s5286.html"
+  "race_page": "https://www.runff.com/html/live/s5286.html",
+  "watermark_review": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "watermark-review",
+    "release_tag": "media-2026-runff-watermark-review-dfa9564e96",
+    "count": 105
+  }
 }
