@@ -4,5 +4,19 @@
   "fid": "24589588",
   "race_page": "https://www.runff.com/html/live/s5191.html",
   "userorder_filter": "2026jymls",
-  "userorder_stype": "free"
+  "userorder_stype": "free",
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2026-runff-original-e75116b780",
+    "count": 17
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2026-runff-original-watermark-50d607cf6f",
+    "count": 17
+  }
 }
