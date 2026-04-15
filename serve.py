@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Local development server with no-cache headers."""
 
+from functools import partial
 import http.server
-import os
 import sys
+from pathlib import Path
 
 
 class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
@@ -18,8 +19,10 @@ class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
-    directory = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'docs')
-    os.chdir(directory)
-    server = http.server.HTTPServer(('', port), NoCacheHandler)
+    directory = Path(__file__).resolve().parent / 'docs'
+    if not directory.is_dir():
+        raise FileNotFoundError(f'docs directory not found: {directory}')
+    handler = partial(NoCacheHandler, directory=str(directory))
+    server = http.server.HTTPServer(('', port), handler)
     print(f"Serving docs/ at http://localhost:{port} (no-cache)")
     server.serve_forever()

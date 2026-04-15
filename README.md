@@ -84,7 +84,8 @@ The gallery now supports committing only metadata while serving photos/videos fr
 Start a local development server (with cache disabled) and open in browser:
 
 ```bash
-python serve.py
+python serve.py       # Serve repo-local docs/ on port 8080
+python serve.py 8081  # Serve repo-local docs/ on a custom port
 ```
 
 Then visit http://localhost:8080, or enable GitHub Pages to view online.
@@ -116,7 +117,7 @@ Your gallery is available at: `https://<username>.github.io/Race-Photos/`
 npm test                    # Run unit tests
 npm run test:report         # Run unit tests with coverage report
 npx playwright test         # Run E2E tests against live site
-BASE_URL=http://localhost:8081 npx playwright test  # Run E2E tests locally
+BASE_URL=http://127.0.0.1:8081 npx playwright test  # Run E2E tests locally after `python serve.py 8081`
 ```
 
 Unit tests use Jest with jsdom. E2E tests use Playwright against the deployed GitHub Pages site. Test reports are uploaded as CI artifacts on every push.
