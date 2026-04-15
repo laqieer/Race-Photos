@@ -9,7 +9,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317102123_442_000494.jpg",
       "ts": "1710642083",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317102123_442_000486.jpg",
@@ -20,7 +21,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317102123_442_000486.jpg",
       "ts": "1710642083",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317133317_422_000116.jpg",
@@ -31,7 +33,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317133317_422_000116.jpg",
       "ts": "1710653597",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317133317_422_000141.jpg",
@@ -42,7 +45,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317133317_422_000141.jpg",
       "ts": "1710653597",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317125700_500_000442.jpg",
@@ -53,7 +57,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317125700_500_000442.jpg",
       "ts": "1710651420",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000185.jpg",
@@ -64,7 +69,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000185.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000175.jpg",
@@ -75,7 +81,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000175.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000242.jpg",
@@ -86,7 +93,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000242.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317125700_500_000425.jpg",
@@ -97,7 +105,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317125700_500_000425.jpg",
       "ts": "1710651420",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000245.jpg",
@@ -108,7 +117,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000245.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000079.jpg",
@@ -119,7 +129,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000079.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317094831_343_000415.jpg",
@@ -130,7 +141,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317094831_343_000415.jpg",
       "ts": "1710640111",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000089.jpg",
@@ -141,7 +153,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000089.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317094831_343_000413.jpg",
@@ -152,7 +165,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317094831_343_000413.jpg",
       "ts": "1710640111",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000113.jpg",
@@ -163,7 +177,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000113.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317114907_780_000203.jpg",
@@ -174,7 +189,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317114907_780_000203.jpg",
       "ts": "1710647348",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000257.jpg",
@@ -185,7 +201,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000257.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000119.jpg",
@@ -196,7 +213,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000119.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000121.jpg",
@@ -207,7 +225,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000121.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000117.jpg",
@@ -218,7 +237,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000117.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000120.jpg",
@@ -229,7 +249,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000120.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000287.jpg",
@@ -240,7 +261,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000287.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000092.jpg",
@@ -251,7 +273,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000092.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000076.jpg",
@@ -262,7 +285,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000076.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000109.jpg",
@@ -273,7 +297,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000109.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000026.jpg",
@@ -284,7 +309,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000026.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000097.jpg",
@@ -295,7 +321,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000097.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000015.jpg",
@@ -306,7 +333,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000015.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317211154_697_000046.jpg",
@@ -317,7 +345,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317211154_697_000046.jpg",
       "ts": "1710681114",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000122.jpg",
@@ -328,7 +357,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000122.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000099.jpg",
@@ -339,7 +369,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000099.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317114907_780_000160.jpg",
@@ -350,7 +381,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317114907_780_000160.jpg",
       "ts": "1710647348",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317114907_780_000213.jpg",
@@ -361,7 +393,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317114907_780_000213.jpg",
       "ts": "1710647348",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000123.jpg",
@@ -372,7 +405,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000123.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000093.jpg",
@@ -383,7 +417,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000093.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000029.jpg",
@@ -394,7 +429,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000029.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000100.jpg",
@@ -405,7 +441,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000100.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000109.jpg",
@@ -416,7 +453,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000109.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000107.jpg",
@@ -427,7 +465,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000107.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000114.jpg",
@@ -438,7 +477,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000114.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000123.jpg",
@@ -449,7 +489,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000123.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000090.jpg",
@@ -460,7 +501,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000090.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000093.jpg",
@@ -471,7 +513,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000093.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000095.jpg",
@@ -482,7 +525,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000095.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000117.jpg",
@@ -493,7 +537,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000117.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000130.jpg",
@@ -504,7 +549,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000130.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000209.jpg",
@@ -515,7 +561,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000209.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317110753_991_000013.jpg",
@@ -526,7 +573,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317110753_991_000013.jpg",
       "ts": "1710644873",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317111327_322_000231.jpg",
@@ -537,7 +585,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317111327_322_000231.jpg",
       "ts": "1710645207",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317145912_589_000008.jpg",
@@ -548,7 +597,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317145912_589_000008.jpg",
       "ts": "1710658752",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317102123_442_000461.jpg",
@@ -559,7 +609,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317102123_442_000461.jpg",
       "ts": "1710642083",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000191.jpg",
@@ -570,7 +621,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000191.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317133317_422_000107.jpg",
@@ -581,7 +633,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317133317_422_000107.jpg",
       "ts": "1710653597",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317125700_500_000416.jpg",
@@ -592,7 +645,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317125700_500_000416.jpg",
       "ts": "1710651420",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000297.jpg",
@@ -603,7 +657,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000297.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317133317_422_000094.jpg",
@@ -614,7 +669,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317133317_422_000094.jpg",
       "ts": "1710653597",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000224.jpg",
@@ -625,7 +681,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000224.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000174.jpg",
@@ -636,7 +693,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000174.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000249.jpg",
@@ -647,7 +705,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000249.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317211154_697_000042.jpg",
@@ -658,7 +717,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317211154_697_000042.jpg",
       "ts": "1710681114",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000316.jpg",
@@ -669,7 +729,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000316.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000230.jpg",
@@ -680,7 +741,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000230.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000016.jpg",
@@ -691,7 +753,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000016.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000028.jpg",
@@ -702,7 +765,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000028.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000343.jpg",
@@ -713,7 +777,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000343.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124928_321_000244.jpg",
@@ -724,7 +789,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124928_321_000244.jpg",
       "ts": "1710650968",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000014.jpg",
@@ -735,7 +801,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000014.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000025.jpg",
@@ -746,7 +813,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000025.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000096.jpg",
@@ -757,7 +825,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000096.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000265.jpg",
@@ -768,7 +837,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000265.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000078.jpg",
@@ -779,7 +849,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000078.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000018.jpg",
@@ -790,7 +861,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000018.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000260.jpg",
@@ -801,7 +873,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000260.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000106.jpg",
@@ -812,7 +885,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000106.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317114907_780_000224.jpg",
@@ -823,7 +897,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317114907_780_000224.jpg",
       "ts": "1710647348",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000340.jpg",
@@ -834,7 +909,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000340.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317211154_697_000044.jpg",
@@ -845,7 +921,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317211154_697_000044.jpg",
       "ts": "1710681114",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000017.jpg",
@@ -856,7 +933,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000017.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317110345_928_000090.jpg",
@@ -867,7 +945,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317110345_928_000090.jpg",
       "ts": "1710644625",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000119.jpg",
@@ -878,7 +957,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000119.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317211154_697_000048.jpg",
@@ -889,7 +969,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317211154_697_000048.jpg",
       "ts": "1710681114",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000087.jpg",
@@ -900,7 +981,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000087.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000010.jpg",
@@ -911,7 +993,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000010.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000108.jpg",
@@ -922,7 +1005,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000108.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317211154_697_000045.jpg",
@@ -933,7 +1017,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317211154_697_000045.jpg",
       "ts": "1710681114",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000104.jpg",
@@ -944,7 +1029,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000104.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000005.jpg",
@@ -955,7 +1041,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000005.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000004.jpg",
@@ -966,7 +1053,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000004.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085028_643_000595.jpg",
@@ -977,7 +1065,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085028_643_000595.jpg",
       "ts": "1710636628",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000361.jpg",
@@ -988,7 +1077,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000361.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000080.jpg",
@@ -999,7 +1089,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000080.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000118.jpg",
@@ -1010,7 +1101,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000118.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092840_537_000093.jpg",
@@ -1021,7 +1113,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092840_537_000093.jpg",
       "ts": "1710638920",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000016.jpg",
@@ -1032,7 +1125,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000016.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000022.jpg",
@@ -1043,7 +1137,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000022.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000120.jpg",
@@ -1054,7 +1149,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000120.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092202_745_000148.jpg",
@@ -1065,7 +1161,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092202_745_000148.jpg",
       "ts": "1710638522",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000030.jpg",
@@ -1076,7 +1173,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000030.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000007.jpg",
@@ -1087,7 +1185,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000007.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000214.jpg",
@@ -1098,7 +1197,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000214.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317110345_928_000091.jpg",
@@ -1109,7 +1209,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317110345_928_000091.jpg",
       "ts": "1710644625",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092747_313_000013.jpg",
@@ -1120,7 +1221,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092747_313_000013.jpg",
       "ts": "1710638867",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317110345_928_000102.jpg",
@@ -1131,7 +1233,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317110345_928_000102.jpg",
       "ts": "1710644625",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317114907_780_000185.jpg",
@@ -1142,7 +1245,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317114907_780_000185.jpg",
       "ts": "1710647348",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000099.jpg",
@@ -1153,7 +1257,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000099.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092840_537_000110.jpg",
@@ -1164,7 +1269,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092840_537_000110.jpg",
       "ts": "1710638920",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092840_537_000098.jpg",
@@ -1175,7 +1281,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092840_537_000098.jpg",
       "ts": "1710638920",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000002.jpg",
@@ -1186,7 +1293,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000002.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317102359_758_000405.jpg",
@@ -1197,7 +1305,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317102359_758_000405.jpg",
       "ts": "1710642239",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000003.jpg",
@@ -1208,7 +1317,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000003.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000113.jpg",
@@ -1219,7 +1329,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000113.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317121721_881_001267.jpg",
@@ -1230,7 +1341,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317121721_881_001267.jpg",
       "ts": "1710649041",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092202_745_000134.jpg",
@@ -1241,7 +1353,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092202_745_000134.jpg",
       "ts": "1710638522",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000029.jpg",
@@ -1252,7 +1365,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000029.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092202_745_000156.jpg",
@@ -1263,7 +1377,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092202_745_000156.jpg",
       "ts": "1710638522",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000097.jpg",
@@ -1274,7 +1389,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000097.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000102.jpg",
@@ -1285,7 +1401,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000102.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092604_592_000033.jpg",
@@ -1296,7 +1413,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092604_592_000033.jpg",
       "ts": "1710638764",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000238.jpg",
@@ -1307,7 +1425,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000238.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000199.jpg",
@@ -1318,7 +1437,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000199.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092604_592_000036.jpg",
@@ -1329,7 +1449,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092604_592_000036.jpg",
       "ts": "1710638764",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100432_157_000218.jpg",
@@ -1340,7 +1461,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100432_157_000218.jpg",
       "ts": "1710641072",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124504_237_000307.jpg",
@@ -1351,7 +1473,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124504_237_000307.jpg",
       "ts": "1710650704",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317101707_968_000642.jpg",
@@ -1362,7 +1485,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317101707_968_000642.jpg",
       "ts": "1710641827",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100432_157_000215.jpg",
@@ -1373,7 +1497,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100432_157_000215.jpg",
       "ts": "1710641072",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317120742_430_000111.jpg",
@@ -1384,7 +1509,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317120742_430_000111.jpg",
       "ts": "1710648462",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092558_734_000217.jpg",
@@ -1395,7 +1521,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092558_734_000217.jpg",
       "ts": "1710638758",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092202_745_000152.jpg",
@@ -1406,7 +1533,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092202_745_000152.jpg",
       "ts": "1710638522",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092604_592_000081.jpg",
@@ -1417,7 +1545,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092604_592_000081.jpg",
       "ts": "1710638764",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317101707_968_000600.jpg",
@@ -1428,7 +1557,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317101707_968_000600.jpg",
       "ts": "1710641827",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100432_157_000224.jpg",
@@ -1439,7 +1569,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100432_157_000224.jpg",
       "ts": "1710641072",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000114.jpg",
@@ -1450,7 +1581,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000114.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317093927_206_000224.jpg",
@@ -1461,7 +1593,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317093927_206_000224.jpg",
       "ts": "1710639567",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317135722_766_000250.jpg",
@@ -1472,7 +1605,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317135722_766_000250.jpg",
       "ts": "1710655042",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317121721_881_001322.jpg",
@@ -1483,7 +1617,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317121721_881_001322.jpg",
       "ts": "1710649041",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100036_281_000264.jpg",
@@ -1494,7 +1629,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100036_281_000264.jpg",
       "ts": "1710640836",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317225733_942_000117.jpg",
@@ -1505,7 +1641,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317225733_942_000117.jpg",
       "ts": "1710687453",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317120710_951_001179.jpg",
@@ -1516,7 +1653,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317120710_951_001179.jpg",
       "ts": "1710648431",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317115122_211_000196.jpg",
@@ -1527,7 +1665,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317115122_211_000196.jpg",
       "ts": "1710647482",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092202_745_000128.jpg",
@@ -1538,7 +1677,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092202_745_000128.jpg",
       "ts": "1710638522",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317115122_211_000231.jpg",
@@ -1549,7 +1689,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317115122_211_000231.jpg",
       "ts": "1710647482",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317121721_881_001198.jpg",
@@ -1560,7 +1701,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317121721_881_001198.jpg",
       "ts": "1710649041",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100432_157_000238.jpg",
@@ -1571,7 +1713,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100432_157_000238.jpg",
       "ts": "1710641072",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317204445_302_000072.jpg",
@@ -1582,7 +1725,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317204445_302_000072.jpg",
       "ts": "1710679485",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317084350_151_000069.jpg",
@@ -1593,7 +1737,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317084350_151_000069.jpg",
       "ts": "1710636230",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317115122_211_000212.jpg",
@@ -1604,7 +1749,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317115122_211_000212.jpg",
       "ts": "1710647482",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085107_895_000026.jpg",
@@ -1615,7 +1761,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085107_895_000026.jpg",
       "ts": "1710636667",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317093927_206_000151.jpg",
@@ -1626,7 +1773,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317093927_206_000151.jpg",
       "ts": "1710639567",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317121721_881_001349.jpg",
@@ -1637,7 +1785,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317121721_881_001349.jpg",
       "ts": "1710649041",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317203917_437_000011.jpg",
@@ -1648,7 +1797,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317203917_437_000011.jpg",
       "ts": "1710679157",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317124545_388_000682.jpg",
@@ -1659,7 +1809,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317124545_388_000682.jpg",
       "ts": "1710650746",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317105827_617_000390.jpg",
@@ -1670,7 +1821,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317105827_617_000390.jpg",
       "ts": "1710644308",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317132859_376_000163.jpg",
@@ -1681,7 +1833,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317132859_376_000163.jpg",
       "ts": "1710653339",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317120742_430_000044.jpg",
@@ -1692,7 +1845,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317120742_430_000044.jpg",
       "ts": "1710648462",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317103735_997_000070.jpg",
@@ -1703,7 +1857,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317103735_997_000070.jpg",
       "ts": "1710643055",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317101007_474_000298.jpg",
@@ -1714,7 +1869,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317101007_474_000298.jpg",
       "ts": "1710641407",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317143744_972_000050.jpg",
@@ -1725,7 +1881,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317143744_972_000050.jpg",
       "ts": "1710657464",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092604_592_000023.jpg",
@@ -1736,7 +1893,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092604_592_000023.jpg",
       "ts": "1710638764",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317225451_615_000168.jpg",
@@ -1747,7 +1905,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317225451_615_000168.jpg",
       "ts": "1710687291",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317101302_612_000008.jpg",
@@ -1758,7 +1917,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317101302_612_000008.jpg",
       "ts": "1710641582",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317113423_641_001055.jpg",
@@ -1769,7 +1929,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317113423_641_001055.jpg",
       "ts": "1710646464",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317120742_430_000028.jpg",
@@ -1780,7 +1941,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317120742_430_000028.jpg",
       "ts": "1710648462",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317103754_606_000229.jpg",
@@ -1791,7 +1953,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317103754_606_000229.jpg",
       "ts": "1710643074",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317125057_604_000174.jpg",
@@ -1802,7 +1965,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317125057_604_000174.jpg",
       "ts": "1710651057",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317120742_430_000051.jpg",
@@ -1813,7 +1977,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317120742_430_000051.jpg",
       "ts": "1710648462",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317112125_202_000451.jpg",
@@ -1824,7 +1989,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317112125_202_000451.jpg",
       "ts": "1710645686",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317111241_966_000372.jpg",
@@ -1835,7 +2001,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317111241_966_000372.jpg",
       "ts": "1710645161",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085955_580_000256.jpg",
@@ -1846,7 +2013,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085955_580_000256.jpg",
       "ts": "1710637195",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317085955_580_000277.jpg",
@@ -1857,7 +2025,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317085955_580_000277.jpg",
       "ts": "1710637195",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091100_634_000105.jpg",
@@ -1868,7 +2037,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091100_634_000105.jpg",
       "ts": "1710637860",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317091918_338_000197.jpg",
@@ -1879,7 +2049,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317091918_338_000197.jpg",
       "ts": "1710638358",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317092202_745_000129.jpg",
@@ -1890,7 +2061,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317092202_745_000129.jpg",
       "ts": "1710638522",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317100556_396_000242.jpg",
@@ -1901,7 +2073,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317100556_396_000242.jpg",
       "ts": "1710641156",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317102057_591_000006.jpg",
@@ -1912,7 +2085,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317102057_591_000006.jpg",
       "ts": "1710642057",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317102057_591_000014.jpg",
@@ -1923,7 +2097,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317102057_591_000014.jpg",
       "ts": "1710642057",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317102057_591_000030.jpg",
@@ -1934,7 +2109,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317102057_591_000030.jpg",
       "ts": "1710642057",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317102359_758_000403.jpg",
@@ -1945,7 +2121,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317102359_758_000403.jpg",
       "ts": "1710642239",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317103059_395_000143.jpg",
@@ -1956,7 +2133,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317103059_395_000143.jpg",
       "ts": "1710642659",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317104456_688_000057.jpg",
@@ -1967,7 +2145,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317104456_688_000057.jpg",
       "ts": "1710643496",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317110635_966_000049.jpg",
@@ -1978,7 +2157,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317110635_966_000049.jpg",
       "ts": "1710644795",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317110753_991_000021.jpg",
@@ -1989,7 +2169,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317110753_991_000021.jpg",
       "ts": "1710644873",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317110753_991_000106.jpg",
@@ -2000,7 +2181,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317110753_991_000106.jpg",
       "ts": "1710644873",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317110753_991_000405.jpg",
@@ -2011,7 +2193,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317110753_991_000405.jpg",
       "ts": "1710644873",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317111241_966_000480.jpg",
@@ -2022,7 +2205,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317111241_966_000480.jpg",
       "ts": "1710645161",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317111305_795_000229.jpg",
@@ -2033,7 +2217,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317111305_795_000229.jpg",
       "ts": "1710645185",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317113310_229_000380.jpg",
@@ -2044,7 +2229,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317113310_229_000380.jpg",
       "ts": "1710646390",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317113310_229_000424.jpg",
@@ -2055,7 +2241,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317113310_229_000424.jpg",
       "ts": "1710646390",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317113310_229_000487.jpg",
@@ -2066,7 +2253,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317113310_229_000487.jpg",
       "ts": "1710646390",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317113346_438_000232.jpg",
@@ -2077,7 +2265,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317113346_438_000232.jpg",
       "ts": "1710646426",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317133748_508_000027.jpg",
@@ -2088,7 +2277,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317133748_508_000027.jpg",
       "ts": "1710653868",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317134219_776_000184.jpg",
@@ -2099,7 +2289,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317134219_776_000184.jpg",
       "ts": "1710654139",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317204113_974_000194.jpg",
@@ -2110,7 +2301,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317204113_974_000194.jpg",
       "ts": "1710679273",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317204124_353_000001.jpg",
@@ -2121,7 +2313,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317204124_353_000001.jpg",
       "ts": "1710679284",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317204124_353_000004.jpg",
@@ -2132,7 +2325,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317204124_353_000004.jpg",
       "ts": "1710679284",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024njbm/big/20240317204619_581_000105.jpg",
@@ -2143,7 +2337,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024njbm/small/20240317204619_581_000105.jpg",
       "ts": "1710679579",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     }
   ],
   "videos": []

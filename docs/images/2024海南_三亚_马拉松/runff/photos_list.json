@@ -9,7 +9,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229100939_995_000002.jpg",
       "ts": "1735438179",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229100939_995_000027.jpg",
@@ -20,7 +21,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229100939_995_000027.jpg",
       "ts": "1735438179",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229100939_995_000035.jpg",
@@ -31,7 +33,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229100939_995_000035.jpg",
       "ts": "1735438179",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229100939_995_000038.jpg",
@@ -42,7 +45,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229100939_995_000038.jpg",
       "ts": "1735438179",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229102024_238_000009.jpg",
@@ -53,7 +57,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229102024_238_000009.jpg",
       "ts": "1735438824",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229120205_995_000223.jpg",
@@ -64,7 +69,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229120205_995_000223.jpg",
       "ts": "1735444926",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229080827_622_000022.jpg",
@@ -75,7 +81,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229080827_622_000022.jpg",
       "ts": "1735430907",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229103752_366_000007.jpg",
@@ -86,7 +93,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229103752_366_000007.jpg",
       "ts": "1735439872",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229122046_898_000036.jpg",
@@ -97,7 +105,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229122046_898_000036.jpg",
       "ts": "1735446046",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229130849_468_000034.jpg",
@@ -108,7 +117,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229130849_468_000034.jpg",
       "ts": "1735448929",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229130849_468_000052.jpg",
@@ -119,7 +129,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229130849_468_000052.jpg",
       "ts": "1735448929",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229130849_468_000058.jpg",
@@ -130,7 +141,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229130849_468_000058.jpg",
       "ts": "1735448929",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     },
     {
       "big": "/upload/photos/2024/2024symls001/big/20241229130849_468_000068.jpg",
@@ -141,7 +153,8 @@
       "price": "",
       "small": "/upload/photos/2024/2024symls001/small/20241229130849_468_000068.jpg",
       "ts": "1735448929",
-      "type": "photo"
+      "type": "photo",
+      "original_requested": true
     }
   ],
   "videos": []
