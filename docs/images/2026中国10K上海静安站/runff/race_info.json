@@ -13,5 +13,19 @@
       "bib": "",
       "label": "provided secondary request"
     }
-  ]
+  ],
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2026-runff-original-596bc0fe11",
+    "count": 44
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2026-runff-original-watermark-73c82b9a77",
+    "count": 44
+  }
 }
