@@ -9,14 +9,14 @@
     "host": "github-release-assets",
     "subdir": "original",
     "release_tag": "media-2026-runff-original-144cc7881f",
-    "count": 98
+    "count": 105
   },
   "original_watermark": {
     "status": "release-backed",
     "host": "github-release-assets",
     "subdir": "original-watermark",
     "release_tag": "media-2026-runff-original-watermark-7a1f36d652",
-    "count": 98
+    "count": 105
   },
   "watermark": {
     "status": "release-backed",
