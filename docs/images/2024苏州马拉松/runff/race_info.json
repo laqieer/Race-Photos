@@ -3,5 +3,19 @@
   "race_id": "4186",
   "fid": "25262779",
   "bib": "A3933",
-  "race_page": "https://www.runff.com/html/live/s4186.html"
+  "race_page": "https://www.runff.com/html/live/s4186.html",
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2024-runff-original-13f45ff453",
+    "count": 222
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2024-runff-original-watermark-3709c33ecb",
+    "count": 222
+  }
 }
