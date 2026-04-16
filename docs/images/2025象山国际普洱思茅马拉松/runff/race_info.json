@@ -10,5 +10,19 @@
       "bib": "B0140"
     }
   ],
-  "strava_url": "https://www.strava.com/activities/13330267464"
+  "strava_url": "https://www.strava.com/activities/13330267464",
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2025-runff-original-61bc9cafc8",
+    "count": 28
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2025-runff-original-watermark-3271342e46",
+    "count": 28
+  }
 }
