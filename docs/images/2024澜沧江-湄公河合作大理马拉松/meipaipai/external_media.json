@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-meipaipai-ff6bf26fb5",
+  "race": "2024澜沧江-湄公河合作大理马拉松",
+  "source": "meipaipai",
+  "items": [
+    {
+      "name": "B10098_朱志文_20240520155303525165.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-meipaipai-ff6bf26fb5/B10098_._20240520155303525165.mp4",
+      "timestamp": "2024-05-20 15:53:03",
+      "poster": "https://oss.meipaipai.cn/media/producing/20240520155303525165.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto"
+    }
+  ]
+}

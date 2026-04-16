@@ -1,0 +1,22 @@
+{
+  "videos": [
+    {
+      "file_name": "B0140_20250112120944057563.mp4",
+      "url": "https://oss.meipaipai.cn/media/producing/20250112120944057563.mp4",
+      "poster_url": "https://oss.meipaipai.cn/media/producing/20250112120944057563.mp4?x-oss-process=video/snapshot,t_5000,f_jpg,w_0,h_0,ar_auto",
+      "timestamp": "2025-01-12 12:09:44"
+    },
+    {
+      "file_name": "B0140_朱志文_20250112192048991825.mp4",
+      "url": "https://oss.meipaipai.cn/media/producing/20250112192048991825.mp4",
+      "poster_url": "https://oss.meipaipai.cn/media/producing/20250112192048991825.mp4?x-oss-process=video/snapshot,t_5000,f_jpg,w_0,h_0,ar_auto",
+      "timestamp": "2025-01-12 19:20:48"
+    },
+    {
+      "file_name": "B0140_朱志文_20250112192308818144.mp4",
+      "url": "https://oss.meipaipai.cn/media/producing/20250112192308818144.mp4",
+      "poster_url": "https://oss.meipaipai.cn/media/producing/20250112192308818144.mp4?x-oss-process=video/snapshot,t_10000,f_jpg,w_0,h_0,ar_auto",
+      "timestamp": "2025-01-12 19:23:08"
+    }
+  ]
+}

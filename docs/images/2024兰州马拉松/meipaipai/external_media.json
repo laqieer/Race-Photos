@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-meipaipai-7319ff6ba6",
+  "race": "2024兰州马拉松",
+  "source": "meipaipai",
+  "items": [
+    {
+      "name": "C44000_20240526144923335600.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-meipaipai-7319ff6ba6/C44000_20240526144923335600.mp4",
+      "timestamp": "2024-05-26 14:49:23",
+      "poster": "https://oss.meipaipai.cn/media/producing/20240526144923335600.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto"
+    },
+    {
+      "name": "C44000_20240528212459242331.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-meipaipai-7319ff6ba6/C44000_20240528212459242331.mp4",
+      "timestamp": "2024-05-28 21:24:59",
+      "poster": "https://oss.meipaipai.cn/media/producing/20240528212459242331.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto"
+    },
+    {
+      "name": "C44000_20240528213053283978.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-meipaipai-7319ff6ba6/C44000_20240528213053283978.mp4",
+      "timestamp": "2024-05-28 21:30:53",
+      "poster": "https://oss.meipaipai.cn/media/producing/20240528213053283978.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto"
+    },
+    {
+      "name": "C44000_20240528223016396334.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-meipaipai-7319ff6ba6/C44000_20240528223016396334.mp4",
+      "timestamp": "2024-05-28 22:30:16",
+      "poster": "https://oss.meipaipai.cn/media/producing/20240528223016396334.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto"
+    }
+  ]
+}

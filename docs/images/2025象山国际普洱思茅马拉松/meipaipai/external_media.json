@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-meipaipai-6b7dd5b2ab",
+  "race": "2025象山国际普洱思茅马拉松",
+  "source": "meipaipai",
+  "items": [
+    {
+      "name": "B0140_20250112120944057563.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-6b7dd5b2ab/B0140_20250112120944057563.mp4",
+      "timestamp": "2025-01-12 12:09:44",
+      "poster": "https://oss.meipaipai.cn/media/producing/20250112120944057563.mp4?x-oss-process=video/snapshot,t_5000,f_jpg,w_0,h_0,ar_auto"
+    },
+    {
+      "name": "B0140_朱志文_20250112192048991825.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-6b7dd5b2ab/B0140_._20250112192048991825.mp4",
+      "timestamp": "2025-01-12 19:20:48",
+      "poster": "https://oss.meipaipai.cn/media/producing/20250112192048991825.mp4?x-oss-process=video/snapshot,t_5000,f_jpg,w_0,h_0,ar_auto"
+    },
+    {
+      "name": "B0140_朱志文_20250112192308818144.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-6b7dd5b2ab/B0140_._20250112192308818144.mp4",
+      "timestamp": "2025-01-12 19:23:08",
+      "poster": "https://oss.meipaipai.cn/media/producing/20250112192308818144.mp4?x-oss-process=video/snapshot,t_10000,f_jpg,w_0,h_0,ar_auto"
+    }
+  ]
+}

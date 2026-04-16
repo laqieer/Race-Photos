@@ -1,0 +1,80 @@
+{
+  "videos": [
+    {
+      "coverUrl": "https://oss.meipaipai.cn/media/producing/20240520155303525165.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto",
+      "duration": 68.76,
+      "size": 42877703,
+      "clipTemplateId": 3968,
+      "name": "B10098_朱志文_20240520155303525165.mp4",
+      "id": 2412135,
+      "versionName": "半马 冲线版",
+      "clipTemplateCount": 0,
+      "folderId": 74135,
+      "url": "https://oss.meipaipai.cn/media/producing/20240520155303525165.mp4",
+      "videoStyle": 1,
+      "product_name": "半马 冲线版",
+      "product_code": "39A602FEDA6544C5B883BC2949EAE4F8",
+      "project_id": "1365",
+      "project_name": "半程马拉松",
+      "price": 58.0,
+      "file_name": "B10098_朱志文_20240520155303525165.mp4",
+      "poster_url": "https://oss.meipaipai.cn/media/producing/20240520155303525165.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto",
+      "timestamp": "2024-05-20 15:53:03",
+      "ts": 1716191583
+    }
+  ],
+  "raw_results": [
+    {
+      "code": "39A602FEDA6544C5B883BC2949EAE4F8",
+      "price": 58.0,
+      "previewAdSwitch": 0,
+      "name": "半马 冲线版",
+      "files": [
+        {
+          "coverUrl": "https://oss.meipaipai.cn/media/producing/20240520155303525165.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto",
+          "duration": 68.76,
+          "size": 42877703,
+          "clipTemplateId": 3968,
+          "name": "B10098_朱志文_20240520155303525165.mp4",
+          "id": 2412135,
+          "versionName": "半马 冲线版",
+          "clipTemplateCount": 0,
+          "folderId": 74135,
+          "url": "https://oss.meipaipai.cn/media/producing/20240520155303525165.mp4",
+          "videoStyle": 1
+        }
+      ],
+      "projectId": "1365",
+      "projectName": "半程马拉松"
+    }
+  ],
+  "raw_results_by_project": [
+    {
+      "project_id": "1365",
+      "project_name": "半程马拉松",
+      "results": [
+        {
+          "code": "39A602FEDA6544C5B883BC2949EAE4F8",
+          "price": 58.0,
+          "previewAdSwitch": 0,
+          "name": "半马 冲线版",
+          "files": [
+            {
+              "coverUrl": "https://oss.meipaipai.cn/media/producing/20240520155303525165.mp4?x-oss-process=video/snapshot,t_10,f_jpg,w_0,h_0,m_fast,ar_auto",
+              "duration": 68.76,
+              "size": 42877703,
+              "clipTemplateId": 3968,
+              "name": "B10098_朱志文_20240520155303525165.mp4",
+              "id": 2412135,
+              "versionName": "半马 冲线版",
+              "clipTemplateCount": 0,
+              "folderId": 74135,
+              "url": "https://oss.meipaipai.cn/media/producing/20240520155303525165.mp4",
+              "videoStyle": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
