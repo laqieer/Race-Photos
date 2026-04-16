@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-pailixiang-5c9ee0316d",
+  "race": "2025苏州吴中太湖新年精英赛",
+  "source": "pailixiang",
+  "items": [
+    {
+      "name": "DSC08733.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-pailixiang-5c9ee0316d/DSC08733.jpg",
+      "timestamp": "2018-01-01 20:32:01"
+    },
+    {
+      "name": "DSC_3314.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-pailixiang-5c9ee0316d/DSC_3314.JPG",
+      "timestamp": "2025-01-05 10:48:12"
+    },
+    {
+      "name": "DSC_3315.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-pailixiang-5c9ee0316d/DSC_3315.JPG",
+      "timestamp": "2025-01-05 10:48:12"
+    },
+    {
+      "name": "DSC_3316.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-pailixiang-5c9ee0316d/DSC_3316.JPG",
+      "timestamp": "2025-01-05 10:48:12"
+    }
+  ]
+}

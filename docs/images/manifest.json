@@ -9675,6 +9675,31 @@
       "country": "中国",
       "sources": [
         {
+          "name": "pailixiang",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-pailixiang-5c9ee0316d/DSC08733.jpg",
+              "name": "DSC08733.jpg",
+              "timestamp": "2018-01-01 20:32:01"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-pailixiang-5c9ee0316d/DSC_3314.JPG",
+              "name": "DSC_3314.JPG",
+              "timestamp": "2025-01-05 10:48:12"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-pailixiang-5c9ee0316d/DSC_3315.JPG",
+              "name": "DSC_3315.JPG",
+              "timestamp": "2025-01-05 10:48:12"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-pailixiang-5c9ee0316d/DSC_3316.JPG",
+              "name": "DSC_3316.JPG",
+              "timestamp": "2025-01-05 10:48:12"
+            }
+          ]
+        },
+        {
           "name": "runnerbar",
           "photos": [
             {
