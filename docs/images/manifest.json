@@ -19533,10 +19533,10 @@
     },
     {
       "name": "2023中国10公里精英赛总决赛（成都新津）",
-      "date": "2023-12-22",
-      "city": "",
-      "province": "",
-      "country": "",
+      "date": "2023-12-23",
+      "city": "成都",
+      "province": "四川",
+      "country": "中国",
       "sources": [
         {
           "name": "yipai360",
@@ -19673,7 +19673,11 @@
             }
           ]
         }
-      ]
+      ],
+      "route": "routes/2023中国10公里精英赛总决赛（成都新津）.gpx",
+      "lat": 30.397297,
+      "lon": 103.831202,
+      "strava_url": "https://www.strava.com/activities/11369497516"
     },
     {
       "name": "苏州环阳山半程马拉松",
