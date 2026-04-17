@@ -33,6 +33,7 @@ docs/images/_temp_cache_*/
 @AutomationLog.txt
 .wiki.git/
 runnerbar_uid.txt
+feipaom_code.txt
 
 # Local media staging: keep metadata, publish binaries via release assets instead
 docs/images/**/*.jpg
