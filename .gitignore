@@ -34,6 +34,7 @@ docs/images/_temp_cache_*/
 .wiki.git/
 runnerbar_uid.txt
 feipaom_code.txt
+kailishi_secret_key.txt
 
 # Local media staging: keep metadata, publish binaries via release assets instead
 docs/images/**/*.jpg
