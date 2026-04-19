@@ -36,6 +36,10 @@ runnerbar_uid.txt
 feipaom_code.txt
 kailishi_secret_key.txt
 
+# Strava upload state (per-user, not repo metadata)
+strava_upload_state.json
+.strava-browser-profile/
+
 # Local media staging: keep metadata, publish binaries via release assets instead
 docs/images/**/*.jpg
 docs/images/**/*.jpeg
