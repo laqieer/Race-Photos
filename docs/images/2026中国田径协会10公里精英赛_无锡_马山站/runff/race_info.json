@@ -9,5 +9,19 @@
       "fid": "25474694",
       "bib": "A19056"
     }
-  ]
+  ],
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2026-runff-original-ea793ec659",
+    "count": 25
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2026-runff-original-watermark-155731dcac",
+    "count": 25
+  }
 }
