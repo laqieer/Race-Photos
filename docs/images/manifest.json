@@ -10470,6 +10470,68 @@
       "route": "routes/2025昆明半程马拉松.gpx"
     },
     {
+      "name": "2024江苏省大学生路跑联盟联赛总决赛",
+      "date": "2025-03-01",
+      "city": "南京",
+      "province": "江苏",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "photoplus",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/BV4A7711.JPG",
+              "name": "BV4A7711.JPG",
+              "timestamp": "2025-03-01 14:26:27"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/BV4A7714.JPG",
+              "name": "BV4A7714.JPG",
+              "timestamp": "2025-03-01 14:26:27"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/DSC04709.JPG",
+              "name": "DSC04709.JPG",
+              "timestamp": "2025-03-01 13:02:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/DSC09330.JPG",
+              "name": "DSC09330.JPG",
+              "timestamp": "2025-03-01 14:02:09"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/LD9A2464.JPG",
+              "name": "LD9A2464.JPG",
+              "timestamp": "2025-03-01 14:15:00"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/QMZ7137.JPG",
+              "name": "QMZ7137.JPG",
+              "timestamp": "2025-03-01 14:29:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/QMZ7141.JPG",
+              "name": "QMZ7141.JPG",
+              "timestamp": "2025-03-01 14:29:57"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/YT202793.JPG",
+              "name": "YT202793.JPG",
+              "timestamp": "2025-03-01 14:16:15"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/YT202808.JPG",
+              "name": "YT202808.JPG",
+              "timestamp": "2025-03-01 14:16:17"
+            }
+          ]
+        }
+      ],
+      "route": "routes/2024江苏省大学生路跑联盟联赛总决赛.gpx",
+      "lat": 32.080225,
+      "lon": 118.70008
+    },
+    {
       "name": "2025重庆铜梁马拉松",
       "date": "2025-02-23",
       "city": "重庆",

@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2024-photoplus-50dc8806c5",
+  "race": "2024江苏省大学生路跑联盟联赛总决赛",
+  "source": "photoplus",
+  "items": [
+    {
+      "name": "BV4A7711.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/BV4A7711.JPG",
+      "timestamp": "2025-03-01 14:26:27"
+    },
+    {
+      "name": "BV4A7714.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/BV4A7714.JPG",
+      "timestamp": "2025-03-01 14:26:27"
+    },
+    {
+      "name": "DSC04709.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/DSC04709.JPG",
+      "timestamp": "2025-03-01 13:02:50"
+    },
+    {
+      "name": "DSC09330.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/DSC09330.JPG",
+      "timestamp": "2025-03-01 14:02:09"
+    },
+    {
+      "name": "LD9A2464.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/LD9A2464.JPG",
+      "timestamp": "2025-03-01 14:15:00"
+    },
+    {
+      "name": "QMZ7137.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/QMZ7137.JPG",
+      "timestamp": "2025-03-01 14:29:54"
+    },
+    {
+      "name": "QMZ7141.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/QMZ7141.JPG",
+      "timestamp": "2025-03-01 14:29:57"
+    },
+    {
+      "name": "YT202793.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/YT202793.JPG",
+      "timestamp": "2025-03-01 14:16:15"
+    },
+    {
+      "name": "YT202808.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2024-photoplus-50dc8806c5/YT202808.JPG",
+      "timestamp": "2025-03-01 14:16:17"
+    }
+  ]
+}
