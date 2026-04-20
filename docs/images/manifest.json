@@ -10470,6 +10470,414 @@
       "route": "routes/2025昆明半程马拉松.gpx"
     },
     {
+      "name": "2025重庆铜梁马拉松",
+      "date": "2025-02-23",
+      "city": "重庆",
+      "province": "重庆",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "photoplus",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/_DSC7190.JPG",
+              "name": "_DSC7190.JPG",
+              "timestamp": "2025-02-23 09:22:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/_DSC7191.JPG",
+              "name": "_DSC7191.JPG",
+              "timestamp": "2025-02-23 09:22:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/_DSC7192.JPG",
+              "name": "_DSC7192.JPG",
+              "timestamp": "2025-02-23 09:22:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/_DSC7195.JPG",
+              "name": "_DSC7195.JPG",
+              "timestamp": "2025-02-23 09:22:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/CQ777235.JPG",
+              "name": "CQ777235.JPG",
+              "timestamp": "2025-02-23 08:50:55"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7418.JPG",
+              "name": "HML_7418.JPG",
+              "timestamp": "2025-02-23 09:23:19"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7420.JPG",
+              "name": "HML_7420.JPG",
+              "timestamp": "2025-02-23 09:23:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7421.JPG",
+              "name": "HML_7421.JPG",
+              "timestamp": "2025-02-23 09:23:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7422.JPG",
+              "name": "HML_7422.JPG",
+              "timestamp": "2025-02-23 09:23:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7423.JPG",
+              "name": "HML_7423.JPG",
+              "timestamp": "2025-02-23 09:23:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7424.JPG",
+              "name": "HML_7424.JPG",
+              "timestamp": "2025-02-23 09:23:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7425.JPG",
+              "name": "HML_7425.JPG",
+              "timestamp": "2025-02-23 09:23:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7426.JPG",
+              "name": "HML_7426.JPG",
+              "timestamp": "2025-02-23 09:23:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_7427.JPG",
+              "name": "HML_7427.JPG",
+              "timestamp": "2025-02-23 09:23:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8229.JPG",
+              "name": "HML_8229.JPG",
+              "timestamp": "2025-02-23 08:11:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8230.JPG",
+              "name": "HML_8230.JPG",
+              "timestamp": "2025-02-23 08:11:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8231.JPG",
+              "name": "HML_8231.JPG",
+              "timestamp": "2025-02-23 08:11:54"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8233.JPG",
+              "name": "HML_8233.JPG",
+              "timestamp": "2025-02-23 08:11:55"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8234.JPG",
+              "name": "HML_8234.JPG",
+              "timestamp": "2025-02-23 08:11:55"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8235.JPG",
+              "name": "HML_8235.JPG",
+              "timestamp": "2025-02-23 08:11:55"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8239.JPG",
+              "name": "HML_8239.JPG",
+              "timestamp": "2025-02-23 08:11:55"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8240.JPG",
+              "name": "HML_8240.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8241.JPG",
+              "name": "HML_8241.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8242.JPG",
+              "name": "HML_8242.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8243.JPG",
+              "name": "HML_8243.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8244.JPG",
+              "name": "HML_8244.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8245.JPG",
+              "name": "HML_8245.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8247.JPG",
+              "name": "HML_8247.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8248.JPG",
+              "name": "HML_8248.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HML_8249.JPG",
+              "name": "HML_8249.JPG",
+              "timestamp": "2025-02-23 08:11:56"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HT3_2276.JPG",
+              "name": "HT3_2276.JPG",
+              "timestamp": "2025-02-23 09:35:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HT3_2277.JPG",
+              "name": "HT3_2277.JPG",
+              "timestamp": "2025-02-23 09:35:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HT3_2278.JPG",
+              "name": "HT3_2278.JPG",
+              "timestamp": "2025-02-23 09:35:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HT3_2279.JPG",
+              "name": "HT3_2279.JPG",
+              "timestamp": "2025-02-23 09:35:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HT3_2287.JPG",
+              "name": "HT3_2287.JPG",
+              "timestamp": "2025-02-23 09:35:44"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HT3_7972.JPG",
+              "name": "HT3_7972.JPG",
+              "timestamp": "2025-02-23 08:28:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HT3_7973.JPG",
+              "name": "HT3_7973.JPG",
+              "timestamp": "2025-02-23 08:28:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/HT3_7974.JPG",
+              "name": "HT3_7974.JPG",
+              "timestamp": "2025-02-23 08:28:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7970.JPG",
+              "name": "TANG7970.JPG",
+              "timestamp": "2025-02-23 09:16:13"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7971.JPG",
+              "name": "TANG7971.JPG",
+              "timestamp": "2025-02-23 09:16:13"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7975.JPG",
+              "name": "TANG7975.JPG",
+              "timestamp": "2025-02-23 09:16:14"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7978.JPG",
+              "name": "TANG7978.JPG",
+              "timestamp": "2025-02-23 09:16:15"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7979.JPG",
+              "name": "TANG7979.JPG",
+              "timestamp": "2025-02-23 09:16:15"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7980.JPG",
+              "name": "TANG7980.JPG",
+              "timestamp": "2025-02-23 09:16:15"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7981.JPG",
+              "name": "TANG7981.JPG",
+              "timestamp": "2025-02-23 09:16:15"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7982.JPG",
+              "name": "TANG7982.JPG",
+              "timestamp": "2025-02-23 09:16:15"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-5166665bb4/TANG7986.JPG",
+              "name": "TANG7986.JPG",
+              "timestamp": "2025-02-23 09:16:16"
+            }
+          ]
+        },
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740275634120_64b001a5_9bee_455d_b4ad_ddaace4bd3f8.jpg",
+              "name": "1740275634120_64b001a5_9bee_455d_b4ad_ddaace4bd3f8.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 08:35:07"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740275634520_361cbe5d_8c08_49c1_bc62_599f0fee5a9e.jpg",
+              "name": "1740275634520_361cbe5d_8c08_49c1_bc62_599f0fee5a9e.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 08:35:07"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740275634621_655f10b5_b3d6_4a7d_965c_737d45120ce9.jpg",
+              "name": "1740275634621_655f10b5_b3d6_4a7d_965c_737d45120ce9.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 08:35:07"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740275634944_4d951a11_dfa7_4630_9da5_faf4ec2d59b5.jpg",
+              "name": "1740275634944_4d951a11_dfa7_4630_9da5_faf4ec2d59b5.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 08:35:07"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740275960710_9cf813b8_43c1_4fdf_9437_0b42e331bb1d.jpg",
+              "name": "1740275960710_9cf813b8_43c1_4fdf_9437_0b42e331bb1d.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:17:11"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740275961354_c91b01f4_266c_458b_83b9_35fcf0ad8dbd.jpg",
+              "name": "1740275961354_c91b01f4_266c_458b_83b9_35fcf0ad8dbd.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:17:12"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740278714382_55347b06_6ba1_4c0a_90a4_17a6570d0c65.jpg",
+              "name": "1740278714382_55347b06_6ba1_4c0a_90a4_17a6570d0c65.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 08:29:32"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740282829023_06397bd4_101d_470e_8d3a_34b326e30337.JPG",
+              "name": "1740282829023_06397bd4_101d_470e_8d3a_34b326e30337.JPG",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:35:17"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740282852944_4f6d132a_1923_425d_a2fa_eeb7f5e48938.JPG",
+              "name": "1740282852944_4f6d132a_1923_425d_a2fa_eeb7f5e48938.JPG",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:35:19"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740282880987_40ce3518_e745_4e01_ba64_dd223a3036cb.JPG",
+              "name": "1740282880987_40ce3518_e745_4e01_ba64_dd223a3036cb.JPG",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:35:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740282893165_814625bd_8c40_4666_9ddc_8ab2d140aa78.JPG",
+              "name": "1740282893165_814625bd_8c40_4666_9ddc_8ab2d140aa78.JPG",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:35:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740286111614_8815259f_d373_403c_b374_30fd6c5d95c7.jpg",
+              "name": "1740286111614_8815259f_d373_403c_b374_30fd6c5d95c7.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:16:05"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740286113551_5e44afd6_f58b_4168_92d5_06b3bb387499.jpg",
+              "name": "1740286113551_5e44afd6_f58b_4168_92d5_06b3bb387499.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:16:07"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740286113981_e213d1ed_fb0c_43fa_8584_69b77a0db283.jpg",
+              "name": "1740286113981_e213d1ed_fb0c_43fa_8584_69b77a0db283.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:16:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740286114019_2a306bed_22d6_430b_a0d1_ce9c528be853.jpg",
+              "name": "1740286114019_2a306bed_22d6_430b_a0d1_ce9c528be853.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:16:04"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740286114219_8fc7556a_dba8_4556_a9b3_3b335d9793ad.jpg",
+              "name": "1740286114219_8fc7556a_dba8_4556_a9b3_3b335d9793ad.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:16:09"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740286114396_d18300d1_b0d5_4f31_ba71_b2a4dea0833f.jpg",
+              "name": "1740286114396_d18300d1_b0d5_4f31_ba71_b2a4dea0833f.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:16:06"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740286114422_ae4e7f3b_df5f_41e4_97d4_94eeeb4a4f6f.jpg",
+              "name": "1740286114422_ae4e7f3b_df5f_41e4_97d4_94eeeb4a4f6f.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:16:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/1740286114734_23b29529_2fa6_438a_95b3_d6182c2e25bf.jpg",
+              "name": "1740286114734_23b29529_2fa6_438a_95b3_d6182c2e25bf.jpg",
+              "lat": 29.56471,
+              "lon": 106.55073,
+              "timestamp": "2025-02-23 09:16:07"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/20250223_3559180_7110490139812667138_d79887f67e03387b7a1038d5350f5f47.MP4",
+              "name": "20250223_3559180_7110490139812667138_d79887f67e03387b7a1038d5350f5f47.MP4",
+              "poster": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/31479_7110490139812667138_cc6a1c58_3691_434d_a116_8117fe577397.jpeg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/31479_7110490139812667138_cc6a1c58_3691_434d_a116_8117fe577397.jpeg",
+              "name": "31479_7110490139812667138_cc6a1c58_3691_434d_a116_8117fe577397.jpeg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/20250223_3608515_7110344142776796929_4eecdda919f89941ec2fe292c7673e28.MP4",
+              "name": "20250223_3608515_7110344142776796929_4eecdda919f89941ec2fe292c7673e28.MP4",
+              "poster": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/31479_7110344142776796929_9ad7bb25_a5c7_4be3_b560_16e6a382d788.jpeg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-6b24c18840/31479_7110344142776796929_9ad7bb25_a5c7_4be3_b560_16e6a382d788.jpeg",
+              "name": "31479_7110344142776796929_9ad7bb25_a5c7_4be3_b560_16e6a382d788.jpeg"
+            }
+          ]
+        }
+      ],
+      "lat": 29.839452,
+      "lon": 106.072645,
+      "route": "routes/2025重庆铜梁马拉松.gpx"
+    },
+    {
       "name": "2025狮山广场杯苏州市首届街头田径挑战赛财神新春跑",
       "date": "2025-02-02",
       "city": "苏州",
