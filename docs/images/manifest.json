@@ -10470,6 +10470,48 @@
       "route": "routes/2025昆明半程马拉松.gpx"
     },
     {
+      "name": "2025狮山广场杯苏州市首届街头田径挑战赛财神新春跑",
+      "date": "2025-02-02",
+      "city": "苏州",
+      "province": "江苏",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "photoplus",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/AD109523.jpg",
+              "name": "AD109523.jpg",
+              "timestamp": "2025-02-02 10:09:58"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/DSC_7618.JPG",
+              "name": "DSC_7618.JPG",
+              "timestamp": "2025-02-02 10:16:12"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/DSC_7619.JPG",
+              "name": "DSC_7619.JPG",
+              "timestamp": "2025-02-02 10:16:13"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/DSC_7620.JPG",
+              "name": "DSC_7620.JPG",
+              "timestamp": "2025-02-02 10:16:13"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/ZPR_7643.jpg",
+              "name": "ZPR_7643.jpg",
+              "timestamp": "2025-02-02 10:26:30"
+            }
+          ]
+        }
+      ],
+      "route": "routes/2025狮山广场杯苏州市首届街头田径挑战赛财神新春跑.gpx",
+      "lat": 31.294826,
+      "lon": 120.542794
+    },
+    {
       "name": "2025象山国际普洱思茅马拉松",
       "date": "2025-01-12",
       "city": "普洱",

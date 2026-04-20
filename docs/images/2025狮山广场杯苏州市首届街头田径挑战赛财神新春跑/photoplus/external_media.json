@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-photoplus-6b799a1867",
+  "race": "2025狮山广场杯苏州市首届街头田径挑战赛财神新春跑",
+  "source": "photoplus",
+  "items": [
+    {
+      "name": "AD109523.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/AD109523.jpg",
+      "timestamp": "2025-02-02 10:09:58"
+    },
+    {
+      "name": "DSC_7618.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/DSC_7618.JPG",
+      "timestamp": "2025-02-02 10:16:12"
+    },
+    {
+      "name": "DSC_7619.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/DSC_7619.JPG",
+      "timestamp": "2025-02-02 10:16:13"
+    },
+    {
+      "name": "DSC_7620.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/DSC_7620.JPG",
+      "timestamp": "2025-02-02 10:16:13"
+    },
+    {
+      "name": "ZPR_7643.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-6b799a1867/ZPR_7643.jpg",
+      "timestamp": "2025-02-02 10:26:30"
+    }
+  ]
+}
