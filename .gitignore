@@ -33,6 +33,7 @@ docs/images/_temp_cache_*/
 @AutomationLog.txt
 .wiki.git/
 runnerbar_uid.txt
+runnerbar_access_token.txt
 feipaom_code.txt
 kailishi_secret_key.txt
 
