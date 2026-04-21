@@ -98,17 +98,19 @@
     },
     {
       "name": "1740882550868_9f1d519b_cd21_46ac_b1e2_ae1c7e824851.JPG",
-      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-077103481e/1740882550868_9f1d519b_cd21_46ac_b1e2_ae1c7e824851.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-original-8215ef30f3/1_7130160799068036866_1740900299130_c64414e9_5a86_476b_882b_f0680654e72a.jpg",
       "timestamp": "2025-03-02 09:15:08",
       "lat": 32.05838,
-      "lon": 118.79647
+      "lon": 118.79647,
+      "original_name": "1_7130160799068036866_1740900299130_c64414e9_5a86_476b_882b_f0680654e72a.jpg"
     },
     {
       "name": "1740884239205_814046a1_9083_4d56_b955_67a29103b0e8.JPG",
-      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-077103481e/1740884239205_814046a1_9083_4d56_b955_67a29103b0e8.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-original-8215ef30f3/1_7130217449941540610_1740915986067_efa4bcae_b025_454f_926b_1325bb358c33.jpg",
       "timestamp": "2025-03-02 09:11:50",
       "lat": 32.05838,
-      "lon": 118.79647
+      "lon": 118.79647,
+      "original_name": "1_7130217449941540610_1740915986067_efa4bcae_b025_454f_926b_1325bb358c33.jpg"
     },
     {
       "name": "1740884664530_4b00db46_bd8e_4f66_bdd9_36b21681883a.jpg",
@@ -140,24 +142,27 @@
     },
     {
       "name": "1740884665172_9b6636ab_38df_4218_85d8_71130d279469.jpg",
-      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-077103481e/1740884665172_9b6636ab_38df_4218_85d8_71130d279469.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-original-8215ef30f3/1_7130231742953856769_1740909591479_d010c5ef_8680_4fe0_82b1_2dbd209c2766.jpg",
       "timestamp": "2025-03-02 10:17:52",
       "lat": 32.05838,
-      "lon": 118.79647
+      "lon": 118.79647,
+      "original_name": "1_7130231742953856769_1740909591479_d010c5ef_8680_4fe0_82b1_2dbd209c2766.jpg"
     },
     {
       "name": "1740884957013_37539e19_3190_41ae_9ae3_81b975a69510.JPG",
-      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-077103481e/1740884957013_37539e19_3190_41ae_9ae3_81b975a69510.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-original-8215ef30f3/1_7130241535585591042_1740895727129_77575858_25d5_41d0_92de_46b5647471c8.jpg",
       "timestamp": "2025-03-02 09:47:39",
       "lat": 32.05838,
-      "lon": 118.79647
+      "lon": 118.79647,
+      "original_name": "1_7130241535585591042_1740895727129_77575858_25d5_41d0_92de_46b5647471c8.jpg"
     },
     {
       "name": "1740885435569_e6836828_2b7d_46d4_a827_38902aa38496.jpg",
-      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-077103481e/1740885435569_e6836828_2b7d_46d4_a827_38902aa38496.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-original-8215ef30f3/1_7130257593465216770_1740920115169_937c7199_065a_4dd3_812c_ed7a78e3c5c7.jpg",
       "timestamp": "2025-03-02 10:29:25",
       "lat": 32.05838,
-      "lon": 118.79647
+      "lon": 118.79647,
+      "original_name": "1_7130257593465216770_1740920115169_937c7199_065a_4dd3_812c_ed7a78e3c5c7.jpg"
     },
     {
       "name": "1740885435641_8289fc63_0e71_459b_95cb_4895ec37c3bf.jpg",
@@ -189,5 +194,7 @@
       "name": "31684_7130964115382574850_665631d8_98fa_48c9_97f4_ab2ffc087757.jpeg",
       "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-077103481e/31684_7130964115382574850_665631d8_98fa_48c9_97f4_ab2ffc087757.jpeg"
     }
-  ]
+  ],
+  "original_release_tag": "media-2025-runnerbar-original-8215ef30f3",
+  "original_watermark_release_tag": "media-2025-runnerbar-original-watermark-97771a9594"
 }
