@@ -10762,6 +10762,56 @@
       "route": "routes/2025昆明半程马拉松.gpx"
     },
     {
+      "name": "2025金沙中国澳门国际十公里长跑赛",
+      "date": "2025-03-16",
+      "city": "澳門",
+      "province": "澳門",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "marathonphotos",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBA1130.jpg",
+              "name": "WEBA1130.jpg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBC2043.jpg",
+              "name": "WEBC2043.jpg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBE0157.jpg",
+              "name": "WEBE0157.jpg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBF2528.jpg",
+              "name": "WEBF2528.jpg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBF2764.jpg",
+              "name": "WEBF2764.jpg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBI1304.jpg",
+              "name": "WEBI1304.jpg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBI1457.jpg",
+              "name": "WEBI1457.jpg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBK3617.jpg",
+              "name": "WEBK3617.jpg"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/13894284983",
+      "lat": 22.181507,
+      "lon": 113.538203,
+      "route": "routes/2025金沙中国澳门国际十公里长跑赛.gpx"
+    },
+    {
       "name": "2025苏州太湖数字半程马拉松",
       "date": "2025-03-09",
       "city": "苏州",

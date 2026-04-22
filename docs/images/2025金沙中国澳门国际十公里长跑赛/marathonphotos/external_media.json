@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-marathonphotos-bec400b311",
+  "race": "2025金沙中国澳门国际十公里长跑赛",
+  "source": "marathonphotos",
+  "items": [
+    {
+      "name": "WEBA1130.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBA1130.jpg"
+    },
+    {
+      "name": "WEBC2043.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBC2043.jpg"
+    },
+    {
+      "name": "WEBE0157.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBE0157.jpg"
+    },
+    {
+      "name": "WEBF2528.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBF2528.jpg"
+    },
+    {
+      "name": "WEBF2764.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBF2764.jpg"
+    },
+    {
+      "name": "WEBI1304.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBI1304.jpg"
+    },
+    {
+      "name": "WEBI1457.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBI1457.jpg"
+    },
+    {
+      "name": "WEBK3617.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-marathonphotos-bec400b311/WEBK3617.jpg"
+    }
+  ]
+}
