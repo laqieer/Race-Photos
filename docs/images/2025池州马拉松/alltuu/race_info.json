@@ -1,0 +1,457 @@
+{
+  "d": {
+    "albumDTO": {
+      "idEnc": "2032164053",
+      "title": "【选手照片免费下载】2025池州马拉松",
+      "order": 4,
+      "pwd": "",
+      "language": 0,
+      "custom": 15,
+      "style": 3,
+      "desc": "点击“加载高清图”-加载成功后，长按图片保存下载",
+      "isTitleDisplay": 1,
+      "isLive": 1,
+      "isLiveStat": 0,
+      "isLike": 1,
+      "isComment": 0,
+      "isSearch": 0,
+      "isIdentity": 1,
+      "isDownload": 1,
+      "isPhotographer": 1,
+      "isGraphic": 1,
+      "isHasGraphic": 0,
+      "isBanner": 1,
+      "isPoster": 1,
+      "bannerTitle": "【选手照片免费下载】2025池州马拉松",
+      "shareCoverUrl": "https://spu.alltuu.com/cover/ALBUM5878871/SHARE/3.jpg",
+      "shareTxt": "点击“加载高清图”-加载成功后，长按图片保存下载",
+      "adText": "",
+      "adLink": "",
+      "isPhotoInfo": 1,
+      "isSponsor": 0,
+      "adate": 1762963200000,
+      "adrId": 341700,
+      "adrString": "安徽 池州",
+      "linkIndex": "JBRvmq",
+      "albumSetId": 0,
+      "albumSetIds": "0",
+      "mainVenueTopicIdS": "",
+      "mainVenueDTO": {
+        "mainVenueTopicIdS": null,
+        "buttonTxt": "主会场",
+        "mainVenueShowBrotherAlbum": 1,
+        "mainVenueTitle": null
+      },
+      "isHot": 1,
+      "isPlanner": 1,
+      "isJigsawQr": 1,
+      "version": 1,
+      "isFree": 1,
+      "price": 100,
+      "currency": "CNY",
+      "scenePrintCurrency": "CNY",
+      "displayType": 1,
+      "isEnd": 0,
+      "official": 1,
+      "isSideAd": 0,
+      "buttonType": 0,
+      "shareNewTitle": "【选手照片免费下载】2025池州马拉松",
+      "isRe": 0,
+      "jigsawImg": "https://spu.alltuu.com/albums/album5878871/jigsaw-1.jpg",
+      "addrDetail": "",
+      "isFooter": 0,
+      "isToolsSpread": 1,
+      "wgsLongitude": null,
+      "wgsLatitude": null,
+      "gcjLongitude": null,
+      "gcjLatitude": null,
+      "detail": "",
+      "detailStyle": 0,
+      "startDate": 1763222400000,
+      "endDate": 1763222400000,
+      "isPersonalMarket": 0,
+      "cmtAuditing": 0,
+      "showVisitors": 0,
+      "showTime": 1,
+      "showAddress": 1,
+      "englishTitle": "",
+      "japaneseTitle": "",
+      "koreanTitle": "",
+      "isSmallFree": 0,
+      "isOpenPayWatermark": 0,
+      "ownerId": 2642720,
+      "textRecognize": 0,
+      "systemVersion": "3.0",
+      "categoryStyle": 0,
+      "backAlbumSetStyle": 0,
+      "coverIDS": "",
+      "uploadAuth": 0,
+      "canShare": 1,
+      "isAlbumSetSide": 1,
+      "isAlbumSetNavigate": 1,
+      "albumSetIconUrl": "",
+      "examination": 0,
+      "cloudAlbumLink": null,
+      "isInteractive": 0,
+      "isDrainage": 0,
+      "isUploadCloudPhoto": 0,
+      "cloudCode": null,
+      "paidDisplayStyle": 0,
+      "livePlayOd": 0,
+      "isBatchDownload": 1,
+      "isBarrage": 0,
+      "isImageShare": 1,
+      "isVideoInteraction": 0,
+      "isFrontPage": 0,
+      "isQuestion": 0,
+      "isActivityDetail": 1,
+      "chatName": null,
+      "isSpeak": null,
+      "isAnonymous": null,
+      "isAsk": null,
+      "sort": null,
+      "showNavigation": 0,
+      "isBigPlay": 0,
+      "isAllowOtherPlay": 1,
+      "freezeStatus": 0,
+      "isGoodOpen": 0,
+      "goodBubbleType": 3,
+      "themeVersion": 0,
+      "cssUrl": "",
+      "isCodeOpen": 1,
+      "isLanguageOpen": 1,
+      "isDisplayTypeOpen": 1,
+      "menuShowStyle": 0,
+      "mineSwitch": 1,
+      "userState": 0,
+      "privacyLevel": 0,
+      "numIdentity": 1,
+      "aiDisplayMode": 1,
+      "isSidebarJigsaw": 1,
+      "openNineJigsaw": 0,
+      "autoIdentifyFace": 1,
+      "isLivePageLogin": 0,
+      "isSaleBuyPhoto": 0,
+      "isOnlineVoting": 0,
+      "isLuckyDraw": 0,
+      "shareSwitch": 0,
+      "interactType": 0,
+      "createTime": 1763003569000,
+      "loadSwitch": 1,
+      "isJigsaw": 1,
+      "isAiFindPic": 0,
+      "isMultiDownload": 1,
+      "isShowing": 1,
+      "isShare": 1,
+      "photoPrivacyState": 0,
+      "isRemoveAd": 1,
+      "handleFlag": 2,
+      "isAllowDeleted": 1,
+      "privacySetState": 1,
+      "aiSearcherSetState": 1,
+      "payVideoType": 0,
+      "videoPrice": 2000,
+      "isOpenScenePrint": 0,
+      "scenePrintPrice": 0,
+      "scenePrintAcquisitionAddress": null,
+      "isShowFileName": 1,
+      "isShowPhotoId": 0,
+      "isShowFileDimensions": 0,
+      "isShowFileSize": 1,
+      "isShowUploadTime": 0,
+      "isShowShootTime": 1,
+      "isSuperAlbum": 1,
+      "videoModel": 1,
+      "videoSort": 0,
+      "isWritingCopywriting": 0,
+      "isAiGroupPhoto": 1,
+      "isBeautify": 1,
+      "isCropping": 1,
+      "bigPhotoPageStyle": 0,
+      "bigPhotoPageBackgroundColor": "#010101",
+      "bigPhotoPageTextColor": "#FFFFFF",
+      "clothIdentify": 0,
+      "visitSepType": 0,
+      "visitSepIdN": null,
+      "userReceiveMode": 0,
+      "shareCoverDbl": "https://spu.alltuu.com/cover/ALBUM5878871/SHARE/3.jpg/dbl"
+    },
+    "seperateDTOList": [
+      {
+        "idEnc": "4327001577",
+        "name": "图片直播",
+        "dsc": "",
+        "sortType": 4,
+        "seq": 0,
+        "kvUrl": null,
+        "pcKvUrl": null,
+        "enName": "",
+        "sepPrivacy": 0
+      }
+    ],
+    "plannerProDTOList": [
+      {
+        "id": 174645,
+        "nick": "像素悖论",
+        "usrId": 2642720,
+        "portrait": "https://pnc.alltuu.com/face/USR2642720/latest.jpg"
+      }
+    ],
+    "posterDTO": {
+      "mainTitle": "",
+      "subTitle": "",
+      "date": "",
+      "addr": "",
+      "posterUrl": "https://spu.alltuu.com/poster/BG/ALBUM5878871/2.jpg/poster-interlace",
+      "posterTime": 3,
+      "buttonType": 0,
+      "posterButtonEnterTxt": "进入图片直播",
+      "posterShowStyle": 0
+    },
+    "proDTOList": [
+      {
+        "id": 174645,
+        "nick": "像素悖论",
+        "usrId": 2642720,
+        "portrait": "https://pnc.alltuu.com/face/USR2642720/latest.jpg"
+      },
+      {
+        "id": 485969,
+        "nick": "小安19956890450",
+        "usrId": 8018977,
+        "portrait": "https://pnc.alltuu.com/face/USR8018977/latest.jpg"
+      },
+      {
+        "id": 489281,
+        "nick": "巨锋传媒文化-小安",
+        "usrId": 8050998,
+        "portrait": "https://pnc.alltuu.com/face/USR8050998/latest.jpg"
+      },
+      {
+        "id": 805652,
+        "nick": "局外人",
+        "usrId": 10352675,
+        "portrait": "https://pnc.alltuu.com/face/USR10352675/latest.jpg"
+      },
+      {
+        "id": 1109240,
+        "nick": "wyh314929",
+        "usrId": 12410983,
+        "portrait": "https://pnc.alltuu.com/face/USR12410983/latest.jpg"
+      },
+      {
+        "id": 1423202,
+        "nick": "王",
+        "usrId": 15050701,
+        "portrait": "https://pnc.alltuu.com/face/USR15050701/latest.jpg"
+      },
+      {
+        "id": 1426283,
+        "nick": "😁",
+        "usrId": 15064567,
+        "portrait": "https://pnc.alltuu.com/face/USR15064567/latest.jpg"
+      },
+      {
+        "id": 1430498,
+        "nick": "xs126126",
+        "usrId": 15093518,
+        "portrait": "https://pnc.alltuu.com/face/USR15093518/latest.jpg"
+      },
+      {
+        "id": 1430499,
+        "nick": "diao",
+        "usrId": 15093519,
+        "portrait": "https://pnc.alltuu.com/face/USR15093519/latest.jpg"
+      },
+      {
+        "id": 1430500,
+        "nick": "zz040699",
+        "usrId": 15093522,
+        "portrait": "https://pnc.alltuu.com/face/USR15093522/latest.jpg"
+      }
+    ],
+    "mbDTOList": [
+      {
+        "t": "",
+        "d": "",
+        "list": []
+      }
+    ],
+    "sideAdDTO": {
+      "bt": null,
+      "at": null,
+      "t": null,
+      "u": null,
+      "seq": null,
+      "lu": null,
+      "adOnce": null
+    },
+    "hostDTOList": [],
+    "workbenchDTO": {
+      "id": null,
+      "actIdN": null,
+      "chatName": null,
+      "chatNameEn": null,
+      "isSpeak": null,
+      "isAnonymous": null,
+      "isAsk": null,
+      "sort": null,
+      "isDoc": null,
+      "docTagName": null,
+      "docTagNameEn": null,
+      "isControl": null,
+      "isIntroduction": null,
+      "introTagName": null,
+      "introTagNameEn": null,
+      "questionTag": null,
+      "questionTagEn": null,
+      "watchAuth": null,
+      "isSyncCmtNick": null
+    },
+    "bannerUrlDTOList": [
+      {
+        "id": 2605053,
+        "size": "0.5627",
+        "href": "",
+        "url": "https://spu.alltuu.com/banner/ALBUM5878871/1/2605053.jpg",
+        "state": null,
+        "startTime": null,
+        "title": null,
+        "hdUrl": null,
+        "isDisplayButton": 1,
+        "buttonContent": "查看详情"
+      }
+    ],
+    "endingDTO": {
+      "endTitle": "",
+      "endIntro": "",
+      "endPhoto": "",
+      "endType": 0
+    },
+    "albumSideButtons": [],
+    "goodBubbles": null,
+    "albumMenus": [
+      {
+        "menuId": 40724750,
+        "type": 0,
+        "title": "图片直播",
+        "seq": 10,
+        "linkType": 2,
+        "linkUrl": null,
+        "enLinkUrl": null,
+        "topNum": 10
+      },
+      {
+        "menuId": 40724751,
+        "type": 1,
+        "title": "热门",
+        "seq": 9,
+        "linkType": 2,
+        "linkUrl": null,
+        "enLinkUrl": null,
+        "topNum": 10
+      }
+    ],
+    "rewardSettingDTO": null,
+    "marketingAdDTO": null,
+    "albumCartDiscountDTO": null,
+    "photoPrintDTO": {
+      "sideInlet": 0,
+      "photoBottomInlet": 0,
+      "rewardGoodsDTOS": [
+        {
+          "name": "6寸精美相片",
+          "price": 199,
+          "goodsId": 1063,
+          "goodsIconUrl": "https://spu.alltuu.com/default/goodsIcon/1063.png",
+          "state": 1,
+          "detail": "¥0.99/张"
+        },
+        {
+          "name": "7寸绒面摆台",
+          "price": 1999,
+          "goodsId": 1062,
+          "goodsIconUrl": "https://spu.alltuu.com/default/goodsIcon/1062.png",
+          "state": 1,
+          "detail": "¥16.99/个"
+        }
+      ],
+      "rewardName": ""
+    },
+    "atAlbumShowStyleDTO": {
+      "photoRounding": 2,
+      "photoInterval": 2
+    },
+    "functionList": [
+      {
+        "functionIdN": "1547455043",
+        "functionType": 1,
+        "state": 1
+      }
+    ],
+    "formInformationDTO": {
+      "title": "填写信息继续观看直播~",
+      "enterAlbumSwitch": 0,
+      "watchLiveSwitch": 0,
+      "obtainImageSwitch": 0,
+      "bannerUrl": "",
+      "buttonCopy": "立即提交",
+      "formItemList": [
+        {
+          "id": 8459062,
+          "assemblyType": 0,
+          "title": "您的姓名",
+          "placeholder": "请输入您的姓名",
+          "isVerify": 0,
+          "isDisplay": 1,
+          "isRequired": 1,
+          "isDefault": 1,
+          "serial": 1
+        },
+        {
+          "id": 8459063,
+          "assemblyType": 1,
+          "title": "联系方式",
+          "placeholder": "请输入您的手机号",
+          "isVerify": 0,
+          "isDisplay": 1,
+          "isRequired": 1,
+          "isDefault": 1,
+          "serial": 2
+        }
+      ]
+    },
+    "sharePosterDTO": {
+      "hasWaterSharePosterUrl": null,
+      "noWaterSharePosterUrl": null
+    },
+    "aiEditDTO": {
+      "isEdit": 1,
+      "coverType": 0,
+      "coverUrl": "https://spu.alltuu.com/album/album2032164053/aiEdit/audience/cover.jpg?Expires=1780161949&OSSAccessKeyId=LTAI5tCKgYFjLSzev9mGY4Vs&Signature=KjL76QsRw0%2BtGNSLVyJIaRlNNgA%3D&x-oss-process=image%2Fresize%2Cw_1200%2Ch_1200%2Fquality%2Cq_90"
+    },
+    "videoCategoryList": [
+      {
+        "idEnc": "1424452733",
+        "albumIdN": "2032164053",
+        "name": "视频",
+        "seq": 0,
+        "isDisplay": 1,
+        "displayMode": 1,
+        "sortType": 0,
+        "count": null
+      }
+    ],
+    "faceRecognitionNoticeDTO": null,
+    "faceRecognitionNotice": null,
+    "marketingAdNewDTO": {
+      "marketingSide": null,
+      "marketingPhotoBottom": null,
+      "marketingMine": null,
+      "marketingInfo": null,
+      "marketingCeiling": null
+    }
+  },
+  "e": 0,
+  "m": "OK"
+}
