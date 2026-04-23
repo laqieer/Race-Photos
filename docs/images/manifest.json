@@ -10762,6 +10762,80 @@
       "route": "routes/2025昆明半程马拉松.gpx"
     },
     {
+      "name": "2025济南（平阴）女子半程马拉松",
+      "date": "2025-04-26",
+      "city": "济南",
+      "province": "山东",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runff",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-f187f7c985/20250426170224_556_000232.jpg",
+              "name": "20250426170224_556_000232.jpg",
+              "timestamp": "2025-04-26 09:36:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-f187f7c985/20250426170224_556_000243.jpg",
+              "name": "20250426170224_556_000243.jpg",
+              "timestamp": "2025-04-26 09:36:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-f187f7c985/20250426170224_556_000288.jpg",
+              "name": "20250426170224_556_000288.jpg",
+              "timestamp": "2025-04-26 09:36:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-f187f7c985/20250426170224_556_000320.jpg",
+              "name": "20250426170224_556_000320.jpg",
+              "timestamp": "2025-04-26 09:36:40"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-f187f7c985/20250426170224_556_000321.jpg",
+              "name": "20250426170224_556_000321.jpg",
+              "timestamp": "2025-04-26 09:36:40"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-f187f7c985/20250426182702_512_000001.jpg",
+              "name": "20250426182702_512_000001.jpg",
+              "timestamp": "2025-04-26 10:05:29"
+            }
+          ]
+        },
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-8f9ad97b10/1745634175637_4bb7ff55_d8d9_4b2c_9310_460d1dccb76c.jpg",
+              "name": "1745634175637_4bb7ff55_d8d9_4b2c_9310_460d1dccb76c.jpg",
+              "lat": 36.65184,
+              "lon": 117.12009,
+              "timestamp": "2025-04-26 09:23:17"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-8f9ad97b10/1745634176455_b35e6b55_85a7_401c_a9d7_9019e95ead0d.jpg",
+              "name": "1745634176455_b35e6b55_85a7_401c_a9d7_9019e95ead0d.jpg",
+              "lat": 36.65184,
+              "lon": 117.12009,
+              "timestamp": "2025-04-26 09:23:17"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-8f9ad97b10/1745634176867_37dfa45f_8f0c_4410_92b8_fde5c96829db.jpg",
+              "name": "1745634176867_37dfa45f_8f0c_4410_92b8_fde5c96829db.jpg",
+              "lat": 36.65184,
+              "lon": 117.12009,
+              "timestamp": "2025-04-26 09:23:17"
+            }
+          ]
+        }
+      ],
+      "lat": 36.283826,
+      "lon": 116.42669,
+      "route": "routes/2025济南（平阴）女子半程马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/14287170717"
+    },
+    {
       "name": "2025阜阳马拉松暨中国田径协会10公里精英赛",
       "date": "2025-04-20",
       "city": "阜阳",

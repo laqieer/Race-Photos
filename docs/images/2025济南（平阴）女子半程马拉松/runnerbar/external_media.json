@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-runnerbar-8f9ad97b10",
+  "race": "2025济南（平阴）女子半程马拉松",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1745634175637_4bb7ff55_d8d9_4b2c_9310_460d1dccb76c.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-8f9ad97b10/1745634175637_4bb7ff55_d8d9_4b2c_9310_460d1dccb76c.jpg",
+      "timestamp": "2025-04-26 09:23:17",
+      "lat": 36.65184,
+      "lon": 117.12009
+    },
+    {
+      "name": "1745634176455_b35e6b55_85a7_401c_a9d7_9019e95ead0d.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-8f9ad97b10/1745634176455_b35e6b55_85a7_401c_a9d7_9019e95ead0d.jpg",
+      "timestamp": "2025-04-26 09:23:17",
+      "lat": 36.65184,
+      "lon": 117.12009
+    },
+    {
+      "name": "1745634176867_37dfa45f_8f0c_4410_92b8_fde5c96829db.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-8f9ad97b10/1745634176867_37dfa45f_8f0c_4410_92b8_fde5c96829db.jpg",
+      "timestamp": "2025-04-26 09:23:17",
+      "lat": 36.65184,
+      "lon": 117.12009
+    }
+  ]
+}
