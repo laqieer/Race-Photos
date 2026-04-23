@@ -32,6 +32,19 @@ No build step — the frontend is vanilla HTML/CSS/JS served directly from `docs
 - Always update documentation (README, etc.) after making code changes
 - Always add unit tests and E2E tests for new changes when possible
 
+## Workflow for New Race
+
+When adding a new race (downloading photos from a platform + Strava activity):
+
+1. Download photos with the platform-specific script (e.g. `download_runnerbar.py`, `download_alltuu.py`, `download_runff.py`, etc.) into `docs/images/{race}/{source}/`
+2. **Pause for explicit user review** of the downloaded files — face/bib search may include false positives
+3. Upload kept media to release assets: `python scripts/migrate_media_to_release_assets.py --race "{race}"` (run from repo root)
+4. Download the Strava route GPX: `python scripts/download_strava_gpx.py {activity_id} -o "docs/routes/{race}.gpx"`
+5. Upload the photos to the matching Strava activity/activities: `python scripts/upload_strava_photos.py --race-name "{race}" --activity-ids {id1} [{id2} ...]` (requires Edge running with `--remote-debugging-port=9222` and logged into Strava)
+6. Regenerate the manifest: `python scripts/generate_manifest.py`
+7. Run unit tests: `npm test`
+8. Commit and push the metadata changes (release assets are already published in step 3; never commit the binaries themselves)
+
 ## Workflow for New Changes
 
 1. Make code changes
