@@ -1,0 +1,74 @@
+{
+  "d": {
+    "fa": 1776952993742,
+    "vt": 0,
+    "fvl": 1776952993754,
+    "gpn": 0,
+    "gpt": 1776952993766,
+    "s": {
+      "1555773702": {
+        "t": 2662,
+        "v": "1776953887799",
+        "likeTotalList": {},
+        "st": "-1"
+      },
+      "0": {
+        "t": 0,
+        "v": "1776953890367",
+        "likeTotalList": {},
+        "st": "-1"
+      }
+    },
+    "flowTotal": 491699,
+    "tempLikeTotalList": {
+      "bc3a6c0c34789804e77e2161671d32d9": 1
+    },
+    "tempQuestionTotalList": {},
+    "commentTotal": 0,
+    "commentLike": {},
+    "caua": 1776952993742,
+    "albumShareDTO": {
+      "title": "2025黄天鹅长兴泗安·长三角10K精英赛",
+      "shareNewTitle": "2025黄天鹅长兴泗安·长三角10K精英赛",
+      "isHasGraphic": 0,
+      "linkIndex": "Mreyeq",
+      "shareTxt": "现场图片直播\n2025.05.04 @长兴 泗安",
+      "shareCoverUrl": "https://spu.alltuu.com/cover/ALBUM4375412/SHARE/3.jpg",
+      "shareCoverWaterUrl": "https://spu.alltuu.com/cover/ALBUM4375412/SHARE/3.jpg/water-mark-cloud-album-cover",
+      "guestTitle": null,
+      "guestTips": null,
+      "guestTitleEn": null,
+      "guestTipsEn": null,
+      "passwdTitle": null,
+      "passwdTips": null,
+      "passwdTitleEn": null,
+      "passwdTipsEn": null,
+      "bannerTitle": "喔图-照片直播平台"
+    },
+    "privacyLevel": 0,
+    "albumSetTime": null,
+    "interactTotal": null,
+    "liveTotal": 0,
+    "albumQuestionTime": 1776953890247,
+    "pptTime": 0,
+    "tagTime": 1776953890256,
+    "talkTime": 1776953890262,
+    "talkLikeTime": 1776953890268,
+    "articleTime": 1776952993949,
+    "articleLikeTime": 1776953890274,
+    "panoPhotoTime": 1776952993965,
+    "panoPhotoTotal": 0,
+    "nowSepId": "",
+    "openDaySepId": "",
+    "isNeedGuideMap": null,
+    "publishBase": 0,
+    "ownerIdS": "1114771039",
+    "invitationTime": 1776953890283,
+    "isShakeRedPackat": 0,
+    "photoCount": 2662,
+    "isFaceInOss": 1,
+    "fac": 1776953890234
+  },
+  "e": 0,
+  "m": "OK"
+}
