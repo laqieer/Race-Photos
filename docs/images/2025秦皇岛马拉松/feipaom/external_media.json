@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-feipaom-c1b68b4278",
+  "race": "2025秦皇岛马拉松",
+  "source": "feipaom",
+  "items": [
+    {
+      "name": "b917322d_23190_V.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-c1b68b4278/b917322d_23190_V.mp4",
+      "timestamp": "2025-05-10 17:04:50"
+    },
+    {
+      "name": "f5b9fef0_23190_H.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-c1b68b4278/f5b9fef0_23190_H.mp4",
+      "timestamp": "2025-05-10 17:04:50"
+    }
+  ]
+}

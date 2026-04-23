@@ -1,0 +1,17 @@
+{
+  "activity_name": "2025秦皇岛马拉松",
+  "activity_no": 35584557,
+  "source": "photoplus",
+  "race_name": "2025秦皇岛马拉松",
+  "search_name": "2025秦皇岛",
+  "search_providers": [
+    "paoyeshidai"
+  ],
+  "race_page": "https://live.photoplus.cn/live/35584557",
+  "auth_url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxfcab077c239a5684&redirect_uri=http%3A%2F%2Fpaoyeshidai.cn%2Fshare.html&response_type=code&scope=snsapi_userinfo&state=202505110566#wechat_redirect",
+  "biz_id": "202505110566",
+  "date": "2025-05-11",
+  "start_date": "2025-05-11",
+  "end_date": "2025-05-11",
+  "place": "河北秦皇岛"
+}
