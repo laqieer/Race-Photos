@@ -10762,6 +10762,18 @@
       "route": "routes/2025昆明半程马拉松.gpx"
     },
     {
+      "name": "2025阜阳马拉松暨中国田径协会10公里精英赛",
+      "date": "2025-04-20",
+      "city": "阜阳",
+      "province": "安徽",
+      "country": "中国",
+      "sources": [],
+      "strava_url": "https://www.strava.com/activities/14228594442",
+      "lat": 32.85984,
+      "lon": 115.788448,
+      "route": "routes/2025阜阳马拉松暨中国田径协会10公里精英赛.gpx"
+    },
+    {
       "name": "2025金斯瑞南京高校百公里接力赛",
       "date": "2025-04-13",
       "city": "南京",
