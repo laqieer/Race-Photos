@@ -38,13 +38,16 @@ When adding a new race (downloading photos from a platform + Strava activity):
 
 1. Download photos with the platform-specific script (e.g. `download_runnerbar.py`, `download_alltuu.py`, `download_runff.py`, etc.) into `docs/images/{race}/{source}/`
 2. **Pause for explicit user review** of the downloaded files — face/bib search may include false positives
-3. For RunFF races: after review, request originals by email for the kept photos: `python scripts/download_runff.py --race-name "{race}" --bib {bib} --request-original-email --approved-only`
-4. Upload kept media to release assets: `python scripts/migrate_media_to_release_assets.py --race "{race}"` (run from repo root)
-5. Download the Strava route GPX: `python scripts/download_strava_gpx.py {activity_id} -o "docs/routes/{race}.gpx"`
-6. Upload the photos to the matching Strava activity/activities: `python scripts/upload_strava_photos.py --race-name "{race}" --activity-ids {id1} [{id2} ...]` (requires Edge running with `--remote-debugging-port=9222` and logged into Strava)
-7. Regenerate the manifest: `python scripts/generate_manifest.py`
+3. For RunFF races: after review, request originals by email using the dedicated helper (NEVER re-run `download_runff.py` without `--metadata-only`, or it will re-download deleted false positives and pollute the curated set):
+   - Preflight: `python scripts/request_runff_original_emails.py --race-name "{race}" --dry-run`
+   - Send: `python scripts/request_runff_original_emails.py --race-name "{race}" -y`
+   - If `photos_list.json` is missing for the race, regenerate it safely first with `python scripts/download_runff.py --race-id {id} --fid {fid} --bib {bib} --race-name "{race}" --metadata-only`
+4. Upload kept media to release assets (run from repo root, not from `scripts/`): `python scripts/migrate_media_to_release_assets.py --race-name "{race}"`
+5. Download the Strava route GPX: `python scripts/download_strava_gpx.py {activity_id} -o "docs/routes/{race}.gpx"` (Strava export often returns 429; the script falls back to opening the browser at `…/export_gpx` and moving the downloaded file into place)
+6. Upload the photos to the matching Strava activity/activities: `python scripts/upload_strava_photos.py --race-name "{race}" --activity-ids {id1} [{id2} ...]` (requires Edge running with `--remote-debugging-port=9222` and a logged-in Strava session; always pass `--activity-ids` explicitly when the race has multiple recordings — auto date matching is unreliable)
+7. Regenerate the manifest: `python scripts/generate_manifest.py` (already invoked by step 4, but rerun if step 6 updated `external_media.json`)
 8. Run unit tests: `npm test`
-9. Commit and push the metadata changes (release assets are already published in step 4; never commit the binaries themselves)
+9. Commit and push the metadata changes — `scripts/` is a Git submodule, so any script edits need a commit there first, then a parent-repo commit to bump the submodule pointer. Never commit binaries (release assets are already published in step 4)
 
 ## Workflow for New Changes
 
