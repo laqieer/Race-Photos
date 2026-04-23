@@ -10762,6 +10762,65 @@
       "route": "routes/2025昆明半程马拉松.gpx"
     },
     {
+      "name": "2025新疆奎屯半程马拉松暨中国田径协会10公里精英赛_奎屯站",
+      "date": "2025-05-02",
+      "city": "伊犁哈萨克自治州",
+      "province": "新疆",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-d02fe36d5a/1746151811398_a1ca0e96_da8b_46ef_9d7a_0da304659262.jpeg",
+              "name": "1746151811398_a1ca0e96_da8b_46ef_9d7a_0da304659262.jpeg",
+              "lat": 43.92186,
+              "lon": 81.317946,
+              "timestamp": "2025-05-02 09:33:04"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-d02fe36d5a/1746151812348_fe485b8e_3970_4ab7_ac6f_c5d0a20864d3.jpeg",
+              "name": "1746151812348_fe485b8e_3970_4ab7_ac6f_c5d0a20864d3.jpeg",
+              "lat": 43.92186,
+              "lon": 81.317946,
+              "timestamp": "2025-05-02 09:33:05"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-d02fe36d5a/1746151812528_9a805d0d_f4a8_4e20_934d_31480e96c498.jpeg",
+              "name": "1746151812528_9a805d0d_f4a8_4e20_934d_31480e96c498.jpeg",
+              "lat": 43.92186,
+              "lon": 81.317946,
+              "timestamp": "2025-05-02 09:33:04"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-d02fe36d5a/1746151812716_705628a8_d8a1_43b3_9c1b_59813abbb1cd.jpeg",
+              "name": "1746151812716_705628a8_d8a1_43b3_9c1b_59813abbb1cd.jpeg",
+              "lat": 43.92186,
+              "lon": 81.317946,
+              "timestamp": "2025-05-02 09:33:04"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-d02fe36d5a/1746151813535_431f5bbc_5ab6_4bb2_8efa_b9b9b4cc681b.jpeg",
+              "name": "1746151813535_431f5bbc_5ab6_4bb2_8efa_b9b9b4cc681b.jpeg",
+              "lat": 43.92186,
+              "lon": 81.317946,
+              "timestamp": "2025-05-02 09:33:04"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-d02fe36d5a/1746164692967_d3fce94e_5e31_4a36_99d1_72d30a455a56.jpg",
+              "name": "1746164692967_d3fce94e_5e31_4a36_99d1_72d30a455a56.jpg",
+              "lat": 43.92186,
+              "lon": 81.317946,
+              "timestamp": "2025-05-02 09:57:34"
+            }
+          ]
+        }
+      ],
+      "lat": 44.426195,
+      "lon": 84.870077,
+      "route": "routes/2025新疆奎屯半程马拉松暨中国田径协会10公里精英赛_奎屯站.gpx"
+    },
+    {
       "name": "2025济南（平阴）女子半程马拉松",
       "date": "2025-04-26",
       "city": "济南",
