@@ -1,0 +1,16 @@
+{
+  "source": "runff",
+  "strava_url": "https://www.strava.com/activities/18260238471/overview",
+  "race_id": "5349",
+  "fid": "25719435",
+  "bib": "B9627",
+  "race_page": "https://www.runff.com/html/live/s5349.html",
+  "queries": [
+    {
+      "fid": "25719435",
+      "bib": "B9627",
+      "faceid": "14667083",
+      "logo": "/upload/site/1014/img/face/5349/a746d9f1-fb33-435e-a10b-59aae035cdae.jpg"
+    }
+  ]
+}
