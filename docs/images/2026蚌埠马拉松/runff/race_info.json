@@ -14,5 +14,19 @@
     }
   ],
   "userorder_filter": "2026bbmls",
-  "userorder_stype": "free"
+  "userorder_stype": "free",
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2026-runff-original-7c9a50bf21",
+    "count": 18
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2026-runff-original-watermark-44f6dafab8",
+    "count": 18
+  }
 }
