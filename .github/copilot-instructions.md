@@ -42,12 +42,16 @@ When adding a new race (downloading photos from a platform + Strava activity):
    - Preflight: `python scripts/request_runff_original_emails.py --race-name "{race}" --dry-run`
    - Send: `python scripts/request_runff_original_emails.py --race-name "{race}" -y`
    - If `photos_list.json` is missing for the race, regenerate it safely first with `python scripts/download_runff.py --race-id {id} --fid {fid} --bib {bib} --race-name "{race}" --metadata-only`
-4. Upload kept media to release assets (run from repo root, not from `scripts/`): `python scripts/migrate_media_to_release_assets.py --race-name "{race}"`
-5. Download the Strava route GPX: `python scripts/download_strava_gpx.py {activity_id} -o "docs/routes/{race}.gpx"` (Strava export often returns 429; the script falls back to opening the browser at `…/export_gpx` and moving the downloaded file into place)
-6. Upload the photos to the matching Strava activity/activities: `python scripts/upload_strava_photos.py --race-name "{race}" --activity-ids {id1} [{id2} ...]` (requires Edge running with `--remote-debugging-port=9222` and a logged-in Strava session; always pass `--activity-ids` explicitly when the race has multiple recordings — auto date matching is unreliable)
-7. Regenerate the manifest: `python scripts/generate_manifest.py` (already invoked by step 4, but rerun if step 6 updated `external_media.json`)
-8. Run unit tests: `npm test`
-9. Commit and push the metadata changes — `scripts/` is a Git submodule, so any script edits need a commit there first, then a parent-repo commit to bump the submodule pointer. Never commit binaries (release assets are already published in step 4)
+4. When the RunFF email zip arrives (contains both `*.jpg` originals and `sy_*.jpg` watermarked variants), DO NOT extract manually or overwrite the root low-res files. Use the dedicated helper, which extracts to `runff/original/` and `runff/original-watermark/`, uploads to deterministic release tags (`media-{year}-runff-original-*` and `media-{year}-runff-original-watermark-*`), and re-routes gallery URLs:
+   - Dry-run: `python scripts/publish_runff_originals.py --race-name "{race}" --zip-path "{path/to/file.zip}" --dry-run`
+   - Publish: `python scripts/publish_runff_originals.py --race-name "{race}" --zip-path "{path/to/file.zip}"`
+   - The 3-tier RunFF layout per race is: `runff/` (low-res face-search, root release) + `runff/original/` (high-res, `original` release) + `runff/original-watermark/` (`sy_*.jpg` watermarked, `original-watermark` release). All three tiers must be preserved.
+5. Upload kept media to release assets (run from repo root, not from `scripts/`): `python scripts/migrate_media_to_release_assets.py --race-name "{race}"`
+6. Download the Strava route GPX: `python scripts/download_strava_gpx.py {activity_id} -o "docs/routes/{race}.gpx"` (Strava export often returns 429; the script falls back to opening the browser at `…/export_gpx` and moving the downloaded file into place)
+7. Upload the photos to the matching Strava activity/activities: `python scripts/upload_strava_photos.py --race-name "{race}" --activity-ids {id1} [{id2} ...]` (requires Edge running with `--remote-debugging-port=9222` and a logged-in Strava session; always pass `--activity-ids` explicitly when the race has multiple recordings — auto date matching is unreliable)
+8. Regenerate the manifest: `python scripts/generate_manifest.py` (already invoked by step 5, but rerun if step 7 updated `external_media.json`)
+9. Run unit tests: `npm test`
+10. Commit and push the metadata changes — `scripts/` is a Git submodule, so any script edits need a commit there first, then a parent-repo commit to bump the submodule pointer. Never commit binaries (release assets are already published in step 5)
 
 ## Workflow for New Changes
 
