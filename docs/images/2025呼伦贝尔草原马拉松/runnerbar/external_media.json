@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-runnerbar-2c56a77037",
+  "race": "2025呼伦贝尔草原马拉松",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1756002691757_9007bea4_8f6e_41bc_b9ad_09bc6863e95a.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-2c56a77037/1756002691757_9007bea4_8f6e_41bc_b9ad_09bc6863e95a.jpg",
+      "timestamp": "2025-08-24 09:10:51",
+      "lat": 49.21163,
+      "lon": 119.76584
+    },
+    {
+      "name": "1756002691862_3abd9a85_49df_4c78_aba0_26cbcb20ef02.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-2c56a77037/1756002691862_3abd9a85_49df_4c78_aba0_26cbcb20ef02.jpg",
+      "timestamp": "2025-08-24 09:10:51",
+      "lat": 49.21163,
+      "lon": 119.76584
+    }
+  ]
+}
