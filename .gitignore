@@ -35,6 +35,7 @@ docs/images/_temp_cache_*/
 runnerbar_uid.txt
 runnerbar_access_token.txt
 feipaom_code.txt
+feipaom_open_id.txt
 kailishi_secret_key.txt
 
 # Strava upload state (per-user, not repo metadata)
