@@ -37,8 +37,6 @@ runnerbar_access_token.txt
 feipaom_open_id.txt
 kailishi_open_id.txt
 kailishi_secret_key.txt
-# legacy: feipaom/kailishi previously exchanged a wx login code; keep ignored so old local files don't leak
-feipaom_code.txt
 
 # Strava upload state (per-user, not repo metadata)
 strava_upload_state.json
