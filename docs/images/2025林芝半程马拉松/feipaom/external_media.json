@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-feipaom-04c3f47cf3",
+  "race": "2025林芝半程马拉松",
+  "source": "feipaom",
+  "items": [
+    {
+      "name": "319ec0e3_A0059_V.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-04c3f47cf3/319ec0e3_A0059_V.mp4",
+      "timestamp": "2025-07-26 16:12:57"
+    },
+    {
+      "name": "8aee9490_A0059_H.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-04c3f47cf3/8aee9490_A0059_H.mp4",
+      "timestamp": "2025-07-26 16:12:57"
+    }
+  ]
+}

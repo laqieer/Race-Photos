@@ -13682,6 +13682,21 @@
       "country": "中国",
       "sources": [
         {
+          "name": "feipaom",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-04c3f47cf3/319ec0e3_A0059_V.mp4",
+              "name": "319ec0e3_A0059_V.mp4",
+              "timestamp": "2025-07-26 16:12:57"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-04c3f47cf3/8aee9490_A0059_H.mp4",
+              "name": "8aee9490_A0059_H.mp4",
+              "timestamp": "2025-07-26 16:12:57"
+            }
+          ]
+        },
+        {
           "name": "runnerbar",
           "photos": [
             {
