@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-meipaipai-2993e995ab",
+  "race": "2025哈尔滨马拉松",
+  "source": "meipaipai",
+  "items": [
+    {
+      "name": "D10955_朱志文_20250901102946794575.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-2993e995ab/D10955_._20250901102946794575.mp4",
+      "timestamp": "2025-09-01 10:29:46",
+      "poster": "https://oss.meipaipai.cn/media/producing/20250901102946794575.mp4?x-oss-process=video/snapshot,t_5000,f_jpg,w_0,h_0,ar_auto"
+    }
+  ]
+}
