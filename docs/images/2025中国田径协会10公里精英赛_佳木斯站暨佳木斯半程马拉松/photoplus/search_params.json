@@ -1,0 +1,20 @@
+{
+  "activity_no": 66506316,
+  "fetched_at": "2026-05-14T10:36:47.070820+00:00",
+  "source_url": "https://live.photoplus.cn/home/find/record?_s=26907512f2f605b7f34d1b767c25740c&_t=1778755006553&activityNo=66506316",
+  "payload": {
+    "code": 1,
+    "message": "I'am OK",
+    "success": true,
+    "result": [
+      {
+        "resultCount": 10,
+        "id": 555458685,
+        "type": 19,
+        "url": "a0535"
+      }
+    ],
+    "miniCode": 0,
+    "meta": null
+  }
+}

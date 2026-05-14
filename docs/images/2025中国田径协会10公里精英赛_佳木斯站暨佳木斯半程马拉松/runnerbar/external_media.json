@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-runnerbar-95b98e36a3",
+  "race": "2025中国田径协会10公里精英赛_佳木斯站暨佳木斯半程马拉松",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1757205888709_059af5d2_0063_4663_af6c_9029e7772393.jpeg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-95b98e36a3/1757205888709_059af5d2_0063_4663_af6c_9029e7772393.jpeg",
+      "timestamp": "2025-09-07 07:30:07",
+      "lat": 46.79977,
+      "lon": 130.31882
+    },
+    {
+      "name": "1757205889500_eff2bfb1_1d42_438c_9468_1c54db06858d.jpeg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-95b98e36a3/1757205889500_eff2bfb1_1d42_438c_9468_1c54db06858d.jpeg",
+      "timestamp": "2025-09-07 07:30:08",
+      "lat": 46.79977,
+      "lon": 130.31882
+    },
+    {
+      "name": "1757215591633_76c3eb1a_c268_43cd_a465_942efa26bade.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-95b98e36a3/1757215591633_76c3eb1a_c268_43cd_a465_942efa26bade.JPG",
+      "timestamp": "2025-09-07 08:19:27",
+      "lat": 46.79977,
+      "lon": 130.31882
+    },
+    {
+      "name": "1757215596533_e2748e56_f836_42ef_a933_e8e10e7a5982.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-95b98e36a3/1757215596533_e2748e56_f836_42ef_a933_e8e10e7a5982.JPG",
+      "timestamp": "2025-09-07 08:19:27",
+      "lat": 46.79977,
+      "lon": 130.31882
+    },
+    {
+      "name": "1757215793836_0b9b17dd_a7e6_462c_ada7_3e38352a4007.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-95b98e36a3/1757215793836_0b9b17dd_a7e6_462c_ada7_3e38352a4007.JPG",
+      "timestamp": "2025-09-07 08:19:26",
+      "lat": 46.79977,
+      "lon": 130.31882
+    },
+    {
+      "name": "1757215795736_b6828982_f8fd_4299_8663_369c5dfefedb.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-95b98e36a3/1757215795736_b6828982_f8fd_4299_8663_369c5dfefedb.JPG",
+      "timestamp": "2025-09-07 08:19:27",
+      "lat": 46.79977,
+      "lon": 130.31882
+    }
+  ]
+}
