@@ -13675,6 +13675,177 @@
       "route": "routes/2025昆明半程马拉松.gpx"
     },
     {
+      "name": "2025金昌半程马拉松暨全国半程马拉松锦标赛_第三站",
+      "date": "2025-09-21",
+      "city": "金昌",
+      "province": "甘肃",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "meipaipai",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-c528183c5d/11094_._20250921230329088533.mp4",
+              "name": "11094_朱志文_20250921230329088533.mp4",
+              "timestamp": "2025-09-21 23:03:29",
+              "poster": "https://oss.meipaipai.cn/media/producing/20250921230329088533.mp4?x-oss-process=video/snapshot,t_12000,f_jpg,w_0,h_0,ar_auto"
+            }
+          ]
+        },
+        {
+          "name": "photoplus",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5515.JPG",
+              "name": "5E7A5515.JPG",
+              "timestamp": "2025-09-21 08:44:42"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5516.JPG",
+              "name": "5E7A5516.JPG",
+              "timestamp": "2025-09-21 08:44:42"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5517.JPG",
+              "name": "5E7A5517.JPG",
+              "timestamp": "2025-09-21 08:44:42"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5518.JPG",
+              "name": "5E7A5518.JPG",
+              "timestamp": "2025-09-21 08:44:43"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5519.JPG",
+              "name": "5E7A5519.JPG",
+              "timestamp": "2025-09-21 08:44:43"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5520.JPG",
+              "name": "5E7A5520.JPG",
+              "timestamp": "2025-09-21 08:44:43"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5521.JPG",
+              "name": "5E7A5521.JPG",
+              "timestamp": "2025-09-21 08:44:43"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5522.JPG",
+              "name": "5E7A5522.JPG",
+              "timestamp": "2025-09-21 08:44:43"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5523.JPG",
+              "name": "5E7A5523.JPG",
+              "timestamp": "2025-09-21 08:44:43"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/5E7A5524.JPG",
+              "name": "5E7A5524.JPG",
+              "timestamp": "2025-09-21 08:44:43"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/DSC09346.JPG",
+              "name": "DSC09346.JPG",
+              "timestamp": "2025-09-21 09:00:45"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/DSC09347.JPG",
+              "name": "DSC09347.JPG",
+              "timestamp": "2025-09-21 09:00:45"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/P1635916.JPG",
+              "name": "P1635916.JPG",
+              "timestamp": "2025-09-21 08:10:42"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/P1635917.JPG",
+              "name": "P1635917.JPG",
+              "timestamp": "2025-09-21 08:10:42"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/P1635920.JPG",
+              "name": "P1635920.JPG",
+              "timestamp": "2025-09-21 08:10:44"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-photoplus-d05c9b278f/P1635921.JPG",
+              "name": "P1635921.JPG",
+              "timestamp": "2025-09-21 08:10:44"
+            }
+          ]
+        },
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/1758421918733_97fe92f2_4018_47b7_9a96_8f0a73e5b15a.JPG",
+              "name": "1758421918733_97fe92f2_4018_47b7_9a96_8f0a73e5b15a.JPG",
+              "lat": 38.52006,
+              "lon": 102.18759,
+              "timestamp": "2025-09-21 08:05:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/1758421918742_74178ea6_174f_49cc_8905_5d28b2b5729e.JPG",
+              "name": "1758421918742_74178ea6_174f_49cc_8905_5d28b2b5729e.JPG",
+              "lat": 38.52006,
+              "lon": 102.18759,
+              "timestamp": "2025-09-21 08:05:22"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/1758421920465_6f1afd5d_707e_4326_8b98_9bd520a50fe1.JPG",
+              "name": "1758421920465_6f1afd5d_707e_4326_8b98_9bd520a50fe1.JPG",
+              "lat": 38.52006,
+              "lon": 102.18759,
+              "timestamp": "2025-09-21 08:05:23"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/1758421920667_3fdc5449_a630_4e69_83ee_c9219826364e.JPG",
+              "name": "1758421920667_3fdc5449_a630_4e69_83ee_c9219826364e.JPG",
+              "lat": 38.52006,
+              "lon": 102.18759,
+              "timestamp": "2025-09-21 08:05:22"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/1758502402542_6604c4f6_52bb_428b_9188_92ff1f866ace.jpg",
+              "name": "1758502402542_6604c4f6_52bb_428b_9188_92ff1f866ace.jpg",
+              "lat": 38.52006,
+              "lon": 102.18759,
+              "timestamp": "2025-09-21 08:36:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/1758502402665_79a9ca30_0af0_4e89_8b17_ab17f574d8d4.jpg",
+              "name": "1758502402665_79a9ca30_0af0_4e89_8b17_ab17f574d8d4.jpg",
+              "lat": 38.52006,
+              "lon": 102.18759,
+              "timestamp": "2025-09-21 08:36:41"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/1758502465412_017fcb4f_d059_4057_9b81_7af197ca3b82.jpg",
+              "name": "1758502465412_017fcb4f_d059_4057_9b81_7af197ca3b82.jpg",
+              "lat": 38.52006,
+              "lon": 102.18759,
+              "timestamp": "2025-09-21 08:36:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/20250921_3087117_7718772356680359682_c56490b71fa03e14ebea0cf26f4a9e01.MP4",
+              "name": "20250921_3087117_7718772356680359682_c56490b71fa03e14ebea0cf26f4a9e01.MP4",
+              "poster": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/32955_7718772356680359682_a6e6adfa_d9e7_4561_81e0_56be6801464b.jpeg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-862337f0c8/32955_7718772356680359682_a6e6adfa_d9e7_4561_81e0_56be6801464b.jpeg",
+              "name": "32955_7718772356680359682_a6e6adfa_d9e7_4561_81e0_56be6801464b.jpeg"
+            }
+          ]
+        }
+      ],
+      "lat": 38.519436,
+      "lon": 102.186237,
+      "route": "routes/2025金昌半程马拉松暨全国半程马拉松锦标赛_第三站.gpx"
+    },
+    {
       "name": "2025沈阳马拉松",
       "date": "2025-09-14",
       "city": "沈阳",

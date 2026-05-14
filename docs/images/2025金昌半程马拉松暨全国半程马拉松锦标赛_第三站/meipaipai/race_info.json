@@ -1,0 +1,118 @@
+{
+  "source": "meipaipai",
+  "search_keyword": "金昌",
+  "match_id": "208",
+  "bib": "11094",
+  "match_info": {
+    "owner": 3,
+    "searchDesc": "输入参赛号",
+    "description": "",
+    "playerListUrl": "",
+    "imageLiveUrl": "",
+    "coverUrl": "https://oss.meipaipai.cn/default/20250916110444415420/WechatIMG941.jpg",
+    "vipSwitch": 0,
+    "createdAt": 1757389298000,
+    "name": "2025-09-21-金昌半程马拉松",
+    "showType": 1,
+    "startTime": 1758384000000,
+    "id": 208,
+    "endTime": 1758384000000,
+    "time": null,
+    "diagramUrl": "",
+    "redeemCodeSwitch": 0,
+    "status": 1
+  },
+  "project_ids": [
+    "3463"
+  ],
+  "project_names": [
+    "赛道影像"
+  ],
+  "project_info_list": [
+    {
+      "searchConditionDesc": "输入姓名",
+      "previewUrl": "",
+      "code": null,
+      "zjhbPrice": 0.0,
+      "description": "",
+      "clipFinish": 1,
+      "zjhbLimit": 0,
+      "zjhbGroup": [
+        {
+          "group": ""
+        }
+      ],
+      "cover": "https://oss.meipaipai.cn/default/20250916110410099576/WechatIMG941.jpg",
+      "faceSearchType": null,
+      "price": null,
+      "sellUrl": "",
+      "addNameSearch": 0,
+      "numberSearchType": 2,
+      "showType": 1,
+      "id": 3463,
+      "clipTemplateMatchId": 208,
+      "uploadImage": 0,
+      "isZjhb": 0,
+      "searchType": 2,
+      "clipTemplateId": null,
+      "balePrice": null,
+      "numberVerifySwitch": 0,
+      "imageLiveUrl": "",
+      "productPublishSwitch": 1,
+      "uploadLongImage": 0,
+      "cozePosterTemplates": null,
+      "uploadGrade": 0,
+      "versions": null,
+      "name": "赛道影像",
+      "mapUrl": "",
+      "zjhbTemplates": null,
+      "versionNames": null,
+      "numberExcelUrl": "",
+      "status": 1
+    }
+  ],
+  "project_id": "3463",
+  "project_name": "赛道影像",
+  "project_info": {
+    "searchConditionDesc": "输入姓名",
+    "previewUrl": "",
+    "code": null,
+    "zjhbPrice": 0.0,
+    "description": "",
+    "clipFinish": 1,
+    "zjhbLimit": 0,
+    "zjhbGroup": [
+      {
+        "group": ""
+      }
+    ],
+    "cover": "https://oss.meipaipai.cn/default/20250916110410099576/WechatIMG941.jpg",
+    "faceSearchType": null,
+    "price": null,
+    "sellUrl": "",
+    "addNameSearch": 0,
+    "numberSearchType": 2,
+    "showType": 1,
+    "id": 3463,
+    "clipTemplateMatchId": 208,
+    "uploadImage": 0,
+    "isZjhb": 0,
+    "searchType": 2,
+    "clipTemplateId": null,
+    "balePrice": null,
+    "numberVerifySwitch": 0,
+    "imageLiveUrl": "",
+    "productPublishSwitch": 1,
+    "uploadLongImage": 0,
+    "cozePosterTemplates": null,
+    "uploadGrade": 0,
+    "versions": null,
+    "name": "赛道影像",
+    "mapUrl": "",
+    "zjhbTemplates": null,
+    "versionNames": null,
+    "numberExcelUrl": "",
+    "status": 1
+  },
+  "date": "2025-09-21"
+}

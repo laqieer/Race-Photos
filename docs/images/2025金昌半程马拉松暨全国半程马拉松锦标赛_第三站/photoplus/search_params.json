@@ -1,0 +1,28 @@
+{
+  "activity_no": 48162961,
+  "fetched_at": "2026-05-14T13:12:22.194673+00:00",
+  "source_url": "https://live.photoplus.cn/home/find/record?_s=42ca5450d877e3def43ccc5eb803421c&_t=1778764342194&activityNo=48162961",
+  "payload": {
+    "code": 1,
+    "message": "I'am OK",
+    "success": true,
+    "result": [
+      {
+        "resultCount": 0,
+        "id": 555615698,
+        "type": 1,
+        "url": "https://pb.plusx.cn/plus/user/findme/48162961/1758508227357~tplv-9lv23dm2t1-image.image?sign=1778764342-XYe0nJPy-imagex-2714db329239630293e46bff4288d9f1",
+        "key": "plus/user/findme/48162961/1758508227357",
+        "hash": "0577a7c895fd86f36ba8e310371162d4"
+      },
+      {
+        "resultCount": 0,
+        "id": 555536266,
+        "type": 19,
+        "url": "a11094"
+      }
+    ],
+    "miniCode": 0,
+    "meta": null
+  }
+}

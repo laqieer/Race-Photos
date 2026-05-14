@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-meipaipai-c528183c5d",
+  "race": "2025金昌半程马拉松暨全国半程马拉松锦标赛_第三站",
+  "source": "meipaipai",
+  "items": [
+    {
+      "name": "11094_朱志文_20250921230329088533.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-meipaipai-c528183c5d/11094_._20250921230329088533.mp4",
+      "timestamp": "2025-09-21 23:03:29",
+      "poster": "https://oss.meipaipai.cn/media/producing/20250921230329088533.mp4?x-oss-process=video/snapshot,t_12000,f_jpg,w_0,h_0,ar_auto"
+    }
+  ]
+}
