@@ -11,5 +11,19 @@
       "faceid": "14760367",
       "logo": "/upload/site/1014/img/face/4900/cdf8066a-45f3-421c-a826-d91663e2898e.jpg"
     }
-  ]
+  ],
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2025-runff-original-8ab517a00f",
+    "count": 17
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2025-runff-original-watermark-8e501d7edf",
+    "count": 17
+  }
 }
