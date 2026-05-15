@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-runnerbar-f5d0df59cf",
+  "race": "2025海南儋州马拉松",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1766278286488_94a23a25_6374_42ab_b66b_75203ee42c6b.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-f5d0df59cf/1766278286488_94a23a25_6374_42ab_b66b_75203ee42c6b.jpg",
+      "timestamp": "2025-12-21 08:03:23",
+      "lat": 19.52093,
+      "lon": 109.58069
+    },
+    {
+      "name": "1766278286488_cb7536bd_886b_4c0c_9036_902d2061145d.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-f5d0df59cf/1766278286488_cb7536bd_886b_4c0c_9036_902d2061145d.jpg",
+      "timestamp": "2025-12-21 08:03:23",
+      "lat": 19.52093,
+      "lon": 109.58069
+    },
+    {
+      "name": "1766278286506_3257523a_1f40_43ed_bb3c_c5a4427f0ef1.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-f5d0df59cf/1766278286506_3257523a_1f40_43ed_bb3c_c5a4427f0ef1.jpg",
+      "timestamp": "2025-12-21 08:03:24",
+      "lat": 19.52093,
+      "lon": 109.58069
+    },
+    {
+      "name": "1766278286522_73a39711_4999_4369_bd17_b7c8813f54f8.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-f5d0df59cf/1766278286522_73a39711_4999_4369_bd17_b7c8813f54f8.jpg",
+      "timestamp": "2025-12-21 08:03:23",
+      "lat": 19.52093,
+      "lon": 109.58069
+    },
+    {
+      "name": "1766278286594_53704b66_ea68_4ce8_87b0_2004f4c392a9.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-f5d0df59cf/1766278286594_53704b66_ea68_4ce8_87b0_2004f4c392a9.jpg",
+      "timestamp": "2025-12-21 08:03:24",
+      "lat": 19.52093,
+      "lon": 109.58069
+    },
+    {
+      "name": "1766278286604_d18c92e4_2d9c_480a_bb17_438db8b69b8a.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runnerbar-f5d0df59cf/1766278286604_d18c92e4_2d9c_480a_bb17_438db8b69b8a.jpg",
+      "timestamp": "2025-12-21 08:03:24",
+      "lat": 19.52093,
+      "lon": 109.58069
+    }
+  ]
+}
