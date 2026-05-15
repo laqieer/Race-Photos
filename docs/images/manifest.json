@@ -12761,6 +12761,163 @@
       "route": "routes/2025池州马拉松.gpx"
     },
     {
+      "name": "2025中国田径协会10公里精英赛_温州_洞头站",
+      "date": "2025-11-09",
+      "city": "温州",
+      "province": "浙江",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "runff",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109091737_344_000001.jpg",
+              "name": "20251109091737_344_000001.jpg",
+              "timestamp": "2025-11-09 08:18:38"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109091737_344_000002.jpg",
+              "name": "20251109091737_344_000002.jpg",
+              "timestamp": "2025-11-09 08:18:38"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109091737_344_000003.jpg",
+              "name": "20251109091737_344_000003.jpg",
+              "timestamp": "2025-11-09 08:18:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109091737_344_000004.jpg",
+              "name": "20251109091737_344_000004.jpg",
+              "timestamp": "2025-11-09 08:18:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109091737_344_000005.jpg",
+              "name": "20251109091737_344_000005.jpg",
+              "timestamp": "2025-11-09 08:18:38"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109091737_344_000006.jpg",
+              "name": "20251109091737_344_000006.jpg",
+              "timestamp": "2025-11-09 08:18:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109091737_344_000008.jpg",
+              "name": "20251109091737_344_000008.jpg",
+              "timestamp": "2025-11-09 08:18:38"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109091737_344_000011.jpg",
+              "name": "20251109091737_344_000011.jpg",
+              "timestamp": "2025-11-09 08:18:39"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109093731_993_000074.jpg",
+              "name": "20251109093731_993_000074.jpg",
+              "timestamp": "2025-11-09 08:27:09"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109093731_993_000083.jpg",
+              "name": "20251109093731_993_000083.jpg",
+              "timestamp": "2025-11-09 08:27:09"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109100833_483_000218.jpg",
+              "name": "20251109100833_483_000218.jpg",
+              "timestamp": "2025-11-09 08:10:58"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109100833_483_000219.jpg",
+              "name": "20251109100833_483_000219.jpg",
+              "timestamp": "2025-11-09 08:10:58"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109100833_483_000222.jpg",
+              "name": "20251109100833_483_000222.jpg",
+              "timestamp": "2025-11-09 08:10:58"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109100833_483_000225.jpg",
+              "name": "20251109100833_483_000225.jpg",
+              "timestamp": "2025-11-09 08:10:58"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109100833_483_000226.jpg",
+              "name": "20251109100833_483_000226.jpg",
+              "timestamp": "2025-11-09 08:10:58"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109100833_483_000227.jpg",
+              "name": "20251109100833_483_000227.jpg",
+              "timestamp": "2025-11-09 08:10:58"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109102328_784_000004.jpg",
+              "name": "20251109102328_784_000004.jpg",
+              "timestamp": "2025-11-09 08:00:22"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109104348_112_000054.jpg",
+              "name": "20251109104348_112_000054.jpg",
+              "timestamp": "2025-11-09 08:41:08"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109104348_112_000055.jpg",
+              "name": "20251109104348_112_000055.jpg",
+              "timestamp": "2025-11-09 08:41:09"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109104348_112_000058.jpg",
+              "name": "20251109104348_112_000058.jpg",
+              "timestamp": "2025-11-09 08:41:10"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109104348_112_000059.jpg",
+              "name": "20251109104348_112_000059.jpg",
+              "timestamp": "2025-11-09 08:41:11"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109104348_112_000065.jpg",
+              "name": "20251109104348_112_000065.jpg",
+              "timestamp": "2025-11-09 08:41:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109104348_112_000066.jpg",
+              "name": "20251109104348_112_000066.jpg",
+              "timestamp": "2025-11-09 08:41:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109104348_112_000067.jpg",
+              "name": "20251109104348_112_000067.jpg",
+              "timestamp": "2025-11-09 08:41:21"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109150936_615_000007.jpg",
+              "name": "20251109150936_615_000007.jpg",
+              "timestamp": "2025-11-09 08:00:21"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109150936_615_000032.jpg",
+              "name": "20251109150936_615_000032.jpg",
+              "timestamp": "2025-11-09 08:00:21"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109150936_615_000039.jpg",
+              "name": "20251109150936_615_000039.jpg",
+              "timestamp": "2025-11-09 08:00:21"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-runff-c4b01c7dcb/20251109150936_615_000058.jpg",
+              "name": "20251109150936_615_000058.jpg",
+              "timestamp": "2025-11-09 08:00:22"
+            }
+          ]
+        }
+      ],
+      "route": "routes/2025中国田径协会10公里精英赛_温州_洞头站.gpx",
+      "lat": 27.846681,
+      "lon": 121.13945
+    },
+    {
       "name": "2025高百接力赛华东站暨上海青年10k青春跑",
       "date": "2025-11-02",
       "city": "上海",
