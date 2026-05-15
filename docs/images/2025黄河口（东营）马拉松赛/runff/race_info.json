@@ -9,5 +9,19 @@
       "fid": "22473638",
       "bib": "D30668"
     }
-  ]
+  ],
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2025-runff-original-eccdba1f38",
+    "count": 46
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2025-runff-original-watermark-5c6afe1a57",
+    "count": 46
+  }
 }
