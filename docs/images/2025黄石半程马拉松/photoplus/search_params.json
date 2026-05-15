@@ -1,0 +1,13 @@
+{
+  "activity_no": 73879051,
+  "fetched_at": "2026-05-15T16:07:38.762263+00:00",
+  "source_url": "https://live.photoplus.cn/home/find/record?_s=7e60f928c888ee773fe920f229f03005&_t=1778861258760&activityNo=73879051",
+  "payload": {
+    "code": 1,
+    "message": "I'am OK",
+    "success": true,
+    "result": [],
+    "miniCode": 0,
+    "meta": null
+  }
+}
