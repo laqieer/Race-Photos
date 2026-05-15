@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-alltuu-fa1496113f",
+  "race": "2025高百接力赛华东站暨上海青年10k青春跑",
+  "source": "alltuu",
+  "items": [
+    {
+      "name": "pl1Duxeakd8.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-alltuu-fa1496113f/pl1Duxeakd8.jpg",
+      "timestamp": "2025-11-02 09:30:35"
+    },
+    {
+      "name": "pl1DuxuI539.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-alltuu-fa1496113f/pl1DuxuI539.jpg",
+      "timestamp": "2025-11-02 09:53:16"
+    },
+    {
+      "name": "pl1DuZpxnb8.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-alltuu-fa1496113f/pl1DuZpxnb8.jpg",
+      "timestamp": "2025-11-02 09:18:43"
+    }
+  ]
+}

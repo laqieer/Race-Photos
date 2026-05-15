@@ -12761,6 +12761,38 @@
       "route": "routes/2025池州马拉松.gpx"
     },
     {
+      "name": "2025高百接力赛华东站暨上海青年10k青春跑",
+      "date": "2025-11-02",
+      "city": "上海",
+      "province": "上海",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "alltuu",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-alltuu-fa1496113f/pl1Duxeakd8.jpg",
+              "name": "pl1Duxeakd8.jpg",
+              "timestamp": "2025-11-02 09:30:35"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-alltuu-fa1496113f/pl1DuxuI539.jpg",
+              "name": "pl1DuxuI539.jpg",
+              "timestamp": "2025-11-02 09:53:16"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-alltuu-fa1496113f/pl1DuZpxnb8.jpg",
+              "name": "pl1DuZpxnb8.jpg",
+              "timestamp": "2025-11-02 09:18:43"
+            }
+          ]
+        }
+      ],
+      "route": "routes/2025高百接力赛华东站暨上海青年10k青春跑.gpx",
+      "lat": 31.337246,
+      "lon": 121.22029
+    },
+    {
       "name": "2025常州西太湖半程马拉松暨东亚半程马拉松锦标赛·大运河马拉松系列赛（常州站）",
       "date": "2025-10-26",
       "city": "常州",
