@@ -18,5 +18,19 @@
       "logo": "/upload/site/1014/img/face/5384/87485067-6821-4151-91ad-bc5e10311fae.jpg",
       "count": 149
     }
-  ]
+  ],
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2026-runff-original-0b166461e0",
+    "count": 54
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2026-runff-original-watermark-c226762f23",
+    "count": 54
+  }
 }
