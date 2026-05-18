@@ -8,6 +8,31 @@
       "country": "中国",
       "sources": [
         {
+          "name": "alltuu",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-5c528468f3/pl1egtBs41a.jpg",
+              "name": "pl1egtBs41a.jpg",
+              "timestamp": "2026-05-16 17:18:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-5c528468f3/pl1egtbyR20.jpg",
+              "name": "pl1egtbyR20.jpg",
+              "timestamp": "2026-05-16 17:18:25"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-5c528468f3/pl1egtqOv44.jpg",
+              "name": "pl1egtqOv44.jpg",
+              "timestamp": "2026-05-16 17:18:22"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-5c528468f3/pl1egtyWTd9.jpg",
+              "name": "pl1egtyWTd9.jpg",
+              "timestamp": "2026-05-16 17:18:20"
+            }
+          ]
+        },
+        {
           "name": "photoplus",
           "photos": [
             {
