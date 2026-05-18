@@ -37,6 +37,7 @@ runnerbar_access_token.txt
 feipaom_open_id.txt
 kailishi_open_id.txt
 kailishi_secret_key.txt
+cinmoore_open_id.txt
 
 # Strava upload state (per-user, not repo metadata)
 strava_upload_state.json
