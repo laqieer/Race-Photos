@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2026-photoplus-0a0fce4183",
+  "race": "2026一汽红旗长春马拉松",
+  "source": "photoplus",
+  "items": [
+    {
+      "name": "2R5B1059.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-0a0fce4183/2R5B1059.jpg",
+      "timestamp": "2026-05-17 08:55:55"
+    }
+  ]
+}

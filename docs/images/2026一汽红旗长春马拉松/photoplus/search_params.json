@@ -1,0 +1,52 @@
+{
+  "activity_no": 66189354,
+  "fetched_at": "2026-05-18T12:07:31.218216+00:00",
+  "source_url": "https://live.photoplus.cn/home/find/record?_s=a58d3d8496070ead6806db883ef5f3ca&_t=1779106051003&activityNo=66189354",
+  "payload": {
+    "code": 1,
+    "message": "I'am OK",
+    "success": true,
+    "result": [
+      {
+        "resultCount": 1,
+        "id": 557573078,
+        "type": 19,
+        "url": "25510"
+      },
+      {
+        "resultCount": 0,
+        "id": 557592038,
+        "type": 1,
+        "url": "https://pb.plusx.cn/plus/user/findme/66189354/1779105583170~tplv-9lv23dm2t1-image.image?sign=1779106050-CgfkCmZz-imagex-f350e69ff93f35843966ba53612e3e71",
+        "key": "plus/user/findme/66189354/1779105583170",
+        "hash": "57a415004839d8bc885a1d6c6ef2b13c"
+      },
+      {
+        "resultCount": 0,
+        "id": 557592037,
+        "type": 1,
+        "url": "https://pb.plusx.cn/plus/user/findme/66189354/1779105566241~tplv-9lv23dm2t1-image.image?sign=1779106050-Y8bIKJBW-imagex-c3fce860c2ffbec41d91d44a29dc5324",
+        "key": "plus/user/findme/66189354/1779105566241",
+        "hash": "86ab5699045b3087cc0e5f1a9ad0374b"
+      },
+      {
+        "resultCount": 0,
+        "id": 557573642,
+        "type": 1,
+        "url": "https://pb.plusx.cn/plus/user/findme/66189354/1779002530082~tplv-9lv23dm2t1-image.image?sign=1779106050-QAPtAo6W-imagex-f94423a327f09470982cb3578efd533b",
+        "key": "plus/user/findme/66189354/1779002530082",
+        "hash": "fd87454ed28010e5cf5e908418baeaa1"
+      },
+      {
+        "resultCount": 0,
+        "id": 557573068,
+        "type": 1,
+        "url": "https://pb.plusx.cn/plus/user/findme/66189354/1779000935288~tplv-9lv23dm2t1-image.image?sign=1779106050-01lXBwKU-imagex-1187429d0d25ba0701e2d96d46ced8f2",
+        "key": "plus/user/findme/66189354/1779000935288",
+        "hash": "e95c7682a75a25390cf90b6e3bf52c34"
+      }
+    ],
+    "miniCode": 0,
+    "meta": null
+  }
+}
