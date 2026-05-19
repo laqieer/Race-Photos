@@ -59,6 +59,17 @@
           ]
         },
         {
+          "name": "meipaipai",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-meipaipai-24a8ad9cbe/E25510_._20260518183842306479.mp4",
+              "name": "E25510_朱志文_20260518183842306479.mp4",
+              "timestamp": "2026-05-18 18:38:42",
+              "poster": "https://oss.meipaipai.cn/media/producing/20260518183842306479.mp4?x-oss-process=video/snapshot,t_5000,f_jpg,w_0,h_0,ar_auto"
+            }
+          ]
+        },
+        {
           "name": "photoplus",
           "photos": [
             {

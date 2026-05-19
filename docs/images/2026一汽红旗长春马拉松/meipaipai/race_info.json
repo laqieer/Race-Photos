@@ -1,0 +1,124 @@
+{
+  "source": "meipaipai",
+  "search_keyword": "2026一汽红旗长春马拉松",
+  "match_id": "261",
+  "bib": "E25510",
+  "match_info": {
+    "owner": 1,
+    "searchDesc": "请输入参赛号",
+    "description": "",
+    "playerListUrl": "",
+    "imageLiveUrl": "",
+    "coverUrl": "https://oss.meipaipai.cn/default/20260513154015462305/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260513153250_156_507.jpg",
+    "vipSwitch": 0,
+    "createdAt": 1778658125000,
+    "name": "2026一汽红旗长春马拉松",
+    "showType": 2,
+    "startTime": 1778947200000,
+    "id": 261,
+    "endTime": 1778947200000,
+    "time": null,
+    "diagramUrl": "",
+    "redeemCodeSwitch": 0,
+    "status": 1
+  },
+  "project_ids": [
+    "3595"
+  ],
+  "project_names": [
+    "赛道影像"
+  ],
+  "project_info_list": [
+    {
+      "searchConditionDesc": "",
+      "previewUrl": "",
+      "code": null,
+      "zjhbPrice": 0.0,
+      "description": "",
+      "clipFinish": 0,
+      "zjhbLimit": 0,
+      "zjhbGroup": [
+        {
+          "group": ""
+        }
+      ],
+      "cover": "https://oss.meipaipai.cn/default/20260513154031020109/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260513153250_156_507.jpg",
+      "faceSearchType": 1,
+      "price": null,
+      "sellUrl": "",
+      "addNameSearch": 0,
+      "numberSearchType": 1,
+      "showType": 1,
+      "id": 3595,
+      "clipTemplateMatchId": 261,
+      "uploadImage": 0,
+      "isZjhb": 0,
+      "searchType": 2,
+      "clipTemplateId": null,
+      "balePrice": null,
+      "numberVerifySwitch": 0,
+      "imageLiveUrl": "",
+      "productPublishSwitch": 1,
+      "uploadLongImage": 0,
+      "cozePosterTemplates": null,
+      "uploadGrade": 0,
+      "versions": null,
+      "name": "赛道影像",
+      "mapUrl": "",
+      "zjhbTemplates": null,
+      "versionNames": [
+        "半马纪录版",
+        "全马纪录版"
+      ],
+      "numberExcelUrl": "",
+      "status": 1
+    }
+  ],
+  "project_id": "3595",
+  "project_name": "赛道影像",
+  "project_info": {
+    "searchConditionDesc": "",
+    "previewUrl": "",
+    "code": null,
+    "zjhbPrice": 0.0,
+    "description": "",
+    "clipFinish": 0,
+    "zjhbLimit": 0,
+    "zjhbGroup": [
+      {
+        "group": ""
+      }
+    ],
+    "cover": "https://oss.meipaipai.cn/default/20260513154031020109/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260513153250_156_507.jpg",
+    "faceSearchType": 1,
+    "price": null,
+    "sellUrl": "",
+    "addNameSearch": 0,
+    "numberSearchType": 1,
+    "showType": 1,
+    "id": 3595,
+    "clipTemplateMatchId": 261,
+    "uploadImage": 0,
+    "isZjhb": 0,
+    "searchType": 2,
+    "clipTemplateId": null,
+    "balePrice": null,
+    "numberVerifySwitch": 0,
+    "imageLiveUrl": "",
+    "productPublishSwitch": 1,
+    "uploadLongImage": 0,
+    "cozePosterTemplates": null,
+    "uploadGrade": 0,
+    "versions": null,
+    "name": "赛道影像",
+    "mapUrl": "",
+    "zjhbTemplates": null,
+    "versionNames": [
+      "半马纪录版",
+      "全马纪录版"
+    ],
+    "numberExcelUrl": "",
+    "status": 1
+  },
+  "date": "2026-05-17"
+}

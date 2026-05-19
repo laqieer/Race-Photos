@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2026-meipaipai-24a8ad9cbe",
+  "race": "2026一汽红旗长春马拉松",
+  "source": "meipaipai",
+  "items": [
+    {
+      "name": "E25510_朱志文_20260518183842306479.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-meipaipai-24a8ad9cbe/E25510_._20260518183842306479.mp4",
+      "timestamp": "2026-05-18 18:38:42",
+      "poster": "https://oss.meipaipai.cn/media/producing/20260518183842306479.mp4?x-oss-process=video/snapshot,t_5000,f_jpg,w_0,h_0,ar_auto"
+    }
+  ]
+}
