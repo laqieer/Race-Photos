@@ -24,13 +24,13 @@
     "host": "github-release-assets",
     "subdir": "original",
     "release_tag": "media-2026-runff-original-0b166461e0",
-    "count": 54
+    "count": 61
   },
   "original_watermark": {
     "status": "release-backed",
     "host": "github-release-assets",
     "subdir": "original-watermark",
     "release_tag": "media-2026-runff-original-watermark-c226762f23",
-    "count": 54
+    "count": 61
   }
 }
