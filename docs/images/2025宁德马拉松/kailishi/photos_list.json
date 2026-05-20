@@ -1,0 +1,23 @@
+{
+  "videos": [
+    {
+      "guid": "47a6c217-9fb0-43b1-a696-eebcd3a8af3b",
+      "goods_type": "AI横屏视频",
+      "preview_url": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/marathon/2025/20251207ningde/render/1207/691d41f8_B33122.mp4",
+      "download_url": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/marathon/2025/20251207ningde/render/1207/691d41f8_B33122.mp4",
+      "create_time": "2025-12-07 09:11:20",
+      "screen_mode": "横屏",
+      "width": 1920,
+      "height": 1080,
+      "shots_count": 0,
+      "scene_count": 0,
+      "price": 0,
+      "buy_state": 3,
+      "bucket": "videos",
+      "url": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/marathon/2025/20251207ningde/render/1207/691d41f8_B33122.mp4",
+      "file_name": "691d41f8_B33122.mp4",
+      "poster_url": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2025/20251207ningde/uservideoposter.png",
+      "timestamp": "2025-12-07 09:11:20"
+    }
+  ]
+}

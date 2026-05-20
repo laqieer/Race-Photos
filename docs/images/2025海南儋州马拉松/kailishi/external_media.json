@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-kailishi-4d36ab5ef3",
+  "race": "2025海南儋州马拉松",
+  "source": "kailishi",
+  "items": [
+    {
+      "name": "dc840794_50056.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-kailishi-4d36ab5ef3/dc840794_50056.mp4",
+      "timestamp": "2025-12-22 09:41:46",
+      "poster": "https://kailishi.oss-cn-zhangjiakou.aliyuncs.com/wxApplet/marathon/2025/20251221danzhou/uservideoposter.png"
+    }
+  ]
+}

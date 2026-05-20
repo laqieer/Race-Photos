@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-feipaom-86d49b9f7f",
+  "race": "2025南京溧水半程马拉松",
+  "source": "feipaom",
+  "items": [
+    {
+      "name": "951138_A1617.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-86d49b9f7f/951138_A1617.mp4",
+      "timestamp": "2025-03-02 04:36:54"
+    },
+    {
+      "name": "16km_0111.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-86d49b9f7f/16km_0111.MP4",
+      "timestamp": "2025-03-01 17:09:20"
+    },
+    {
+      "name": "18km_0129.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-feipaom-86d49b9f7f/18km_0129.MP4",
+      "timestamp": "2025-03-02 04:36:54"
+    }
+  ]
+}
