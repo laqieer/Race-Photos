@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-source-2f2aca0f25",
+  "race": "2025重庆铜梁马拉松",
+  "source": "中电智安",
+  "items": [
+    {
+      "name": "mmexport1740750592442.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2f2aca0f25/mmexport1740750592442.mp4"
+    },
+    {
+      "name": "mmexport1740751112468.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2f2aca0f25/mmexport1740751112468.mp4"
+    }
+  ]
+}
