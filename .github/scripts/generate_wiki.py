@@ -287,8 +287,8 @@ def render_home_page(races: Sequence[dict]) -> str:
         "Race pages mirror the published gallery and document which release "
         "assets back each race/source.",
         "",
-        "| Race | Date | Sources | Media items | Wiki page |",
-        "| --- | --- | ---: | ---: | --- |",
+        "| Race | Date | Sources | Media items |",
+        "| --- | --- | ---: | ---: |",
     ]
     for race in races:
         name = race.get("name", "")
@@ -297,8 +297,8 @@ def render_home_page(races: Sequence[dict]) -> str:
         items, _, _ = total_counts(race)
         link = f"[{escape_link_text(name)}]({wiki_page_url(name)})"
         lines.append(
-            f"| {escape_table_cell(name)} | {escape_table_cell(date)}"
-            f" | {n_sources} | {items} | {link} |"
+            f"| {link} | {escape_table_cell(date)}"
+            f" | {n_sources} | {items} |"
         )
     lines.append("")
     return "\n".join(lines)

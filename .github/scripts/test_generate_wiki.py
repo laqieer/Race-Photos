@@ -313,8 +313,12 @@ class TestHomePage(unittest.TestCase):
         self.assertIn("# Race-Photos wiki", out)
         # 2026A appears before 2024B (same order as input)
         self.assertLess(out.index("2026A"), out.index("2024B"))
-        self.assertIn("| 2026A | 2026-03-07 | 1 | 1 | [2026A](2026A) |", out)
-        self.assertIn("| 2024B | 2024-01-21 | 0 | 0 | [2024B](2024B) |", out)
+        # The Race cell is itself the wiki link (no separate "Wiki page" column).
+        self.assertIn("| [2026A](2026A) | 2026-03-07 | 1 | 1 |", out)
+        self.assertIn("| [2024B](2024B) | 2024-01-21 | 0 | 0 |", out)
+        # Header has 4 columns, not 5.
+        self.assertIn("| Race | Date | Sources | Media items |", out)
+        self.assertNotIn("Wiki page", out)
 
     def test_home_link_replaces_spaces_with_hyphens(self):
         # GitHub Wiki normalizes page-name spaces to hyphens in URLs and the
@@ -325,8 +329,6 @@ class TestHomePage(unittest.TestCase):
         ]
         out = gw.render_home_page(races)
         self.assertIn("[2026 温州市迎新跑](2026-温州市迎新跑)", out)
-        # The display label keeps the original space-bearing race name.
-        self.assertIn("| 2026 温州市迎新跑 |", out)
 
 
 class TestWikiPageUrl(unittest.TestCase):
