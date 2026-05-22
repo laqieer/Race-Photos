@@ -243,8 +243,11 @@ def render_race_page(race: dict) -> str:
 
     route = race.get("route")
     if route:
+        # quote with safe="/" so path separators stay readable while spaces
+        # and other URL-unsafe chars are percent-encoded.
+        route_url = f"{GALLERY_BASE}/{quote(route, safe='/')}"
         bullets.append(
-            f"- GPX route: [{route}]({GALLERY_BASE}/{route})"
+            f"- GPX route: [{escape_link_text(route)}]({route_url})"
         )
 
     strava_url = race.get("strava_url")

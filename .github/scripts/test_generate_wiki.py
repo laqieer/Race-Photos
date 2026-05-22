@@ -282,6 +282,25 @@ class TestRacePage(unittest.TestCase):
         out = gw.render_race_page(race)
         self.assertNotIn("### empty", out)
 
+    def test_gpx_route_url_is_percent_encoded(self):
+        # GPX route URLs with spaces or Chinese characters must be
+        # percent-encoded or the Markdown link parser stops at the space.
+        race = self._race(
+            name="2026 温州市迎新跑",
+            route="routes/2026 温州市迎新跑.gpx",
+        )
+        out = gw.render_race_page(race)
+        # Path separator stays readable; the space becomes %20.
+        self.assertIn(
+            "(https://laqieer.github.io/Race-Photos/routes/2026%20%E6%B8%A9%E5%B7%9E%E5%B8%82%E8%BF%8E%E6%96%B0%E8%B7%91.gpx)",
+            out,
+        )
+        # No raw space inside the link target.
+        self.assertNotIn(
+            "(https://laqieer.github.io/Race-Photos/routes/2026 ",
+            out,
+        )
+
 
 class TestHomePage(unittest.TestCase):
     def test_home_lists_races_in_order(self):
