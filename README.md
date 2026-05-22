@@ -34,7 +34,11 @@ Race-Photos/
 ├── .github/workflows/    # CI/CD
 │   ├── deploy-pages.yml       # Deploy to GitHub Pages + coverage
 │   ├── test.yml               # Run unit tests + upload report artifact
-│   └── e2e.yml                # Run E2E tests after deployment
+│   ├── e2e.yml                # Run E2E tests after deployment
+│   └── update-wiki.yml        # Regenerate wiki pages from manifest
+├── .github/scripts/      # CI helper scripts (not the private submodule)
+│   ├── generate_wiki.py       # Wiki page generator (reads manifest.json)
+│   └── test_generate_wiki.py  # Unit tests for the wiki generator
 ├── tests/                # Tests
 │   ├── app.test.js            # Unit tests (Jest + jsdom)
 │   └── e2e/                   # E2E tests (Playwright)
@@ -114,13 +118,23 @@ Your gallery is available at: `https://<username>.github.io/Race-Photos/`
 ## 🧪 Testing
 
 ```bash
-npm test                    # Run unit tests
-npm run test:report         # Run unit tests with coverage report
-npx playwright test         # Run E2E tests against live site
+npm test                                            # Run unit tests
+npm run test:report                                 # Run unit tests with coverage report
+npx playwright test                                 # Run E2E tests against live site
 BASE_URL=http://127.0.0.1:8081 npx playwright test  # Run E2E tests locally after `python serve.py 8081`
+python -m unittest discover -s .github/scripts -p 'test_*.py'  # Run CI helper script tests
 ```
 
 Unit tests use Jest with jsdom. E2E tests use Playwright against the deployed GitHub Pages site. Test reports are uploaded as CI artifacts on every push.
+
+## 📖 Wiki
+
+The [GitHub wiki](https://github.com/laqieer/Race-Photos/wiki) is generated automatically from `docs/images/manifest.json` by [`.github/scripts/generate_wiki.py`](./.github/scripts/generate_wiki.py). The [`update-wiki`](./.github/workflows/update-wiki.yml) workflow re-runs the generator whenever the manifest changes on `main` and pushes a `Sync wiki with manifest` commit to the wiki repo.
+
+- One `{race}.md` page per race plus `Home.md` (index table) and `_Footer.md`.
+- Generated pages start with `<!-- generated-by: generate_wiki.py; do not edit manually -->`. Manual edits to these pages are overwritten on the next sync; pages without that marker are preserved.
+- To regenerate locally: `git clone https://github.com/laqieer/Race-Photos.wiki.git && python .github/scripts/generate_wiki.py --manifest docs/images/manifest.json --output Race-Photos.wiki`.
+- The workflow uses `secrets.GITHUB_TOKEN` to push to the wiki by default. If pushes are blocked by repo policy, set an optional `WIKI_TOKEN` secret (classic PAT with `repo` scope) and the workflow will use it instead.
 
 ## 🤖 Built with GitHub Copilot
 

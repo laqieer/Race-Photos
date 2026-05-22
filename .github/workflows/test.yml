@@ -17,8 +17,13 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: npm ci
       - run: mkdir -p test-report && npm run test:report
+      - name: Run Python helper tests
+        run: python -m unittest discover -s .github/scripts -p 'test_*.py' -v
       - name: Generate test report summary
         if: always()
         run: |
