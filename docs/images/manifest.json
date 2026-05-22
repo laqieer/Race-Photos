@@ -1376,7 +1376,8 @@
       ],
       "lat": 43.861956,
       "lon": 125.33715,
-      "route": "routes/2026一汽红旗长春马拉松.gpx"
+      "route": "routes/2026一汽红旗长春马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/18536353312"
     },
     {
       "name": "2026大觉山半程马拉松",
@@ -2023,7 +2024,8 @@
       ],
       "lat": 27.719069,
       "lon": 117.091515,
-      "route": "routes/2026大觉山半程马拉松.gpx"
+      "route": "routes/2026大觉山半程马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/18445817503"
     },
     {
       "name": "2026中国田径协会10公里精英赛_怒江_泸水_暨怒小咖泸水欢乐跑",
@@ -2341,7 +2343,8 @@
       ],
       "route": "routes/2026中国田径协会10公里精英赛_怒江_泸水_暨怒小咖泸水欢乐跑.gpx",
       "lat": 25.822517,
-      "lon": 98.862031
+      "lon": 98.862031,
+      "strava_url": "https://www.strava.com/activities/18354308637"
     },
     {
       "name": "2026蚌埠马拉松",
@@ -3690,7 +3693,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/18260238471/overview",
+      "strava_url": "https://www.strava.com/activities/18260238471",
       "lat": 32.895837,
       "lon": 117.361416,
       "route": "routes/2026蚌埠马拉松.gpx"
@@ -4289,7 +4292,8 @@
       ],
       "lat": 34.762725,
       "lon": 118.845508,
-      "route": "routes/2026江苏东海海陵湖半程马拉松.gpx"
+      "route": "routes/2026江苏东海海陵湖半程马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/18246681433"
     },
     {
       "name": "2026中国田径协会10公里精英赛_无锡_马山站",
@@ -6232,7 +6236,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/18072992508/overview",
+      "strava_url": "https://www.strava.com/activities/18072992508",
       "lat": 39.903226,
       "lon": 116.393329,
       "route": "routes/2026北京国际长跑节-北京半程马拉松.gpx"
@@ -6588,7 +6592,8 @@
       ],
       "lat": 30.889063,
       "lon": 119.911282,
-      "route": "routes/浙江路跑10K_湖州吕山站暨第四届春日_吕_游田野跑.gpx"
+      "route": "routes/浙江路跑10K_湖州吕山站暨第四届春日_吕_游田野跑.gpx",
+      "strava_url": "https://www.strava.com/activities/17994477404"
     },
     {
       "name": "2026武马奔腾万米精英排位赛",
@@ -6678,7 +6683,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/17969396962/overview",
+      "strava_url": "https://www.strava.com/activities/17969396962",
       "lat": 39.389169,
       "lon": 117.003702,
       "route": "routes/2026武马奔腾万米精英排位赛.gpx"
@@ -7909,7 +7914,8 @@
       ],
       "lat": 30.448443,
       "lon": 116.271096,
-      "route": "routes/2026太湖花亭湖半程马拉松.gpx"
+      "route": "routes/2026太湖花亭湖半程马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/17726348065"
     },
     {
       "name": "2026首届长兴太湖9号公路玫瑰跑嘉年华",
@@ -16882,7 +16888,8 @@
       ],
       "lat": 29.54987,
       "lon": 106.585781,
-      "route": "routes/2025中国田径协会10公里精英赛重庆站暨重庆10公里挑战赛.gpx"
+      "route": "routes/2025中国田径协会10公里精英赛重庆站暨重庆10公里挑战赛.gpx",
+      "strava_url": "https://www.strava.com/activities/16596410789"
     },
     {
       "name": "2025中国马拉松精英排名赛暨长荡湖马拉松",
@@ -17797,7 +17804,8 @@
       ],
       "lat": 31.672418,
       "lon": 119.585865,
-      "route": "routes/2025中国马拉松精英排名赛暨长荡湖马拉松.gpx"
+      "route": "routes/2025中国马拉松精英排名赛暨长荡湖马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/16539428107"
     },
     {
       "name": "2025池州马拉松",
@@ -18099,7 +18107,8 @@
       ],
       "lat": 30.656883,
       "lon": 117.511297,
-      "route": "routes/2025池州马拉松.gpx"
+      "route": "routes/2025池州马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/16471175560"
     },
     {
       "name": "2025中国田径协会10公里精英赛_温州_洞头站",
@@ -18256,7 +18265,8 @@
       ],
       "route": "routes/2025中国田径协会10公里精英赛_温州_洞头站.gpx",
       "lat": 27.846681,
-      "lon": 121.13945
+      "lon": 121.13945,
+      "strava_url": "https://www.strava.com/activities/16399970721"
     },
     {
       "name": "2025高百接力赛华东站暨上海青年10k青春跑",
@@ -18288,7 +18298,8 @@
       ],
       "route": "routes/2025高百接力赛华东站暨上海青年10k青春跑.gpx",
       "lat": 31.337246,
-      "lon": 121.22029
+      "lon": 121.22029,
+      "strava_url": "https://www.strava.com/activities/16327355887"
     },
     {
       "name": "2025常州西太湖半程马拉松暨东亚半程马拉松锦标赛·大运河马拉松系列赛（常州站）",
@@ -18555,7 +18566,8 @@
       ],
       "lat": 31.695509,
       "lon": 119.801312,
-      "route": "routes/2025常州西太湖半程马拉松暨东亚半程马拉松锦标赛·大运河马拉松系列赛（常州站）.gpx"
+      "route": "routes/2025常州西太湖半程马拉松暨东亚半程马拉松锦标赛·大运河马拉松系列赛（常州站）.gpx",
+      "strava_url": "https://www.strava.com/activities/16257339103"
     },
     {
       "name": "2025黄河口（东营）马拉松赛",
@@ -19311,7 +19323,8 @@
       ],
       "lat": 37.432479,
       "lon": 118.668639,
-      "route": "routes/2025黄河口（东营）马拉松赛.gpx"
+      "route": "routes/2025黄河口（东营）马拉松赛.gpx",
+      "strava_url": "https://www.strava.com/activities/16186521483"
     },
     {
       "name": "2025昆明半程马拉松",
@@ -20225,7 +20238,8 @@
       ],
       "lat": 24.776701,
       "lon": 103.287919,
-      "route": "routes/2025昆明半程马拉松.gpx"
+      "route": "routes/2025昆明半程马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/16112150687"
     },
     {
       "name": "2025克拉玛依马拉松",
@@ -20836,7 +20850,8 @@
       ],
       "lat": 45.563248,
       "lon": 84.879184,
-      "route": "routes/2025克拉玛依马拉松.gpx"
+      "route": "routes/2025克拉玛依马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/16047967782"
     },
     {
       "name": "中交_绿城杯2025库尔勒半程马拉松",
@@ -21137,7 +21152,8 @@
       ],
       "lat": 38.519436,
       "lon": 102.186237,
-      "route": "routes/2025金昌半程马拉松暨全国半程马拉松锦标赛_第三站.gpx"
+      "route": "routes/2025金昌半程马拉松暨全国半程马拉松锦标赛_第三站.gpx",
+      "strava_url": "https://www.strava.com/activities/15882933573"
     },
     {
       "name": "2025沈阳马拉松",
@@ -22106,7 +22122,8 @@
       ],
       "lat": 46.795105,
       "lon": 130.312899,
-      "route": "routes/2025中国田径协会10公里精英赛_佳木斯站暨佳木斯半程马拉松.gpx"
+      "route": "routes/2025中国田径协会10公里精英赛_佳木斯站暨佳木斯半程马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/15723734059"
     },
     {
       "name": "2025哈尔滨马拉松",
@@ -23296,7 +23313,8 @@
       ],
       "lat": 49.459188,
       "lon": 119.702162,
-      "route": "routes/2025呼伦贝尔草原马拉松.gpx"
+      "route": "routes/2025呼伦贝尔草原马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/15568641664"
     },
     {
       "name": "2025林芝半程马拉松",
@@ -23515,7 +23533,8 @@
       ],
       "lat": 29.644461,
       "lon": 94.362384,
-      "route": "routes/2025林芝半程马拉松.gpx"
+      "route": "routes/2025林芝半程马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/15248424228"
     },
     {
       "name": "2025秦皇岛马拉松",
@@ -23968,7 +23987,8 @@
       ],
       "lat": 39.905771,
       "lon": 119.548683,
-      "route": "routes/2025秦皇岛马拉松.gpx"
+      "route": "routes/2025秦皇岛马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/14441691448"
     },
     {
       "name": "2025黄天鹅长兴泗安_长三角10K精英赛",
@@ -24015,7 +24035,8 @@
       ],
       "route": "routes/2025黄天鹅长兴泗安_长三角10K精英赛.gpx",
       "lat": 30.893112,
-      "lon": 119.612887
+      "lon": 119.612887,
+      "strava_url": "https://www.strava.com/activities/14369804306"
     },
     {
       "name": "2025新疆奎屯半程马拉松暨中国田径协会10公里精英赛_奎屯站",
@@ -24074,7 +24095,8 @@
       ],
       "lat": 44.426195,
       "lon": 84.870077,
-      "route": "routes/2025新疆奎屯半程马拉松暨中国田径协会10公里精英赛_奎屯站.gpx"
+      "route": "routes/2025新疆奎屯半程马拉松暨中国田径协会10公里精英赛_奎屯站.gpx",
+      "strava_url": "https://www.strava.com/activities/14350257524"
     },
     {
       "name": "2025济南（平阴）女子半程马拉松",
@@ -25869,7 +25891,8 @@
       ],
       "lat": 31.617772,
       "lon": 119.034561,
-      "route": "routes/2025南京溧水半程马拉松.gpx"
+      "route": "routes/2025南京溧水半程马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/13764398176"
     },
     {
       "name": "2024江苏省大学生路跑联盟联赛总决赛",
@@ -25931,7 +25954,8 @@
       ],
       "route": "routes/2024江苏省大学生路跑联盟联赛总决赛.gpx",
       "lat": 32.080225,
-      "lon": 118.70008
+      "lon": 118.70008,
+      "strava_url": "https://www.strava.com/activities/13755776984"
     },
     {
       "name": "2025重庆铜梁马拉松",
@@ -26352,7 +26376,8 @@
       ],
       "lat": 29.839452,
       "lon": 106.072645,
-      "route": "routes/2025重庆铜梁马拉松.gpx"
+      "route": "routes/2025重庆铜梁马拉松.gpx",
+      "strava_url": "https://www.strava.com/activities/13700721243"
     },
     {
       "name": "2025狮山广场杯苏州市首届街头田径挑战赛财神新春跑",
@@ -26394,7 +26419,8 @@
       ],
       "route": "routes/2025狮山广场杯苏州市首届街头田径挑战赛财神新春跑.gpx",
       "lat": 31.294826,
-      "lon": 120.542794
+      "lon": 120.542794,
+      "strava_url": "https://www.strava.com/activities/13515200494"
     },
     {
       "name": "2025象山国际普洱思茅马拉松",
@@ -27178,7 +27204,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/13214920319/overview",
+      "strava_url": "https://www.strava.com/activities/13214920319",
       "lat": 18.255179,
       "lon": 109.515772,
       "route": "routes/2024海南_三亚_马拉松.gpx"
@@ -27405,7 +27431,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/13117691890/overview",
+      "strava_url": "https://www.strava.com/activities/13117691890",
       "lat": 32.467725,
       "lon": 119.510677,
       "route": "routes/2024中国田径协会10公里精英赛_扬州站.gpx"
@@ -27619,7 +27645,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/13020013990/overview",
+      "strava_url": "https://www.strava.com/activities/13020013990",
       "lat": 31.294693,
       "lon": 120.545026,
       "route": "routes/2024苏州太湖马拉松.gpx"
@@ -27799,7 +27825,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/12910836335/overview",
+      "strava_url": "https://www.strava.com/activities/12910836335",
       "lat": 31.43973,
       "lon": 120.40754,
       "route": "routes/2024长三角女王跑系列赛暨苏州10K精英赛.gpx"
@@ -29361,7 +29387,8 @@
       ],
       "route": "routes/2024中国田径协会10公里精英赛_嘉善_大云站.gpx",
       "lat": 30.812066,
-      "lon": 120.971589
+      "lon": 120.971589,
+      "strava_url": "https://www.strava.com/activities/11346123872"
     },
     {
       "name": "2024苏州马拉松",
@@ -31191,7 +31218,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/11346129230/overview",
+      "strava_url": "https://www.strava.com/activities/11346129230",
       "lat": 31.298699,
       "lon": 120.696548,
       "route": "routes/2024苏州马拉松.gpx"
@@ -31573,7 +31600,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/11346133394/overview",
+      "strava_url": "https://www.strava.com/activities/11346133394",
       "lat": 35.567976,
       "lon": 116.978492,
       "route": "routes/2024曲阜马拉松.gpx"
@@ -31662,7 +31689,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/11346134597/overview",
+      "strava_url": "https://www.strava.com/activities/11346134597",
       "lat": 31.135889,
       "lon": 118.631947,
       "route": "routes/2024芜湖航空马拉松暨中国10公里精英赛.gpx"
@@ -32210,7 +32237,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/11346137984/overview",
+      "strava_url": "https://www.strava.com/activities/11346137984",
       "lat": 31.911436,
       "lon": 118.891968,
       "route": "routes/2024南京江宁大学城半程马拉松.gpx"
@@ -34285,7 +34312,7 @@
           ]
         }
       ],
-      "strava_url": "https://www.strava.com/activities/11375068858/overview",
+      "strava_url": "https://www.strava.com/activities/11375068858",
       "lat": 31.998392,
       "lon": 118.693913,
       "route": "routes/2024南京半程马拉松.gpx"
