@@ -98,7 +98,7 @@ test.describe('Race Detail', () => {
         await expect(firstCard).toBeVisible({ timeout: 10000 });
         await firstCard.click();
         await expect(page.locator('.back-link')).toBeVisible({ timeout: 10000 });
-        const stravaLink = page.locator('.strava-link').first();
+        const stravaLink = page.locator('.strava-view').first();
         if (await stravaLink.isVisible()) {
             await expect(stravaLink).toHaveAttribute('href', /strava\.com/);
         }

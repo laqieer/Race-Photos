@@ -915,25 +915,37 @@ class RacePhotosGallery {
 
         raceHeader.appendChild(title);
         raceHeader.appendChild(info);
+
+        // GPX URL is shared between the Download button and the route map.
+        // Prefer the local file (always present for races whose GPX we host)
+        // and fall back to Strava's public export endpoint.
+        const gpxUrl = race.route || (race.strava_url ? race.strava_url + '/export_gpx' : null);
+
         if (race.strava_url) {
             const stravaLink = document.createElement('a');
             stravaLink.href = race.strava_url;
             stravaLink.target = '_blank';
-            stravaLink.className = 'strava-link';
+            stravaLink.className = 'strava-link strava-view';
             stravaLink.innerHTML = '🏃 View on Strava';
             raceHeader.appendChild(stravaLink);
-
+        }
+        if (gpxUrl) {
             const gpxLink = document.createElement('a');
-            gpxLink.href = race.route || (race.strava_url + '/export_gpx');
-            gpxLink.download = '';
+            gpxLink.href = gpxUrl;
+            if (race.route) {
+                // Local GPX: suggest a friendly filename based on the race name.
+                const safeName = race.name.replace(/[\/\\:*?"<>|]+/g, '_').trim() || 'route';
+                gpxLink.download = safeName + '.gpx';
+            } else {
+                gpxLink.download = '';
+            }
             gpxLink.className = 'strava-link gpx-download';
             gpxLink.innerHTML = '📥 Download GPX';
             raceHeader.appendChild(gpxLink);
         }
         card.appendChild(raceHeader);
 
-        // Route map - use local GPX file, fall back to Strava export
-        const gpxUrl = race.route || (race.strava_url ? race.strava_url + '/export_gpx' : null);
+        // Route map - use the same gpxUrl computed above
         if (gpxUrl && typeof L !== 'undefined') {
             const mapContainer = document.createElement('div');
             mapContainer.id = 'race-detail-map';

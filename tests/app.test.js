@@ -907,11 +907,13 @@ describe('renderRaceDetail', () => {
             sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
         };
         await gallery.renderRaceDetail(race);
-        const stravaLink = document.querySelector('.strava-link');
+        const stravaLink = document.querySelector('.strava-view');
         expect(stravaLink).not.toBeNull();
         expect(stravaLink.href).toBe('https://www.strava.com/activities/12345');
         expect(stravaLink.target).toBe('_blank');
         expect(stravaLink.textContent).toContain('Strava');
+        // Shares the orange .strava-link styling class.
+        expect(stravaLink.classList.contains('strava-link')).toBe(true);
     });
 
     test('does not show Strava link when strava_url is absent', async () => {
@@ -920,7 +922,7 @@ describe('renderRaceDetail', () => {
             sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
         };
         await gallery.renderRaceDetail(race);
-        expect(document.querySelector('.strava-link')).toBeNull();
+        expect(document.querySelector('.strava-view')).toBeNull();
         expect(document.querySelector('.gpx-download')).toBeNull();
     });
 
@@ -937,6 +939,23 @@ describe('renderRaceDetail', () => {
         expect(gpxLink.textContent).toContain('Download GPX');
     });
 
+    test('shows GPX download link when only race.route is present (no strava_url)', async () => {
+        const race = {
+            name: 'Local GPX Only',
+            route: 'routes/local-only.gpx',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        const gpxLink = document.querySelector('.gpx-download');
+        expect(gpxLink).not.toBeNull();
+        expect(gpxLink.getAttribute('href')).toBe('routes/local-only.gpx');
+        expect(gpxLink.textContent).toContain('Download GPX');
+        // No Strava activity link should appear.
+        expect(document.querySelector('.strava-view')).toBeNull();
+        // Local downloads suggest a sanitized filename based on race name.
+        expect(gpxLink.getAttribute('download')).toBe('Local GPX Only.gpx');
+    });
+
     test('GPX download prefers local route over strava export', async () => {
         const race = {
             name: 'Local GPX',
@@ -947,7 +966,18 @@ describe('renderRaceDetail', () => {
         await gallery.renderRaceDetail(race);
         const gpxLink = document.querySelector('.gpx-download');
         expect(gpxLink.getAttribute('href')).toBe('routes/test.gpx');
-        expect(gpxLink.download).toBeDefined();
+        expect(gpxLink.getAttribute('download')).toBe('Local GPX.gpx');
+    });
+
+    test('sanitizes filesystem-unsafe characters when building GPX download filename', async () => {
+        const race = {
+            name: 'Race/With:Bad*Chars?',
+            route: 'routes/weird.gpx',
+            sources: [{ name: 'src', photos: [{ url: 'a.jpg', name: 'a.jpg' }] }],
+        };
+        await gallery.renderRaceDetail(race);
+        const gpxLink = document.querySelector('.gpx-download');
+        expect(gpxLink.getAttribute('download')).toBe('Race_With_Bad_Chars_.gpx');
     });
 
     test('renders race detail with timestamps grouped by time', async () => {
