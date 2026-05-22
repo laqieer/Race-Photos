@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2025-source-2e3a57daae",
+  "race": "2025重庆忠县马拉松暨第八届长江三峡马拉松",
+  "source": "中电智安",
+  "items": [
+    {
+      "name": "1764503667174.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2e3a57daae/1764503667174.MP4"
+    },
+    {
+      "name": "a215c9c26ff40b9e8866f2f1bf85e246_WC-EditVideo_1.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2e3a57daae/a215c9c26ff40b9e8866f2f1bf85e246_WC-EditVideo_1.MP4"
+    },
+    {
+      "name": "video.1.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2e3a57daae/video.1.MP4"
+    },
+    {
+      "name": "video.2.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2e3a57daae/video.2.MP4"
+    },
+    {
+      "name": "video.3.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2e3a57daae/video.3.MP4"
+    },
+    {
+      "name": "video.4.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2e3a57daae/video.4.MP4"
+    },
+    {
+      "name": "video.5.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2e3a57daae/video.5.MP4"
+    },
+    {
+      "name": "video.6.MP4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2025-source-2e3a57daae/video.6.MP4"
+    }
+  ]
+}
