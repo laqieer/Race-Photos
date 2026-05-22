@@ -292,7 +292,7 @@ def render_home_page(races: Sequence[dict]) -> str:
         date = race.get("date") or ""
         n_sources = len(race.get("sources", []))
         items, _, _ = total_counts(race)
-        link = f"[{escape_link_text(name)}]({name})"
+        link = f"[{escape_link_text(name)}]({wiki_page_url(name)})"
         lines.append(
             f"| {escape_table_cell(name)} | {escape_table_cell(date)}"
             f" | {n_sources} | {items} | {link} |"
@@ -321,6 +321,18 @@ def safe_page_filename(race_name: str) -> str:
     if filename in RESERVED_PAGE_NAMES:
         raise ValueError(f"Race name collides with reserved wiki page: {race_name!r}")
     return filename
+
+
+def wiki_page_url(race_name: str) -> str:
+    """Return the relative URL slug GitHub Wiki uses for a race page.
+
+    GitHub Wiki normalizes page-name spaces to hyphens in URLs and stops
+    Markdown link parsing at unescaped spaces, so a link target of
+    ``"2026 温州市..."`` renders as a broken link. Replacing spaces with
+    hyphens matches GitHub Wiki's canonical URL slug and keeps the link
+    intact regardless of how many spaces appear in the name.
+    """
+    return race_name.replace(" ", "-")
 
 
 def file_is_generated(path: Path) -> bool:

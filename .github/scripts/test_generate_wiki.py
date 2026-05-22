@@ -297,6 +297,32 @@ class TestHomePage(unittest.TestCase):
         self.assertIn("| 2026A | 2026-03-07 | 1 | 1 | [2026A](2026A) |", out)
         self.assertIn("| 2024B | 2024-01-21 | 0 | 0 | [2024B](2024B) |", out)
 
+    def test_home_link_replaces_spaces_with_hyphens(self):
+        # GitHub Wiki normalizes page-name spaces to hyphens in URLs and the
+        # Markdown parser stops at unescaped spaces in link targets, so the
+        # link target must use the hyphen form to avoid a broken link.
+        races = [
+            {"name": "2026 温州市迎新跑", "date": "2026-01-01", "sources": []},
+        ]
+        out = gw.render_home_page(races)
+        self.assertIn("[2026 温州市迎新跑](2026-温州市迎新跑)", out)
+        # The display label keeps the original space-bearing race name.
+        self.assertIn("| 2026 温州市迎新跑 |", out)
+
+
+class TestWikiPageUrl(unittest.TestCase):
+    def test_replaces_spaces_with_hyphens(self):
+        self.assertEqual(
+            gw.wiki_page_url("2026 温州市迎新跑"),
+            "2026-温州市迎新跑",
+        )
+
+    def test_passes_through_names_without_spaces(self):
+        self.assertEqual(gw.wiki_page_url("2026江油马拉松"), "2026江油马拉松")
+
+    def test_handles_multiple_spaces(self):
+        self.assertEqual(gw.wiki_page_url("a b c"), "a-b-c")
+
 
 class TestSafePageFilename(unittest.TestCase):
     def test_chinese_name_is_valid(self):
