@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2026-photoplus-cb7ca81352",
+  "race": "2026年陕西省路跑精英赛暨陕西·永寿醉美槐林10公里精英赛",
+  "source": "photoplus",
+  "items": [
+    {
+      "name": "_DSC7904.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/_DSC7904.JPG",
+      "timestamp": "2026-05-24 08:06:31"
+    },
+    {
+      "name": "_DSC7905.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/_DSC7905.JPG",
+      "timestamp": "2026-05-24 08:06:31"
+    },
+    {
+      "name": "LYP_5634.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/LYP_5634.JPG",
+      "timestamp": "2026-05-24 08:35:24"
+    },
+    {
+      "name": "LYP_5635.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/LYP_5635.JPG",
+      "timestamp": "2026-05-24 08:35:25"
+    },
+    {
+      "name": "LYP_5636.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/LYP_5636.JPG",
+      "timestamp": "2026-05-24 08:35:26"
+    },
+    {
+      "name": "LYP_5637.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/LYP_5637.JPG",
+      "timestamp": "2026-05-24 08:35:26"
+    }
+  ]
+}

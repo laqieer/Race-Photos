@@ -1,6 +1,54 @@
 {
   "races": [
     {
+      "name": "2026年陕西省路跑精英赛暨陕西·永寿醉美槐林10公里精英赛",
+      "date": "2026-05-24",
+      "city": "咸阳",
+      "province": "陕西",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "photoplus",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/_DSC7904.JPG",
+              "name": "_DSC7904.JPG",
+              "timestamp": "2026-05-24 08:06:31"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/_DSC7905.JPG",
+              "name": "_DSC7905.JPG",
+              "timestamp": "2026-05-24 08:06:31"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/LYP_5634.JPG",
+              "name": "LYP_5634.JPG",
+              "timestamp": "2026-05-24 08:35:24"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/LYP_5635.JPG",
+              "name": "LYP_5635.JPG",
+              "timestamp": "2026-05-24 08:35:25"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/LYP_5636.JPG",
+              "name": "LYP_5636.JPG",
+              "timestamp": "2026-05-24 08:35:26"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-cb7ca81352/LYP_5637.JPG",
+              "name": "LYP_5637.JPG",
+              "timestamp": "2026-05-24 08:35:26"
+            }
+          ]
+        }
+      ],
+      "route": "routes/2026年陕西省路跑精英赛暨陕西·永寿醉美槐林10公里精英赛.gpx",
+      "lat": 34.757527,
+      "lon": 108.165313,
+      "strava_url": "https://www.strava.com/activities/18628935671"
+    },
+    {
       "name": "2026一汽红旗长春马拉松",
       "date": "2026-05-17",
       "city": "长春",
