@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2026-photoplus-a4401ed692",
+  "race": "2026运满满10KM城市联赛_南京中华门站",
+  "source": "photoplus",
+  "items": [
+    {
+      "name": "3188733_20260530065345_459131_1471097524_LP9844.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-a4401ed692/3188733_20260530065345_459131_1471097524_LP9844.jpg",
+      "timestamp": "2026-05-30 06:53:45"
+    },
+    {
+      "name": "3188733_20260530065347_459131_1471097516_LP9847.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-a4401ed692/3188733_20260530065347_459131_1471097516_LP9847.jpg",
+      "timestamp": "2026-05-30 06:53:47"
+    },
+    {
+      "name": "3188733_20260530071152_493993_1471099091_BF8A0863.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-a4401ed692/3188733_20260530071152_493993_1471099091_BF8A0863.jpg",
+      "timestamp": "2026-05-30 07:11:52"
+    },
+    {
+      "name": "3188733_20260530071153_493993_1471099105_BF8A0867.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-a4401ed692/3188733_20260530071153_493993_1471099105_BF8A0867.jpg",
+      "timestamp": "2026-05-30 07:11:53"
+    },
+    {
+      "name": "3188733_20260530072136_459131_1471114237_LP0001.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-a4401ed692/3188733_20260530072136_459131_1471114237_LP0001.jpg",
+      "timestamp": "2026-05-30 07:21:36"
+    },
+    {
+      "name": "4I1A3154.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-a4401ed692/4I1A3154.JPG",
+      "timestamp": "2026-05-30 07:22:44"
+    },
+    {
+      "name": "4I1A3155.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-a4401ed692/4I1A3155.JPG",
+      "timestamp": "2026-05-30 07:22:47"
+    },
+    {
+      "name": "LAOL2358.JPG",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-a4401ed692/LAOL2358.JPG",
+      "timestamp": "2026-05-30 07:33:21"
+    }
+  ]
+}
