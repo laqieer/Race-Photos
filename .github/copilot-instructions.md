@@ -16,7 +16,7 @@ No build step — the frontend is vanilla HTML/CSS/JS served directly from `docs
 
 **Frontend (docs/):** A single-page gallery app. `app.js` contains a `RacePhotosGallery` class that loads `images/manifest.json`, uses hash-based routing (`#raceName`) for overview vs. detail views, and renders everything via DOM manipulation. External libs (Leaflet, Chart.js, MarkerCluster) are loaded from CDNs in `index.html`. The class is exported via `module.exports` for testing.
 
-**Data pipeline (scripts/):** A private Git submodule ([Race-Photos-Scripts](https://github.com/laqieer/Race-Photos-Scripts)) containing Python scripts that download photos from various Chinese race photo platforms (RunnerBar, Pailixiang, PhotoPlus, Yipai360, RunFF, iHuiPao) and Strava GPX routes. `generate_manifest.py` scans `docs/images/` to produce `manifest.json`. Each race directory has cached `race_info.json` and `photos_list.json`.
+**Data pipeline (scripts/):** A private Git submodule ([Race-Photos-Scripts](https://github.com/laqieer/Race-Photos-Scripts)) containing Python scripts that download photos from various Chinese race photo platforms (RunnerBar, Pailixiang, PhotoPlus, Yipai360, RunFF, iHuiPao) and Strava GPX routes. `generate_manifest.py` scans `docs/images/` to produce `manifest.json`. Each race directory has a committed `race_info.json` and a git-ignored, local-only `photos_list.json` cache.
 
 **Data flow:** Download scripts → local media staging + `docs/images/{race}/{source}/` JSON caches → shared release-asset upload workflow → `external_media.json` / metadata in `docs/images/{race}/{source}/` → `generate_manifest.py` → `docs/images/manifest.json` → `app.js` renders gallery.
 
@@ -24,7 +24,7 @@ No build step — the frontend is vanilla HTML/CSS/JS served directly from `docs
 
 ## Key Conventions
 
-- Never commit media binaries to Git; always upload photos/videos to release assets and keep only metadata (`race_info.json`, `photos_list.json`, `external_media.json`, manifest data) in the repo
+- Never commit media binaries to Git; always upload photos/videos to release assets and keep only metadata (`race_info.json`, `external_media.json`, manifest data) in the repo. `photos_list.json` is **git-ignored** — it caches raw platform API responses containing ephemeral signed-URL tokens (flagged by secret scanners), so keep it on disk for local incremental downloads / manifest regeneration but never commit it; its distilled metadata already lives in `manifest.json`
 - Photo timestamps are UTC+8 (China Standard Time); `photoTimestampToUtc()` converts them
 - Download scripts skip already-existing files and cache API responses (`race_info.json`, `photos_list.json`) for offline/incremental use
 - `app.js` must work both in browsers (DOM + CDN libs) and in Node.js (Jest) — guard exports with `typeof module !== 'undefined'`

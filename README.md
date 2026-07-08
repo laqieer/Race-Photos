@@ -28,7 +28,7 @@ Race-Photos/
 │       │       ├── *.jpg      # Optional local photo/video files before migration
 │       │       ├── *.mp4      # Optional local photo/video files before migration
 │       │       ├── race_info.json    # Race metadata (committed)
-│       │       ├── photos_list.json  # Photo metadata (committed)
+│       │       ├── photos_list.json  # Photo metadata (git-ignored local cache)
 │       │       └── external_media.json # Externally hosted media mapping
 │       └── manifest.json      # Gallery manifest
 ├── .github/workflows/    # CI/CD

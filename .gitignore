@@ -43,6 +43,14 @@ cinmoore_open_id.txt
 strava_upload_state.json
 .strava-browser-profile/
 
+# Photo-list API caches: keep on disk, never commit.
+# These cache raw platform API responses and contain ephemeral signed-URL tokens
+# (OSS Signature / STS security-token / auth_key) that secret scanners flag. They
+# are only consumed locally by generate_manifest.py; their distilled metadata
+# already lives in the committed manifest.json, so nothing at runtime or in CI
+# needs them.
+docs/images/**/photos_list.json
+
 # Local media staging: keep metadata, publish binaries via release assets instead
 docs/images/**/*.jpg
 docs/images/**/*.jpeg
