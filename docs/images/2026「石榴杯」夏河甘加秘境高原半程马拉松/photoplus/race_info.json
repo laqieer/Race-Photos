@@ -1,0 +1,17 @@
+{
+  "activity_name": "2026夏河甘加秘境半马",
+  "activity_no": 78526723,
+  "source": "photoplus",
+  "race_name": "2026「石榴杯」夏河甘加秘境高原半程马拉松",
+  "search_name": "夏河",
+  "search_providers": [
+    "paoyeshidai"
+  ],
+  "race_page": "https://live.photoplus.cn/live/78526723",
+  "auth_url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxfcab077c239a5684&redirect_uri=http%3A%2F%2Fpaoyeshidai.cn%2Fshare.html&response_type=code&scope=snsapi_userinfo&state=202607260100#wechat_redirect",
+  "biz_id": "202607260100",
+  "date": "2026-07-26",
+  "start_date": "2026-07-26",
+  "end_date": "2026-07-26",
+  "place": "甘肃夏河"
+}
