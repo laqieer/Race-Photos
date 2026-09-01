@@ -1,6 +1,39 @@
 {
   "races": [
     {
+      "name": "2026Astra5K系列赛_慈溪站",
+      "date": "2026-08-15",
+      "city": "宁波",
+      "province": "浙江",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "alltuu",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-94eb035b68/pl1eImWkyb0.jpg",
+              "name": "pl1eImWkyb0.jpg",
+              "timestamp": "2026-08-15 16:38:55"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-94eb035b68/pl1eM5GSE72.jpg",
+              "name": "pl1eM5GSE72.jpg",
+              "timestamp": "2026-08-15 18:51:00"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-94eb035b68/pl1eMgDOzf5.jpg",
+              "name": "pl1eMgDOzf5.jpg",
+              "timestamp": "2026-08-15 18:50:59"
+            }
+          ]
+        }
+      ],
+      "route": "routes/2026Astra5K系列赛_慈溪站.gpx",
+      "lat": 30.202895,
+      "lon": 121.289566,
+      "strava_url": "https://www.strava.com/activities/19751347479"
+    },
+    {
       "name": "2026「石榴杯」夏河甘加秘境高原半程马拉松",
       "date": "2026-07-26",
       "city": "甘南藏族自治州",

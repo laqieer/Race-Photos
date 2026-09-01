@@ -1,0 +1,79 @@
+{
+  "d": {
+    "fa": 1787906748622,
+    "vt": 0,
+    "fvl": 1788252342378,
+    "gpn": 0,
+    "gpt": 1788252342390,
+    "s": {
+      "5040502606": {
+        "t": 1416,
+        "v": "1788089384762",
+        "likeTotalList": {},
+        "st": "-1"
+      },
+      "0": {
+        "t": 0,
+        "v": "1788253461997",
+        "likeTotalList": {},
+        "st": "-1"
+      }
+    },
+    "flowTotal": 173107,
+    "tempLikeTotalList": {
+      "4a2f38a2eddb4c2296e97e41195ddab3": 1,
+      "1f9c9fe942efbf5796473e5521af0e47": 1,
+      "b37bc037acea53624a3705851cbf89e6": 1,
+      "ae0c89600ce3cf264b77b8e73dfb9fdd": 2,
+      "4f45ae16cb79b0062882cd080649aa85": 1
+    },
+    "tempQuestionTotalList": {},
+    "commentTotal": 0,
+    "commentLike": {},
+    "caua": 1787906748622,
+    "albumShareDTO": {
+      "title": "Astra 5K系列赛--慈溪站",
+      "shareNewTitle": "Astra 5K系列赛--慈溪站",
+      "isHasGraphic": 0,
+      "linkIndex": "fE7rmi",
+      "shareTxt": "现场图片直播\n2026.08.15 @浙江 宁波",
+      "shareCoverUrl": "https://spu.alltuu.com/cover/ALBUM8017081/SHARE/14.jpg",
+      "shareCoverWaterUrl": "https://spu.alltuu.com/cover/ALBUM8017081/SHARE/14.jpg",
+      "guestTitle": null,
+      "guestTips": null,
+      "guestTitleEn": null,
+      "guestTipsEn": null,
+      "passwdTitle": null,
+      "passwdTips": null,
+      "passwdTitleEn": null,
+      "passwdTipsEn": null,
+      "bannerTitle": "喔图-照片直播平台"
+    },
+    "privacyLevel": 0,
+    "albumSetTime": null,
+    "interactTotal": null,
+    "liveTotal": 0,
+    "albumQuestionTime": 1788253185325,
+    "pptTime": 0,
+    "tagTime": 1788253185338,
+    "talkTime": 1788253185347,
+    "talkLikeTime": 1788253185355,
+    "articleTime": 1788252342480,
+    "articleLikeTime": 1788253185363,
+    "panoPhotoTime": 1788252342495,
+    "panoPhotoTotal": 0,
+    "nowSepId": "",
+    "openDaySepId": "",
+    "isNeedGuideMap": null,
+    "publishBase": 0,
+    "ownerIdS": "2570662042",
+    "invitationTime": 1788253185374,
+    "isShakeRedPackat": 0,
+    "photoCount": 1419,
+    "isFaceInOss": 0,
+    "gbt": 1787906748759,
+    "fac": 1788253185307
+  },
+  "e": 0,
+  "m": "OK"
+}

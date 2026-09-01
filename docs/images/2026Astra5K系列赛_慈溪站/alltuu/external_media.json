@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2026-alltuu-94eb035b68",
+  "race": "2026Astra5K系列赛_慈溪站",
+  "source": "alltuu",
+  "items": [
+    {
+      "name": "pl1eImWkyb0.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-94eb035b68/pl1eImWkyb0.jpg",
+      "timestamp": "2026-08-15 16:38:55"
+    },
+    {
+      "name": "pl1eM5GSE72.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-94eb035b68/pl1eM5GSE72.jpg",
+      "timestamp": "2026-08-15 18:51:00"
+    },
+    {
+      "name": "pl1eMgDOzf5.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-94eb035b68/pl1eMgDOzf5.jpg",
+      "timestamp": "2026-08-15 18:50:59"
+    }
+  ]
+}
