@@ -1,0 +1,27 @@
+{
+  "source": "runff",
+  "race_id": "5585",
+  "fid": "27223416",
+  "bib": "A19056",
+  "race_page": "https://www.runff.com/html/live/s5585.html",
+  "queries": [
+    {
+      "fid": "27223416",
+      "bib": "A19056"
+    }
+  ],
+  "original": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original",
+    "release_tag": "media-2026-runff-original-e681ccfb0f",
+    "count": 53
+  },
+  "original_watermark": {
+    "status": "release-backed",
+    "host": "github-release-assets",
+    "subdir": "original-watermark",
+    "release_tag": "media-2026-runff-original-watermark-586715432e",
+    "count": 53
+  }
+}

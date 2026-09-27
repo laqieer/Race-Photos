@@ -50,6 +50,7 @@ strava_upload_state.json
 # already lives in the committed manifest.json, so nothing at runtime or in CI
 # needs them.
 docs/images/**/photos_list.json
+docs/images/**/search_params.json
 
 # Local media staging: keep metadata, publish binaries via release assets instead
 docs/images/**/*.jpg
