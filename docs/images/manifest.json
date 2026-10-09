@@ -1,6 +1,134 @@
 {
   "races": [
     {
+      "name": "WSE10KOPEN·南京站",
+      "date": "2026-10-01",
+      "city": "南京",
+      "province": "江苏",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "yipai360",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/502A4695.JPG",
+              "name": "502A4695.JPG",
+              "timestamp": "2026-10-01 07:11:10"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/502A4696.JPG",
+              "name": "502A4696.JPG",
+              "timestamp": "2026-10-01 07:11:10"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/502A4697.JPG",
+              "name": "502A4697.JPG",
+              "timestamp": "2026-10-01 07:11:10"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/502A4698.JPG",
+              "name": "502A4698.JPG",
+              "timestamp": "2026-10-01 07:11:10"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/502A4699.JPG",
+              "name": "502A4699.JPG",
+              "timestamp": "2026-10-01 07:11:11"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/502A4972.JPG",
+              "name": "502A4972.JPG",
+              "timestamp": "2026-10-01 07:52:09"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/502A4973.JPG",
+              "name": "502A4973.JPG",
+              "timestamp": "2026-10-01 07:52:09"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/DSC03993.JPG",
+              "name": "DSC03993.JPG",
+              "timestamp": "2026-10-01 07:41:53"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9459.JPG",
+              "name": "G80A9459.JPG",
+              "timestamp": "2026-10-01 07:06:13"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9460.JPG",
+              "name": "G80A9460.JPG",
+              "timestamp": "2026-10-01 07:09:27"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9463.JPG",
+              "name": "G80A9463.JPG",
+              "timestamp": "2026-10-01 07:09:48"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9470.JPG",
+              "name": "G80A9470.JPG",
+              "timestamp": "2026-10-01 07:10:42"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9475.JPG",
+              "name": "G80A9475.JPG",
+              "timestamp": "2026-10-01 07:11:10"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9476.JPG",
+              "name": "G80A9476.JPG",
+              "timestamp": "2026-10-01 07:11:10"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9477.JPG",
+              "name": "G80A9477.JPG",
+              "timestamp": "2026-10-01 07:11:11"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9478.JPG",
+              "name": "G80A9478.JPG",
+              "timestamp": "2026-10-01 07:11:11"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9479.JPG",
+              "name": "G80A9479.JPG",
+              "timestamp": "2026-10-01 07:11:11"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9710.JPG",
+              "name": "G80A9710.JPG",
+              "timestamp": "2026-10-01 07:52:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9711.JPG",
+              "name": "G80A9711.JPG",
+              "timestamp": "2026-10-01 07:52:51"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/G80A9712.JPG",
+              "name": "G80A9712.JPG",
+              "timestamp": "2026-10-01 07:52:51"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/JDQ04058.JPG",
+              "name": "JDQ04058.JPG",
+              "timestamp": "2026-10-01 07:47:19"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-media-yipai360-514019beb9/JDQ04059.JPG",
+              "name": "JDQ04059.JPG",
+              "timestamp": "2026-10-01 07:47:19"
+            }
+          ]
+        }
+      ],
+      "lat": 32.028392,
+      "lon": 118.702064,
+      "route": "routes/WSE10KOPEN·南京站.gpx",
+      "strava_url": "https://www.strava.com/activities/20400670827"
+    },
+    {
       "name": "2026中国田径协会10公里精英赛_苏州_漕湖站",
       "date": "2026-09-27",
       "city": "苏州",
