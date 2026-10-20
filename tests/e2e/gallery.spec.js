@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const xxpieMedia = require('../../docs/images/2026爱慕粉红公益跑/xxpie/external_media.json');
 
 test.describe('Gallery Overview', () => {
     test('page loads with title and header', async ({ page }) => {
@@ -64,6 +65,22 @@ test.describe('Gallery Overview', () => {
 });
 
 test.describe('Race Detail', () => {
+    test('xxpie deep link shows only curated release photos and the Strava route', async ({ page }) => {
+        await page.goto(`./#${encodeURIComponent(xxpieMedia.race)}`);
+        await expect(page.locator('.race-header h2')).toHaveText(xxpieMedia.race);
+        const photos = page.locator('.photo-grid img');
+        await expect(photos).toHaveCount(xxpieMedia.items.length);
+        const urls = await photos.evaluateAll(images => images.map(image => image.src).sort());
+        expect(urls).toEqual(xxpieMedia.items.map(item => item.url).sort());
+        await expect(page.locator('.strava-view')).toHaveAttribute(
+            'href', 'https://www.strava.com/activities/20615506345'
+        );
+        await expect(page.locator('.gpx-download')).toHaveAttribute(
+            'href', `routes/${xxpieMedia.race}.gpx`
+        );
+        await expect(page.locator('#race-detail-map')).toBeVisible();
+    });
+
     test('clicking a race card navigates to detail', async ({ page }) => {
         await page.goto('./');
         const firstCard = page.locator('.race-card').first();

@@ -83,6 +83,11 @@ python scripts/generate_manifest.py
 
 The gallery now supports committing only metadata while serving photos/videos from stable external URLs (for example GitHub release asset URLs) via per-source `external_media.json` files, using a shared post-download release-upload workflow from the scripts submodule.
 
+For **xxpie / 享像派**, `scripts/download_xxpie.py` combines bib and shared
+face-search matches into one deduplicated local set. Review the downloaded
+photos before publishing release assets; signed image URLs remain only in the
+git-ignored photo cache. See the scripts README for command options.
+
 ### 4. View Gallery
 
 Start a local development server (with cache disabled) and open in browser:

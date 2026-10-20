@@ -1,6 +1,74 @@
 {
   "races": [
     {
+      "name": "2026爱慕粉红公益跑",
+      "date": "2026-10-17",
+      "city": "苏州",
+      "province": "江苏",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "xxpie",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903357295839313920_DSC07742.jpg",
+              "name": "903357295839313920_DSC07742.jpg",
+              "timestamp": "2026-10-17 08:51:52"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903360913619582976_DSC07278.jpg",
+              "name": "903360913619582976_DSC07278.jpg",
+              "timestamp": "2026-10-17 09:05:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903360914157899776_DSC07279.jpg",
+              "name": "903360914157899776_DSC07279.jpg",
+              "timestamp": "2026-10-17 09:05:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903364746484023296_DSC08654.jpg",
+              "name": "903364746484023296_DSC08654.jpg",
+              "timestamp": "2026-10-17 09:21:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903364760668762112_DSC08657.jpg",
+              "name": "903364760668762112_DSC08657.jpg",
+              "timestamp": "2026-10-17 09:21:29"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903364784450863104_DSC08660.jpg",
+              "name": "903364784450863104_DSC08660.jpg",
+              "timestamp": "2026-10-17 09:21:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903374970210258944_ZH_03182_Y89qh.jpg",
+              "name": "903374970210258944_ZH_03182_Y89qh.jpg",
+              "timestamp": "2026-10-17 08:58:41"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903374992804052992_ZH_03184_Y89qh.jpg",
+              "name": "903374992804052992_ZH_03184_Y89qh.jpg",
+              "timestamp": "2026-10-17 08:58:43"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903376764301115392_2M8A0365.jpg",
+              "name": "903376764301115392_2M8A0365.jpg",
+              "timestamp": "2026-10-17 09:22:22"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-xxpie-79a01e02ab/903376775375654912_2M8A0368.jpg",
+              "name": "903376775375654912_2M8A0368.jpg",
+              "timestamp": "2026-10-17 09:22:24"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/20615506345",
+      "route": "routes/2026爱慕粉红公益跑.gpx",
+      "lat": 31.134039,
+      "lon": 120.581386
+    },
+    {
       "name": "2026建行杯浙江省城市路跑联赛_体和友绍兴站",
       "date": "2026-10-11",
       "city": "绍兴",
