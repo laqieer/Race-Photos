@@ -1,6 +1,54 @@
 {
   "races": [
     {
+      "name": "2026建行杯浙江省城市路跑联赛_体和友绍兴站",
+      "date": "2026-10-11",
+      "city": "绍兴",
+      "province": "浙江",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "alltuu",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-9e5994a68c/pl1ed5wRQ09.jpg",
+              "name": "pl1ed5wRQ09.jpg",
+              "timestamp": "2026-10-11 07:39:26"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-9e5994a68c/pl1edhQCC57.jpg",
+              "name": "pl1edhQCC57.jpg",
+              "timestamp": "2026-10-11 07:29:25"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-9e5994a68c/pl1etGkMi69.jpg",
+              "name": "pl1etGkMi69.jpg",
+              "timestamp": "2026-10-11 07:29:25"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-9e5994a68c/pl1etGkSZe6.jpg",
+              "name": "pl1etGkSZe6.jpg",
+              "timestamp": "2026-10-11 07:29:25"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-9e5994a68c/pl1etGoxa91.jpg",
+              "name": "pl1etGoxa91.jpg",
+              "timestamp": "2026-10-11 07:36:55"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-9e5994a68c/IMG_4357.jpeg",
+              "name": "IMG_4357.jpeg",
+              "timestamp": "2026-10-11 22:28:29"
+            }
+          ]
+        }
+      ],
+      "strava_url": "https://www.strava.com/activities/20534502395",
+      "lat": 30.059104,
+      "lon": 120.570801,
+      "route": "routes/2026建行杯浙江省城市路跑联赛_体和友绍兴站.gpx"
+    },
+    {
       "name": "WSE10KOPEN·南京站",
       "date": "2026-10-01",
       "city": "南京",
