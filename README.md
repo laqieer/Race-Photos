@@ -88,6 +88,10 @@ face-search matches into one deduplicated local set. Review the downloaded
 photos before publishing release assets; signed image URLs remain only in the
 git-ignored photo cache. See the scripts README for command options.
 
+The **2026兴化马拉松** gallery (October 18, 2026) includes reviewed RunnerBar
+and RunFF media hosted in release assets, with the route linked to
+[Strava activity 20628972432](https://www.strava.com/activities/20628972432).
+
 ### 4. View Gallery
 
 Start a local development server (with cache disabled) and open in browser:

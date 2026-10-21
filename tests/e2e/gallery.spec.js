@@ -1,5 +1,9 @@
 const { test, expect } = require('@playwright/test');
 const xxpieMedia = require('../../docs/images/2026爱慕粉红公益跑/xxpie/external_media.json');
+const xinghuaMedia = [
+    require('../../docs/images/2026兴化马拉松/runff/external_media.json'),
+    require('../../docs/images/2026兴化马拉松/runnerbar/external_media.json'),
+];
 
 test.describe('Gallery Overview', () => {
     test('page loads with title and header', async ({ page }) => {
@@ -65,6 +69,27 @@ test.describe('Gallery Overview', () => {
 });
 
 test.describe('Race Detail', () => {
+    test('Xinghua deep link shows reviewed photos, videos, and the Strava route', async ({ page }) => {
+        const race = xinghuaMedia[0].race;
+        const items = xinghuaMedia.flatMap(source => source.items);
+        await page.goto(`./#${encodeURIComponent(race)}`);
+        await expect(page.locator('.race-header h2')).toHaveText(race);
+        const media = page.locator('.photo-grid img, .photo-grid video');
+        await expect(media).toHaveCount(items.length);
+        const urls = await media.evaluateAll(elements => elements.map(element => element.src).sort());
+        expect(urls).toEqual(items.map(item => item.url).sort());
+        const videos = page.locator('.photo-grid video');
+        const expectedVideos = items.filter(item => item.name.endsWith('.mp4'));
+        await expect(videos).toHaveCount(expectedVideos.length);
+        const posters = await videos.evaluateAll(elements => elements.map(element => element.poster).sort());
+        expect(posters).toEqual(expectedVideos.map(item => item.poster).sort());
+        await expect(page.locator('.strava-view')).toHaveAttribute(
+            'href', 'https://www.strava.com/activities/20628972432'
+        );
+        await expect(page.locator('.gpx-download')).toHaveAttribute('href', `routes/${race}.gpx`);
+        await expect(page.locator('#race-detail-map')).toBeVisible();
+    });
+
     test('xxpie deep link shows only curated release photos and the Strava route', async ({ page }) => {
         await page.goto(`./#${encodeURIComponent(xxpieMedia.race)}`);
         await expect(page.locator('.race-header h2')).toHaveText(xxpieMedia.race);
