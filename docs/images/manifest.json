@@ -1,6 +1,90 @@
 {
   "races": [
     {
+      "name": "2026中国田径协会10公里精英赛_无锡_梁溪站",
+      "date": "2026-10-31",
+      "city": "无锡",
+      "province": "江苏",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "alltuu",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-53dc450f3c/pl1eHWrD332.jpg",
+              "name": "pl1eHWrD332.jpg",
+              "timestamp": "2026-10-31 20:17:17"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-53dc450f3c/pl1eHYh3Q31.jpg",
+              "name": "pl1eHYh3Q31.jpg",
+              "timestamp": "2026-10-31 20:06:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-53dc450f3c/pl1eHYMTH99.jpg",
+              "name": "pl1eHYMTH99.jpg",
+              "timestamp": "2026-10-31 20:12:40"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-53dc450f3c/pl1eHYRz3a3.jpg",
+              "name": "pl1eHYRz3a3.jpg",
+              "timestamp": "2026-10-31 20:06:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-53dc450f3c/pl1eHYv5Lc7.jpg",
+              "name": "pl1eHYv5Lc7.jpg",
+              "timestamp": "2026-10-31 20:06:30"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-53dc450f3c/pl1eHYwDpef.jpg",
+              "name": "pl1eHYwDpef.jpg",
+              "timestamp": "2026-10-31 20:12:42"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-53dc450f3c/pl1eHYwNr8d.jpg",
+              "name": "pl1eHYwNr8d.jpg",
+              "timestamp": "2026-10-31 20:12:44"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-alltuu-53dc450f3c/pl1eHYZZ900.jpg",
+              "name": "pl1eHYZZ900.jpg",
+              "timestamp": "2026-10-31 20:41:11"
+            }
+          ]
+        },
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/1793452878284_aeb5aee9_9622_444a_a82a_cee7247af848.jpg",
+              "name": "1793452878284_aeb5aee9_9622_444a_a82a_cee7247af848.jpg",
+              "timestamp": "2026-10-31 20:35:16"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/1793453569455_c3981741_1ea5_4632_930f_8ea53ee225ae.jpg",
+              "name": "1793453569455_c3981741_1ea5_4632_930f_8ea53ee225ae.jpg",
+              "lat": 31.49099,
+              "lon": 120.31237,
+              "timestamp": "2026-10-31 20:09:15"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/20261031_4411883_b7e5d00bc790479fb2d5699411e8164a.mp4",
+              "name": "20261031_4411883_b7e5d00bc790479fb2d5699411e8164a.mp4",
+              "poster": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/36820_8894285003530798850_2fd389e3_9ade_47e6_95b8_c7a5fb1d2fbb.jpeg"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/36820_8894285003530798850_2fd389e3_9ade_47e6_95b8_c7a5fb1d2fbb.jpeg",
+              "name": "36820_8894285003530798850_2fd389e3_9ade_47e6_95b8_c7a5fb1d2fbb.jpeg"
+            }
+          ]
+        }
+      ],
+      "lat": 31.58509,
+      "lon": 120.267901,
+      "route": "routes/2026中国田径协会10公里精英赛_无锡_梁溪站.gpx",
+      "strava_url": "https://www.strava.com/activities/20806616370"
+    },
+    {
       "name": "2026兴化马拉松",
       "date": "2026-10-18",
       "city": "泰州",
