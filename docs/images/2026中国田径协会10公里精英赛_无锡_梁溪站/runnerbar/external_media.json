@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "host": "github-release-assets",
+  "release_tag": "media-2026-runnerbar-36101f3378",
+  "race": "2026中国田径协会10公里精英赛_无锡_梁溪站",
+  "source": "runnerbar",
+  "items": [
+    {
+      "name": "1793452878284_aeb5aee9_9622_444a_a82a_cee7247af848.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/1793452878284_aeb5aee9_9622_444a_a82a_cee7247af848.jpg",
+      "timestamp": "2026-10-31 20:35:16"
+    },
+    {
+      "name": "1793453569455_c3981741_1ea5_4632_930f_8ea53ee225ae.jpg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/1793453569455_c3981741_1ea5_4632_930f_8ea53ee225ae.jpg",
+      "timestamp": "2026-10-31 20:09:15",
+      "lat": 31.49099,
+      "lon": 120.31237
+    },
+    {
+      "name": "20261031_4411883_b7e5d00bc790479fb2d5699411e8164a.mp4",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/20261031_4411883_b7e5d00bc790479fb2d5699411e8164a.mp4",
+      "poster": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/36820_8894285003530798850_2fd389e3_9ade_47e6_95b8_c7a5fb1d2fbb.jpeg"
+    },
+    {
+      "name": "36820_8894285003530798850_2fd389e3_9ade_47e6_95b8_c7a5fb1d2fbb.jpeg",
+      "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-36101f3378/36820_8894285003530798850_2fd389e3_9ade_47e6_95b8_c7a5fb1d2fbb.jpeg"
+    }
+  ]
+}
