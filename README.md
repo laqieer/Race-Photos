@@ -9,6 +9,10 @@
 
 My photos and videos from various races and platforms, organized and displayed in a beautiful web gallery.
 
+第一赛道APP (Gusto) photo/video captures are supported by
+`scripts\download_gusto.py`; see `scripts/README.md` for import instructions.
+New race downloads remain local for review before release-asset publication.
+
 🔗 **Live site**: https://laqieer.github.io/Race-Photos/
 
 ## 📁 Project Structure
