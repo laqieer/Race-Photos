@@ -140,6 +140,8 @@ python -m unittest discover -s .github/scripts -p 'test_*.py'  # Run CI helper s
 
 Unit tests use Jest with jsdom. E2E tests use Playwright against the deployed GitHub Pages site. Test reports are uploaded as CI artifacts on every push.
 
+The E2E workflow pins Ubuntu 24.04 because the locked Playwright version does not support installing Chromium dependencies on Ubuntu 26.04.
+
 ## 📖 Wiki
 
 The [GitHub wiki](https://github.com/laqieer/Race-Photos/wiki) is generated automatically from `docs/images/manifest.json` by [`.github/scripts/generate_wiki.py`](./.github/scripts/generate_wiki.py). The [`update-wiki`](./.github/workflows/update-wiki.yml) workflow re-runs the generator whenever the manifest changes on `main` and pushes a `Sync wiki with manifest` commit to the wiki repo.
