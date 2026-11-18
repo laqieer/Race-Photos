@@ -4,6 +4,10 @@ const xinghuaMedia = [
     require('../../docs/images/2026兴化马拉松/runff/external_media.json'),
     require('../../docs/images/2026兴化马拉松/runnerbar/external_media.json'),
 ];
+const xianganMedia = [
+    require('../../docs/images/2026中国田径协会10公里精英赛_厦门_翔安/runnerbar/external_media.json'),
+    require('../../docs/images/2026中国田径协会10公里精英赛_厦门_翔安/photoplus/external_media.json'),
+];
 
 test.describe('Gallery Overview', () => {
     test('page loads with title and header', async ({ page }) => {
@@ -69,6 +73,22 @@ test.describe('Gallery Overview', () => {
 });
 
 test.describe('Race Detail', () => {
+    test('Xiangan deep link shows reviewed RunnerBar and PhotoPlus photos and the Strava route', async ({ page }) => {
+        const race = xianganMedia[0].race;
+        const items = xianganMedia.flatMap(source => source.items);
+        await page.goto(`./#${encodeURIComponent(race)}`);
+        await expect(page.locator('.race-header h2')).toHaveText(race);
+        const photos = page.locator('.photo-grid img');
+        await expect(photos).toHaveCount(items.length);
+        const urls = await photos.evaluateAll(images => images.map(image => image.src).sort());
+        expect(urls).toEqual(items.map(item => item.url).sort());
+        await expect(page.locator('.strava-view')).toHaveAttribute(
+            'href', 'https://www.strava.com/activities/20981297449'
+        );
+        await expect(page.locator('.gpx-download')).toHaveAttribute('href', `routes/${race}.gpx`);
+        await expect(page.locator('#race-detail-map')).toBeVisible();
+    });
+
     test('Xinghua deep link shows reviewed photos, videos, and the Strava route', async ({ page }) => {
         const race = xinghuaMedia[0].race;
         const items = xinghuaMedia.flatMap(source => source.items);

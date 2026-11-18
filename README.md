@@ -96,6 +96,11 @@ The **2026兴化马拉松** gallery (October 18, 2026) includes reviewed RunnerB
 and RunFF media hosted in release assets, with the route linked to
 [Strava activity 20628972432](https://www.strava.com/activities/20628972432).
 
+The **2026中国田径协会10公里精英赛（厦门·翔安）** gallery (November 14, 2026)
+includes 36 reviewed photos from RunnerBar (27) and PhotoPlus (9), hosted
+in release assets, with the route linked to
+[Strava activity 20981297449](https://www.strava.com/activities/20981297449).
+
 ### 4. View Gallery
 
 Start a local development server (with cache disabled) and open in browser:

@@ -1,6 +1,225 @@
 {
   "races": [
     {
+      "name": "2026中国田径协会10公里精英赛_厦门_翔安",
+      "date": "2026-11-14",
+      "city": "厦门",
+      "province": "福建",
+      "country": "中国",
+      "sources": [
+        {
+          "name": "photoplus",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/0F9A7243.JPG",
+              "name": "0F9A7243.JPG",
+              "timestamp": "2026-11-14 17:37:02"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/DSC01996.JPG",
+              "name": "DSC01996.JPG",
+              "timestamp": "2026-11-14 17:14:20"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/Z7N02588.JPG",
+              "name": "Z7N02588.JPG",
+              "timestamp": "2026-11-14 17:27:44"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/Z7N02592.JPG",
+              "name": "Z7N02592.JPG",
+              "timestamp": "2026-11-14 17:27:44"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/Z7N02594.JPG",
+              "name": "Z7N02594.JPG",
+              "timestamp": "2026-11-14 17:27:45"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/Z7N02596.JPG",
+              "name": "Z7N02596.JPG",
+              "timestamp": "2026-11-14 17:27:46"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/Z7N02599.JPG",
+              "name": "Z7N02599.JPG",
+              "timestamp": "2026-11-14 17:27:46"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/ZENG9530.JPG",
+              "name": "ZENG9530.JPG",
+              "timestamp": "2026-11-14 17:33:37"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-photoplus-56eae05363/ZKK9330.JPG",
+              "name": "ZKK9330.JPG",
+              "timestamp": "2026-11-14 17:04:17"
+            }
+          ]
+        },
+        {
+          "name": "runnerbar",
+          "photos": [
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794647809175_ef18b1a2_99ee_40b9_9267_d5376b77d8f2.jpg",
+              "name": "1794647809175_ef18b1a2_99ee_40b9_9267_d5376b77d8f2.jpg",
+              "lat": 24.47951,
+              "lon": 118.08948,
+              "timestamp": "2026-11-14 17:20:36"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794647809188_3b667a8f_7a3c_46ce_a357_33759c7814ac.jpg",
+              "name": "1794647809188_3b667a8f_7a3c_46ce_a357_33759c7814ac.jpg",
+              "lat": 24.47951,
+              "lon": 118.08948,
+              "timestamp": "2026-11-14 17:20:36"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794647809195_9e84bcbd_1fa4_47fc_a068_4f0ff2c91bb7.jpg",
+              "name": "1794647809195_9e84bcbd_1fa4_47fc_a068_4f0ff2c91bb7.jpg",
+              "lat": 24.47951,
+              "lon": 118.08948,
+              "timestamp": "2026-11-14 17:20:37"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794647809245_9f107c84_b151_4796_b4f7_82b9942a6910.jpg",
+              "name": "1794647809245_9f107c84_b151_4796_b4f7_82b9942a6910.jpg",
+              "lat": 24.47951,
+              "lon": 118.08948,
+              "timestamp": "2026-11-14 17:20:36"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794647809246_f848c0f3_f895_4c82_8a67_ce471bffc83b.jpg",
+              "name": "1794647809246_f848c0f3_f895_4c82_8a67_ce471bffc83b.jpg",
+              "lat": 24.47951,
+              "lon": 118.08948,
+              "timestamp": "2026-11-14 17:20:37"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794647809255_9ccc2d3b_08d7_42c7_b532_30b3b56e4292.jpg",
+              "name": "1794647809255_9ccc2d3b_08d7_42c7_b532_30b3b56e4292.jpg",
+              "lat": 24.47951,
+              "lon": 118.08948,
+              "timestamp": "2026-11-14 17:20:37"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794647809262_d60cbef1_3ffc_4a0b_ab5f_b2e87c2264b7.jpg",
+              "name": "1794647809262_d60cbef1_3ffc_4a0b_ab5f_b2e87c2264b7.jpg",
+              "lat": 24.47951,
+              "lon": 118.08948,
+              "timestamp": "2026-11-14 17:20:36"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794647809267_2f49a8a3_ef9a_4a1c_b8a8_805e62e2a8a5.jpg",
+              "name": "1794647809267_2f49a8a3_ef9a_4a1c_b8a8_805e62e2a8a5.jpg",
+              "lat": 24.47951,
+              "lon": 118.08948,
+              "timestamp": "2026-11-14 17:20:36"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651319065_52c49c17_302d_40ed_915d_0adc2fa08255.jpg",
+              "name": "1794651319065_52c49c17_302d_40ed_915d_0adc2fa08255.jpg",
+              "timestamp": "2026-11-14 17:18:48"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651319120_6b31b457_b924_4925_99c2_6a09c39036df.jpg",
+              "name": "1794651319120_6b31b457_b924_4925_99c2_6a09c39036df.jpg",
+              "timestamp": "2026-11-14 17:18:48"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651319242_08324a12_55bc_474f_a31a_a70bfce3520b.jpg",
+              "name": "1794651319242_08324a12_55bc_474f_a31a_a70bfce3520b.jpg",
+              "timestamp": "2026-11-14 17:18:49"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651319807_f16b7cdf_d7b9_4a65_ba3f_0fdd95e6f65d.jpg",
+              "name": "1794651319807_f16b7cdf_d7b9_4a65_ba3f_0fdd95e6f65d.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651319863_e16d4089_22f5_4933_8f77_708550cd92cc.jpg",
+              "name": "1794651319863_e16d4089_22f5_4933_8f77_708550cd92cc.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651319989_303c9261_95ec_46d7_8790_2f23f8fcdb69.jpg",
+              "name": "1794651319989_303c9261_95ec_46d7_8790_2f23f8fcdb69.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651320381_ff34fda4_bd74_4dfc_98e4_700a7c685239.jpg",
+              "name": "1794651320381_ff34fda4_bd74_4dfc_98e4_700a7c685239.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651320463_e72a854b_91cd_49ec_b9c1_e53fab1158b6.jpg",
+              "name": "1794651320463_e72a854b_91cd_49ec_b9c1_e53fab1158b6.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651320473_634d28a2_f07b_4e9d_a1f9_57ae85c89bf8.jpg",
+              "name": "1794651320473_634d28a2_f07b_4e9d_a1f9_57ae85c89bf8.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651320643_f1518eda_444a_46b0_a937_dafc1d90b431.jpg",
+              "name": "1794651320643_f1518eda_444a_46b0_a937_dafc1d90b431.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651320757_99e7db0a_156b_4cc5_9932_34eeb62241c4.jpg",
+              "name": "1794651320757_99e7db0a_156b_4cc5_9932_34eeb62241c4.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651320806_644f6a8e_2573_47ba_b61b_5fdd70b49655.jpg",
+              "name": "1794651320806_644f6a8e_2573_47ba_b61b_5fdd70b49655.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651320965_4f1ed2ed_22ff_48e4_8340_57ba5c91925b.jpg",
+              "name": "1794651320965_4f1ed2ed_22ff_48e4_8340_57ba5c91925b.jpg",
+              "timestamp": "2026-11-14 17:18:50"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651320974_ad4452cb_f6ae_4c75_af66_799deb8b81e4.jpg",
+              "name": "1794651320974_ad4452cb_f6ae_4c75_af66_799deb8b81e4.jpg",
+              "timestamp": "2026-11-14 17:18:51"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651321013_78e65d47_33a0_4c8f_9037_48edcfda4a75.jpg",
+              "name": "1794651321013_78e65d47_33a0_4c8f_9037_48edcfda4a75.jpg",
+              "timestamp": "2026-11-14 17:18:51"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651321064_53b8588c_9565_420d_8105_333498e9d85b.jpg",
+              "name": "1794651321064_53b8588c_9565_420d_8105_333498e9d85b.jpg",
+              "timestamp": "2026-11-14 17:18:51"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651321167_bbefaf65_0e1d_4e00_9996_f925ddb16fcb.jpg",
+              "name": "1794651321167_bbefaf65_0e1d_4e00_9996_f925ddb16fcb.jpg",
+              "timestamp": "2026-11-14 17:18:51"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651321187_b2b42572_a9da_4000_9637_7e5f0022386a.jpg",
+              "name": "1794651321187_b2b42572_a9da_4000_9637_7e5f0022386a.jpg",
+              "timestamp": "2026-11-14 17:18:51"
+            },
+            {
+              "url": "https://github.com/laqieer/Race-Photos/releases/download/media-2026-runnerbar-c2c978793d/1794651321322_e154ffe7_8568_492e_8892_cea3593eedca.jpg",
+              "name": "1794651321322_e154ffe7_8568_492e_8892_cea3593eedca.jpg",
+              "timestamp": "2026-11-14 17:18:51"
+            }
+          ]
+        }
+      ],
+      "lat": 24.553692,
+      "lon": 118.203604,
+      "route": "routes/2026中国田径协会10公里精英赛_厦门_翔安.gpx",
+      "strava_url": "https://www.strava.com/activities/20981297449"
+    },
+    {
       "name": "2026郴州马拉松",
       "date": "2026-11-08",
       "city": "郴州",
